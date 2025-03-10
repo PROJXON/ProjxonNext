@@ -9,7 +9,14 @@ module.exports = {
         "./src/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                geologica: ['Geologica', 'Roboto', 'system-ui', 'sans-serif'],
+                roboto: ['Roboto', 'system-ui', 'sans-serif'],
+                code: ['source-code-pro', 'Menlo', 'Monaco', 'Consolas', 'Courier New',
+                    'monospace']
+            }
+        },
     },
     plugins: [],
 }

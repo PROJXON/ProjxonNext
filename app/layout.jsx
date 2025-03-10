@@ -1,4 +1,6 @@
 import "@/assets/global.css"
+import SiteNavbar from "@/components/SiteNavbar"
+import favicon from '@/assets/favicon.ico'
 
 export const metadata = {
     title: 'PROJXON',
@@ -8,8 +10,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className="font-geologica h-full">
+            <head>
+                <link rel="icon" href={favicon.src} sizes="any" />
+            </head>
             <body className="p-0 m-0 font-roboto h-full">
                 <div className="min-h-[calc(100vh - 56px)] pt-[5rem]">
+                    <SiteNavbar />
                     {children}
                 </div>
             </body>
