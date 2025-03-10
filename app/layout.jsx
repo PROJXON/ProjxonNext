@@ -7,9 +7,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
     return (
-        <html lang="en">
-            <body>
-                {children}
+        <html lang="en" className="font-geologica h-full">
+            <body className="p-0 m-0 font-roboto h-full">
+                <div className="min-h-[calc(100vh - 56px)] pt-[5rem]">
+                    {children}
+                </div>
             </body>
         </html>
     )
