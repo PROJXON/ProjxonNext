@@ -1,2 +1,26 @@
+# Node modules
 node_modules/
+
+# Next.js build output
 .next/
+out/
+
+# Local environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
