@@ -25,9 +25,7 @@ export default function CustomButton({ buttonText, link, buttonStyle, delayTime,
         </button>
     )
 
-    return (isAnimated ? (
-        <CustomButtonWrapper link={link} refProp={ref} isExternal={isExternal}>{motionBtn}</CustomButtonWrapper>
-    ) : (
-        <CustomButtonWrapper link={link} refProp={ref} isExternal={isExternal}>{staticBtn}</CustomButtonWrapper>
-    ))
+    return (<CustomButtonWrapper link={link} refProp={ref} isExternal={isExternal}>
+        {isAnimated ? motionBtn : staticBtn}
+    </CustomButtonWrapper>)
 }
