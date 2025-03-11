@@ -1,0 +1,33 @@
+.black-card {
+    box-shadow: rgba(255, 215, 0, 0.16) 0px 10px 15px 0px, rgba(255, 215, 0, 0.06) 0px 0px 0px 1px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    position: relative
+}
+
+.black-card-body {
+    padding: 30px;
+}
+
+.black-card-desc {
+    padding-bottom: 32px;
+}
+
+.black-card-stat-desc {
+    color: rgb(156 163 175 / 1)
+}
+
+.black-card-stat {
+    color: var(--golden);
+    font-size: 3rem;
+}
+
+.black-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px var(--golden);
+}
+
+.black-card-stat-desc {
+    font-size: 0.9rem;
+}

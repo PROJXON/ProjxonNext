@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #343a40;
+    background-color: var(--navbar-gray);
     transition: background-color 0.3s ease;
 }
 
@@ -27,20 +27,20 @@
 }
 
 .nav-link a:hover {
-    color: #ffd700;
+    color: var(--golden);
     /* background-color: rgba(255, 255, 255, 0.1); */
     border-radius: 5px;
 }
 
 /* Active link styling - underline the active button */
 .nav-link.active a {
-    color: #ffd700 !important;
+    color: var(--golden) !important;
     text-decoration: underline;
 }
 
 
 .nav-link a:focus {
-    color: #ffd700;
+    color: var(--golden);
 }
 
 .nav-link a:focus-visible {
@@ -71,7 +71,7 @@
     left: 0;
     right: 0;
     z-index: 1030;
-    background-color: #343a40;
+    background-color: var(--navbar-gray);
 }
 
 
