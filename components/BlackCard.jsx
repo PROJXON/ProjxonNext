@@ -25,5 +25,6 @@ export default function BlackCard({ item, isStat }) {
                     </div>
                 }
             </div>
-        </Col>)
+        </Col>
+    )
 }

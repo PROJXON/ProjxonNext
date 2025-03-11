@@ -1,6 +1,6 @@
 import { useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
-import CustomButtonWrapper from '@/components/CustomButtonWrapper'
+import Link from 'next/link'
 
 export default function CustomButton({ buttonText, link, buttonStyle, delayTime, isExternal, isAnimated }) {
     const { ref, inView } = useInView({
@@ -8,24 +8,30 @@ export default function CustomButton({ buttonText, link, buttonStyle, delayTime,
         threshold: 0.1,
     })
 
-    const motionBtn = (
+    const btnClasses = `btn btn-primary fs-5 px-4 ${buttonStyle}`
+
+    const buttonToDisplay = isAnimated ? (
         <motion.button
-            className={`btn btn-primary fs-5 px-4 ${buttonStyle}`}
+            className={btnClasses}
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: delayTime }}
         >
             {buttonText}
         </motion.button>
-    )
-
-    const staticBtn = (
-        <button className={`btn btn-primary fs-5 px-4 ${buttonStyle}`}>
+    ) : (
+        <button className={btnClasses}>
             {buttonText}
         </button>
     )
 
-    return (<CustomButtonWrapper link={link} refProp={ref} isExternal={isExternal}>
-        {isAnimated ? motionBtn : staticBtn}
-    </CustomButtonWrapper>)
+    return (
+        isExternal ? (<a href={link} target="_blank" rel="noopener noreferrer" ref={ref}>
+            {buttonToDisplay}
+        </a>) : (<div ref={ref}>
+            <Link href={link}>
+                {buttonToDisplay}
+            </Link>
+        </div>)
+    )
 }
