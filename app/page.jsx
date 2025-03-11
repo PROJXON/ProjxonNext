@@ -1,8 +1,8 @@
 "use client"
 
 import 'bootstrap/dist/css/bootstrap.min.css'
-//import './HomePage.css'
 import 'aos/dist/aos.css'
+import '@/css/HomePage.css'
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from "react"
