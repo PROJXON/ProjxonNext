@@ -19,6 +19,7 @@ import market from '@/images/market.webp'
 import CustomButton from '@/components/CustomButton'
 import ServicesCards from '@/components/ServicesCards'
 import BlackCard from '@/components/BlackCard'
+import CallToAction from '@/components/CallToAction'
 //import fetchBlogs
 
 export default function Page() {
@@ -233,5 +234,29 @@ export default function Page() {
             </Container>
         </section>
         */}
+
+        {/* Blogs Section */}
+        {/* Uncomment out once fetchBlogs has been implemented
+        {blogs && blogs.length > 0 && (
+            <section className='bg-black'>
+                <Container className="blogs">
+                    <h2 className='mb-5 sections-heading text-white'>
+                        Our Latest Blogs
+                        <span className="blog-heading-border mt-2"></span>
+                    </h2>
+                    <ul className={`list-unstyled row row-cols-1 row-cols-md-2 ${blogs.length === 2 ? "row-cols-lg-2" : "row-cols-lg-3"}`}>
+                        {blogs && blogs.slice(0,3).map((blog, index) => (    
+                            <BlogCard blog={blog} key={index} blogStyle="dark"/>                    
+                        ))}
+                    </ul> 
+                    <div className='d-flex justify-content-center mt-5'>
+                        <CustomButton buttonText="See All Blogs" link="/research" buttonStyle="yellow-button"/>
+                    </div>
+                </Container>
+            </section>
+        )}
+        */}
+
+        <CallToAction />
     </>)
 }
