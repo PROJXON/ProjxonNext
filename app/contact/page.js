@@ -1,19 +1,14 @@
-import { useEffect } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, CardBody } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FaEnvelopeOpenText } from "react-icons/fa";
 import "./ContactPage.css";
 
-import Hero from "../components/Hero";
-import InfoForm from "../components/InfoForm";
+import Hero from "@/components/Hero";
+import InfoForm from "@/components/InfoForm";
 
 import AOSWrapper from "@/components/AOSWrapper";
 
 const ContactPage = () => {
-  useEffect(() => {
-    AOS.init({ duration: 800, once: true });
-  }, []);
-
   const contactInfoList = [
     {
       icon: <FaEnvelopeOpenText className="text-yellow" />,
@@ -52,7 +47,7 @@ const ContactPage = () => {
               <div className="mt-5 pt-md-4">
                 {contactInfoList.map((info, index) => (
                   <Card className={`contact-link mt-4`} key={index}>
-                    <Card.Body className="d-flex align-items-center">
+                    <CardBody className="d-flex align-items-center">
                       <div className="fs-3 px-2 lh-1">{info.icon}</div>
                       <a
                         className="contact-link-content ms-4"
@@ -60,7 +55,7 @@ const ContactPage = () => {
                       >
                         {info.label}
                       </a>
-                    </Card.Body>
+                    </CardBody>
                   </Card>
                 ))}
               </div>

@@ -17,16 +17,6 @@ import CustomButton from "@/components/CustomButton";
 import CallToAction from "@/components/CallToAction";
 import BlackCard from "@/components/BlackCard";
 
-import whoWeAre from "/assets/about/whoarewe.webp";
-import phelan from "/assets/about/team/phelan.webp";
-import kathy from "/assets/about/team/kathy.webp";
-import donavon from "/assets/about/team/donavon.webp";
-import melissa from "/assets/about/team/melissa.webp";
-import bast from "/assets/about/team/bast.webp";
-import dania from "/assets/about/team/dania.webp";
-import megha from "/assets/about/team/megha.webp";
-import alexandria from "/assets/about/team/alexandria.webp";
-
 import Image from "next/image";
 
 const AboutPage = () => {
@@ -53,7 +43,7 @@ const AboutPage = () => {
 
   const consultingLeads = [
     {
-      image: phelan,
+      image: "/assets/about/team/phelan.webp",
       name: "Mark Phelan",
       title: "Senior Consultant,",
       specialty: "E-Commerce Solutions",
@@ -69,7 +59,7 @@ const AboutPage = () => {
       ],
     },
     {
-      image: kathy,
+      image: "/assets/about/team/kathy.webp",
       name: "Kathy Seaton",
       title: "Senior Consultant,",
       specialty: "Non Profit Development",
@@ -85,7 +75,7 @@ const AboutPage = () => {
       ],
     },
     {
-      image: donavon,
+      image: "/assets/about/team/donavon.webp",
       name: "Donavon Roberson",
       title: "Senior Consultant,",
       specialty: "Tech + Software Solutions",
@@ -101,7 +91,7 @@ const AboutPage = () => {
       ],
     },
     {
-      image: melissa,
+      image: "/assets/about/team/melissa.webp",
       name: "Melissa Eboli",
       title: "Senior Consultant,",
       specialty: "Health + Wellness Solutions",
@@ -117,7 +107,7 @@ const AboutPage = () => {
 
   const teamLeads = [
     {
-      image: bast,
+      image: "/assets/about/team/bast.webp",
       name: "Bast Herrera",
       title: "Team Lead,",
       specialty: "Program Development",
@@ -129,7 +119,7 @@ const AboutPage = () => {
       ],
     },
     {
-      image: dania,
+      image: "/assets/about/team/dania.webp",
       name: "Dania Ali",
       title: "Team Lead,",
       specialty: "Operations + Strategy",
@@ -141,7 +131,7 @@ const AboutPage = () => {
       ],
     },
     {
-      image: megha,
+      image: "/assets/about/team/megha.webp",
       name: "Megha Vinjamuru",
       title: "Team Lead,",
       specialty: "Project Management",
@@ -153,7 +143,7 @@ const AboutPage = () => {
       ],
     },
     {
-      image: alexandria,
+      image: "/assets/about/team/alexandria.webp",
       name: "Alexandria Boreman",
       title: "Team Lead,",
       specialty: "Marketing + Creative",
@@ -182,13 +172,13 @@ const AboutPage = () => {
           <Row className="align-items-center g-5">
             <Col md={12} lg={6} data-aos="fade-up" data-aos-once="true">
               <Image
-                src={whoWeAre}
+                src="/assets/about/whoarewe.webp"
                 alt="who we are"
                 width={800}
                 height={400}
                 className="overflow-hidden rounded-3 object-fit-cover w-100"
                 style={{ height: "auto" }}
-                placeholder="blur"
+                // placeholder="blur"
               />
             </Col>
 
@@ -320,7 +310,7 @@ const AboutPage = () => {
                     className="img-fluid w-100"
                     loading="lazy"
                     style={{ height: "auto" }}
-                    placeholder="blur"
+                    // placeholder="blur"
                   />
                   <div className="px-3 py-4 px-xl-4 text-white d-flex flex-column flex-grow-1">
                     <h4 className="mb-2 text-yellow">{member.name}</h4>
@@ -358,7 +348,7 @@ const AboutPage = () => {
                     className="img-fluid w-100"
                     loading="lazy"
                     style={{ height: "auto" }}
-                    placeholder="blur"
+                    // placeholder="blur"
                   />
                   <div className="px-3 py-4 px-xl-4 text-white d-flex flex-column flex-grow-1">
                     <h4 className="mb-2 text-yellow">{member.name}</h4>

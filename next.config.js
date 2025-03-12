@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ["blog.projxon.com"],
+    domains: ["blog.projxon.com", "localhost"],
   },
 };

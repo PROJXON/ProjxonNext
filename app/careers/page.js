@@ -2,12 +2,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CareerPage.css";
 
-import Hero from "../components/Hero";
-import CallToAction from "../components/CallToAction";
-import CustomButton from "../components/CustomButton";
-
-import consult from "../assets/careers/consult.webp";
-import advisor from "../assets/careers/advisor.webp";
+import Hero from "@/components/Hero";
+import CallToAction from "@/components/CallToAction";
+import CustomButton from "@/components/CustomButton";
 
 import AOSWrapper from "@/components/AOSWrapper";
 import InternCarousel from "@/components/InternCarousel";
@@ -51,7 +48,7 @@ const CareerPage = () => {
 
   const positions = [
     {
-      image: consult,
+      image: "/assets/careers/consult.webp",
       title: "Consulting Positions",
       description:
         "Join a team that values continuous improvement, collaboration, and exceptional client service. If you're passionate about delivering unique and impactful projects, we want to hear from you.",
@@ -60,7 +57,7 @@ const CareerPage = () => {
       dataAOS: "fade-right",
     },
     {
-      image: advisor,
+      image: "/assets/careers/advisor.webp",
       title: "Advisory Positions",
       description:
         "Leverage your consulting expertise in a flexible, part-time role, supporting client engagements without the responsibility of managing clients. Share your skills and knowledge with us.",
