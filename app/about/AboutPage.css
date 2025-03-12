@@ -4,7 +4,7 @@
 
 #about-hero {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../assets/banners/About.webp") no-repeat center center;
+    url("/assets/banners/About.webp") no-repeat center center;
   background-size: cover;
 }
 

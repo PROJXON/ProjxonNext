@@ -1,0 +1,28 @@
+/* || Infoform */
+
+.infoform .form-label {
+  color: #f8f9fa;
+}
+
+.infoform .form-control {
+  color: #f8f9fa;
+}
+
+.infoform .form-control::placeholder {
+  color: #adb5bd;
+}
+
+.infoform .form-control:focus {
+  background-color: #495057;
+  border-color: #ffd700;
+  box-shadow: none;
+  color: #f8f9fa;
+}
+
+.submit-button:hover {
+  background-color: #ffc300;
+  border-color: #ffc300;
+  color: #fff;
+  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}

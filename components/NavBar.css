@@ -1,0 +1,96 @@
+/* NavBar.css */
+
+.navbar {
+  background-color: #343a40;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+  color: #f8f9fa;
+  transition: color 0.3s ease;
+  letter-spacing: 0.1rem;
+}
+
+.navbar-brand:hover {
+  color: #ffd700;
+  text-decoration: none;
+}
+
+/* Navbar Links Styling */
+.nav-link {
+  color: #fff;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+  letter-spacing: 0.05rem;
+  font-family: "Roboto", system-ui, sans-serif;
+}
+
+.nav-link:hover {
+  color: #ffd700;
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* Active link styling - underline the active button */
+.nav-link.active {
+  color: #ffd700 !important;
+  text-decoration: underline;
+}
+
+.nav-link:focus {
+  color: #ffd700;
+}
+
+.nav-link:focus-visible {
+  box-shadow: none;
+}
+
+/* Navbar Toggle Button Styling */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+/* Centering the Navbar Items */
+.navbar-collapse {
+  justify-content: center;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  color: white;
+}
+
+/* Fixed Top Navbar */
+.fixed-top {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: #343a40;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Transition for Link Click Collapse (optional but improves UX) */
+.navbar-collapse.collapsing {
+  transition: height 0.3s ease;
+}
+
+@media (max-width: 990px) {
+  .navbar-container {
+    padding-left: 0px;
+  }
+
+  .navbar-nav a.nav-link {
+    padding-left: 0px !important;
+  }
+}
