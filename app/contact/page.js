@@ -1,5 +1,4 @@
 import { Container, Row, Col, Card, CardBody } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { FaEnvelopeOpenText } from "react-icons/fa";
 import "./ContactPage.css";
 

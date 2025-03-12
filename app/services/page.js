@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./ServicesPage.css";
 
 import Hero from "@/components/Hero";

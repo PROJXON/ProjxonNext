@@ -1,4 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./HomePage.css";
 
 import { Container, Row, Col, Card } from "react-bootstrap";
@@ -115,7 +114,12 @@ export default async function HomePage() {
           <h2 className="mb-5 fw-bold fs-3 text-black text-uppercase">About</h2>
           <p className="fs-4 text-black">
             PROJXON is a leading Holistic Business Optimization Consulting
-            Agency...
+            Agency, partnering with high-impact organizations across the Health
+            & Wellness, Tech, and Nonprofit sectors. Our customized business
+            strategies are designed to tackle chaos, transforming potential
+            failures into opportunities for growth and scalable success. Through
+            strategic and tailored consulting, we drive growth, enhance
+            productivity, and increase market value for our clients.
           </p>
           <hr className="divider" />
           <CustomButton

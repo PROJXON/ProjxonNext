@@ -3,7 +3,6 @@ import CallToAction from "@/components/CallToAction";
 import BlogClientList from "@/components/BlogClientList";
 import { fetchBlogs } from "@/services/blogService";
 
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./ResearchPage.css";
 
 export default async function ResearchPage() {

@@ -1,7 +1,6 @@
 import { createElement } from "react";
 import { FaEnvelope, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
 import "./Footer.css";
 

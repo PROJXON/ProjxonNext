@@ -1,5 +1,4 @@
 import { Container, Row, Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./CareerPage.css";
 
 import Hero from "@/components/Hero";
