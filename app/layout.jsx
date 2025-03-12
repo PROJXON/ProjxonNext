@@ -1,5 +1,6 @@
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "aos/dist/aos.css";
 
 export const metadata = {
   title: "PROJXON",

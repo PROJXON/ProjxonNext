@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./HomePage.css";
-import "aos/dist/aos.css";
 
 import { Container, Row, Col, Card } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
@@ -34,6 +33,8 @@ import defaultClientImage from "@/public/assets/homepage/default-pic.jpg";
 
 import ServiceCards from "@/components/ServiceCards";
 import BlackCardsSection from "@/components/BlackCardsSection";
+import AOSWrapper from "@/components/AOSWrapper";
+import Image from "next/image";
 
 export default async function HomePage() {
   const blogs = await fetchBlogs();
@@ -106,6 +107,7 @@ export default async function HomePage() {
 
   return (
     <>
+      <AOSWrapper />
       <HomeHero />
 
       <section className="text-center introduction bg-yellow">
@@ -188,11 +190,13 @@ export default async function HomePage() {
             {clients.map((client, index) => (
               <CarouselItem key={index}>
                 <CarouselCaption>
-                  <img
-                    className="testimonial-img mb-5"
-                    src={client.image || defaultClientImage.src}
+                  <Image
+                    className="testimonial-img"
+                    src={client.image || defaultClientImage}
                     alt={client.name}
-                    loading="lazy"
+                    width={80}
+                    height={80}
+                    style={{ borderRadius: "50%" }}
                   />
                   <p className="mb-4 fs-5">
                     <FaQuoteLeft className="quote-icon" size={25} />

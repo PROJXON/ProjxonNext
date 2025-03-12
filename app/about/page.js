@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import "./AboutPage.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import { Container, Row, Col } from "react-bootstrap";
 import {
   FaLightbulb,
@@ -10,8 +10,7 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
-import AOS from "aos";
-import "aos/dist/aos.css";
+import AOSWrapper from "@/components/AOSWrapper";
 
 import Hero from "@/components/Hero";
 import CustomButton from "@/components/CustomButton";
@@ -167,12 +166,9 @@ const AboutPage = () => {
     },
   ];
 
-  useEffect(() => {
-    AOS.init({ duration: 800 });
-  }, []);
-
   return (
     <div className="about-page">
+      <AOSWrapper />
       {/* Hero Section */}
       <Hero
         title="About PROJXON"
