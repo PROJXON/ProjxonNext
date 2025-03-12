@@ -1,3 +1,5 @@
+/* Footer.css */
+
 footer {
   background-color: #000000;
   color: white;
@@ -7,8 +9,6 @@ footer {
 
 .footer-logo {
   letter-spacing: 0.1rem;
-  text-decoration: none;
-  color: inherit;
 }
 
 footer:hover {
@@ -35,25 +35,23 @@ footer:hover {
 }
 
 .footer-link:hover {
-  color: var(--golden);
+  color: #ffd700;
   text-shadow: 0 0 8px rgba(235, 182, 22, 0.8);
 }
 
 .social-icons a {
   font-size: 1.5rem;
-  color: var(--golden);
+  color: #ffd700;
   transition: color 0.3s ease, transform 0.3s ease;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  shadow: 0 0 8px rgba(255, 255, 255, 0.8);
 }
 
 .social-icons a:hover {
-  color: var(--golden);
+  color: #ffd700;
   transform: translateY(-3px);
-  text-shadow: 0 0 5px var(--golden), 0 0 10px var(--golden),
-    0 0 15px var(--golden), 0 0 20px var(--golden), 0 0 25px var(--golden);
-  /* Enhanced glowing effect */
-  transition: transform 0.2s ease, text-shadow 0.2s ease;
-  /* Smooth transition */
+  text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700,
+    0 0 20px #ffd700, 0 0 25px #ffd700; /* Enhanced glowing effect */
+  transition: transform 0.2s ease, text-shadow 0.2s ease; /* Smooth transition */
 }
 
 .footer-icon {
@@ -79,7 +77,7 @@ footer:hover {
 
 .footer .text-center {
   margin-top: 20px;
-  border-top: 1px solid var(--navbar-gray);
+  border-top: 1px solid #343a40;
   padding-top: 20px;
 }
 

@@ -1,0 +1,19 @@
+/* App.css or a global CSS file */
+.content {
+  padding-top: 5rem; /* Adjust this value to match the height of your navbar */
+}
+
+/* Additional styling to ensure full-height content (optional) */
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  min-height: calc(
+    100vh - 56px
+  ); /* Adjust for full height minus navbar height */
+  /* padding-bottom: 20px; Optional padding to ensure content doesn't touch the footer */
+}

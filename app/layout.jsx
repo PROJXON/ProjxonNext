@@ -1,4 +1,5 @@
-import "./index.css";
+import "@/styles/index.css";
+import "@/styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
 

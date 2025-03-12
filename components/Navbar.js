@@ -1,10 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navbar, Nav, NavLink, Container } from "react-bootstrap";
 import Link from "next/link";
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import "./NavBar.css";
+
+import dynamic from "next/dynamic";
+
+const BootstrapBundle = dynamic(
+  () => import("bootstrap/dist/js/bootstrap.bundle.min"),
+  { ssr: false } // Disable SSR for Bootstrap JS
+);
 
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -21,6 +27,10 @@ const NavBar = () => {
     { to: "/careers", label: "Careers" },
     { to: "/contact", label: "Contact" },
   ];
+
+  useEffect(() => {
+    BootstrapBundle(); // Ensure bootstrap JS is loaded after the component mounts
+  }, []);
 
   return (
     <div className="w-100">
