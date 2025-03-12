@@ -1,4 +1,5 @@
 import SiteNavbar from "@/components/SiteNavbar"
+import Footer from "@/components/Footer"
 import favicon from '@/assets/favicon.ico'
 import '@/css/main.scss'
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
                 <div className="content">
                     <SiteNavbar />
                     {children}
+                    <Footer />
                 </div>
             </body>
         </html>
