@@ -18,7 +18,7 @@
 }
 
 /* Navbar Links Styling */
-.nav-link {
+a.nav-link {
   color: #fff;
   padding-left: 12px !important;
   padding-right: 12px !important;
@@ -29,7 +29,7 @@
   font-family: "Roboto", system-ui, sans-serif;
 }
 
-.nav-link:hover {
+a.nav-link:hover {
   color: #ffd700;
   /* background-color: rgba(255, 255, 255, 0.1); */
   border-radius: 5px;
@@ -37,7 +37,7 @@
 }
 
 /* Active link styling - underline the active button */
-.nav-link.active {
+a.nav-link.active {
   color: #ffd700 !important;
   text-decoration: underline;
 }

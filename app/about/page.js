@@ -176,7 +176,6 @@ const AboutPage = () => {
                 width={800}
                 height={400}
                 className="overflow-hidden rounded-3 object-fit-cover w-100"
-                style={{ height: "auto" }}
                 // placeholder="blur"
               />
             </Col>
@@ -308,7 +307,6 @@ const AboutPage = () => {
                     height={400}
                     className="img-fluid w-100"
                     loading="lazy"
-                    style={{ height: "auto" }}
                     // placeholder="blur"
                   />
                   <div className="px-3 py-4 px-xl-4 text-white d-flex flex-column flex-grow-1">
@@ -346,7 +344,6 @@ const AboutPage = () => {
                     height={400}
                     className="img-fluid w-100"
                     loading="lazy"
-                    style={{ height: "auto" }}
                     // placeholder="blur"
                   />
                   <div className="px-3 py-4 px-xl-4 text-white d-flex flex-column flex-grow-1">

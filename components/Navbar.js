@@ -4,8 +4,8 @@ import React, { useState, useEffect } from "react";
 import { Navbar, Nav, NavLink, Container } from "react-bootstrap";
 import Link from "next/link";
 import "./NavBar.css";
-
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 
 const BootstrapBundle = dynamic(
   () => import("bootstrap/dist/js/bootstrap.bundle.min"),
@@ -14,6 +14,11 @@ const BootstrapBundle = dynamic(
 
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    BootstrapBundle(); // Ensure bootstrap JS is loaded after the component mounts
+  }, []);
 
   const handleToggle = () => setExpanded(!expanded);
   const handleLinkClick = () => setExpanded(false);
@@ -27,10 +32,6 @@ const NavBar = () => {
     { to: "/careers", label: "Careers" },
     { to: "/contact", label: "Contact" },
   ];
-
-  useEffect(() => {
-    BootstrapBundle(); // Ensure bootstrap JS is loaded after the component mounts
-  }, []);
 
   return (
     <div className="w-100">
@@ -58,7 +59,9 @@ const NavBar = () => {
                   >
                     <Link
                       href={link.to}
-                      className="text-light"
+                      className={`nav-link ${
+                        router.pathname === link.to ? "active" : ""
+                      }`} // Add the active class based on current route
                       onClick={handleLinkClick}
                     >
                       {link.label}
