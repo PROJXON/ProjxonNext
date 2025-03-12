@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
 
 import ScrollToTop from "@/components/ScrollToTop";
+import NavBar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export const metadata = {
   title: "PROJXON",
@@ -13,8 +15,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <NavBar />
         <ScrollToTop />
         {children}
+        <Footer />
       </body>
     </html>
   );

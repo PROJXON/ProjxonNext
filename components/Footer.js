@@ -1,213 +1,201 @@
+import { createElement } from "react";
 import { FaEnvelope, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Link from "next/link";
 import "./Footer.css";
 
-import Link from "next/link";
+export default function Footer() {
+  const socialIcons = [
+    {
+      href: "mailto:info@projxon.com",
+      ariaLabel: "Email",
+      icon: FaEnvelope,
+      newTab: false,
+    },
+    {
+      href: "https://twitter.com/projxon",
+      ariaLabel: "Twitter",
+      icon: FaTwitter,
+      newTab: true,
+    },
+    {
+      href: "https://linkedin.com/company/projxon",
+      ariaLabel: "LinkedIn",
+      icon: FaLinkedin,
+      newTab: true,
+    },
+  ];
 
-const Footer = () => {
+  //Note: I assume that all of these href values are supposed to be different and go to different pages/subpages, or different sections of the same page (like /services#marketing-social) and the fact that each subsection of the footer gave all of them the same href was just a placeholder. But when copying over the code, I kept the href links exactly how they originally were.
+  const footerLinks = [
+    {
+      heading: "Services",
+      links: [
+        {
+          href: "/services",
+          text: "Marketing + Social",
+        },
+        {
+          href: "/services",
+          text: "E-commerce Solutions",
+        },
+        {
+          href: "/services",
+          text: "Business Optimization",
+        },
+        {
+          href: "/services",
+          text: "Project Management",
+        },
+        {
+          href: "/services",
+          text: "IT Interactions",
+        },
+      ],
+    },
+    {
+      heading: "About",
+      links: [
+        {
+          href: "/about",
+          text: "Vision",
+        },
+        {
+          href: "/about",
+          text: "Mission",
+        },
+        {
+          href: "/about",
+          text: "Core Value",
+        },
+        {
+          href: "/about",
+          text: "Meet the Team",
+        },
+        {
+          href: "/about",
+          text: "Our Journey",
+        },
+      ],
+    },
+    {
+      heading: "Partnerships",
+      links: [
+        {
+          href: "/servicepartners",
+          text: "Service Partners",
+        },
+        {
+          href: "/referralpartners",
+          text: "Referral Partners",
+        },
+      ],
+    },
+    {
+      heading: "Connect",
+      links: [
+        {
+          href: "/contact",
+          text: "Contact",
+        },
+        {
+          href: "/contact",
+          text: "Social",
+        },
+        {
+          href: "/contact",
+          text: "Appoint",
+        },
+        {
+          href: "/contact",
+          text: "Inquiries",
+        },
+        {
+          href: "/contact",
+          text: "Address (Google)",
+        },
+      ],
+    },
+    {
+      heading: "Research",
+      links: [
+        {
+          href: "/research",
+          text: "Blog",
+        },
+        {
+          href: "/research",
+          text: "Events",
+        },
+        {
+          href: "/research",
+          text: "Articles",
+        },
+        {
+          href: "/research",
+          text: "Newsletter",
+        },
+      ],
+    },
+    {
+      heading: "Careers",
+      links: [
+        {
+          href: "/career",
+          text: "Join Our Team",
+        },
+        {
+          href: "/career",
+          text: "Internship Program",
+        },
+      ],
+    },
+  ];
+
   return (
-    <footer className="bg-black text-white py-4 footer">
+    <footer className="bg-black text-white py-4 footer text-center">
       <Container>
         <Row>
           <Col>
-            <Link href="/" passHref>
-              <a
-                className="footer-logo"
-                style={{ textDecoration: "none", color: "inherit" }}
-              >
-                <h1>PROJXON</h1>
-              </a>
+            <Link href="/" className="footer-logo">
+              <h1 className="footer-logo">PROJXON</h1>
             </Link>
           </Col>
           <Col className="text-end">
             <div className="d-flex justify-content-end social-icons">
-              <a
-                href="mailto:info@projxon.com"
-                className="footer-icon"
-                aria-label="Email"
-              >
-                <FaEnvelope size={40} />
-              </a>
-              <a
-                href="https://twitter.com/projxon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-icon"
-                aria-label="Twitter"
-              >
-                <FaTwitter size={40} />
-              </a>
-              <a
-                href="https://linkedin.com/company/projxon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-icon"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin size={40} />
-              </a>
+              {socialIcons.map((icon, index) => (
+                <a
+                  key={index}
+                  href={icon.href}
+                  className="footer-icon"
+                  aria-label={icon.ariaLabel}
+                  target={icon.newTab ? "_blank" : undefined}
+                  rel={icon.newTab ? "noopener noreferrer" : undefined}
+                >
+                  {createElement(icon.icon, { size: 40 })}
+                </a>
+              ))}
             </div>
           </Col>
         </Row>
 
         <hr className="my-4" />
         <Row>
-          {/* Services Column */}
-          <Col xs={6} md={2} className="mb-3">
-            <h2 className="footer-heading">Services</h2>
-            <ul className="list-unstyled">
-              <li>
-                <Link href="/services" passHref>
-                  <a className="footer-link">Marketing + Social</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" passHref>
-                  <a className="footer-link">E-commerce Solutions</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" passHref>
-                  <a className="footer-link">Business Optimization</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" passHref>
-                  <a className="footer-link">Project Management</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" passHref>
-                  <a className="footer-link">IT Interactions</a>
-                </Link>
-              </li>
-            </ul>
-          </Col>
-
-          {/* About Column */}
-          <Col xs={6} md={2} className="mb-3">
-            <h2 className="footer-heading">About</h2>
-            <ul className="list-unstyled">
-              <li>
-                <Link href="/about" passHref>
-                  <a className="footer-link">Vision</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" passHref>
-                  <a className="footer-link">Mission</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" passHref>
-                  <a className="footer-link">Core Value</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" passHref>
-                  <a className="footer-link">Meet the Team</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" passHref>
-                  <a className="footer-link">Our Journey</a>
-                </Link>
-              </li>
-            </ul>
-          </Col>
-
-          {/* Partnerships Column */}
-          <Col xs={6} md={2} className="mb-3">
-            <h2 className="footer-heading">Partnerships</h2>
-            <ul className="list-unstyled">
-              <li>
-                <Link href="/servicepartners" passHref>
-                  <a className="footer-link">Service Partners</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/referralpartners" passHref>
-                  <a className="footer-link">Referral Partners</a>
-                </Link>
-              </li>
-            </ul>
-          </Col>
-
-          {/* Connect Column */}
-          <Col xs={6} md={2} className="mb-3">
-            <h2 className="footer-heading">Connect</h2>
-            <ul className="list-unstyled">
-              <li>
-                <Link href="/contact" passHref>
-                  <a className="footer-link">Contact</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" passHref>
-                  <a className="footer-link">Social</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" passHref>
-                  <a className="footer-link">Appoint</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" passHref>
-                  <a className="footer-link">Inquiries</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" passHref>
-                  <a className="footer-link">Address (Google)</a>
-                </Link>
-              </li>
-            </ul>
-          </Col>
-
-          {/* Blog & Research Column */}
-          <Col xs={6} md={2} className="mb-3">
-            <h2 className="footer-heading">Research</h2>
-            <ul className="list-unstyled">
-              <li>
-                <Link href="/research" passHref>
-                  <a className="footer-link">Blog</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/research" passHref>
-                  <a className="footer-link">Events</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/research" passHref>
-                  <a className="footer-link">Articles</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/research" passHref>
-                  <a className="footer-link">Newsletter</a>
-                </Link>
-              </li>
-            </ul>
-          </Col>
-
-          {/* Careers Column */}
-          <Col xs={6} md={2} className="mb-3">
-            <h2 className="footer-heading">Careers</h2>
-            <ul className="list-unstyled">
-              <li>
-                <Link href="/career" passHref>
-                  <a className="footer-link">Join Our Team</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/career" passHref>
-                  <a className="footer-link">Internship Program</a>
-                </Link>
-              </li>
-            </ul>
-          </Col>
+          {footerLinks.map((section, index) => (
+            <Col xs={6} md={2} className="mb-3" key={index}>
+              <h2 className="footer-heading">{section.heading}</h2>
+              <ul className="list-unstyled">
+                {section.links.map((link, index) => (
+                  <li key={index}>
+                    <Link href={link.href} className="footer-link">
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Col>
+          ))}
         </Row>
 
         <Row className="mt-4">
@@ -220,6 +208,4 @@ const Footer = () => {
       </Container>
     </footer>
   );
-};
-
-export default Footer;
+}
