@@ -41,7 +41,7 @@ export default function SiteNavbar() {
         },
     ]
 
-    return (<div>
+    return (<div className="w-100">
         <Navbar fixed="top" bg="black" variant="black" expand="lg" expanded={expanded} onToggle={() => setExpanded(!expanded)}>
             <Container className="d-flex justify-content-between py-1">
                 <Navbar.Brand>

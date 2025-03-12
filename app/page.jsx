@@ -174,7 +174,7 @@ export default function Page() {
         </section>
 
         {/* Services Overview */}
-        <section className="bg-yellow services">
+        <section className="bg-yellow services text-center">
             <Container className="overflow-hidden">
                 <Row className="gy-4 gy-md-5 gy-lg-0 align-items-center">
                     <Col md="12" lg="5">
