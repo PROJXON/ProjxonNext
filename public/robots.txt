@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /editor
+
+Sitemap: https://www.projxon.com/sitemap.xml
