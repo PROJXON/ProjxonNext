@@ -1,48 +1,52 @@
+/* NavBar.css */
+
 .navbar {
-  background-color: var(--navbar-gray);
+  background-color: #343a40;
   transition: background-color 0.3s ease;
 }
 
-.navbar-brand a {
+.navbar-brand {
   font-size: 2rem;
   color: #f8f9fa;
-  text-decoration: none;
+  transition: color 0.3s ease;
   letter-spacing: 0.1rem;
-  font-family: "Geologica", "Roboto", system-ui, sans-serif;
+}
+
+.navbar-brand:hover {
+  color: #ffd700;
+  text-decoration: none;
 }
 
 /* Navbar Links Styling */
 .nav-link {
+  color: #fff;
   padding-left: 12px !important;
   padding-right: 12px !important;
   font-size: 0.95rem;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
   letter-spacing: 0.05rem;
   font-family: "Roboto", system-ui, sans-serif;
 }
 
-.nav-link a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.nav-link a:hover {
-  color: var(--golden);
+.nav-link:hover {
+  color: #ffd700;
   /* background-color: rgba(255, 255, 255, 0.1); */
   border-radius: 5px;
+  text-decoration: none;
 }
 
 /* Active link styling - underline the active button */
-.nav-link.active a {
-  color: var(--golden) !important;
+.nav-link.active {
+  color: #ffd700 !important;
   text-decoration: underline;
 }
 
-.nav-link a:focus {
-  color: var(--golden);
+.nav-link:focus {
+  color: #ffd700;
 }
 
-.nav-link a:focus-visible {
+.nav-link:focus-visible {
   box-shadow: none;
 }
 
@@ -69,7 +73,7 @@
   left: 0;
   right: 0;
   z-index: 1030;
-  background-color: var(--navbar-gray);
+  background-color: #343a40;
 }
 
 .navbar.scrolled {
