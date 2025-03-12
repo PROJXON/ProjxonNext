@@ -14,7 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.12",
+    "form-data": "^4.0.2",
+    "jsonwebtoken": "^9.0.2",
     "next": "^15.2.1",
+    "nodemailer": "^6.10.0",
     "postcss": "^8.5.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
