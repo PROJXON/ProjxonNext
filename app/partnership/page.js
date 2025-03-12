@@ -3,9 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./PartnershipPage.css";
 
-import Hero from "../components/Hero";
-import CallToAction from "../components/CallToAction";
-import CustomButton from "../components/CustomButton";
+import Hero from "../../components/Hero";
+import CallToAction from "../../components/CallToAction";
+import CustomButton from "../../components/CustomButton";
 
 import AOSWrapper from "@/components/AOSWrapper";
 import Image from "next/image";
