@@ -103,7 +103,7 @@ export default async function HomePage() {
       <AOSWrapper />
       <HomeHero />
 
-      <section className="text-center introduction bg-yellow">
+      <section className="introduction bg-yellow">
         <Container>
           <h2 className="mb-5 fw-bold fs-3 text-black mx-auto text-uppercase">
             About
@@ -132,7 +132,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <section className="text-center bg-black introduction">
+      <section className="bg-black introduction">
         <Container>
           <h2
             data-aos="fade-up"
@@ -161,9 +161,9 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-yellow services">
+      <section className="bg-yellow services text-center">
         <Container className="overflow-hidden">
-          <Row className="gy-4 gy-md-5 align-items-center">
+          <Row className="gy-4 gy-md-5 gy-lg-0 align-items-center">
             <Col md={12} lg={5}>
               <Row>
                 <Col xs={12} xl={11} data-aos="fade-up" data-aos-once="true">
@@ -189,7 +189,14 @@ export default async function HomePage() {
               </Row>
             </Col>
             <Col md={12} lg={7}>
-              <ServiceCards services={services} />
+              {/*<ServiceCards services={services} /> */}
+              <Row>
+                <ServiceCards servicesPortion={services.slice(0, 3)} />
+                <ServiceCards
+                  servicesPortion={services.slice(3, 5)}
+                  divClasses="mt-md-5 pt-md-5"
+                />
+              </Row>
             </Col>
           </Row>
         </Container>
@@ -217,7 +224,7 @@ export default async function HomePage() {
                     alt={client.name}
                     width={100}
                     height={100}
-                    // style={{ borderRadius: "50%" }}
+                  // style={{ borderRadius: "50%" }}
                   />
                   <p className="mb-4 fs-5">
                     <FaQuoteLeft className="quote-icon" size={25} />

@@ -34,52 +34,40 @@ const NavBar = () => {
     { to: "/contact", label: "Contact" },
   ];
 
-  return (
-    <div className="w-100">
-      <Navbar
-        fixed="top"
-        bg="black"
-        variant="black"
-        expand="lg"
-        expanded={expanded}
-        onToggle={handleToggle}
-      >
-        <Container className="d-flex justify-content-between py-1">
-          <Navbar.Brand as={NavLink} to="/" className="text-light">
+  return (<div className="w-100">
+    <Navbar fixed="top" bg="black" variant="black" expand="lg" expanded={expanded} onToggle={() => setExpanded(!expanded)}>
+      <Container className="d-flex justify-content-between py-1">
+        <Navbar.Brand>
+          <Link href="/" className="text-light">
             PROJXON
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Container className="navbar-container d-flex justify-content-md-start justify-content-lg-end">
-              <Nav className="ml-auto text-uppercase">
-                {navLinks.map((link, index) => {
-                  // Check if the current link is the active one
-                  const currPage =
-                    pathname === link.to || (pathname.startsWith(link.to) && link.to !== "/");
+          </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Container className="navbar-container d-flex justify-content-md-start justify-content-lg-end">
+            <Nav className="ml-auto text-uppercase">
+              {navLinks.map((link, index) => {
+                const currPage = pathname === link.to || (pathname.startsWith(link.to) && link.to != "/")
 
-                  return (
-                    <NavLink
-                      className="link-offset-3"
-                      key={index}
-                      as="div" // Render as a div since Next.js Link uses an anchor tag
-                    >
-                      <Link
-                        href={link.to}
-                        className={`nav-link ${currPage ? "active" : ""}`} // Add the active class based on current route
-                        onClick={handleLinkClick}
-                      >
-                        {link.label}
-                      </Link>
-                    </NavLink>
-                  );
-                })}
-              </Nav>
-            </Container>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
-  );
+                return (<Nav.Link
+                  className={`link-offset-3${currPage ? " active" : ""}`}
+                  key={index}
+                  as="div"
+                >
+                  <Link
+                    href={link.to}
+                    onClick={() => setExpanded(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </Nav.Link>)
+              })}
+            </Nav>
+          </Container>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  </div>)
 };
 
 export default NavBar;

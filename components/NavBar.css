@@ -1,52 +1,50 @@
-/* NavBar.css */
-
 .navbar {
-  background-color: #343a40;
+  background-color: var(--navbar-gray);
   transition: background-color 0.3s ease;
 }
 
-.navbar-brand {
+.navbar-brand a {
   font-size: 2rem;
   color: #f8f9fa;
-  transition: color 0.3s ease;
-  letter-spacing: 0.1rem;
-}
-
-.navbar-brand:hover {
-  color: #ffd700;
   text-decoration: none;
+  letter-spacing: 0.1rem;
+  font-family: "Geologica", 'Roboto', system-ui, sans-serif;
 }
 
 /* Navbar Links Styling */
-a.nav-link {
-  color: #fff;
+.nav-link {
   padding-left: 12px !important;
   padding-right: 12px !important;
-  font-size: 0.95rem;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  text-decoration: none;
   letter-spacing: 0.05rem;
-  font-family: "Roboto", system-ui, sans-serif;
+  font-family: 'Roboto', system-ui, sans-serif;
 }
 
-a.nav-link:hover {
-  color: #ffd700;
+.nav-link a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  font-family: 'Roboto', system-ui, sans-serif;
+  font-size: 0.95rem;
+}
+
+.nav-link a:hover {
+  color: var(--golden);
   /* background-color: rgba(255, 255, 255, 0.1); */
   border-radius: 5px;
-  text-decoration: none;
 }
 
 /* Active link styling - underline the active button */
-a.nav-link.active {
-  color: #ffd700 !important;
+.nav-link.active a {
+  color: var(--golden) !important;
   text-decoration: underline;
 }
 
-.nav-link:focus {
-  color: #ffd700;
+
+.nav-link a:focus {
+  color: var(--golden);
 }
 
-.nav-link:focus-visible {
+.nav-link a:focus-visible {
   box-shadow: none;
 }
 
@@ -56,6 +54,7 @@ a.nav-link.active {
   outline: none;
   background-color: transparent;
 }
+
 
 /* Centering the Navbar Items */
 .navbar-collapse {
@@ -73,12 +72,14 @@ a.nav-link.active {
   left: 0;
   right: 0;
   z-index: 1030;
-  background-color: #343a40;
+  background-color: var(--navbar-gray);
 }
+
 
 .navbar.scrolled {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Transition for Link Click Collapse (optional but improves UX) */
 .navbar-collapse.collapsing {
