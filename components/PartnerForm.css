@@ -1,7 +1,7 @@
 /* InfoForm.css */
 
 .partner-form-container {
-  background-color: #343a40;
+  background-color: var(--navbar-gray);
   padding: 50px 0;
 }
 

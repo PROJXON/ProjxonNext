@@ -24,8 +24,8 @@
 /* || Our Team */
 
 .bg-yellow-team {
-  background: #ffd700;
-  background: radial-gradient(circle, #ffd700 80%, #000 100%);
+  background: var(--golden);
+  background: radial-gradient(circle, var(--golden) 80%, #000 100%);
 }
 
 .our-team {
@@ -68,8 +68,8 @@
   } */
 
   .bg-yellow-team {
-    background: #ffd700;
-    background: radial-gradient(circle, #ffd700 96%, #000 100%);
+    background: var(--golden);
+    background: radial-gradient(circle, var(--golden) 96%, #000 100%);
   }
 
   .our-team .sections-heading {

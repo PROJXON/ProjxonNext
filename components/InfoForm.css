@@ -14,7 +14,7 @@
 
 .infoform .form-control:focus {
   background-color: #495057;
-  border-color: #ffd700;
+  border-color: var(--golden);
   box-shadow: none;
   color: #f8f9fa;
 }

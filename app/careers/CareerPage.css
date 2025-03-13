@@ -104,7 +104,7 @@
 
 [class*="positions-shape-"]::before {
   content: "";
-  background-color: #ffd700;
+  background-color: var(--golden);
   border-radius: 20px;
   position: absolute;
   top: -25px;

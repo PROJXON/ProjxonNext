@@ -20,13 +20,13 @@
 }
 
 .black-card-stat {
-  color: #ffd700;
+  color: var(--golden);
   font-size: 3rem;
 }
 
 .black-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px #ffd700;
+  box-shadow: 0 8px 20px var(--golden);
 }
 
 .black-card-stat-desc {

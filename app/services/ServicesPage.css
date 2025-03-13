@@ -33,7 +33,7 @@
 }
 
 .service-card:hover {
-  background: linear-gradient(135deg, #ffd700, #feb47a);
+  background: linear-gradient(135deg, var(--golden), #feb47a);
 }
 
 .service-card:hover p,
