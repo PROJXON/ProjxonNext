@@ -197,7 +197,7 @@ export default async function HomePage() {
 
       <section className="bg-black choose-us">
         <Container className="text-center">
-          <h2 className="fw-bold sections-heading text-yellow">
+          <h2 className="fw-bold sections-heading text-yellow" data-aos="fade-up" data-aos-once="true">
             Why Choose Us?
           </h2>
           <BlackCardsSection reasons={reasons} />
@@ -205,19 +205,19 @@ export default async function HomePage() {
       </section>
 
       <section className="testimonials bg-yellow carousel-dark slide">
-        <Container className="text-center">
+        <Container className="text-center" data-aos="fade-up" data-aos-once="true">
           <h2 className="fw-bold text-black sections-heading">Testimonials</h2>
           <Carousel>
             {clients.map((client, index) => (
               <CarouselItem key={index}>
                 <CarouselCaption>
                   <Image
-                    className="testimonial-img"
+                    className="testimonial-img mb-5"
                     src={client.image || defaultClientImage}
                     alt={client.name}
-                    width={80}
-                    height={80}
-                    style={{ borderRadius: "50%" }}
+                    width={100}
+                    height={100}
+                    // style={{ borderRadius: "50%" }}
                   />
                   <p className="mb-4 fs-5">
                     <FaQuoteLeft className="quote-icon" size={25} />
@@ -233,13 +233,13 @@ export default async function HomePage() {
       </section>
 
       {blogs?.length > 0 && (
-        <section className="bg-black blogs">
-          <Container>
+        <section className="bg-black">
+          <Container className="blogs">
             <h2 className="mb-5 sections-heading text-white">
               Our Latest Blogs{" "}
               <span className="blog-heading-border mt-2"></span>
             </h2>
-            <ul className="list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <ul className={`list-unstyled row row-cols-1 row-cols-md-2 ${blogs.length === 2 ? "row-cols-lg-2" : "row-cols-lg-3"}`}>
               {blogs.slice(0, 3).map((blog, index) => (
                 <BlogCard blog={blog} key={index} blogStyle="dark" />
               ))}
