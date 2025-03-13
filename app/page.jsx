@@ -5,7 +5,6 @@ import 'aos/dist/aos.css'
 import '@/css/HomePage.css'
 
 import { motion } from 'framer-motion'
-import { useState, useEffect } from "react"
 import { Container, Row, Col, Carousel } from 'react-bootstrap'
 import { LuTrendingUp, LuUsers, LuLightbulb } from "react-icons/lu"
 import { FaQuoteLeft, FaMobile, FaCogs, FaProjectDiagram, FaShoppingCart, FaLaptopCode } from 'react-icons/fa'
@@ -16,11 +15,12 @@ import it from '@/images/it.webp'
 import manage from '@/images/manage.webp'
 import market from '@/images/market.webp'
 
+import AOSWrapper from '@/components/AOSWrapper'
 import CustomButton from '@/components/CustomButton'
 import ServicesCards from '@/components/ServicesCards'
 import BlackCard from '@/components/BlackCard'
+import Blogs from '@/components/Blogs'
 import CallToAction from '@/components/CallToAction'
-//import fetchBlogs
 
 export default function Page() {
     const services = [
@@ -88,30 +88,8 @@ export default function Page() {
         }
     ]
 
-    const [blogs, setBlogs] = useState([])
-    const [clients, setClients] = useState([])
-
-    useEffect(() => {
-        import('aos').then(AOS => AOS.init({ duration: 800 }))
-        /*(async () => {
-            try {
-                const response = await fetchBlogs()
-                setBlogs(response)
-            }
-            catch (error) {
-                console.log(error)
-            }
-        })()*/
-    }, [])
-
-    /*useEffect(() => {
-        (async () => {
-            const response = await fetchClients()
-            setClients(response)
-        })()
-    }, [])*/
-
     return (<>
+        <AOSWrapper />
         {/* Hero Section */}
         <div className="homepage-hero-section">
             <Container className="text-center text-white homepage-hero-content d-flex flex-column align-items-center">
@@ -236,26 +214,7 @@ export default function Page() {
         */}
 
         {/* Blogs Section */}
-        {/* Uncomment out once fetchBlogs has been implemented
-        {blogs && blogs.length > 0 && (
-            <section className='bg-black'>
-                <Container className="blogs">
-                    <h2 className='mb-5 sections-heading text-white'>
-                        Our Latest Blogs
-                        <span className="blog-heading-border mt-2"></span>
-                    </h2>
-                    <ul className={`list-unstyled row row-cols-1 row-cols-md-2 ${blogs.length === 2 ? "row-cols-lg-2" : "row-cols-lg-3"}`}>
-                        {blogs && blogs.slice(0,3).map((blog, index) => (    
-                            <BlogCard blog={blog} key={index} blogStyle="dark"/>                    
-                        ))}
-                    </ul> 
-                    <div className='d-flex justify-content-center mt-5'>
-                        <CustomButton buttonText="See All Blogs" link="/research" buttonStyle="yellow-button"/>
-                    </div>
-                </Container>
-            </section>
-        )}
-        */}
+        {/* <Blogs /> */}
 
         <CallToAction />
     </>)
