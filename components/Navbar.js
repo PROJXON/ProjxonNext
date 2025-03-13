@@ -5,7 +5,8 @@ import { Navbar, Nav, NavLink, Container } from "react-bootstrap";
 import Link from "next/link";
 import "./NavBar.css";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/navigation";
+
+import { usePathname } from 'next/navigation'
 
 const BootstrapBundle = dynamic(
   () => import("bootstrap/dist/js/bootstrap.bundle.min"),
@@ -14,7 +15,7 @@ const BootstrapBundle = dynamic(
 
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
-  const router = useRouter();
+  const pathname = usePathname()
 
   useEffect(() => {
     BootstrapBundle(); // Ensure bootstrap JS is loaded after the component mounts
@@ -51,23 +52,27 @@ const NavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Container className="navbar-container d-flex justify-content-md-start justify-content-lg-end">
               <Nav className="ml-auto text-uppercase">
-                {navLinks.map((link, index) => (
-                  <NavLink
-                    className="link-offset-3"
-                    key={index}
-                    as="div" // Render as a div since Next.js Link uses an anchor tag
-                  >
-                    <Link
-                      href={link.to}
-                      className={`nav-link ${
-                        router.pathname === link.to ? "active" : ""
-                      }`} // Add the active class based on current route
-                      onClick={handleLinkClick}
+                {navLinks.map((link, index) => {
+                  // Check if the current link is the active one
+                  const currPage =
+                    pathname === link.to || (pathname.startsWith(link.to) && link.to !== "/");
+
+                  return (
+                    <NavLink
+                      className="link-offset-3"
+                      key={index}
+                      as="div" // Render as a div since Next.js Link uses an anchor tag
                     >
-                      {link.label}
-                    </Link>
-                  </NavLink>
-                ))}
+                      <Link
+                        href={link.to}
+                        className={`nav-link ${currPage ? "active" : ""}`} // Add the active class based on current route
+                        onClick={handleLinkClick}
+                      >
+                        {link.label}
+                      </Link>
+                    </NavLink>
+                  );
+                })}
               </Nav>
             </Container>
           </Navbar.Collapse>

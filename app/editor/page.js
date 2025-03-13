@@ -6,12 +6,12 @@ import {
   fetchClients,
   addClient,
   deleteClient,
-} from "../services/clientService";
+} from "../../services/clientService";
 import "./TestimonialEditorPage.css";
 import { useRouter } from "next/navigation";
-import { logout } from "../services/loginService";
-import ImageUpload from "../components/ImageUpload";
-import axiosInstance from "../utils/axiosInstance";
+import { logout } from "../../services/loginService";
+import ImageUpload from "../../components/ImageUpload";
+import axiosInstance from "../../utils/axiosInstance";
 
 export default function EditorPage() {
   const router = useRouter();
@@ -26,12 +26,14 @@ export default function EditorPage() {
   const fileInputRef = useRef(null);
   const [file, setFile] = useState(null);
 
-  const authToken = localStorage.getItem("authToken");
-
   const handleLogout = () => {
     logout();
     router.push("/login");
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+  }, []);
 
   useEffect(() => {
     const loadClients = async () => {
