@@ -32,7 +32,7 @@
 }
 
 .homepage-hero-section {
-    background: rgba(0, 0, 0, 0.5) url('../images/city.webp');
+    background: rgba(0, 0, 0, 0.5) url('../assets/images/home-page/city.webp');
     background-blend-mode: overlay;
     background-size: cover;
     background-position: center;

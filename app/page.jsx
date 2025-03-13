@@ -9,11 +9,11 @@ import { Container, Row, Col, Carousel } from 'react-bootstrap'
 import { LuTrendingUp, LuUsers, LuLightbulb } from "react-icons/lu"
 import { FaQuoteLeft, FaMobile, FaCogs, FaProjectDiagram, FaShoppingCart, FaLaptopCode } from 'react-icons/fa'
 
-import business from '@/images/business.webp'
-import ecom from '@/images/ecom.webp'
-import it from '@/images/it.webp'
-import manage from '@/images/manage.webp'
-import market from '@/images/market.webp'
+import business from '@/assets/images/home-page/services/business.webp'
+import ecom from '@/assets/images/home-page/services/ecom.webp'
+import it from '@/assets/images/home-page/services/it.webp'
+import manage from '@/assets/images/home-page/services/manage.webp'
+import market from '@/assets/images/home-page/services/market.webp'
 
 import AOSWrapper from '@/components/AOSWrapper'
 import CustomButton from '@/components/CustomButton'

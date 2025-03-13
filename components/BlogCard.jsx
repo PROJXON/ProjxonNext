@@ -4,7 +4,7 @@ import DOMPurify from "isomorphic-dompurify";
 import { Card, Button } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
-import blogDefaultImg from '@/images/default-blog-img.webp'
+import blogDefaultImg from '@/assets/images/research/default-blog-img.webp'
 import '@/css/BlogCard.css'
 
 const BlogCard = ({ blog, blogStyle }) => {
