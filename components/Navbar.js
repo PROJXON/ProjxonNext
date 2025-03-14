@@ -45,7 +45,7 @@ const NavBar = () => {
         onToggle={handleToggle}
       >
         <Container className="d-flex justify-content-between py-1">
-          <Navbar.Brand as={NavLink} to="/" className="text-light">
+          <Navbar.Brand as={Link} href="/" className="text-light">
             PROJXON
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
