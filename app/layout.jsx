@@ -6,8 +6,6 @@ import "aos/dist/aos.css";
 import ScrollToTop from "@/components/ScrollToTop";
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import "@/components/Footer.css"
-import "@/components/Navbar.css"
 
 export const metadata = {
   title: "PROJXON",

@@ -25,15 +25,17 @@ export default function EditorPage() {
   });
   const fileInputRef = useRef(null);
   const [file, setFile] = useState(null);
+  const [authToken, setAuthToken] = useState(null);
+
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    setAuthToken(token);
+  }, []);
 
   const handleLogout = () => {
     logout();
     router.push("/login");
   };
-
-  useEffect(() => {
-    const token = localStorage.getItem("authToken");
-  }, []);
 
   useEffect(() => {
     const loadClients = async () => {
@@ -142,11 +144,13 @@ export default function EditorPage() {
         <h1>Testimonial Carousel Editor</h1>
         <div className="testimonial-carousel">
           <div className="testimonial">
-            <img
-              className="image"
-              src={getCurrentClient().image}
-              alt="Client"
-            />
+            {getCurrentClient().image && (
+              <img
+                className="image"
+                src={getCurrentClient().image}
+                alt="Client"
+              />
+            )}
             <span className="quote">{getCurrentClient().quote}</span>
             <span className="name">{getCurrentClient().name}</span>
             <span className="title">{getCurrentClient().title}</span>
