@@ -260,7 +260,7 @@ const ServiceCarousel = () => {
             src={service.image}
             alt={service.title}
             width={800}
-            height={500}
+            height={600}
             layout="intrinsic"
           />
           <CarouselCaption>

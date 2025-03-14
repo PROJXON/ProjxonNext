@@ -166,8 +166,8 @@ const AboutPage = () => {
       />
 
       {/* Who We Are Section */}
-      <section className="who-we-are sections-container">
-        <Container className="overflow-hidden">
+      <section className="bg-black who-we-are sections-container">
+        <Container className="overflow-hidden text-yellow">
           <Row className="align-items-center g-5">
             <Col md={12} lg={6} data-aos="fade-up" data-aos-once="true">
               <Image
@@ -187,13 +187,13 @@ const AboutPage = () => {
               data-aos-delay="500"
               data-aos-once="true"
             >
-              <h1 className="text-uppercase fw-bolder mb-3">Who Are We?</h1>
+              <h1 className="text-uppercase fw-bolder mb-3 text-yellow">Who Are We?</h1>
               <h2 className="fw-bolder fs-4">
                 {" "}
                 PROJXON is a leading business consulting firm helping
                 medium-sized businesses achieve their full potential.
               </h2>
-              <div className="mt-3 who-we-are-description gray-opacity">
+              <div className="mt-3 who-we-are-description gray-opacity text-white">
                 <p className="fs-5">
                   PROJXON offers a wide range of services, including business
                   process optimization, project management, and strategic

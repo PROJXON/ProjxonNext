@@ -77,6 +77,14 @@
 
 .service-carousel img {
   width: 100%;
-  height: 600px;
+  height: 600px !important;
   object-fit: cover;
+}
+
+.text-yellow {
+  color: gold;
+}
+
+.text-gray { 
+  color: #d1d5db;
 }
