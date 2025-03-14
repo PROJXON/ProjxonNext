@@ -12,7 +12,7 @@ const ContactPage = () => {
     {
       icon: <FaEnvelopeOpenText className="text-yellow" />,
       label: "info@projxon.com",
-      href: "mailto:info@projxon.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=info@projxon.com",
     },
   ];
 
