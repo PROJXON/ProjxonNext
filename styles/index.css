@@ -52,3 +52,8 @@ code {
 .yellow-button:active{
   color: #000000 !important; 
 }
+
+.sections-container {
+  padding-top: 108px;
+  padding-bottom: 108px;
+}

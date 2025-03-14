@@ -40,10 +40,12 @@ export default function RootLayout({ children }) {
           ></iframe>
         </noscript>
         
-        <NavBar />
-        <ScrollToTop />
-        {children}
-        <Footer />
+        <div className="content">
+          <NavBar />
+          <ScrollToTop />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

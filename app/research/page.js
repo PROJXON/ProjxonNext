@@ -7,6 +7,7 @@ import "./ResearchPage.css";
 
 export default async function ResearchPage() {
   const blogs = await fetchBlogs();
+  console.log(blogs);
 
   return (
     <>
