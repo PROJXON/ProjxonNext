@@ -42,11 +42,11 @@ a.nav-link.active {
   text-decoration: underline;
 }
 
-.nav-link:focus {
+a.nav-link:focus {
   color: #ffd700;
 }
 
-.nav-link:focus-visible {
+a.nav-link:focus-visible {
   box-shadow: none;
 }
 
