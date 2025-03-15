@@ -1,0 +1,111 @@
+/* || Hero */
+
+#contact-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/banners/Contact.webp") no-repeat center center;
+  background-size: cover;
+}
+
+/* || Contact */
+
+.contact {
+  background-color: #fff;
+}
+
+.contact-title {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.contact-heading {
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 45px;
+}
+
+.contact-sub-heading {
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+}
+
+.contact-bg-holder {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 60px 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 370px;
+}
+
+.contact-form-card {
+  background-color: #000;
+  border: none;
+  border-radius: 15px;
+}
+
+.contact .form-control {
+  min-height: 48px;
+  line-height: 40px;
+  border-color: transparent;
+  background: rgba(163, 190, 241, 0.14);
+  border-radius: 10px;
+  color: #000000;
+}
+
+.contact-link {
+  background-color: #000;
+  border: none;
+  border-radius: 10px;
+  max-width: 350px;
+  transition: box-shadow 0.15s ease-in-out;
+}
+
+.contact-icon,
+.contact-link .contact-link-content {
+  color: #fff;
+}
+
+.contact-link.active,
+.contact-link:hover {
+  box-shadow: 0 16px 24px 0 rgba(44, 44, 44, 0.25);
+}
+
+.contact-link-content {
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .promotional-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .promotional-section p {
+    font-size: 1rem;
+  }
+
+  .info-form {
+    margin-top: 50px;
+    padding-left: 12px;
+  }
+
+  .contact-title {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  .contact-heading {
+    font-size: 25px;
+    line-height: 25px;
+  }
+
+  .contact-link {
+    width: 100%;
+  }
+}

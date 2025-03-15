@@ -1,0 +1,102 @@
+/* AboutPage.css */
+
+/* || Hero */
+
+#about-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/banners/About.webp") no-repeat center center;
+  background-size: cover;
+}
+
+/* || Who We Are */
+
+.who-we-are img {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+/* || Mission & Values */
+
+.mission-values h2 {
+  font-size: 3rem;
+}
+
+/* || Our Team */
+
+.bg-yellow-team {
+  background: #ffd700;
+  background: radial-gradient(circle, #ffd700 80%, #000 100%);
+}
+
+.our-team {
+  overflow: hidden;
+}
+
+.our-team-sub-heading {
+  font-size: 1.1rem;
+  color: #000;
+}
+
+.our-team-card {
+  background-color: #000;
+  border-radius: 25px;
+  box-shadow: 0 8px 15px #000000;
+  transition: transform 0.25s ease-in-out;
+}
+
+.our-team-card:hover {
+  transform: translateY(-5px);
+}
+
+.our-team img {
+  border-radius: 20px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.social-icons:hover {
+  color: rgb(234 179 8 / 1);
+}
+
+/* || Media Queries */
+
+@media (max-width: 768px) {
+  /* .hero-subtitle {
+      font-size: 1.2rem;
+  } */
+
+  .bg-yellow-team {
+    background: #ffd700;
+    background: radial-gradient(circle, #ffd700 96%, #000 100%);
+  }
+
+  .our-team .sections-heading {
+    text-align: center;
+  }
+
+  .mission-vision .row,
+  .who-we-are .row,
+  .our-values .row {
+    --bs-gutter-x: 0px;
+  }
+
+  .black-card-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .our-team-card-body {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .about-button .yellow-button {
+    box-shadow: none;
+  }
+}
+
+.sections-heading {
+  font-size: 3rem;
+}

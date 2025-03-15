@@ -1,0 +1,16 @@
+.call-to-action {
+  background: rgba(0, 0, 0, 0.6) url("/assets/contact/calltoaction.webp");
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 600px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sections-heading {
+  font-size: 3rem;
+}

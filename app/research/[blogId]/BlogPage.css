@@ -1,0 +1,32 @@
+mark {
+  padding: 0px;
+}
+
+.blogpage-img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.blog-container p {
+  font-size: 1.2rem;
+}
+
+.wp-block-heading {
+  margin-bottom: 1.5rem;
+}
+
+.blog-container .wp-block-image img {
+  width: 100%;
+  height: auto;
+}
+
+.blogpage-date {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .blog-container {
+    width: 100vw !important;
+  }
+}

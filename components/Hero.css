@@ -1,0 +1,58 @@
+.hero-section {
+  background: linear-gradient(135deg, #ffd700, #000000);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 30rem;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  width: 400%;
+  height: 400%;
+  top: -200%;
+  left: -200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-content {
+  margin: auto;
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 20px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}

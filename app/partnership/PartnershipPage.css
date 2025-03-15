@@ -1,0 +1,63 @@
+/* PartnershipPage.css */
+
+/* || Hero */
+
+#partner-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("/assets/banners/Partnership.webp") no-repeat center center;
+  background-size: cover;
+}
+
+/* || Partner With Projxon */
+
+.partner-img {
+  aspect-ratio: auto 1280 / 720;
+}
+.partner-heading {
+  line-height: 1.3;
+}
+
+.partner-heading-sub-heading {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.partner-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffd700;
+  color: #000;
+}
+
+.partner-title {
+  font-weight: 500;
+}
+
+/* || Partnership Opportunities */
+
+.partner-opportunity {
+  padding-bottom: 80px;
+}
+
+.partner-opportunity.referral {
+  padding-bottom: 108px;
+}
+
+.partner-opportunity > h1 {
+  padding-top: 108px;
+}
+
+@media (min-width: 1024px) {
+  .row.flex-row-reverse .partner-text {
+    padding-right: 96px;
+  }
+
+  .row:not(.flex-row-reverse) .partner-text {
+    padding-left: 96px;
+  }
+}
