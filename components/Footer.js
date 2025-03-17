@@ -7,7 +7,7 @@ import "./Footer.css";
 const Footer = () => {
   const socialIcons = [
     {
-      href: "mailto:info@projxon.com",
+      href: "https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=info@projxon.com",
       ariaLabel: "Email",
       icon: FaEnvelope,
       newTab: false
@@ -166,16 +166,20 @@ const Footer = () => {
         <Col className="text-end">
           <div className="d-flex justify-content-end social-icons">
             {socialIcons.map((icon, index) => (
-              <a
+              <Link
                 key={index}
                 href={icon.href}
-                className="footer-icon"
-                aria-label={icon.ariaLabel}
                 target={icon.newTab ? "_blank" : undefined}
                 rel={icon.newTab ? "noopener noreferrer" : undefined}
+                passHref
               >
-                {renderIcon(icon.icon, 40)}
-              </a>
+                <div
+                  className="footer-icon"
+                  aria-label={icon.ariaLabel}
+                >
+                  {renderIcon(icon.icon, 40)}
+                </div>
+              </Link>
             ))}
           </div>
         </Col>
