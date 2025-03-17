@@ -5,7 +5,6 @@ import Carousel from "react-bootstrap/Carousel";
 import CarouselItem from "react-bootstrap/CarouselItem";
 import CarouselCaption from "react-bootstrap/CarouselCaption";
 import { FaQuoteLeft } from "react-icons/fa";
-import { LuTrendingUp, LuUsers, LuLightbulb } from "react-icons/lu";
 
 import HomeHero from "@/components/HomeHero";
 import BlogCard from "@/components/BlogCard";
@@ -17,42 +16,13 @@ import { fetchClients } from "@/services/clientService";
 import defaultClientImage from "@/public/assets/homepage/default-pic.jpg";
 
 import Services from "@/components/Services";
-import BlackCardsSection from "@/components/BlackCardsSection";
+import ChooseUs from "@/components/ChooseUs";
 import AOSWrapper from "@/components/AOSWrapper";
 import Image from "next/image";
 
 export default async function HomePage() {
   const blogs = await fetchBlogs();
   const clients = await fetchClients();
-
-  const reasons = [
-    {
-      icon: <LuUsers size={64} className="text-yellow" />,
-      title: "Expert Team",
-      description:
-        "Our team consists of industry experts with years of experience in their respective fields. With diverse backgrounds and deep knowledge, we bring unparalleled expertise to every project.",
-      stat: "10",
-      statSuffix: "+",
-      statDescription: "years combined experience",
-    },
-    {
-      icon: <LuTrendingUp size={64} className="text-yellow" />,
-      title: "Proven Results",
-      description: "We have a track record of delivering successful projects and measurable improvements for our clients. Our results speak for themselves, with consistent client satisfaction and tangible outcomes.",
-      stat: "95",
-      statSuffix: "%",
-      statDescription: "customer satisfaction rate",
-    },
-    {
-      icon: <LuLightbulb size={64} className="text-yellow" />,
-      title: "Innovative Solutions",
-      description:
-        "We leverage the latest technologies and methodologies to provide innovative solutions to our clients. Our forward-thinking approach ensures that you stay ahead of the curve in your industry.",
-      stat: "20",
-      statSuffix: "+",
-      statDescription: "innovative projects delivered",
-    },
-  ];
 
   return (
     <>
@@ -151,14 +121,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-black choose-us">
-        <Container className="text-center">
-          <h2 className="fw-bold sections-heading text-yellow" data-aos="fade-up" data-aos-once="true">
-            Why Choose Us?
-          </h2>
-          <BlackCardsSection reasons={reasons} />
-        </Container>
-      </section>
+      <ChooseUs />
 
       <section className="testimonials bg-yellow carousel-dark slide">
         <Container className="text-center" data-aos="fade-up" data-aos-once="true">

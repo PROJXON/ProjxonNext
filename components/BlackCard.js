@@ -1,10 +1,11 @@
 "use client";
 
-import AnimatedNumber from "../components/AnimatedNumber";
+import AnimatedNumber from "@/components/AnimatedNumber";
 import "./BlackCard.css";
 import { Col } from "react-bootstrap";
+import { createElement } from "react";
 
-const BlackCard = ({ item, isStat }) => {
+const BlackCard = ({ item, iconSize, isStat }) => {
   return (
     <Col
       md={12}
@@ -15,7 +16,12 @@ const BlackCard = ({ item, isStat }) => {
       data-aos-once="true"
     >
       <div className="d-flex flex-column black-card-body h-100 black-card">
-        <div className="mb-4">{item.icon}</div>
+        <div className="mb-4">
+          {createElement(item.icon, {
+            className: "text-yellow",
+            size: iconSize
+          })}
+        </div>
 
         <h3 className="fs-2 mb-3 text-yellow">{item.title}</h3>
 
