@@ -1,6 +1,6 @@
 import { FaEnvelope, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
-import { createElement } from "react";
+import renderIcon from "@/lib/renderIcon";
 import Link from "next/link";
 import "./Footer.css";
 
@@ -174,7 +174,7 @@ const Footer = () => {
                 target={icon.newTab ? "_blank" : undefined}
                 rel={icon.newTab ? "noopener noreferrer" : undefined}
               >
-                {createElement(icon.icon, { size: 40 })}
+                {renderIcon(icon.icon, 40)}
               </a>
             ))}
           </div>

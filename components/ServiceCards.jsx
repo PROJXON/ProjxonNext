@@ -1,7 +1,7 @@
 "use client";
 
 import { Card, Col } from "react-bootstrap";
-import { createElement } from "react";
+import renderIcon from "@/lib/renderIcon";
 
 const ServiceCards = ({ services, divClasses }) => {
   return (<Col xs={12} md={6}>
@@ -19,7 +19,7 @@ const ServiceCards = ({ services, divClasses }) => {
         >
           <Card.Body className="text-white">
             <div className="text-yellow">
-              {createElement(service.icon, { size: 40 })}
+              {renderIcon(service.icon, 40)}
             </div>
             <h3 className="my-4 fs-5 text-yellow">{service.title}</h3>
             <p className="text-gray mt-3">{service.description}</p>

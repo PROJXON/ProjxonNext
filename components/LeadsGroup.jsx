@@ -2,7 +2,7 @@
 
 import { Row, Col } from "react-bootstrap";
 import Image from "next/image";
-import { createElement } from "react";
+import renderIcon from "@/lib/renderIcon";
 
 export default function LeadsGroup({ heading, leads }) {
     return (<>
@@ -33,7 +33,7 @@ export default function LeadsGroup({ heading, leads }) {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        {createElement(link.icon, { size: 20 })}
+                                        {renderIcon(link.icon, 20)}
                                     </a>
                                 ))}
                             </div>

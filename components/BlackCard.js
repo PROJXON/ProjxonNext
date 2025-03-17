@@ -1,9 +1,9 @@
 "use client";
 
 import AnimatedNumber from "@/components/AnimatedNumber";
+import renderIcon from "@/lib/renderIcon";
 import "./BlackCard.css";
 import { Col } from "react-bootstrap";
-import { createElement } from "react";
 
 const BlackCard = ({ item, iconSize, isStat }) => {
   return (
@@ -17,10 +17,7 @@ const BlackCard = ({ item, iconSize, isStat }) => {
     >
       <div className="d-flex flex-column black-card-body h-100 black-card">
         <div className="mb-4">
-          {createElement(item.icon, {
-            className: "text-yellow",
-            size: iconSize
-          })}
+          {renderIcon(item.icon, iconSize, "text-yellow")}
         </div>
 
         <h3 className="fs-2 mb-3 text-yellow">{item.title}</h3>
