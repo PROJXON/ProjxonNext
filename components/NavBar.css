@@ -52,9 +52,13 @@ a.nav-link:focus-visible {
 
 /* Navbar Toggle Button Styling */
 .navbar-toggler {
-  border: none;
-  outline: none;
+  border: none !important; 
+  outline: none !important;  
+  box-shadow: none !important; 
+  border-radius: 8px;
+  padding: 8px;
   background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 
 /* Centering the Navbar Items */
@@ -62,9 +66,16 @@ a.nav-link:focus-visible {
   justify-content: center;
 }
 
+.navbar-toggler:not(.collapsed):hover {
+  background-color: #e0b400;
+}
+
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-  color: white;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='3' stroke-linecap='round' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important; 
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* Fixed Top Navbar */

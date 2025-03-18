@@ -39,7 +39,7 @@ const NavBar = () => {
       <Navbar
         fixed="top"
         bg="black"
-        variant="black"
+        variant="dark"
         expand="lg"
         expanded={expanded}
         onToggle={handleToggle}
@@ -48,7 +48,10 @@ const NavBar = () => {
           <Navbar.Brand as={Link} href="/" className="text-light">
             PROJXON
           </Navbar.Brand>
+          
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
+
+
           <Navbar.Collapse id="basic-navbar-nav">
             <Container className="navbar-container d-flex justify-content-md-start justify-content-lg-end">
               <Nav className="ml-auto text-uppercase">
