@@ -39,7 +39,7 @@ const NavBar = () => {
       <Navbar
         fixed="top"
         bg="black"
-        variant="dark"
+        variant="black"
         expand="lg"
         expanded={expanded}
         onToggle={handleToggle}
@@ -50,10 +50,8 @@ const NavBar = () => {
           </Navbar.Brand>
           
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
-
           <Navbar.Collapse id="basic-navbar-nav">
-            <Container className="navbar-container d-flex justify-content-md-start justify-content-lg-end">
+            <Container className="navbar-container d-flex justify-content-md-start justify-content-lg-end w-100">
               <Nav className="ml-auto text-uppercase">
                 {navLinks.map((link, index) => {
                   // Check if the current link is the active one
