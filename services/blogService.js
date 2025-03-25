@@ -17,13 +17,13 @@ export const fetchBlogs = async () => {
 
 export const fetchBlog = async (id) => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog/${id}`); // Full URL
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog?slug=${id}`); // Full URL
 
     if (!response.ok) {
       throw new Error(`Failed to fetch blog with id: ${id}`);
     }
-
-    return await response.json();
+    const data = await response.json();
+    return data[0];
   } catch (error) {
     console.error("❌ Error fetching blog:", error);
     return null;
