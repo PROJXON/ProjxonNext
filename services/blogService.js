@@ -1,11 +1,31 @@
-import axiosInstance from "../utils/axiosInstance";
+// services/blogService.js
 
 export const fetchBlogs = async () => {
-  const response = await axiosInstance.get("/api/blogs");
-  return response.data;
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog`); // Full URL
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch blogs");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("❌ Error fetching blogs:", error);
+    return []; // Return empty array if error occurs
+  }
 };
 
 export const fetchBlog = async (id) => {
-  const response = await axiosInstance.get(`/api/blogs/${id}`);
-  return response.data[0];
+  try {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog/${id}`); // Full URL
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch blog with id: ${id}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("❌ Error fetching blog:", error);
+    return null;
+  }
 };
