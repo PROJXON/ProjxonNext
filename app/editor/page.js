@@ -6,6 +6,7 @@ import {
   fetchClients,
   addClient,
   deleteClient,
+  uploadFile
 } from "../../services/clientService";
 import "./TestimonialEditorPage.css";
 import { useRouter } from "next/navigation";
@@ -92,51 +93,44 @@ export default function EditorPage() {
     setNewTestimonial({ ...newTestimonial, [e.target.name]: e.target.value });
   };
 
-  const handleAdd = async () => {
-    if (
-      !file ||
-      !newTestimonial.quote ||
-      !newTestimonial.name ||
-      !newTestimonial.title
-    ) {
-      alert("Please fill out relevant fields before adding a new entry.");
-      return;
+  const handleAdd = async (e) => {
+    e.preventDefault();
+
+    // Make sure you handle the JWT token (can be stored in cookies or context)
+    const token = localStorage.getItem('authToken'); // Or use context if needed
+
+    if (!token) {
+        return;
     }
 
     try {
-      const formData = new FormData();
-      formData.append("file", file);
-
-      const response = await axiosInstance.post("/api/upload", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${authToken}`,
-        },
-      });
-
-      const imageUrl = response.data.url;
-
-      const testimonialWithImage = {
-        ...newTestimonial,
-        image: imageUrl,
-      };
-
-      const addedClient = await addClient(testimonialWithImage);
-
-      if (addedClient && addedClient.id) {
-        const updatedClients = await fetchClients();
-        setClients(updatedClients);
-        setCurrentTestIndex(updatedClients.length - 1);
-        setNewTestimonial({ image: "", quote: "", name: "", title: "" });
-        setFile(null);
-        if (fileInputRef.current) {
-          fileInputRef.current.value = null;
+        // Upload file if there is one
+        let fileUrl = '';
+        if (file) {
+            fileUrl = await uploadFile(file);
         }
-      }
+
+        const newClient = {
+          name: newTestimonial.name,  
+          quote: newTestimonial.quote, 
+          title: newTestimonial.title,
+          image: fileUrl,         
+        };
+        const addedClient = await addClient(newClient, token);
+        if (addedClient) {
+          setClients((prevClients) => {
+            const updatedClients = [...prevClients, newClient];
+            setCurrentTestIndex(updatedClients.length - 1);
+            return updatedClients;
+          });
+        }
+
+        console.log('Added client:', addedClient);
+        // Handle success (e.g., clear form, show success message)
     } catch (error) {
-      console.error("Error adding testimonial", error);
+        console.error('Error adding client:', error);
     }
-  };
+};
 
   return (
     <AuthGuard>

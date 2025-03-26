@@ -1,11 +1,9 @@
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
 import BlogClientList from "@/components/BlogClientList";
-import { fetchBlogs } from "@/services/blogService";
-
-
 import "./ResearchPage.css";
 import AOSWrapper from "@/components/AOSWrapper";
+import { fetchBlogs } from "@/services/blogService";
 
 export default async function ResearchPage() {
   const blogs = await fetchBlogs();
