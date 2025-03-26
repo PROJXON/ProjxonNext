@@ -1,6 +1,14 @@
 // services/clientService.js
 
 // We will modify the clientService.js to fetch data internally instead of externally
+import axios from 'axios';
+
+const api = axios.create({
+  baseURL: process.env.WORDPRESS_CUSTOM_API_URL,
+  headers: {
+      'Content-Type': 'application/json',
+  },
+});
 
 export const fetchClients = async () => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client`); // Internal API route
@@ -36,12 +44,37 @@ export const addClient = async (clientData) => {
     });
 
     if (!res.ok) {
-      throw new Error("Error adding client");
+      const errorResponse = await res.json(); 
+      throw new Error(`Error adding client: ${errorResponse.message || res.statusText}`);
     }
-    return res.json(); // Return the added client data
+
+    return res.json(); 
   } catch (error) {
-    console.error("❌ Error adding client:", error);
+    console.error("❌ Error adding client:", error.message);
     return null;
+  }
+};
+
+export const uploadFile = async (file) => {
+  const token = localStorage.getItem("authToken");
+  
+  if (!token) {
+    throw new Error("No token found");
+  }
+
+  const formData = new FormData();
+  formData.append('file', file);
+
+  try {
+      const response = await axios.post('/api/upload', formData, {
+          headers: {
+              'Authorization': `Bearer ${token}`,
+          },
+      });
+      return response.data.url;
+  } catch (error) {
+      console.error('Error uploading file:', error);
+      throw error;
   }
 };
 
