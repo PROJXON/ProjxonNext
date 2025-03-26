@@ -106,13 +106,15 @@ export default function EditorPage() {
     try {
       const formData = new FormData();
       formData.append("file", file);
+      formData.append("authToken", authToken)
 
       const response = await axiosInstance.post("/api/upload", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${authToken}`,
-        },
+        }
       });
+
+      console.log(response.data)
 
       const imageUrl = response.data.url;
 
@@ -129,11 +131,16 @@ export default function EditorPage() {
         setCurrentTestIndex(updatedClients.length - 1);
         setNewTestimonial({ image: "", quote: "", name: "", title: "" });
         setFile(null);
-        if (fileInputRef.current) {
-          fileInputRef.current.value = null;
-        }
+        if (fileInputRef.current) fileInputRef.current.value = null;
       }
     } catch (error) {
+      /*
+      Error uploading image: {
+        code: 'rest_upload_unknown_error',
+        message: 'The uploaded file could not be moved to wp-content/uploads/2025/03.',
+        data: { status: 500 }
+      }
+      */
       console.error("Error adding testimonial", error);
     }
   };
