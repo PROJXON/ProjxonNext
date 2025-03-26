@@ -26,8 +26,10 @@ export async function DELETE(req, { params }) {
   try {
     authenticateUser(req);
 
+    const { id } = await params
+
     const res = await fetch(
-      `${process.env.WORDPRESS_CUSTOM_API_URL}/clients/${params.id}`,
+      `${process.env.WORDPRESS_CUSTOM_API_URL}/clients/${id}`,
       {
         method: "DELETE",
         headers: {
