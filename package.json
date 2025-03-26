@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node --max-old-space-size=4096 node_modules/.bin/next build",
     "start": "next start",
     "lint": "next lint",
     "generate-sitemap": "node generate-sitemap.js",
