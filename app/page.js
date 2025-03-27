@@ -1,5 +1,6 @@
+"use client";
 import "./HomePage.css";
-
+import { useEffect, useState } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import CarouselItem from "react-bootstrap/CarouselItem";
@@ -19,8 +20,7 @@ import BlogCard from "@/components/BlogCard";
 import BlackCard from "@/components/BlackCard";
 import CustomButton from "@/components/CustomButton";
 import CallToAction from "@/components/CallToAction";
-
-// import { fetchBlogs } from "../api/blog/route";
+import { fetchBlogs } from "@/services/blogService";
 import { fetchClients } from "@/services/clientService";
 import defaultClientImage from "@/public/assets/homepage/default-pic.jpg";
 
@@ -29,10 +29,29 @@ import BlackCardsSection from "@/components/BlackCardsSection";
 import AOSWrapper from "@/components/AOSWrapper";
 import Image from "next/image";
 
-export default async function HomePage() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog`);
-  const blogs = await res.json();
-  const clients = await fetchClients();
+export default function HomePage() {
+  const [blogs, setBlogs] = useState([]);
+  const [clients, setClients] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const blogData = await fetchBlogs();
+        setBlogs(blogData);
+
+        const clientData = await fetchClients();
+        setClients(clientData);
+      } catch (err) {
+        console.error("❌ Error loading homepage data:", err);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  //dont forget to delete this console.log
+  console.log('blog', blogs)
+  console.log(clients)
 
   const services = [
     {
@@ -109,18 +128,8 @@ export default async function HomePage() {
           <h2 className="mb-5 fw-bold fs-3 text-black mx-auto text-uppercase">
             About
           </h2>
-          <p
-            data-aos="fade-up"
-            data-aos-once="true"
-            className="fs-4 text-black"
-          >
-            PROJXON is a leading Holistic Business Optimization Consulting
-            Agency, partnering with high-impact organizations across the Health
-            & Wellness, Tech, and Nonprofit sectors. Our customized business
-            strategies are designed to tackle chaos, transforming potential
-            failures into opportunities for growth and scalable success. Through
-            strategic and tailored consulting, we drive growth, enhance
-            productivity, and increase market value for our clients.
+          <p data-aos="fade-up" data-aos-once="true" className="fs-4 text-black">
+            PROJXON is a leading Holistic Business Optimization Consulting Agency...
           </p>
           <hr className="divider" />
           <CustomButton
@@ -135,21 +144,12 @@ export default async function HomePage() {
 
       <section className="text-center bg-black introduction">
         <Container>
-          <h2
-            data-aos="fade-up"
-            data-aos-once="true"
-            className="mb-5 fw-bold text-yellow mx-auto sections-heading"
-          >
+          <h2 className="mb-5 fw-bold text-yellow mx-auto sections-heading" data-aos="fade-up">
             Welcome to PROJXON
           </h2>
           <Row className="justify-content-center">
             <Col md={10} lg={8}>
-              <div
-                className="homepage-video-container rounded-3"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-once="true"
-              >
+              <div className="homepage-video-container rounded-3" data-aos="fade-up" data-aos-delay="300">
                 <iframe
                   className="homepage-video-iframe"
                   src="https://www.youtube.com/embed/ad79nYk2keg"
@@ -167,25 +167,17 @@ export default async function HomePage() {
           <Row className="gy-4 gy-md-5 align-items-center">
             <Col md={12} lg={5}>
               <Row>
-                <Col xs={12} xl={11} data-aos="fade-up" data-aos-once="true">
+                <Col xs={12} xl={11} data-aos="fade-up">
                   <h3 className="fs-6 mb-3 mb-xl-4 text-uppercase text-black">
                     Our Services
                   </h3>
                   <h2 className="display-5 mb-3 mb-xl-4 text-black">
-                    We are giving you perfect solutions with our proficient
-                    services.
+                    We are giving you perfect solutions with our proficient services.
                   </h2>
                   <p className="mb-3 mb-xl-4 text-black">
-                    Our commitment in helping brands reach their full potential
-                    is dynamic and unconventional providing strategic and
-                    customized consulting plans that drive growth, enhance
-                    productivity, and increase market value.
+                    Our commitment in helping brands reach their full potential...
                   </p>
-                  <CustomButton
-                    buttonText="See Services"
-                    link="/services"
-                    buttonStyle="black-button"
-                  />
+                  <CustomButton buttonText="See Services" link="/services" buttonStyle="black-button" />
                 </Col>
               </Row>
             </Col>
@@ -198,7 +190,7 @@ export default async function HomePage() {
 
       <section className="bg-black choose-us">
         <Container className="text-center">
-          <h2 className="fw-bold sections-heading text-yellow" data-aos="fade-up" data-aos-once="true">
+          <h2 className="fw-bold sections-heading text-yellow" data-aos="fade-up">
             Why Choose Us?
           </h2>
           <BlackCardsSection reasons={reasons} />
@@ -206,7 +198,7 @@ export default async function HomePage() {
       </section>
 
       <section className="testimonials bg-yellow carousel-dark slide">
-        <Container className="text-center" data-aos="fade-up" data-aos-once="true">
+        <Container className="text-center" data-aos="fade-up">
           <h2 className="fw-bold text-black sections-heading">Testimonials</h2>
           <Carousel>
             {clients.map((client, index) => (
@@ -218,7 +210,6 @@ export default async function HomePage() {
                     alt={client.name}
                     width={100}
                     height={100}
-                    // style={{ borderRadius: "50%" }}
                   />
                   <p className="mb-4 fs-5">
                     <FaQuoteLeft className="quote-icon" size={25} />
@@ -233,7 +224,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {blogs?.length > 0 && (
+      {blogs.length > 0 && (
         <section className="bg-black">
           <Container className="blogs">
             <h2 className="mb-5 sections-heading text-white">

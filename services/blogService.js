@@ -1,4 +1,4 @@
-// services/blogService.js
+'use client'
 
 export const fetchBlogs = async () => {
   try {

@@ -1,17 +1,7 @@
-// services/clientService.js
-
-// We will modify the clientService.js to fetch data internally instead of externally
-import axios from 'axios';
-
-const api = axios.create({
-  baseURL: process.env.WORDPRESS_CUSTOM_API_URL,
-  headers: {
-      'Content-Type': 'application/json',
-  },
-});
+'use client'
 
 export const fetchClients = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client`); // Internal API route
+  const res = await fetch(`/api/client`); // Internal API route
   if (!res.ok) {
     throw new Error("Error fetching clients");
   }
@@ -19,7 +9,7 @@ export const fetchClients = async () => {
 };
 
 export const fetchClient = async (id) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/${id}`); // Internal API route with dynamic id
+  const res = await fetch(`/api/client/${id}`); // Internal API route with dynamic id
   if (!res.ok) {
     throw new Error("Error fetching client");
   }
@@ -34,7 +24,7 @@ export const addClient = async (clientData) => {
       throw new Error("Unauthorized - No token found");
     }
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client`, {
+    const res = await fetch(`/api/client`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -44,11 +34,11 @@ export const addClient = async (clientData) => {
     });
 
     if (!res.ok) {
-      const errorResponse = await res.json(); 
+      const errorResponse = await res.json();
       throw new Error(`Error adding client: ${errorResponse.message || res.statusText}`);
     }
 
-    return res.json(); 
+    return res.json();
   } catch (error) {
     console.error("❌ Error adding client:", error.message);
     return null;
@@ -57,7 +47,7 @@ export const addClient = async (clientData) => {
 
 export const uploadFile = async (file) => {
   const token = localStorage.getItem("authToken");
-  
+
   if (!token) {
     throw new Error("No token found");
   }
@@ -66,15 +56,18 @@ export const uploadFile = async (file) => {
   formData.append('file', file);
 
   try {
-      const response = await axios.post('/api/upload', formData, {
-          headers: {
-              'Authorization': `Bearer ${token}`,
-          },
-      });
-      return response.data.url;
+    opt = {
+      method: 'POST',
+      body: 'formData',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+    }
+    const response = await fetch('/api/upload', opt);
+    return response.data.url;
   } catch (error) {
-      console.error('Error uploading file:', error);
-      throw error;
+    console.error('Error uploading file:', error);
+    throw error;
   }
 };
 
@@ -86,7 +79,7 @@ export const deleteClient = async (id) => {
       throw new Error("Unauthorized - No token found");
     }
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/${id}`, {
+    const res = await fetch(`/api/client/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${token}`,
