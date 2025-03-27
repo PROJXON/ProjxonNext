@@ -6,6 +6,8 @@ import AOSWrapper from "@/components/AOSWrapper";
 import { fetchBlogs } from "@/services/blogService";
 
 export default async function ResearchPage() {
+  const blogs = await fetchBlogs();
+
   return (
     <div>
       <AOSWrapper />
@@ -14,7 +16,7 @@ export default async function ResearchPage() {
         subtitle="Stay Updated with the Latest News, Events, and Insight"
         backgroundClass="research-hero"
       />
-      <BlogClientList />
+      <BlogClientList initialBlogs={blogs} />
       <CallToAction />
     </div>
   );

@@ -1,8 +1,8 @@
-// services/blogService.js
+import getBlogs from '@/lib/getBlogs'
 
 export const fetchBlogs = async () => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog`); // Full URL
+    const response = await getBlogs()
 
     if (!response.ok) {
       throw new Error("Failed to fetch blogs");
@@ -15,9 +15,9 @@ export const fetchBlogs = async () => {
   }
 };
 
-export const fetchBlog = async (id) => {
+export const fetchBlog = async id => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog?slug=${id}`); // Full URL
+    const response = await getBlogs(id)
 
     if (!response.ok) {
       throw new Error(`Failed to fetch blog with id: ${id}`);
