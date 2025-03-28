@@ -12,7 +12,6 @@ import "./TestimonialEditorPage.css";
 import { useRouter } from "next/navigation";
 import { logout } from "../../services/loginService";
 import ImageUpload from "../../components/ImageUpload";
-import axiosInstance from "../../utils/axiosInstance";
 
 export default function EditorPage() {
   const router = useRouter();
@@ -100,37 +99,37 @@ export default function EditorPage() {
     const token = localStorage.getItem('authToken'); // Or use context if needed
 
     if (!token) {
-        return;
+      return;
     }
 
     try {
-        // Upload file if there is one
-        let fileUrl = '';
-        if (file) {
-            fileUrl = await uploadFile(file);
-        }
+      // Upload file if there is one
+      let fileUrl = '';
+      if (file) {
+        fileUrl = await uploadFile(file);
+      }
 
-        const newClient = {
-          name: newTestimonial.name,  
-          quote: newTestimonial.quote, 
-          title: newTestimonial.title,
-          image: fileUrl,         
-        };
-        const addedClient = await addClient(newClient, token);
-        if (addedClient) {
-          setClients((prevClients) => {
-            const updatedClients = [...prevClients, newClient];
-            setCurrentTestIndex(updatedClients.length - 1);
-            return updatedClients;
-          });
-        }
+      const newClient = {
+        name: newTestimonial.name,
+        quote: newTestimonial.quote,
+        title: newTestimonial.title,
+        image: fileUrl,
+      };
+      const addedClient = await addClient(newClient, token);
+      if (addedClient) {
+        setClients((prevClients) => {
+          const updatedClients = [...prevClients, newClient];
+          setCurrentTestIndex(updatedClients.length - 1);
+          return updatedClients;
+        });
+      }
 
-        console.log('Added client:', addedClient);
-        // Handle success (e.g., clear form, show success message)
+      console.log('Added client:', addedClient);
+      // Handle success (e.g., clear form, show success message)
     } catch (error) {
-        console.error('Error adding client:', error);
+      console.error('Error adding client:', error);
     }
-};
+  };
 
   return (
     <AuthGuard>
