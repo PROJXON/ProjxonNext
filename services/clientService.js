@@ -11,11 +11,20 @@ const api = axios.create({
 });
 
 export const fetchClients = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client`); // Internal API route
-  if (!res.ok) {
-    throw new Error("Error fetching clients");
+  try {
+    const res = await fetch(`${process.env.WORDPRESS_CUSTOM_API_URL}/clients`, {
+      next: { revalidate: 300 }
+    });
+
+    if (!res.ok) {
+      throw new Error("Error fetching clients");
+    }
+
+    return await res.json();
+  } catch (error) {
+    console.error("❌ Error fetching clients:", error.message);
+    return []; // Safe fallback for SSR
   }
-  return res.json(); // Parse the JSON response
 };
 
 export const fetchClient = async (id) => {
