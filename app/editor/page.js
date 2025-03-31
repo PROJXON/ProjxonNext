@@ -125,6 +125,17 @@ export default function EditorPage() {
             setCurrentTestIndex(updatedClients.length - 1);
             return updatedClients;
           });
+
+          setNewTestimonial({
+            image: "",
+            quote: "",
+            name: "",
+            title: ""
+          });
+          setFile(null); // Reset file state if needed
+          if (fileInputRef.current) {
+            fileInputRef.current.value = null;
+          }
         }
 
         console.log('Added client:', addedClient);
