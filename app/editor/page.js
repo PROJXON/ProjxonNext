@@ -2,16 +2,12 @@
 
 import AuthGuard from "@/components/AuthGuard";
 import React, { useState, useEffect, useRef } from "react";
-import {
-  fetchClients,
-  addClient,
-  deleteClient,
-  uploadFile
-} from "../../services/clientService";
+import { deleteClient, uploadFile } from "../../services/clientService";
 import "./TestimonialEditorPage.css";
 import { useRouter } from "next/navigation";
 import { logout } from "../../services/loginService";
 import ImageUpload from "../../components/ImageUpload";
+import axios from 'axios';
 
 export default function EditorPage() {
   const router = useRouter();
@@ -38,11 +34,10 @@ export default function EditorPage() {
   };
 
   useEffect(() => {
-    const loadClients = async () => {
-      const response = await fetchClients();
-      setClients(response);
-    };
-    loadClients();
+    (async () => {
+      const response = await axios.get("/api/client")
+      setClients(response.data)
+    })()
   }, []);
 
   const getCurrentClient = () => {
@@ -59,15 +54,13 @@ export default function EditorPage() {
 
   const handlePrev = () => {
     if (clients.length > 0) {
-      setCurrentTestIndex(
-        (prevIndex) => (prevIndex - 1 + clients.length) % clients.length
-      );
+      setCurrentTestIndex(prevIndex => (prevIndex - 1 + clients.length) % clients.length)
     }
   };
 
   const handleNext = () => {
     if (clients.length > 0) {
-      setCurrentTestIndex((prevIndex) => (prevIndex + 1) % clients.length);
+      setCurrentTestIndex(prevIndex => (prevIndex + 1) % clients.length);
     }
   };
 
@@ -88,11 +81,11 @@ export default function EditorPage() {
     }
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = e => {
     setNewTestimonial({ ...newTestimonial, [e.target.name]: e.target.value });
   };
 
-  const handleAdd = async (e) => {
+  const handleAdd = async e => {
     e.preventDefault();
 
     // Make sure you handle the JWT token (can be stored in cookies or context)
@@ -115,7 +108,7 @@ export default function EditorPage() {
         title: newTestimonial.title,
         image: fileUrl,
       };
-      const addedClient = await addClient(newClient, token);
+      const addedClient = await axios.post("/api/client", newClient, token)
       if (addedClient) {
         setClients((prevClients) => {
           const updatedClients = [...prevClients, newClient];
@@ -161,7 +154,7 @@ export default function EditorPage() {
 
         <ImageUpload
           ref={fileInputRef}
-          onFileSelect={(file) => setFile(file)}
+          onFileSelect={file => setFile(file)}
         />
         <textarea
           name="quote"
