@@ -40,8 +40,9 @@ export default function EditorPage() {
 
   useEffect(() => {
     const loadClients = async () => {
-      const response = await fetchClients();
-      setClients(response);
+      const response = await fetch("/api/client");
+      const data = await response.json();
+      setClients(data);
     };
     loadClients();
   }, []);
@@ -80,8 +81,9 @@ export default function EditorPage() {
     try {
       const success = await deleteClient(clientId);
       if (success) {
-        const updatedClients = await fetchClients();
-        setClients(updatedClients);
+        const updatedClients = await fetch("/api/client");
+        const data = await updatedClients.json();
+        setClients(data);
         setCurrentTestIndex(Math.max(0, currentTestIndex - 1));
       }
     } catch (error) {
