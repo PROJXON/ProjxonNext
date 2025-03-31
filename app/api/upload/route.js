@@ -9,14 +9,13 @@ export async function POST(req) {
 
         const authHeader = req.headers.get('Authorization');
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
-          return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+            return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
         }
         const token = authHeader.split(' ')[1];
 
         const formData = new FormData();
         const body = await req.formData();
         const file = body.get('file');
-        console.log('this is file', file)
 
         if (!file) {
             return NextResponse.json({ message: 'No file uploaded' }, { status: 400 });
@@ -26,7 +25,6 @@ export async function POST(req) {
 
         const buffer = Buffer.from(await file.arrayBuffer());
         formData.append('file', buffer, file.name);
-        console.log('FormData:', formData);
 
         // Make the POST request to the WordPress media API
         const response = await axios.post(`${process.env.WORDPRESS_API_URL}/media`, formData, {
@@ -35,7 +33,6 @@ export async function POST(req) {
                 'Authorization': `Bearer ${token}`,
             },
         });
-        console.log('WordPress API response:', response.data);
 
         // Return the image URL from the WordPress API
         return NextResponse.json({ url: response.data.source_url }, { status: 200 });

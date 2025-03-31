@@ -2,11 +2,11 @@
 
 import AuthGuard from "@/components/AuthGuard";
 import React, { useState, useEffect, useRef } from "react";
-import { deleteClient, uploadFile } from "../../services/clientService";
+import { deleteClient, uploadFile } from "@/services/clientService";
 import "./TestimonialEditorPage.css";
 import { useRouter } from "next/navigation";
-import { logout } from "../../services/loginService";
-import ImageUpload from "../../components/ImageUpload";
+import { logout } from "@/services/loginService";
+import ImageUpload from "@/components/ImageUpload";
 import axios from 'axios';
 
 export default function EditorPage() {
@@ -72,8 +72,8 @@ export default function EditorPage() {
     try {
       const success = await deleteClient(clientId);
       if (success) {
-        const updatedClients = await fetchClients();
-        setClients(updatedClients);
+        const updatedClients = await axios.get("/api/client");
+        setClients(updatedClients.data);
         setCurrentTestIndex(Math.max(0, currentTestIndex - 1));
       }
     } catch (error) {
@@ -110,7 +110,7 @@ export default function EditorPage() {
       };
       const addedClient = await axios.post("/api/client", newClient, token)
       if (addedClient) {
-        setClients((prevClients) => {
+        setClients(prevClients => {
           const updatedClients = [...prevClients, newClient];
           setCurrentTestIndex(updatedClients.length - 1);
           return updatedClients;
