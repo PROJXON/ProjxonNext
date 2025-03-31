@@ -90,17 +90,12 @@ export default function EditorPage() {
 
     // Make sure you handle the JWT token (can be stored in cookies or context)
     const token = localStorage.getItem('authToken'); // Or use context if needed
-
-    if (!token) {
-      return;
-    }
+    if (!token) return
 
     try {
       // Upload file if there is one
       let fileUrl = '';
-      if (file) {
-        fileUrl = await uploadFile(file);
-      }
+      if (file) fileUrl = await uploadFile(file)
 
       const newClient = {
         name: newTestimonial.name,
@@ -110,15 +105,10 @@ export default function EditorPage() {
       };
       const addedClient = await addClient(newClient, token)
       if (addedClient) {
-        setClients(prevClients => {
-          const updatedClients = [...prevClients, newClient];
-          setCurrentTestIndex(updatedClients.length - 1);
-          return updatedClients;
-        });
+        const updatedClients = await axios.get("/api/client")
+        setClients(updatedClients.data)
+        setCurrentTestIndex(updatedClients.data.length - 1)
       }
-
-      console.log('Added client:', addedClient);
-      // Handle success (e.g., clear form, show success message)
     } catch (error) {
       console.error('Error adding client:', error);
     }
