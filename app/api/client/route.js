@@ -1,9 +1,9 @@
 import { authenticateUser } from "@/lib/authenticateUser";
+import { fetchClients } from "@/services/clientService";
 
 export async function GET() {
   try {
-    const res = await fetch(`${process.env.WORDPRESS_CUSTOM_API_URL}/clients`);
-    const data = await res.json();
+    const data = await fetchClients();
     return Response.json(data);
   } catch (error) {
     return new Response(

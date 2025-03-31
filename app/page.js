@@ -20,8 +20,8 @@ import BlackCard from "@/components/BlackCard";
 import CustomButton from "@/components/CustomButton";
 import CallToAction from "@/components/CallToAction";
 
-// import { fetchBlogs } from "../api/blog/route";
 import { fetchClients } from "@/services/clientService";
+import { fetchBlogs } from "@/services/blogService";
 import defaultClientImage from "@/public/assets/homepage/default-pic.jpg";
 
 import ServiceCards from "@/components/ServiceCards";
@@ -30,8 +30,7 @@ import AOSWrapper from "@/components/AOSWrapper";
 import Image from "next/image";
 
 export default async function HomePage() {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog`);
-  const blogs = await res.json();
+  const blogs = await await fetchBlogs();
   const clients = await fetchClients();
 
   const services = [

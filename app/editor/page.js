@@ -40,8 +40,9 @@ export default function EditorPage() {
 
   useEffect(() => {
     const loadClients = async () => {
-      const response = await fetchClients();
-      setClients(response);
+      const response = await fetch("/api/client");
+      const data = await response.json();
+      setClients(data);
     };
     loadClients();
   }, []);
@@ -80,8 +81,9 @@ export default function EditorPage() {
     try {
       const success = await deleteClient(clientId);
       if (success) {
-        const updatedClients = await fetchClients();
-        setClients(updatedClients);
+        const updatedClients = await fetch("/api/client");
+        const data = await updatedClients.json();
+        setClients(data);
         setCurrentTestIndex(Math.max(0, currentTestIndex - 1));
       }
     } catch (error) {
@@ -123,6 +125,17 @@ export default function EditorPage() {
             setCurrentTestIndex(updatedClients.length - 1);
             return updatedClients;
           });
+
+          setNewTestimonial({
+            image: "",
+            quote: "",
+            name: "",
+            title: ""
+          });
+          setFile(null); // Reset file state if needed
+          if (fileInputRef.current) {
+            fileInputRef.current.value = null;
+          }
         }
 
         console.log('Added client:', addedClient);
@@ -130,7 +143,7 @@ export default function EditorPage() {
     } catch (error) {
         console.error('Error adding client:', error);
     }
-};
+  };
 
   return (
     <AuthGuard>
