@@ -1,5 +1,3 @@
-import axiosInstance from "../utils/axiosInstance";
-
 const login = async (username, password) => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth`, {

@@ -2,7 +2,7 @@
 
 import AuthGuard from "@/components/AuthGuard";
 import React, { useState, useEffect, useRef } from "react";
-import { deleteClient, uploadFile } from "@/services/clientService";
+import { addClient, deleteClient, uploadFile } from "@/services/clientService";
 import "./TestimonialEditorPage.css";
 import { useRouter } from "next/navigation";
 import { logout } from "@/services/loginService";
@@ -108,7 +108,7 @@ export default function EditorPage() {
         title: newTestimonial.title,
         image: fileUrl,
       };
-      const addedClient = await axios.post("/api/client", newClient, token)
+      const addedClient = await addClient(newClient, token)
       if (addedClient) {
         setClients(prevClients => {
           const updatedClients = [...prevClients, newClient];

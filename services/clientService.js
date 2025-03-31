@@ -35,11 +35,9 @@ export const addClient = async clientData => {
   try {
     const token = localStorage.getItem("authToken");
 
-    if (!token) {
-      throw new Error("Unauthorized - No token found");
-    }
+    if (!token) throw new Error("Unauthorized - No token found")
 
-    const res = await fetch(`${process.env.WORDPRESS_CUSTOM_API_URL}/clients`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -64,7 +62,7 @@ export const addClient = async clientData => {
   }
 };
 
-export const uploadFile = async (file) => {
+export const uploadFile = async file => {
   const token = localStorage.getItem("authToken");
 
   if (!token) {
