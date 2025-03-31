@@ -88,30 +88,23 @@ export const uploadFile = async file => {
 export const deleteClient = async id => {
   try {
     const token = localStorage.getItem("authToken");
+    if (!token) throw new Error("Unauthorized - No token found")
 
-    if (!token) {
-      throw new Error("Unauthorized - No token found");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (!res.ok) {
+      throw new Error("Error deleting client");
     }
 
-    const res = await fetch(
-      `${process.env.WORDPRESS_CUSTOM_API_URL}/clients/${id}`,
-      {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    return Response.json(await res.json());
+    return res.status === 200 || res.status === 204;
   } catch (error) {
-    return new Response(
-      JSON.stringify({
-        message: "Error deleting client",
-        error: error.message,
-      }),
-      { status: 500 }
-    );
+    console.error("❌ Error deleting client:", error);
+    return false;
   }
 };
