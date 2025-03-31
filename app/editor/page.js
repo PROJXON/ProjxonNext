@@ -143,7 +143,7 @@ export default function EditorPage() {
     } catch (error) {
         console.error('Error adding client:', error);
     }
-};
+  };
 
   return (
     <AuthGuard>
