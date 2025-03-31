@@ -108,6 +108,16 @@ export default function EditorPage() {
         const updatedClients = await axios.get("/api/client")
         setClients(updatedClients.data)
         setCurrentTestIndex(updatedClients.data.length - 1)
+
+        setNewTestimonial({
+          image: "",
+          quote: "",
+          name: "",
+          title: ""
+        })
+
+        setFile(null);
+        if (fileInputRef.current) fileInputRef.current.value = ""
       }
     } catch (error) {
       console.error('Error adding client:', error);
