@@ -1,7 +1,7 @@
 import DOMPurify from "isomorphic-dompurify";
 import { Container } from "react-bootstrap";
 import { CiCalendar } from "react-icons/ci";
-import { fetchBlog } from "@/services/blogService";
+import { fetchBlogs, fetchBlog } from "@/services/blogService";
 import Image from "next/image";
 import defaultImg from "@/public/assets/research/default-blog-img.webp";
 import "./BlogPage.css";
@@ -23,6 +23,11 @@ export async function generateMetadata({ params }) {
   };
 }
 
+export async function generateStaticParams() {
+  const blogs = await fetchBlogs()
+  return blogs.map(blog => ({ blogId: blog.slug }))
+}
+
 export default async function BlogPage({ params }) {
   const { blogId } = await params;
   const blog = await fetchBlog(blogId);
@@ -32,7 +37,7 @@ export default async function BlogPage({ params }) {
   const featuredMedia = blog._embedded?.["wp:featuredmedia"];
   const imageUrl = featuredMedia?.[0]?.source_url ?? defaultImg.src;
 
-  const formatDate = (date) => {
+  const formatDate = date => {
     return new Date(date).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
