@@ -2,7 +2,18 @@ import { authenticateUser } from "@/lib/authenticateUser";
 import getClients from "@/lib/getClients";
 
 export async function GET() {
-    return await getClients()
+    try {
+        const clients = await getClients(null, false)
+        return new Response(JSON.stringify(clients), { status: 200 })
+    } catch (error) {
+        return new Response(
+            JSON.stringify({
+                message: "Error fetching clients",
+                error: error.message
+            }),
+            { status: 500 }
+        )
+    }
 }
 
 export async function POST(req) {

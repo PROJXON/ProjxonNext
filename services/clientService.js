@@ -1,40 +1,13 @@
 import getClients from '@/lib/getClients'
 import axios from 'axios';
 
-export const fetchClients = async () => {
-  try {
-    const response = await getClients()
+export const fetchClients = async () => await getClients()
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch clients");
-    }
-
-    return await response.json();
-  } catch (error) {
-    console.error("❌ Error fetching clients:", error);
-    return []; // Return empty array if error occurs
-  }
-};
-
-export const fetchClient = async id => {
-  try {
-    const response = await getClients(id)
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch client with id: ${id}`);
-    }
-    const data = await response.json();
-    return data[0];
-  } catch (error) {
-    console.error("❌ Error fetching client:", error);
-    return null;
-  }
-};
+export const fetchClient = async id => await getClients(id)
 
 export const addClient = async clientData => {
   try {
     const token = localStorage.getItem("authToken");
-
     if (!token) throw new Error("Unauthorized - No token found")
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client`, {
@@ -52,13 +25,10 @@ export const addClient = async clientData => {
       throw new Error(`Failed to add client. Status code: ${res.status}`);
     }
 
-    const responseData = await res.json();
-    return Response.json(responseData, { status: 201 });
+    return await res.json()
   } catch (error) {
-    return new Response(
-      JSON.stringify({ message: "Error adding client", error: error.message }),
-      { status: 500 }
-    );
+    console.error("Error adding client")
+    throw error
   }
 };
 
@@ -98,11 +68,7 @@ export const deleteClient = async id => {
       },
     });
 
-    if (!res.ok) {
-      throw new Error("Error deleting client");
-    }
-
-    return res.status === 200 || res.status === 204;
+    return res.ok
   } catch (error) {
     console.error("❌ Error deleting client:", error);
     return false;
