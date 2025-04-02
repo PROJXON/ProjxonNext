@@ -9,6 +9,12 @@ import AOSWrapper from "@/components/AOSWrapper";
 import InternCarousel from "@/components/InternCarousel";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Careers at PROJXON | Build Your Future in With Us",
+  description: "Join PROJXON and be part of a team that drives business innovation. Explore career opportunities in strategy, consulting, and digital transformation.",
+};
+
+
 const CareerPage = () => {
   const internTestimonials = [
     [
