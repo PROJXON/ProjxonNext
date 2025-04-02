@@ -120,22 +120,15 @@ export default function EditorPage() {
         };
         const addedClient = await addClient(newClient, token);
         if (addedClient) {
-          setClients((prevClients) => {
-            const updatedClients = [...prevClients, newClient];
-            setCurrentTestIndex(updatedClients.length - 1);
-            return updatedClients;
-          });
+          const response = await fetch('/api/client');
 
-          setNewTestimonial({
-            image: "",
-            quote: "",
-            name: "",
-            title: ""
-          });
-          setFile(null); // Reset file state if needed
-          if (fileInputRef.current) {
-            fileInputRef.current.value = null;
+          if (!response.ok) {
+            throw new Error('Failed to fetch clients');
           }
+          
+          const updatedClients = await response.json();
+          setClients(updatedClients);
+          setCurrentTestIndex(updatedClients.length - 1);
         }
 
         console.log('Added client:', addedClient);
