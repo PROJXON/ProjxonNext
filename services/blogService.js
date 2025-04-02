@@ -1,31 +1,34 @@
 // services/blogService.js
 
-export const fetchBlogs = async () => {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog`); // Full URL
+export const fetchBlogs = async (slug) => {
+  const endpoint = slug ? `/posts?_embed&slug=${slug}` : `/posts?_embed`;
+  const url = `${process.env.WORDPRESS_API_URL}${endpoint}`;
 
-    if (!response.ok) {
-      throw new Error("Failed to fetch blogs");
+  try {
+    const res = await fetch(url, {
+      headers: {
+        Authorization:
+          "Basic " +
+          Buffer.from(
+            `${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`
+          ).toString("base64"),
+      },
+      next: { revalidate: 300 }, 
+    });
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch blogs: ${res.statusText}`);
     }
 
-    return await response.json();
+    const data = await res.json();
+    return data;
   } catch (error) {
     console.error("❌ Error fetching blogs:", error);
-    return []; // Return empty array if error occurs
+    return slug ? null : [];
   }
 };
 
-export const fetchBlog = async (id) => {
-  try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/blog?slug=${id}`); // Full URL
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch blog with id: ${id}`);
-    }
-    const data = await response.json();
-    return data[0];
-  } catch (error) {
-    console.error("❌ Error fetching blog:", error);
-    return null;
-  }
+export const fetchBlog = async (slug) => {
+  const data = await fetchBlogs(slug);
+  return data ? data[0] : null;
 };
