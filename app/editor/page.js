@@ -118,11 +118,15 @@ export default function EditorPage() {
         };
         const addedClient = await addClient(newClient, token);
         if (addedClient) {
-          setClients((prevClients) => {
-            const updatedClients = [...prevClients, newClient];
-            setCurrentTestIndex(updatedClients.length - 1);
-            return updatedClients;
-          });
+          const response = await fetch('/api/client');
+
+          if (!response.ok) {
+            throw new Error('Failed to fetch clients');
+          }
+          
+          const updatedClients = await response.json();
+          setClients(updatedClients);
+          setCurrentTestIndex(updatedClients.length - 1);
         }
 
         console.log('Added client:', addedClient);
