@@ -7,6 +7,12 @@ import InfoForm from "@/components/InfoForm";
 
 import AOSWrapper from "@/components/AOSWrapper";
 
+export const metadata = {
+  title: "Contact PROJXON | Get in Touch with Our Experts",
+  description: "Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.",
+};
+
+
 const ContactPage = () => {
   const contactInfoList = [
     {
