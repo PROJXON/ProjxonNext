@@ -3,7 +3,7 @@ import { fetchClients } from "@/services/clientService";
 
 export async function GET() {
   try {
-    const data = await fetchClients();
+    const data = await fetchClients({ useNoStore: true });
     return Response.json(data);
   } catch (error) {
     return new Response(

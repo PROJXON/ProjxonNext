@@ -10,10 +10,12 @@ const api = axios.create({
   },
 });
 
-export const fetchClients = async () => {
+export const fetchClients = async ({ useNoStore = false } = {}) => {
   try {
     const res = await fetch(`${process.env.WORDPRESS_CUSTOM_API_URL}/clients`, {
-      next: { revalidate: 300 }
+      ...(useNoStore
+        ? { cache: "no-store" }
+        : { next: { revalidate: 300 } }), // default ISR for SSR pages
     });
 
     if (!res.ok) {
