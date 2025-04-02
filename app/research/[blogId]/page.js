@@ -6,23 +6,6 @@ import Image from "next/image";
 import defaultImg from "@/public/assets/research/default-blog-img.webp";
 import "./BlogPage.css";
 
-export async function generateMetadata({ params }) {
-  const { blogId } = await params;
-  const blog = await fetchBlog(blogId);
-
-  if (!blog) {
-    return {
-      title: "Blog not found",
-      description: "The blog could not be found.",
-    };
-  }
-
-  return {
-    title: blog?.title?.rendered || "Blog",
-    description: blog?.excerpt?.rendered?.replace(/<[^>]+>/g, "") || "",
-  };
-}
-
 export async function generateStaticParams() {
   const blogs = await fetchBlogs()
   return blogs.map(blog => ({ blogId: blog.slug }))
