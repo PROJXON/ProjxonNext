@@ -129,10 +129,19 @@ export default function EditorPage() {
           const updatedClients = await response.json();
           setClients(updatedClients);
           setCurrentTestIndex(updatedClients.length - 1);
+
+          setNewTestimonial({
+            image: "",
+            quote: "",
+            name: "",
+            title: ""
+          })
+  
+          setFile(null);
+          if (fileInputRef.current) fileInputRef.current.value = ""
         }
 
         console.log('Added client:', addedClient);
-        // Handle success (e.g., clear form, show success message)
     } catch (error) {
         console.error('Error adding client:', error);
     }
