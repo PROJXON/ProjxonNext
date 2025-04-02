@@ -11,8 +11,21 @@ export async function generateStaticParams() {
   return blogs.map(blog => ({ blogId: blog.slug }))
 }
 
-export default async function BlogPage({ params }) {
+export async function generateMetadata({ params }) {
   const { blogId } = await params;
+  const blog = await fetchBlog(blogId);
+
+  return blog ? {
+    title: blog?.title?.rendered || "Blog",
+    description: blog?.excerpt?.rendered?.replace(/<[^>]+>/g, "") || "",
+  } : {
+    title: "Blog not found",
+    description: "The blog could not be found.",
+  }
+}
+
+export default async function BlogPage(context) {
+  const { blogId } = context.params
   const blog = await fetchBlog(blogId)
   const content = blog.content?.rendered || "";
   const sanitizedHtml = DOMPurify.sanitize(content);
