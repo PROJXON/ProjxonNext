@@ -35,7 +35,7 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  const blogs = await await fetchBlogs();
+  const blogs = await fetchBlogs();
   const clients = await fetchClients();
 
   const services = [
@@ -222,7 +222,7 @@ export default async function HomePage() {
                     alt={client.name}
                     width={100}
                     height={100}
-                    // style={{ borderRadius: "50%" }}
+                  // style={{ borderRadius: "50%" }}
                   />
                   <p className="mb-4 fs-5">
                     <FaQuoteLeft className="quote-icon" size={25} />
