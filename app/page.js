@@ -29,6 +29,11 @@ import BlackCardsSection from "@/components/BlackCardsSection";
 import AOSWrapper from "@/components/AOSWrapper";
 import Image from "next/image";
 
+export const metadata = {
+  title: "PROJXON Services | Expert Business Consulting & Strategy",
+  description: "Explore PROJXON’s consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
+};
+
 export default async function HomePage() {
   const blogs = await await fetchBlogs();
   const clients = await fetchClients();

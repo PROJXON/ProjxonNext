@@ -9,6 +9,11 @@ import CustomButton from "../../components/CustomButton";
 import AOSWrapper from "@/components/AOSWrapper";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Partner with PROJXON | Strategic Collaborations for Growth",
+  description: "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
+};
+
 const PartnershipPage = () => {
   const partnerships = [
     {
