@@ -5,6 +5,11 @@ import "./ResearchPage.css";
 import AOSWrapper from "@/components/AOSWrapper";
 import { fetchBlogs } from "@/services/blogService";
 
+export const metadata = {
+  title: "PROJXON Blog | Insights on Business Strategy & Innovation",
+  description: "Stay ahead with expert insights from PROJXON. Explore articles on business strategy, market trends, digital transformation, and innovation.",
+};
+
 export default async function ResearchPage() {
   const blogs = await fetchBlogs();
 

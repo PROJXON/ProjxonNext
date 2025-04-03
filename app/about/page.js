@@ -18,6 +18,11 @@ import BlackCard from "@/components/BlackCard";
 
 import Image from "next/image";
 
+export const metadata = {
+  title: "About PROJXON | The Story Behing Strategy & Innovation",
+  description: "Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.",
+};
+
 const AboutPage = () => {
   const values = [
     {
