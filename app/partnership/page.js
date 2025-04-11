@@ -12,11 +12,11 @@ import Image from "next/image";
 export const metadata = {
   title: "Partner with PROJXON | Strategic Collaborations for Growth",
   description: "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
-  metadataBase: new URL("https://www.projxon.com/"),
+  metadataBase: new URL("https://www.projxon.com/partnership"),
   openGraph: {
     title: "Partner with PROJXON | Strategic Collaborations for Growth",
     description: "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
-    url: "https://www.projxon.com/",
+    url: "https://www.projxon.com/partnership",
     siteName: "PROJXON",
     images: [
       {
