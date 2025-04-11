@@ -10,6 +10,28 @@ import Footer from "@/components/Footer";
 export const metadata = {
   title: "PROJXON | Strategic Business Consulting for Scalable Growth",
   description: "PROJXON empowers businesses with data-driven strategies, operational clarity, and innovative insights. Turning chaos into opportunity with every move.",
+  metadataBase: new URL("https://www.projxon.com/"),
+  openGraph: {
+    title: "PROJXON",
+    description: "PROJXON empowers businesses with data-driven strategies, operational clarity, and innovative insights. Turning chaos into opportunity with every move.",
+    url: "https://www.projxon.com/",
+    siteName: "PROJXON",
+    images: [
+      {
+        url: "/PROJXON.png",
+        width: 1200,
+        height: 630,
+        alt: "PROJXON logo",
+      }
+    ],
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PROJXON",
+    description: "PROJXON empowers businesses with data-driven strategies, operational clarity, and innovative insights. Turning chaos into opportunity with every move.",
+    images: ["/PROJXON.png"]
+  }
 };
 
 export default function RootLayout({ children }) {
