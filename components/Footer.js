@@ -14,7 +14,7 @@ const Footer = () => {
               className="footer-logo"
               style={{ textDecoration: "none", color: "inherit" }}
             >
-              <h1 className="footer-logo">PROJXON</h1>
+              <h3 className="footer-logo">PROJXON</h3>
             </Link>
           </Col>
           <Col className="text-end">
