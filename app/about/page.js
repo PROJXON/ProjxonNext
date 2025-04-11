@@ -18,9 +18,32 @@ import BlackCard from "@/components/BlackCard";
 
 import Image from "next/image";
 
+
 export const metadata = {
   title: "About PROJXON | The Story Behing Strategy & Innovation",
   description: "Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.",
+  metadataBase: new URL("https://www.projxon.com/"),
+  openGraph: {
+    title: "About PROJXON | The Story Behing Strategy & Innovation",
+    description: "Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.",
+    url: "https://www.projxon.com/",
+    siteName: "PROJXON",
+    images: [
+      {
+        url: "/PROJXON.png",
+        width: 1200,
+        height: 630,
+        alt: "PROJXON logo",
+      }
+    ],
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About PROJXON | The Story Behing Strategy & Innovation",
+    description: "Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.",
+    images: ["/PROJXON.png"]
+  }
 };
 
 const AboutPage = () => {
