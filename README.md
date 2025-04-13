@@ -1,5 +1,7 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
+
 <a id="readme-top"></a>
+
 <!--
 *** Thanks for checking out the Best-README-Template. If you have a suggestion
 *** that would make this better, please fork the repo and create a pull request
@@ -7,8 +9,6 @@
 *** Don't forget to give the project a star!
 *** Thanks again! Now go create something AMAZING! :D
 -->
-
-
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -19,18 +19,15 @@
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
-
-
 <!-- PROJECT LOGO -->
 <!-- <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
     <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a> 
+  </a>
 
   <h3 align="center">Best-README-Template</h3>
 </div> -->
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -58,32 +55,25 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 [![Product Name Screen Shot][product-screenshot]](https://projxon.com)
 
 PROJXON is a leading business consulting firm helping medium-sized businesses achieve their full potential. This project aims to provide a comprehensive digital platform that enhances client engagement, streamlines communication, and showcases the firm's expertise through an intuitive and user-friendly website. By integrating modern design elements, responsive layouts, and optimized backend functionality, the project seeks to highlight PROJXON's services, share insightful research, and establish the firm as a trusted partner for business growth and innovation.
 
-
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 ### Built With
 
-
-* [![NextJS][Next.js]][Next-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+- [![NextJS][Next.js]][Next-url]
+- [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
@@ -91,7 +81,6 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 1. Create a .env.local in root
-
 
 ### Installation
 
@@ -102,36 +91,40 @@ To get a local copy up and running follow these simple example steps.
 2. Run npm install
 3. Enter your API in frontend/projxon-web `.env`
    ```
-  NEXT_PUBLIC_API_URL=https://api.projxon.com
-
-  # WordPress API URLs
-  WORDPRESS_API_URL=
-  WORDPRESS_CUSTOM_API_URL=\
-  WORDPRESS_JWT_URL=
-  WORDPRESS_API_USERNAME=
-  WORDPRESS_API_PASSWORD=
-
-  # JWT Secret
-  JWT_SECRET=
-
-  # Email OAuth2 (for sending emails via Gmail)
-  EMAIL_USER=
-  EMAIL_CLIENT_ID=
-  EMAIL_CLIENT_SECRET=
-  EMAIL_REFRESH_TOKEN=
-  EMAIL_REDIRECT_URI=
+   NEXT_PUBLIC_API_URL=https://api.projxon.com
    ```
+
+# WordPress API URLs
+
+WORDPRESS_API_URL=
+WORDPRESS_CUSTOM_API_URL=\
+ WORDPRESS_JWT_URL=
+WORDPRESS_API_USERNAME=
+WORDPRESS_API_PASSWORD=
+
+# JWT Secret
+
+JWT_SECRET=
+
+# Email OAuth2 (for sending emails via Gmail)
+
+EMAIL_USER=
+EMAIL_CLIENT_ID=
+EMAIL_CLIENT_SECRET=
+EMAIL_REFRESH_TOKEN=
+EMAIL_REDIRECT_URI=
+
+````
 
 5. Start dev environment
-   ```sh
-   npm run dev
-   ```
-
+```sh
+npm run dev
+````
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 <!-- HANDOVER -->
+
 ## Handover Notes
 
 <!-- - [x] Add Changelog
@@ -140,7 +133,6 @@ To get a local copy up and running follow these simple example steps.
 - [ ] Add "components" document to easily copy & paste sections of the readme -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- ROADMAP -->
 <!-- ## Roadmap
@@ -153,10 +145,7 @@ To get a local copy up and running follow these simple example steps.
     - [ ] Chinese
     - [ ] Spanish -->
 
-
 <!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
-
 
 <!-- CONTRIBUTING -->
 <!-- ## Contributing
@@ -180,9 +169,9 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
-
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [product-screenshot]: projxon-web/src/assets/image.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/

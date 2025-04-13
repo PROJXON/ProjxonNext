@@ -10,7 +10,8 @@
     "lint": "next lint",
     "generate-sitemap": "node generate-sitemap.js",
     "prebuild": "npm run generate-sitemap",
-    "deploy": "aws s3 sync ./out s3:www.projxon.com --delete"
+    "deploy": "aws s3 sync ./out s3:www.projxon.com --delete",
+    "type-check": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
