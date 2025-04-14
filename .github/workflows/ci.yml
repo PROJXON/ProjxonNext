@@ -38,7 +38,7 @@ jobs:
           echo "EMAIL_REDIRECT_URI=${{ secrets.EMAIL_REDIRECT_URI }}" >> .env
 
       - name: Run linting
-        run: npm run lint
+        run: npm run lint -- --max-warnings 0
 
       - name: Build project
         run: npm run build
