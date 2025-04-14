@@ -14,7 +14,7 @@ export default function AuthGuard({ children }) {
     } else {
       setAuthorized(true);
     }
-  }, []);
+  }, [router]);
 
   return authorized ? children : null;
 }
