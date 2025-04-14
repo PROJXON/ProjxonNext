@@ -48,4 +48,8 @@ jobs:
         run: npm run lint
 
       - name: Build project
-        run: npm run build
+        run: |
+          export NODE_OPTIONS="--max_old_space_size=4096"
+          npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
