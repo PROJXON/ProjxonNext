@@ -19,8 +19,15 @@ jobs:
           node-version: "20.11.1"
           cache: "npm"
 
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libvips-dev
+
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm install sharp
 
       - name: Create .env file
         run: |
