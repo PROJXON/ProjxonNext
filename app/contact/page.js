@@ -11,11 +11,11 @@ import AOSWrapper from "@/components/AOSWrapper";
 export const metadata = {
   title: "Contact PROJXON | Get in Touch with Our Experts",
   description: "Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.",
-  metadataBase: new URL("https://www.projxon.com/"),
+  metadataBase: new URL("https://www.projxon.com/contact"),
   openGraph: {
     title: "Contact PROJXON | Get in Touch with Our Experts",
     description: "Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.",
-    url: "https://www.projxon.com/",
+    url: "https://www.projxon.com/contact",
     siteName: "PROJXON",
     images: [
       {
