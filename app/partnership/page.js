@@ -9,6 +9,33 @@ import CustomButton from "../../components/CustomButton";
 import AOSWrapper from "@/components/AOSWrapper";
 import Image from "next/image";
 
+export const metadata = {
+  title: "Partner with PROJXON | Strategic Collaborations for Growth",
+  description: "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
+  metadataBase: new URL("https://www.projxon.com/"),
+  openGraph: {
+    title: "Partner with PROJXON | Strategic Collaborations for Growth",
+    description: "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
+    url: "https://www.projxon.com/",
+    siteName: "PROJXON",
+    images: [
+      {
+        url: "/PROJXON.png",
+        width: 1200,
+        height: 630,
+        alt: "PROJXON logo",
+      }
+    ],
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Partner with PROJXON | Strategic Collaborations for Growth",
+    description: "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
+    images: ["/PROJXON.png"]
+  }
+};
+
 const PartnershipPage = () => {
   const partnerships = [
     {

@@ -156,7 +156,7 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* || Choose Us */
+/* || Section padding */
 
 .choose-us,
 .testimonials,
@@ -180,25 +180,56 @@
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #dee2e6;
+  margin: 0 auto 20px;
 }
 
 .carousel-caption {
-  bottom: 70px;
-  padding: 50px 0;
+  position: static;
+  padding: 0 20px;
+  margin-top: 30px;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 20px auto;
+  color: #000;
+}
+
+.carousel-caption h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.carousel-caption span {
+  font-size: 1rem;
+  color: #333;
 }
 
 .quote-icon {
-  margin-top: -10px;
   margin-right: 10px;
   color: #000;
+  vertical-align: middle;
 }
+
+.carousel-indicators {
+  bottom: -30px;
+}
+
+/* || Blog Heading Border */
 
 .blog-heading-border {
   width: 5rem;
   height: 0.25rem;
   background-color: #facc15;
   display: block;
+  margin: 0 auto;
 }
+
+/* || Responsive Tweaks */
 
 @media (max-width: 780px) {
   .sections-heading {
@@ -214,7 +245,35 @@
   }
 
   .carousel-caption p {
-    font-size: 1rem !important ;
+    font-size: 1rem !important;
+    line-height: 1.6;
+    padding: 0 5px;
+    margin-bottom: 1.5rem;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.1rem;
+  }
+
+  .carousel-caption span {
+    font-size: 0.95rem;
+  }
+
+  .testimonials .testimonial-img {
+    width: 80px;
+    height: 80px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border: 2px solid #000;
+  }
+
+  .carousel-indicators {
+    bottom: -20px;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 12%;
   }
 
   .choose-us .row {
@@ -224,10 +283,6 @@
   .black-card-container {
     padding-left: 20px;
     padding-right: 20px;
-  }
-
-  .carousel-caption {
-    bottom: 30px;
   }
 
   .bg-yellow {

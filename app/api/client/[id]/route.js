@@ -22,12 +22,14 @@ export async function GET(req, { params }) {
   }
 }
 
-export async function DELETE(req, { params }) {
+export async function DELETE(req, context) {
   try {
     authenticateUser(req);
 
+    const { id } = await context.params
+
     const res = await fetch(
-      `${process.env.WORDPRESS_CUSTOM_API_URL}/clients/${params.id}`,
+      `${process.env.WORDPRESS_CUSTOM_API_URL}/clients/${id}`,
       {
         method: "DELETE",
         headers: {

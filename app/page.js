@@ -20,14 +20,42 @@ import BlackCard from "@/components/BlackCard";
 import CustomButton from "@/components/CustomButton";
 import CallToAction from "@/components/CallToAction";
 
-import { fetchBlogs } from "@/services/blogService";
 import { fetchClients } from "@/services/clientService";
+import { fetchBlogs } from "@/services/blogService";
 import defaultClientImage from "@/public/assets/homepage/default-pic.jpg";
 
 import ServiceCards from "@/components/ServiceCards";
 import BlackCardsSection from "@/components/BlackCardsSection";
 import AOSWrapper from "@/components/AOSWrapper";
 import Image from "next/image";
+
+
+export const metadata = {
+  title: "PROJXON Services | Expert Business Consulting & Strategy",
+  description: "Explore PROJXON’s consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
+  metadataBase: new URL("https://www.projxon.com/"),
+  openGraph: {
+    title: "PROJXON Services | Expert Business Consulting & Strategy",
+    description: "Explore PROJXON’s consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
+    url: "https://www.projxon.com/",
+    siteName: "PROJXON",
+    images: [
+      {
+        url: "/PROJXON.png",
+        width: 1200,
+        height: 630,
+        alt: "PROJXON logo",
+      }
+    ],
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PROJXON Services | Expert Business Consulting & Strategy",
+    description: "Explore PROJXON’s consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
+    images: ["/PROJXON.png"]
+  }
+};
 
 export default async function HomePage() {
   const blogs = await fetchBlogs();
@@ -217,7 +245,7 @@ export default async function HomePage() {
                     alt={client.name}
                     width={100}
                     height={100}
-                    // style={{ borderRadius: "50%" }}
+                  // style={{ borderRadius: "50%" }}
                   />
                   <p className="mb-4 fs-5">
                     <FaQuoteLeft className="quote-icon" size={25} />

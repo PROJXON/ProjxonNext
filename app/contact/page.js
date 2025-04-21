@@ -7,6 +7,35 @@ import InfoForm from "@/components/InfoForm";
 
 import AOSWrapper from "@/components/AOSWrapper";
 
+
+export const metadata = {
+  title: "Contact PROJXON | Get in Touch with Our Experts",
+  description: "Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.",
+  metadataBase: new URL("https://www.projxon.com/"),
+  openGraph: {
+    title: "Contact PROJXON | Get in Touch with Our Experts",
+    description: "Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.",
+    url: "https://www.projxon.com/",
+    siteName: "PROJXON",
+    images: [
+      {
+        url: "/PROJXON.png",
+        width: 1200,
+        height: 630,
+        alt: "PROJXON logo",
+      }
+    ],
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact PROJXON | Get in Touch with Our Experts",
+    description: "Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.",
+    images: ["/PROJXON.png"]
+  }
+};
+
+
 const ContactPage = () => {
   const contactInfoList = [
     {

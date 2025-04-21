@@ -2,15 +2,26 @@ import axiosInstance from "../utils/axiosInstance";
 
 const login = async (username, password) => {
   try {
-    const response = await axiosInstance.post("/api/auth/login", {
-      username,
-      password,
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, password })
     });
 
-    if (response.data.token) {
-      localStorage.setItem("authToken", response.data.token);
-      localStorage.setItem("user", JSON.stringify(response.data.user));
-      return { success: true, user: response.data.user };
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Login failed:", errorData);
+      throw new Error(errorData.message || "Invalid username or password.");
+    }
+
+    const data = await response.json()
+
+    if (data.token) {
+      localStorage.setItem("authToken", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+      return { success: true, user: data.user };
     } else {
       return { success: false, message: "Invalid username or password." };
     }

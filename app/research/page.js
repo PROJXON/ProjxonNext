@@ -1,11 +1,37 @@
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
 import BlogClientList from "@/components/BlogClientList";
+import "./ResearchPage.css";
+import AOSWrapper from "@/components/AOSWrapper";
 import { fetchBlogs } from "@/services/blogService";
 
 
-import "./ResearchPage.css";
-import AOSWrapper from "@/components/AOSWrapper";
+export const metadata = {
+  title: "PROJXON Blog | Insights on Business Strategy & Innovation",
+  description: "Stay ahead with expert insights from PROJXON. Explore articles on business strategy, market trends, digital transformation, and innovation.",
+  metadataBase: new URL("https://www.projxon.com/"),
+  openGraph: {
+    title: "PROJXON Blog | Insights on Business Strategy & Innovation",
+    description: "Stay ahead with expert insights from PROJXON. Explore articles on business strategy, market trends, digital transformation, and innovation.",
+    url: "https://www.projxon.com/",
+    siteName: "PROJXON",
+    images: [
+      {
+        url: "/PROJXON.png",
+        width: 1200,
+        height: 630,
+        alt: "PROJXON logo",
+      }
+    ],
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PROJXON Blog | Insights on Business Strategy & Innovation",
+    description: "Stay ahead with expert insights from PROJXON. Explore articles on business strategy, market trends, digital transformation, and innovation.",
+    images: ["/PROJXON.png"]
+  }
+};
 
 export default async function ResearchPage() {
   const blogs = await fetchBlogs();

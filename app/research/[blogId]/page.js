@@ -1,13 +1,32 @@
 import DOMPurify from "isomorphic-dompurify";
 import { Container } from "react-bootstrap";
 import { CiCalendar } from "react-icons/ci";
-import { fetchBlog } from "@/services/blogService";
+import { fetchBlogs, fetchBlog } from "@/services/blogService";
 import Image from "next/image";
 import defaultImg from "@/public/assets/research/default-blog-img.webp";
 import "./BlogPage.css";
 
+export const revalidate = 300;
+
+export async function generateStaticParams() {
+  const blogs = await fetchBlogs();
+
+  return blogs.map((blog) => ({
+    blogId: blog.slug, 
+  }));
+}
+
 export async function generateMetadata({ params }) {
-  const blog = await fetchBlog(params.blogId);
+  const { blogId } = params;
+  const blog = await fetchBlog(blogId);
+
+  if (!blog) {
+    return {
+      title: "Blog not found",
+      description: "The blog could not be found.",
+    };
+  }
+
   return {
     title: blog?.title?.rendered || "Blog",
     description: blog?.excerpt?.rendered?.replace(/<[^>]+>/g, "") || "",
@@ -15,7 +34,8 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPage({ params }) {
-  const blog = await fetchBlog(params.blogId);
+  const { blogId } =  params;
+  const blog = await fetchBlog(blogId);
   const content = blog.content?.rendered || "";
   const sanitizedHtml = DOMPurify.sanitize(content);
 

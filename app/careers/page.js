@@ -9,6 +9,35 @@ import AOSWrapper from "@/components/AOSWrapper";
 import InternCarousel from "@/components/InternCarousel";
 import Image from "next/image";
 
+
+export const metadata = {
+  title: "Careers at PROJXON | Build Your Future in With Us",
+  description: "Join PROJXON and be part of a team that drives business innovation. Explore career opportunities in strategy, consulting, and digital transformation.",
+  metadataBase: new URL("https://www.projxon.com/careers"),
+  openGraph: {
+    title: "Careers at PROJXON | Build Your Future in With Us",
+    description: "Join PROJXON and be part of a team that drives business innovation. Explore career opportunities in strategy, consulting, and digital transformation.",
+    url: "https://www.projxon.com/careers",
+    siteName: "PROJXON",
+    images: [
+      {
+        url: "/PROJXON.png",
+        width: 1200,
+        height: 630,
+        alt: "PROJXON logo",
+      }
+    ],
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Careers at PROJXON | Build Your Future in With Us",
+    description: "Join PROJXON and be part of a team that drives business innovation. Explore career opportunities in strategy, consulting, and digital transformation.",
+    images: ["/PROJXON.png"]
+  }
+};
+
+
 const CareerPage = () => {
   const internTestimonials = [
     [
