@@ -33,11 +33,11 @@ import Image from "next/image";
 export const metadata = {
   title: "PROJXON Services | Expert Business Consulting & Strategy",
   description: "Explore PROJXON’s consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
-  metadataBase: new URL("https://www.projxon.com/"),
+  metadataBase: new URL("https://www.projxon.com/services"),
   openGraph: {
     title: "PROJXON Services | Expert Business Consulting & Strategy",
     description: "Explore PROJXON’s consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
-    url: "https://www.projxon.com/",
+    url: "https://www.projxon.com/services",
     siteName: "PROJXON",
     images: [
       {
