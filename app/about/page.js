@@ -22,11 +22,11 @@ import Image from "next/image";
 export const metadata = {
   title: "About PROJXON | The Story Behing Strategy & Innovation",
   description: "Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.",
-  metadataBase: new URL("https://www.projxon.com/"),
+  metadataBase: new URL("https://www.projxon.com/about"),
   openGraph: {
     title: "About PROJXON | The Story Behing Strategy & Innovation",
     description: "Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.",
-    url: "https://www.projxon.com/",
+    url: "https://www.projxon.com/about",
     siteName: "PROJXON",
     images: [
       {
