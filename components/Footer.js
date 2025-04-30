@@ -122,12 +122,12 @@ const Footer = () => {
             <h2 className="footer-heading">Partnerships</h2>
             <ul className="list-unstyled">
               <li>
-                <Link href="/servicepartners" className="footer-link">
+                <Link href="/partnership" className="footer-link">
                   Service Partners
                 </Link>
               </li>
               <li>
-                <Link href="/referralpartners" className="footer-link">
+                <Link href="/partnership" className="footer-link">
                   Referral Partners
                 </Link>
               </li>
@@ -141,26 +141,6 @@ const Footer = () => {
               <li>
                 <Link href="/contact" className="footer-link">
                   Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="footer-link">
-                  Social
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="footer-link">
-                  Appoint
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="footer-link">
-                  Inquiries
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="footer-link">
-                  Address (Google)
                 </Link>
               </li>
             </ul>
@@ -185,11 +165,6 @@ const Footer = () => {
                   Articles
                 </Link>
               </li>
-              <li>
-                <Link href="/research" className="footer-link">
-                  Newsletter
-                </Link>
-              </li>
             </ul>
           </Col>
 
@@ -198,12 +173,12 @@ const Footer = () => {
             <h2 className="footer-heading">Careers</h2>
             <ul className="list-unstyled">
               <li>
-                <Link href="/career" className="footer-link">
+                <Link href="/careers" className="footer-link">
                   Join Our Team
                 </Link>
               </li>
               <li>
-                <Link href="/career" className="footer-link">
+                <Link href="/careers" className="footer-link">
                   Internship Program
                 </Link>
               </li>
