@@ -17,7 +17,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { blogId } = params;
+  const { blogId } = await params;
   const blog = await fetchBlog(blogId);
 
   if (!blog) {
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPage({ params }) {
-  const { blogId } =  params;
+  const { blogId } =  await params;
   const blog = await fetchBlog(blogId);
   const content = blog.content?.rendered || "";
   const sanitizedHtml = DOMPurify.sanitize(content);
