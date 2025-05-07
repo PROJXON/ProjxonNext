@@ -20,7 +20,7 @@ export const metadata = {
     siteName: "PROJXON",
     images: [
       {
-        url: "/PROJXON.png",
+        url: "https://www.projxon.com/PROJXON.png",
         width: 1200,
         height: 630,
         alt: "PROJXON logo",
@@ -32,7 +32,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Partner with PROJXON | Strategic Collaborations for Growth",
     description: "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
-    images: ["/PROJXON.png"]
+    images: ["https://www.projxon.com/PROJXON.png"]
   }
 };
 
