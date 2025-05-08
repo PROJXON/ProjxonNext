@@ -6,8 +6,8 @@ import CallToAction from "@/components/CallToAction";
 import CustomButton from "@/components/CustomButton";
 
 import AOSWrapper from "@/components/AOSWrapper";
-import ClientsCarousel from "@/components/ClientsCarousel"
-import InternCarousel from "@/components/InternCarousel"
+import ClientSection from "@/components/ClientSection"
+import InternTestimonialsSection from "@/components/InternTestimonialsSection"
 import Image from "next/image";
 
 
@@ -36,44 +36,9 @@ export const metadata = {
     description: "Join PROJXON and be part of a team that drives business innovation. Explore career opportunities in strategy, consulting, and digital transformation.",
     images: ["/PROJXON.png"]
   }
-};
-
+}
 
 const CareerPage = () => {
-  const internTestimonials = [
-    [
-      {
-        image: "/assets/careers/interns/jordan.webp",
-        name: "Jordan Le",
-        university: "Azuza Pacific University",
-        testimonial:
-          "PROJXON helps companies grow, while the internship program helps its interns develop into competent, knowledgable professionals. Throughout this experience, I have become more collaborative, communicative, detail-oriented, and creative.",
-      },
-      {
-        image: "/assets/careers/interns/noemi.webp",
-        name: "Noemi Nagy",
-        university: "University of California Merced",
-        testimonial:
-          "Participating in the PROJXON MIP has been a pivotal experience...",
-      },
-      {
-        image: "/assets/careers/interns/gianna.webp",
-        name: "Gianna Vita",
-        university: "Indiana University Bloomington",
-        testimonial:
-          "PROJXON has provided me with valuable insights into cross-departmental collaboration...",
-      },
-    ],
-    [
-      {
-        image: "/assets/careers/interns/arthur.webp",
-        name: "Artur Fedrizzi",
-        university: "University of California Irvine",
-        testimonial:
-          "The Momentum Internship Program at PROJXON gave me applicable knowledge, skills, tools...",
-      },
-    ],
-  ];
 
   const positions = [
     {
@@ -94,33 +59,6 @@ const CareerPage = () => {
       align: "end",
       dataAOS: "fade-left",
     },
-  ]
-
-  const clients = [
-    {
-      name: "United States Army",
-      image: "/assets/careers/clients/army.webp"
-    },
-    {
-      name: "United States Navy",
-      image: "/assets/careers/clients/navy.webp"
-    },
-    {
-      name: "United States Air Force",
-      image: "/assets/careers/clients/air-force.webp"
-    },
-    {
-      name: "United States Space Force",
-      image: "/assets/careers/clients/space-force.webp"
-    },
-    {
-      name: "United States Marine Corps",
-      image: "/assets/careers/clients/marine-corps.webp"
-    },
-    {
-      name: "United States Coast Guard",
-      image: "/assets/careers/clients/coast-guard.webp"
-    }
   ]
 
   return (
@@ -299,32 +237,10 @@ const CareerPage = () => {
       </section>
 
       {/* Clients */}
-      <section className="positions sections-container clients-section">
-        <Container>
-          <h2 className="sections-heading text-center mb-5">Clients</h2>
-          <ClientsCarousel clients={clients} clientsPerRow={5} />
-        </Container>
-      </section>
+      <ClientSection />
 
       {/* Intern Testimonials */}
-      <section className="interns-testimonials sections-container bg-yellow">
-        <Container>
-          <Row className="align-items-center justify-content-between mb-4 mb-md-5">
-            <Col xs={12} md={6} lg={5}>
-              <h2 className="interns-testimonials-heading fw-bold mb-0">
-                Hear what previous interns have to say about our program.
-              </h2>
-            </Col>
-            <Col xs={12} md={6} lg={5}>
-              <p className="interns-testimonials-sub-heading mb-0">
-                Gain hands-on experience and invaluable skills to jumpstart your
-                career with our industry-leading internship program.
-              </p>
-            </Col>
-          </Row>
-          <InternCarousel internTestimonials={internTestimonials} />
-        </Container>
-      </section>
+      <InternTestimonialsSection />
 
       {/* Call to Action Section */}
       <CallToAction />

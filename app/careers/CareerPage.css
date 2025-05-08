@@ -133,14 +133,14 @@ section.clients-section div.carousel-item {
   border-color: black;
 }
 
-.client-col {
+.item-col {
   flex: 0 0 100%;
   max-width: 100%;
 }
 
 @media (min-width: 992px) {
-  .client-col {
-    flex: 0 0 calc(100% / var(--clients-per-row));
-    max-width: calc(100% / var(--clients-per-row));
+  .item-col {
+    flex: 0 0 calc(100% / var(--items-per-row));
+    max-width: calc(100% / var(--items-per-row));
   }
 }
