@@ -19,24 +19,31 @@
   line-height: 1.7;
 }
 
-.intern-card {
+.interns-testimonials .careers-page-card {
   background-color: #000 !important;
   box-shadow: 0 8px 20px #000000 !important;
+}
+
+.clients-section .careers-page-card {
+  box-shadow: 0 6px 10px #000000 !important;
+}
+
+.careers-page-card {
   border-radius: 10px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.intern-card:hover {
+.careers-page-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
 }
 
-.interns-testimonials .carousel-indicators {
+.careers-page-carousel .carousel-indicators {
   margin: 0;
   bottom: -50px;
 }
 
-.interns-testimonials .carousel-indicators button {
+.careers-page-carousel .carousel-indicators button {
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -44,7 +51,7 @@
   opacity: 0.2;
 }
 
-.interns-testimonials .carousel-indicators button.active {
+.careers-page-carousel .carousel-indicators button.active {
   background-color: #000 !important;
   color: #000 !important;
   opacity: 1;
@@ -119,4 +126,21 @@
 
 .positions-shape-end::before {
   right: -25px;
+}
+
+section.clients-section div.carousel-item {
+  min-height: 225px;
+  border-color: black;
+}
+
+.client-col {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 992px) {
+  .client-col {
+    flex: 0 0 calc(100% / var(--clients-per-row));
+    max-width: calc(100% / var(--clients-per-row));
+  }
 }

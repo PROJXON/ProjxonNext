@@ -16,13 +16,14 @@ const InternCarousel = ({ internTestimonials }) => {
       controls={false}
       indicators={true}
       interval={null}
+      className="careers-page-carousel"
     >
       {internTestimonials.map((testimonialGroup, groupIndex) => (
         <Carousel.Item key={groupIndex}>
           <Row>
             {testimonialGroup.map((intern, i) => (
               <Col xs={12} lg={4} key={i}>
-                <Card className="border-0 p-4 mt-4 intern-card">
+                <Card className="border-0 p-4 mt-4 careers-page-card">
                   <Card.Body>
                     <div className="d-flex align-items-center mb-4">
                       <div className="me-3">

@@ -6,7 +6,8 @@ import CallToAction from "@/components/CallToAction";
 import CustomButton from "@/components/CustomButton";
 
 import AOSWrapper from "@/components/AOSWrapper";
-import InternCarousel from "@/components/InternCarousel";
+import ClientsCarousel from "@/components/ClientsCarousel"
+import InternCarousel from "@/components/InternCarousel"
 import Image from "next/image";
 
 
@@ -93,7 +94,34 @@ const CareerPage = () => {
       align: "end",
       dataAOS: "fade-left",
     },
-  ];
+  ]
+
+  const clients = [
+    {
+      name: "United States Army",
+      image: "/assets/careers/clients/army.webp"
+    },
+    {
+      name: "United States Navy",
+      image: "/assets/careers/clients/navy.webp"
+    },
+    {
+      name: "United States Air Force",
+      image: "/assets/careers/clients/air-force.webp"
+    },
+    {
+      name: "United States Space Force",
+      image: "/assets/careers/clients/space-force.webp"
+    },
+    {
+      name: "United States Marine Corps",
+      image: "/assets/careers/clients/marine-corps.webp"
+    },
+    {
+      name: "United States Coast Guard",
+      image: "/assets/careers/clients/coast-guard.webp"
+    }
+  ]
 
   return (
     <div>
@@ -267,6 +295,14 @@ const CareerPage = () => {
               </Col>
             ))}
           </Row>
+        </Container>
+      </section>
+
+      {/* Clients */}
+      <section className="positions sections-container clients-section">
+        <Container>
+          <h2 className="sections-heading text-center mb-5">Clients</h2>
+          <ClientsCarousel clients={clients} clientsPerRow={5} />
         </Container>
       </section>
 
