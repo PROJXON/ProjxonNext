@@ -10,16 +10,12 @@ export default function ClientSection() {
             image: "/assets/careers/clients/army.webp"
         },
         {
-            name: "United States Navy",
-            image: "/assets/careers/clients/navy.webp"
-        },
-        {
             name: "United States Air Force",
             image: "/assets/careers/clients/air-force.webp"
         },
         {
-            name: "United States Space Force",
-            image: "/assets/careers/clients/space-force.webp"
+            name: "United States Navy",
+            image: "/assets/careers/clients/navy.webp"
         },
         {
             name: "United States Marine Corps",
@@ -28,6 +24,10 @@ export default function ClientSection() {
         {
             name: "United States Coast Guard",
             image: "/assets/careers/clients/coast-guard.webp"
+        },
+        {
+            name: "United States Space Force",
+            image: "/assets/careers/clients/space-force.webp"
         }
     ]
 
