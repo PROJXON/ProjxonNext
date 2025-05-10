@@ -13,4 +13,6 @@ const ImageUpload = React.forwardRef(({ onFileSelect }, ref) => {
   );
 });
 
+ImageUpload.displayName = 'ImageUpload';
+
 export default ImageUpload;

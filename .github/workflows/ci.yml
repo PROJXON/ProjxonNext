@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.11.1"
+          cache: "npm"
+
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libvips-dev
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install sharp
+
+      - name: Create .env file
+        run: |
+          echo "NEXT_PUBLIC_API_URL=${{ secrets.NEXT_PUBLIC_API_URL }}" > .env
+          echo "WORDPRESS_API_URL=${{ secrets.WORDPRESS_API_URL }}" >> .env
+          echo "WORDPRESS_CUSTOM_API_URL=${{ secrets.WORDPRESS_CUSTOM_API_URL }}" >> .env
+          echo "WORDPRESS_JWT_URL=${{ secrets.WORDPRESS_JWT_URL }}" >> .env
+          echo "WORDPRESS_API_USERNAME=${{ secrets.WORDPRESS_API_USERNAME }}" >> .env
+          echo "WORDPRESS_API_PASSWORD=${{ secrets.WORDPRESS_API_PASSWORD }}" >> .env
+          echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
+          echo "EMAIL_USER=${{ secrets.EMAIL_USER }}" >> .env
+          echo "EMAIL_CLIENT_ID=${{ secrets.EMAIL_CLIENT_ID }}" >> .env
+          echo "EMAIL_CLIENT_SECRET=${{ secrets.EMAIL_CLIENT_SECRET }}" >> .env
+          echo "EMAIL_REFRESH_TOKEN=${{ secrets.EMAIL_REFRESH_TOKEN }}" >> .env
+          echo "EMAIL_REDIRECT_URI=${{ secrets.EMAIL_REDIRECT_URI }}" >> .env
+
+      - name: Run linting
+        run: npm run lint
+
+      - name: Build project
+        run: |
+          export NODE_OPTIONS="--max_old_space_size=4096"
+          npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
