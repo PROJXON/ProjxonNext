@@ -170,17 +170,6 @@ const CareerPage = () => {
                 isAnimated={false}
               />
             </Col>
-            <Col xs={12} lg={6}>
-              <div className="position-relative mt-4 mt-md-0">
-                <Image
-                  src="/assets/careers/employee.webp"
-                  className="apply-img img-fluid"
-                  alt="employee person"
-                  width={600}
-                  height={400}
-                />
-              </div>
-            </Col>
           </Row>
         </Container>
       </section>
