@@ -1,22 +1,13 @@
 import "./HomePage.css";
 
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import CarouselItem from "react-bootstrap/CarouselItem";
 import CarouselCaption from "react-bootstrap/CarouselCaption";
-import {
-  FaQuoteLeft,
-  FaMobile,
-  FaCogs,
-  FaProjectDiagram,
-  FaShoppingCart,
-  FaLaptopCode,
-} from "react-icons/fa";
-import { LuTrendingUp, LuUsers, LuLightbulb } from "react-icons/lu";
+import { FaQuoteLeft } from "react-icons/fa";
 
 import HomeHero from "@/components/HomeHero";
 import BlogCard from "@/components/BlogCard";
-import BlackCard from "@/components/BlackCard";
 import CustomButton from "@/components/CustomButton";
 import CallToAction from "@/components/CallToAction";
 
@@ -24,8 +15,8 @@ import { fetchClients } from "@/services/clientService";
 import { fetchBlogs } from "@/services/blogService";
 import defaultClientImage from "@/public/assets/homepage/default-pic.jpg";
 
-import ServiceCards from "@/components/ServiceCards";
-import BlackCardsSection from "@/components/BlackCardsSection";
+import Services from "@/components/Services";
+import ChooseUs from "@/components/ChooseUs";
 import AOSWrapper from "@/components/AOSWrapper";
 import Image from "next/image";
 
@@ -60,71 +51,6 @@ export const metadata = {
 export default async function HomePage() {
   const blogs = await fetchBlogs();
   const clients = await fetchClients();
-
-  const services = [
-    {
-      image: "/assets/homepage/services-img/market.webp",
-      icon: <FaMobile size={40} />,
-      title: "Marketing + Social Media",
-      description:
-        "Amplify your brand's impact with expert marketing and social media strategies. Engage your audience, accelerate growth, and redefine your digital presence.",
-    },
-    {
-      image: "/assets/homepage/services-img/ecom.webp",
-      icon: <FaShoppingCart size={40} />,
-      title: "E-commerce Solutions",
-      description:
-        "Transform your online business with tailored e-commerce solutions. Optimize performance, boost sales, and enhance customer satisfaction.",
-    },
-    {
-      image: "/assets/homepage/services-img/business.webp",
-      icon: <FaCogs size={40} />,
-      title: "Business Process Optimization",
-      description: "Streamline your operations and enhance efficiency with our business optimization services. Achieve greater productivity and profitability.",
-    },
-    {
-      image: "/assets/homepage/services-img/manage.webp",
-      icon: <FaProjectDiagram size={40} />,
-      title: "Project Management",
-      description:
-        "Ensure timely, budget-friendly project delivery with our expert management services. We focus on seamless project process management with an emphasis on continuity to improve efficiency and achieve your goals.",
-    },
-    {
-      image: "/assets/homepage/services-img/it.webp",
-      icon: <FaLaptopCode size={40} />,
-      title: "IT + Tech Integrations",
-      description: "Boost your business with our innovative IT solutions. We design custom IT and tech packages to increase efficiencies and maximize output.",
-    },
-  ];
-
-  const reasons = [
-    {
-      icon: <LuUsers size={64} className="text-yellow" />,
-      title: "Expert Team",
-      description:
-        "Our team consists of industry experts with years of experience in their respective fields. With diverse backgrounds and deep knowledge, we bring unparalleled expertise to every project.",
-      stat: "10",
-      statSuffix: "+",
-      statDescription: "years combined experience",
-    },
-    {
-      icon: <LuTrendingUp size={64} className="text-yellow" />,
-      title: "Proven Results",
-      description: "We have a track record of delivering successful projects and measurable improvements for our clients. Our results speak for themselves, with consistent client satisfaction and tangible outcomes.",
-      stat: "95",
-      statSuffix: "%",
-      statDescription: "customer satisfaction rate",
-    },
-    {
-      icon: <LuLightbulb size={64} className="text-yellow" />,
-      title: "Innovative Solutions",
-      description:
-        "We leverage the latest technologies and methodologies to provide innovative solutions to our clients. Our forward-thinking approach ensures that you stay ahead of the curve in your industry.",
-      stat: "20",
-      statSuffix: "+",
-      statDescription: "innovative projects delivered",
-    },
-  ];
 
   return (
     <>
@@ -217,20 +143,13 @@ export default async function HomePage() {
               </Row>
             </Col>
             <Col md={12} lg={7}>
-              <ServiceCards services={services} />
+              <Services />
             </Col>
           </Row>
         </Container>
       </section>
 
-      <section className="bg-black choose-us">
-        <Container className="text-center">
-          <h2 className="fw-bold sections-heading text-yellow" data-aos="fade-up" data-aos-once="true">
-            Why Choose Us?
-          </h2>
-          <BlackCardsSection reasons={reasons} />
-        </Container>
-      </section>
+      <ChooseUs />
 
       <section className="testimonials bg-yellow carousel-dark slide">
         <Container className="text-center" data-aos="fade-up" data-aos-once="true">

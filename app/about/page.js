@@ -1,20 +1,13 @@
 import "./AboutPage.css";
 
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  FaLightbulb,
-  FaBalanceScale,
-  FaUsers,
-  FaLinkedinIn,
-  FaGlobe,
-} from "react-icons/fa";
 
 import AOSWrapper from "@/components/AOSWrapper";
-
 import Hero from "@/components/Hero";
 import CustomButton from "@/components/CustomButton";
 import CallToAction from "@/components/CallToAction";
-import BlackCard from "@/components/BlackCard";
+import Leads from "@/components/Leads";
+import OurValues from "@/components/OurValues";
 
 import Image from "next/image";
 
@@ -47,142 +40,6 @@ export const metadata = {
 };
 
 const AboutPage = () => {
-  const values = [
-    {
-      icon: <FaLightbulb size={55} className="text-yellow" />,
-      title: "Innovation",
-      description:
-        "We constantly seek out new ideas and approaches to stay ahead of industry trends and provide our clients with cutting-edge solutions.",
-    },
-    {
-      icon: <FaBalanceScale size={55} className="text-yellow" />,
-      title: "Integrity",
-      description:
-        "We believe in doing business with honesty and transparency, building trust with our clients and partners through ethical practices.",
-    },
-    {
-      icon: <FaUsers size={55} className="text-yellow" />,
-      title: "Collaboration",
-      description:
-        "We work closely with our clients and partners, fostering a collaborative environment that drives success for everyone involved.",
-    },
-  ];
-
-  const consultingLeads = [
-    {
-      image: "/assets/about/team/phelan.webp",
-      name: "Mark Phelan",
-      title: "Senior Consultant,",
-      specialty: "E-Commerce Solutions",
-      socials: [
-        {
-          icon: <FaLinkedinIn size={20} />,
-          href: "https://www.linkedin.com/in/phelanmarkw",
-        },
-        {
-          icon: <FaGlobe size={20} />,
-          href: "https://www.thephelanfocus.com/",
-        },
-      ],
-    },
-    {
-      image: "/assets/about/team/kathy.webp",
-      name: "Kathy Seaton",
-      title: "Senior Consultant,",
-      specialty: "Non Profit Development",
-      socials: [
-        {
-          icon: <FaLinkedinIn size={20} />,
-          href: "https://www.linkedin.com/in/klseaton",
-        },
-        {
-          icon: <FaGlobe size={20} />,
-          href: "https://www.klseatonconsulting.com/",
-        },
-      ],
-    },
-    {
-      image: "/assets/about/team/donavon.webp",
-      name: "Donavon Roberson",
-      title: "Senior Consultant,",
-      specialty: "Tech + Software Solutions",
-      socials: [
-        {
-          icon: <FaLinkedinIn size={20} />,
-          href: "https://www.linkedin.com/in/donavonroberson",
-        },
-        {
-          icon: <FaGlobe size={20} />,
-          href: "https://medium.com/@thejourneyofthedreamer",
-        },
-      ],
-    },
-    {
-      image: "/assets/about/team/melissa.webp",
-      name: "Melissa Eboli",
-      title: "Senior Consultant,",
-      specialty: "Health + Wellness Solutions",
-      socials: [
-        {
-          icon: <FaLinkedinIn size={20} />,
-          href: "https://www.linkedin.com/in/viamelissa",
-        },
-        { icon: <FaGlobe size={20} />, href: "https://www.viaskitchen.com/" },
-      ],
-    },
-  ];
-
-  const teamLeads = [
-    {
-      image: "/assets/about/team/bast.webp",
-      name: "Bast Herrera",
-      title: "Team Lead,",
-      specialty: "Program Development",
-      socials: [
-        {
-          icon: <FaLinkedinIn size={20} />,
-          href: "https://www.linkedin.com/in/vincentcherrera",
-        },
-      ],
-    },
-    {
-      image: "/assets/about/team/dania.webp",
-      name: "Dania Ali",
-      title: "Team Lead,",
-      specialty: "Operations + Strategy",
-      socials: [
-        {
-          icon: <FaLinkedinIn size={20} />,
-          href: "https://www.linkedin.com/in/syeda-dania-ali",
-        },
-      ],
-    },
-    {
-      image: "/assets/about/team/megha.webp",
-      name: "Megha Vinjamuru",
-      title: "Team Lead,",
-      specialty: "Project Management",
-      socials: [
-        {
-          icon: <FaLinkedinIn size={20} />,
-          href: "https://www.linkedin.com/in/meghanethra",
-        },
-      ],
-    },
-    {
-      image: "/assets/about/team/alexandria.webp",
-      name: "Alexandria Boreman",
-      title: "Team Lead,",
-      specialty: "Marketing + Creative",
-      socials: [
-        {
-          icon: <FaLinkedinIn size={20} />,
-          href: "https://www.linkedin.com/in/alexandriaboreman",
-        },
-      ],
-    },
-  ];
-
   return (
     <div className="about-page">
       <AOSWrapper />
@@ -204,7 +61,7 @@ const AboutPage = () => {
                 width={800}
                 height={400}
                 className="overflow-hidden rounded-3 object-fit-cover w-100"
-                // placeholder="blur"
+              // placeholder="blur"
               />
             </Col>
 
@@ -293,22 +150,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Values Section */}
-      <section className="bg-black our-values sections-container">
-        <Container className="text-center">
-          <h2
-            className="fw-bold sections-heading text-yellow"
-            data-aos="fade-up"
-            data-aos-once="true"
-          >
-            Our Core Values
-          </h2>
-          <Row className="my-5 g-5">
-            {values.map((value, index) => (
-              <BlackCard key={index} item={value} isStat={false} />
-            ))}
-          </Row>
-        </Container>
-      </section>
+      <OurValues />
 
       {/* Our Team Section */}
       <section className="bg-yellow-team our-team sections-container">
@@ -323,79 +165,8 @@ const AboutPage = () => {
             </Col>
           </Row>
 
-          <h2 className="fw-bold sections-heading">Consulting Leads</h2>
-          <Row className="text-center">
-            {consultingLeads.map((member, i) => (
-              <Col md={6} lg={3} key={i} className="mb-5 our-team-card-body">
-                <div className="our-team-card mt-4 d-flex flex-column h-100">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={400}
-                    height={400}
-                    className="img-fluid w-100"
-                    loading="lazy"
-                    // placeholder="blur"
-                  />
-                  <div className="px-3 py-4 px-xl-4 text-white d-flex flex-column flex-grow-1">
-                    <h4 className="mb-2 text-yellow">{member.name}</h4>
-                    <h6>{member.title}</h6>
-                    <h6>{member.specialty}</h6>
-                    <div className="mt-auto">
-                      {member.socials.map((link, index) => (
-                        <a
-                          href={link.href}
-                          className="text-yellow social-icons mx-2"
-                          key={index}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {link.icon}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
-
-          <h2 className="fw-bold sections-heading mt-5">Delivery Team Leads</h2>
-          <Row className="text-center">
-            {teamLeads.map((member, i) => (
-              <Col md={6} lg={3} key={i} className="mb-5 our-team-card-body">
-                <div className="our-team-card mt-4 d-flex flex-column h-100">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    width={400}
-                    height={400}
-                    className="img-fluid w-100"
-                    loading="lazy"
-                    // placeholder="blur"
-                  />
-                  <div className="px-3 py-4 px-xl-4 text-white d-flex flex-column flex-grow-1">
-                    <h4 className="mb-2 text-yellow">{member.name}</h4>
-                    <h6>{member.title}</h6>
-                    <h6>{member.specialty}</h6>
-                    <div className="mt-auto">
-                      {member.socials.map((link, index) => (
-                        <a
-                          href={link.href}
-                          className="text-yellow social-icons"
-                          key={index}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {link.icon}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
+          {/* Consulting Leads and Team Leads Sections */}
+          <Leads />
         </Container>
       </section>
 
