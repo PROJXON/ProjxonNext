@@ -1,23 +1,23 @@
 import "./HomePage.css";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Container/*, Row, Col*/ } from "react-bootstrap";
 import Carousel from "react-bootstrap/Carousel";
 import CarouselItem from "react-bootstrap/CarouselItem";
 import CarouselCaption from "react-bootstrap/CarouselCaption";
 import { FaQuoteLeft } from "react-icons/fa";
 
 import HomeHero from "@/components/HomeHero";
-import BlogCard from "@/components/BlogCard";
+//import BlogCard from "@/components/BlogCard";
 import CustomButton from "@/components/CustomButton";
-import CallToAction from "@/components/CallToAction";
-
-import { fetchClients } from "@/services/clientService";
-import { fetchBlogs } from "@/services/blogService";
-import defaultClientImage from "@/public/assets/homepage/default-pic.jpg";
-
-import Services from "@/components/Services";
+import CallToAction from "@/components/CallToAction"
+//import Services from "@/components/Services";
 import ChooseUs from "@/components/ChooseUs";
 import AOSWrapper from "@/components/AOSWrapper";
+
+import { fetchClients } from "@/services/clientService";
+//import { fetchBlogs } from "@/services/blogService";
+import defaultClientImage from "@/public/assets/homepage/default-pic.jpg";
+
 import Image from "next/image";
 
 
@@ -49,7 +49,7 @@ export const metadata = {
 };
 
 export default async function HomePage() {
-  const blogs = await fetchBlogs();
+  //const blogs = await fetchBlogs();
   const clients = await fetchClients();
 
   return (
@@ -86,36 +86,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      <section className="text-center bg-black introduction">
-        <Container>
-          <h2
-            data-aos="fade-up"
-            data-aos-once="true"
-            className="mb-5 fw-bold text-yellow mx-auto sections-heading"
-          >
-            Welcome to PROJXON
-          </h2>
-          <Row className="justify-content-center">
-            <Col md={10} lg={8}>
-              <div
-                className="homepage-video-container rounded-3"
-                data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-once="true"
-              >
-                <iframe
-                  className="homepage-video-iframe"
-                  src="https://www.youtube.com/embed/ad79nYk2keg"
-                  allowFullScreen
-                  title="Introductory Video"
-                ></iframe>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      <section className="bg-yellow services">
+      {/*<section className="bg-yellow services">
         <Container className="overflow-hidden">
           <Row className="gy-4 gy-md-5 align-items-center">
             <Col md={12} lg={5}>
@@ -147,7 +118,7 @@ export default async function HomePage() {
             </Col>
           </Row>
         </Container>
-      </section>
+      </section>*/}
 
       <ChooseUs />
 
@@ -164,7 +135,6 @@ export default async function HomePage() {
                     alt={client.name}
                     width={100}
                     height={100}
-                  // style={{ borderRadius: "50%" }}
                   />
                   <p className="mb-4 fs-5">
                     <FaQuoteLeft className="quote-icon" size={25} />
@@ -179,7 +149,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {blogs?.length > 0 && (
+      {/*blogs?.length > 0 && (
         <section className="bg-black">
           <Container className="blogs">
             <h2 className="mb-5 sections-heading text-white">
@@ -200,7 +170,7 @@ export default async function HomePage() {
             </div>
           </Container>
         </section>
-      )}
+      )*/}
 
       <CallToAction />
     </>
