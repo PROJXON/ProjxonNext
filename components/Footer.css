@@ -11,6 +11,7 @@ footer {
   letter-spacing: 0.1rem;
   text-decoration: none;
   color: inherit;
+  text-align: left;
 }
 
 footer:hover {

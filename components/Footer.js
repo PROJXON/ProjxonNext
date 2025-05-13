@@ -1,4 +1,4 @@
-import { FaEnvelope, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaEnvelope, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { Container, Row, Col } from "react-bootstrap";
 import renderIcon from "@/lib/renderIcon";
 import Link from "next/link";
@@ -16,6 +16,12 @@ const Footer = () => {
       href: "https://twitter.com/projxon",
       ariaLabel: "Twitter",
       icon: FaTwitter,
+      newTab: true
+    },
+    {
+      href: "https://www.instagram.com/projxon/",
+      ariaLabel: "Instagram",
+      icon: FaInstagram,
       newTab: true
     },
     {
