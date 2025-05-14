@@ -22,7 +22,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "100",
       title: "Business Process Optimization",
-      icon: <FaCogs />,
+      icon: FaCogs,
       content: [
         {
           heading: "Workflow Analysis",
@@ -44,7 +44,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "200",
       title: "Project Management",
-      icon: <FaProjectDiagram />,
+      icon: FaProjectDiagram,
       content: [
         {
           heading: "Project Planning and Execution",
@@ -66,7 +66,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "300",
       title: "E-commerce Solutions",
-      icon: <FaShoppingCart />,
+      icon: FaShoppingCart,
       content: [
         {
           heading: "Platform Selection and Implementation",
@@ -88,7 +88,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "400",
       title: "IT Consulting",
-      icon: <FaLaptopCode />,
+      icon: FaLaptopCode,
       content: [
         {
           heading: "IT Strategy and Planning",
@@ -110,7 +110,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "500",
       title: "Data-Driven Decision Making",
-      icon: <FaChartLine />,
+      icon: FaChartLine,
       content: [
         {
           heading: "Advanced Analytics",
@@ -127,7 +127,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "600",
       title: "Customized Training Program",
-      icon: <FaChalkboardTeacher />,
+      icon: FaChalkboardTeacher,
       content: [
         {
           heading: "Employee Training",
@@ -144,7 +144,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "700",
       title: "Innovation and R&D Consulting",
-      icon: <FaLightbulb />,
+      icon: FaLightbulb,
       content: [
         {
           heading: "Innovation Workshops",
@@ -161,7 +161,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "800",
       title: "Sustainability and CSR",
-      icon: <FaLeaf />,
+      icon: FaLeaf,
       content: [
         {
           heading: "Sustainability Audits",
@@ -178,7 +178,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "900",
       title: "Customer Experience Enhancement",
-      icon: <FaSmile />,
+      icon: FaSmile,
       content: [
         {
           heading: "CX Strategy",
@@ -195,7 +195,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "1000",
       title: "Global Expansion Support",
-      icon: <FaGlobe />,
+      icon: FaGlobe,
       content: [
         {
           heading: "Market Entry Strategies",
@@ -212,7 +212,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "1100",
       title: "Financial Consulting",
-      icon: <FaMoneyCheckAlt />,
+      icon: FaMoneyCheckAlt,
       content: [
         {
           heading: "Financial Planning and Analysis",
@@ -229,7 +229,7 @@ const ServiceGrid = () => {
     {
       dataAOS: "1200",
       title: "Digital Transformation Consulting",
-      icon: <FaDigitalTachograph />,
+      icon: FaDigitalTachograph,
       content: [
         {
           heading: "Digital Strategy Development",
@@ -245,31 +245,31 @@ const ServiceGrid = () => {
     },
   ];
 
-  return (
-    <Container className="mt-5">
-      <Row className="py-4">
-        {services.map((service, index) => (
-          <Col md={6} key={index}>
-            <Card
-              className="service-card"
-              data-aos="fade-up"
-              data-aos-delay={service.dataAOS}
-            >
-              <div className="card-icon text-yellow">{service.icon}</div>
-              <div className="card-content">
-                <h3 className="text-white">{service.title}</h3>
-                {service.content.map((item, idx) => (
-                  <p key={idx} className="text-gray gray-opacity">
-                    <strong>{item.heading}:</strong> {item.description}
-                  </p>
-                ))}
-              </div>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </Container>
-  );
+  return (<Container className="mt-5">
+    <Row className="py-4">
+      {services.map((service, index) => (
+        <Col md={6} key={index}>
+          <Card
+            className="service-card"
+            data-aos="fade-up"
+            data-aos-delay={service.dataAOS}
+          >
+            <div className="card-icon text-yellow">
+              <service.icon />
+            </div>
+            <div className="card-content">
+              <h3 className="text-white">{service.title}</h3>
+              {service.content.map((item, idx) => (
+                <p key={idx} className="text-gray gray-opacity">
+                  <strong>{item.heading}:</strong> {item.description}
+                </p>
+              ))}
+            </div>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+  </Container>)
 };
 
 export default ServiceGrid;

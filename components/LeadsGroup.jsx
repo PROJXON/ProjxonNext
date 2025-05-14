@@ -1,8 +1,7 @@
 "use client"
 
 import { Row, Col } from "react-bootstrap";
-import Image from "next/image";
-import renderIcon from "@/lib/renderIcon";
+import Image from "next/image"
 
 export default function LeadsGroup({ heading, leads }) {
     return (<>
@@ -33,7 +32,7 @@ export default function LeadsGroup({ heading, leads }) {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        {renderIcon(link.icon, 20)}
+                                        <link.icon size={20} />
                                     </a>
                                 ))}
                             </div>

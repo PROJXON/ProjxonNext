@@ -123,7 +123,8 @@
 
 .homepage-video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
+  /* 16:9 */
   height: 0;
   overflow: hidden;
   max-width: 100%;
@@ -214,7 +215,7 @@
   }
 
   .carousel-caption p {
-    font-size: 1rem !important ;
+    font-size: 1rem !important;
   }
 
   .choose-us .row {

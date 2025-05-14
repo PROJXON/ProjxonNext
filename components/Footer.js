@@ -1,6 +1,5 @@
 import { FaEnvelope, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { Container, Row, Col } from "react-bootstrap";
-import renderIcon from "@/lib/renderIcon";
+import { Container, Row, Col } from "react-bootstrap"
 import Link from "next/link";
 import "./Footer.css";
 
@@ -183,7 +182,7 @@ const Footer = () => {
                   className="footer-icon"
                   aria-label={icon.ariaLabel}
                 >
-                  {renderIcon(icon.icon, 40)}
+                  <icon.icon size={40} />
                 </div>
               </Link>
             ))}
