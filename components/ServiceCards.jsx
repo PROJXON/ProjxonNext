@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { Card, Col } from "react-bootstrap"
 
 const ServiceCards = ({ services, divClasses }) => {

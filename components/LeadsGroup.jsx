@@ -1,5 +1,4 @@
 "use client"
-
 import { Row, Col } from "react-bootstrap";
 import Image from "next/image"
 

@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import AnimatedNumber from "@/components/AnimatedNumber"
 import "./BlackCard.css";
 import { Col } from "react-bootstrap";
