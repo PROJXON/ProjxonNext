@@ -12,7 +12,7 @@ export async function generateStaticParams() {
   const blogs = await fetchBlogs();
 
   return blogs.map((blog) => ({
-    blogId: blog.slug, 
+    blogId: blog.slug,
   }));
 }
 
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPage({ params }) {
-  const { blogId } =  params;
+  const { blogId } = params;
   const blog = await fetchBlog(blogId);
   const content = blog.content?.rendered || "";
   const sanitizedHtml = DOMPurify.sanitize(content);
