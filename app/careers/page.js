@@ -8,8 +8,6 @@ import CustomButton from "@/components/CustomButton";
 import AOSWrapper from "@/components/AOSWrapper";
 import ClientSection from "@/components/ClientSection"
 import InternTestimonialsSection from "@/components/InternTestimonialsSection"
-import Image from "next/image";
-
 
 export const metadata = {
   title: "Careers at PROJXON | Build Your Future in With Us",
