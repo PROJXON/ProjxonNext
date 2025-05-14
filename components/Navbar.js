@@ -26,8 +26,8 @@ const NavBar = () => {
 
   const navLinks = [
     { to: "/", label: "Home" },
-    { to: "/services", label: "Services" },
     { to: "/about", label: "About" },
+    { to: "/services", label: "Services" },
     { to: "/partnership", label: "Partnership" },
     { to: "/research", label: "Research" },
     { to: "/careers", label: "Careers" },

@@ -50,6 +50,52 @@ const AboutPage = () => {
         backgroundClass="about-hero"
       />
 
+      {/* Our Mission & Vision Section */}
+      <section className="mission-vision bg-yellow overflow-hidden sections-container">
+        <Container>
+          <Row className="g-5">
+            <Col
+              sm={12}
+              md={6}
+              className="mb-4 p-lg-5"
+              data-aos="fade-up"
+              data-aos-once="true"
+            >
+              <section className="w-100">
+                <h2 className="fs-1 mb-4 text-uppercase fw-bold">
+                  Our Mission
+                </h2>
+                <p className="fs-5">
+                  At PROJXON, our mission is to empower medium-sized businesses
+                  to achieve their full potential through tailored solutions,
+                  innovative strategies, and expert guidance. We strive to help
+                  our clients navigate challenges, optimize operations, and
+                  drive sustainable growth.
+                </p>
+              </section>
+            </Col>
+            <Col
+              sm={12}
+              md={6}
+              className="mb-4 p-lg-5"
+              data-aos="fade-up"
+              data-aos-once="true"
+            >
+              <section className="w-100">
+                <h2 className="fs-1 mb-4 text-uppercase fw-bold">Our Vision</h2>
+                <p className="fs-5">
+                  We envision a world where businesses easily access the
+                  expertise and tools they need to thrive in a rapidly changing
+                  environment. By offering cutting-edge solutions and
+                  unparalleled support, we aim to be the go-to partner for
+                  businesses looking to innovate, grow, and succeed.
+                </p>
+              </section>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
       {/* Who We Are Section */}
       <section className="who-we-are sections-container">
         <Container className="overflow-hidden">
@@ -98,52 +144,6 @@ const AboutPage = () => {
                   buttonStyle="yellow-button"
                 />
               </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      {/* Our Mission & Vision Section */}
-      <section className="mission-vision bg-yellow overflow-hidden sections-container">
-        <Container>
-          <Row className="g-5">
-            <Col
-              sm={12}
-              md={6}
-              className="mb-4 p-lg-5"
-              data-aos="fade-up"
-              data-aos-once="true"
-            >
-              <section className="w-100">
-                <h2 className="fs-1 mb-4 text-uppercase fw-bold">
-                  Our Mission
-                </h2>
-                <p className="fs-5">
-                  At PROJXON, our mission is to empower medium-sized businesses
-                  to achieve their full potential through tailored solutions,
-                  innovative strategies, and expert guidance. We strive to help
-                  our clients navigate challenges, optimize operations, and
-                  drive sustainable growth.
-                </p>
-              </section>
-            </Col>
-            <Col
-              sm={12}
-              md={6}
-              className="mb-4 p-lg-5"
-              data-aos="fade-up"
-              data-aos-once="true"
-            >
-              <section className="w-100">
-                <h2 className="fs-1 mb-4 text-uppercase fw-bold">Our Vision</h2>
-                <p className="fs-5">
-                  We envision a world where businesses easily access the
-                  expertise and tools they need to thrive in a rapidly changing
-                  environment. By offering cutting-edge solutions and
-                  unparalleled support, we aim to be the go-to partner for
-                  businesses looking to innovate, grow, and succeed.
-                </p>
-              </section>
             </Col>
           </Row>
         </Container>

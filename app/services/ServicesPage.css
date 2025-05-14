@@ -6,14 +6,6 @@
   background-size: cover;
 }
 
-.services-container {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url("/assets/servicepage/PROJ-service.webp") no-repeat center center fixed;
-  background-size: cover;
-  background-color: #000;
-  color: #fff;
-}
-
 .service-card {
   background-color: rgba(0, 0, 0, 0.8);
   border: none;
@@ -33,7 +25,7 @@
 }
 
 .service-card:hover {
-  background: linear-gradient(135deg, #ffd700, #feb47a);
+  background: linear-gradient(135deg, white, gray);
 }
 
 .service-card:hover p,

@@ -41,22 +41,6 @@ export default function Leads() {
             ],
         },
         {
-            image: "/assets/about/team/donavon.webp",
-            name: "Donavon Roberson",
-            title: "Senior Consultant,",
-            specialty: "Tech + Software Solutions",
-            socials: [
-                {
-                    icon: FaLinkedin,
-                    href: "https://www.linkedin.com/in/donavonroberson",
-                },
-                {
-                    icon: FaGlobe,
-                    href: "https://medium.com/@thejourneyofthedreamer",
-                },
-            ],
-        },
-        {
             image: "/assets/about/team/melissa.webp",
             name: "Melissa Eboli",
             title: "Senior Consultant,",
@@ -72,6 +56,22 @@ export default function Leads() {
                 },
             ],
         },
+        {
+            image: "/assets/about/team/donavon.webp",
+            name: "Donavon Roberson",
+            title: "Senior Consultant,",
+            specialty: "Tech + Software Solutions",
+            socials: [
+                {
+                    icon: FaLinkedin,
+                    href: "https://www.linkedin.com/in/donavonroberson",
+                },
+                {
+                    icon: FaGlobe,
+                    href: "https://medium.com/@thejourneyofthedreamer",
+                },
+            ],
+        }
     ];
 
     const teamLeads = [
