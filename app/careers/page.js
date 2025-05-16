@@ -3,8 +3,7 @@ import "./CareerPage.css";
 
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
-import CustomButton from "@/components/CustomButton";
-
+import CustomButton from "@/components/CustomButton"
 import AOSWrapper from "@/components/AOSWrapper";
 import ClientSection from "@/components/ClientSection"
 import InternTestimonialsSection from "@/components/InternTestimonialsSection"
