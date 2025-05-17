@@ -1,16 +1,13 @@
-import "./AboutPage.css";
-
-import { Container, Row, Col } from "react-bootstrap";
+import "./AboutPage.css"
+import { Container, Row, Col } from "react-bootstrap"
+import { FaLinkedin, FaGlobe } from "react-icons/fa"
+import Image from "next/image"
 
 import AOSWrapper from "@/components/AOSWrapper";
 import Hero from "@/components/Hero";
 import CustomButton from "@/components/CustomButton";
-import CallToAction from "@/components/CallToAction";
-import Leads from "@/components/Leads";
-import OurValues from "@/components/OurValues";
-
-import Image from "next/image";
-
+import CallToAction from "@/components/CallToAction"
+import OurValues from "@/components/OurValues"
 
 export const metadata = {
   title: "About PROJXON | The Story Behing Strategy & Innovation",
@@ -40,6 +37,73 @@ export const metadata = {
 };
 
 const AboutPage = () => {
+  const consultingLeads = [
+    {
+      image: "/assets/about/team/phelan.webp",
+      name: "Mark Phelan",
+      title: "Senior Consultant,",
+      specialty: "E-Commerce Solutions",
+      socials: [
+        {
+          icon: FaLinkedin,
+          href: "https://www.linkedin.com/in/phelanmarkw",
+        },
+        {
+          icon: FaGlobe,
+          href: "https://www.thephelanfocus.com/",
+        },
+      ],
+    },
+    {
+      image: "/assets/about/team/kathy.webp",
+      name: "Kathy Seaton",
+      title: "Senior Consultant,",
+      specialty: "Non Profit Development",
+      socials: [
+        {
+          icon: FaLinkedin,
+          href: "https://www.linkedin.com/in/klseaton",
+        },
+        {
+          icon: FaGlobe,
+          href: "https://www.klseatonconsulting.com/",
+        },
+      ],
+    },
+    {
+      image: "/assets/about/team/melissa.webp",
+      name: "Melissa Eboli",
+      title: "Senior Consultant,",
+      specialty: "Health + Wellness Solutions",
+      socials: [
+        {
+          icon: FaLinkedin,
+          href: "https://www.linkedin.com/in/viamelissa",
+        },
+        {
+          icon: FaGlobe,
+          href: "https://www.viaskitchen.com/"
+        },
+      ],
+    },
+    {
+      image: "/assets/about/team/donavon.webp",
+      name: "Donavon Roberson",
+      title: "Senior Consultant,",
+      specialty: "Tech + Software Solutions",
+      socials: [
+        {
+          icon: FaLinkedin,
+          href: "https://www.linkedin.com/in/donavonroberson",
+        },
+        {
+          icon: FaGlobe,
+          href: "https://medium.com/@thejourneyofthedreamer",
+        },
+      ],
+    }
+  ]
+
   return (
     <div className="about-page">
       <AOSWrapper />
@@ -165,8 +229,43 @@ const AboutPage = () => {
             </Col>
           </Row>
 
-          {/* Consulting Leads and Team Leads Sections */}
-          <Leads />
+          {/* Consulting Leads Section */}
+          <h2 className="fw-bold sections-heading">Consulting Leads</h2>
+          <Row className="text-center">
+            {consultingLeads.map((member, i) => (
+              <Col md={6} lg={3} key={i} className="mb-5 our-team-card-body">
+                <div className="our-team-card mt-4 d-flex flex-column h-100">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    width={400}
+                    height={400}
+                    className="img-fluid w-100"
+                    loading="lazy"
+                  // placeholder="blur"
+                  />
+                  <div className="px-3 py-4 px-xl-4 text-white d-flex flex-column flex-grow-1">
+                    <h4 className="mb-2 text-yellow">{member.name}</h4>
+                    <h6>{member.title}</h6>
+                    <h6>{member.specialty}</h6>
+                    <div className="mt-auto">
+                      {member.socials.map((link, index) => (
+                        <a
+                          href={link.href}
+                          className="text-yellow social-icons mx-2"
+                          key={index}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <link.icon size={20} />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Col>
+            ))}
+          </Row>
         </Container>
       </section>
 
