@@ -39,12 +39,12 @@ export const metadata = {
 const PartnershipPage = () => {
   const partnerships = [
     {
-      title: "Expertise and Experience",
+      title: "Experience and Expertise",
       text: "Leverage our extensive experience across various industries to enhance your offerings and drive growth. Our team of experts is equipped to handle diverse challenges and deliver innovative solutions.",
       dataAOSDelay: "100",
     },
     {
-      title: "Innovative Solutions",
+      title: "Sustainable Solutions",
       text: "Collaborate with us to develop cutting-edge solutions tailored to your needs. Our focus on innovation ensures that we stay ahead of the curve, providing partners with a competitive advantage.",
       dataAOSDelay: "200",
     },

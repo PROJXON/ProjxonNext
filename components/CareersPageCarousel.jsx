@@ -26,7 +26,7 @@ export default function CareersPageCarousel({ data, itemsPerRow, cardClasses, re
                 style={divisibleByTwelve ? undefined : { '--items-per-row': itemsPerRow }}
                 className={divisibleByTwelve ? undefined : "w-100"}
             >
-                {chunk.map((item, j) => <Col
+                {chunk.map((item, j) => (<Col
                     key={j}
                     xs={12}
                     lg={divisibleByTwelve ? 4 : undefined}
@@ -37,7 +37,7 @@ export default function CareersPageCarousel({ data, itemsPerRow, cardClasses, re
                             {renderItem(item)}
                         </Card.Body>
                     </Card>
-                </Col>)}
+                </Col>))}
             </Row>
         </Carousel.Item>)}
     </Carousel>)

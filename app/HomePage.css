@@ -1,10 +1,4 @@
 /* || General styles */
-
-.bg-yellow {
-  background: #ffd700;
-  background: radial-gradient(circle, #ffd700 80%, #000 100%);
-}
-
 .sections-container {
   padding-top: 108px;
   padding-bottom: 108px;
@@ -123,7 +117,8 @@
 
 .homepage-video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
+  /* 16:9 */
   height: 0;
   overflow: hidden;
   max-width: 100%;
@@ -214,7 +209,7 @@
   }
 
   .carousel-caption p {
-    font-size: 1rem !important ;
+    font-size: 1rem !important;
   }
 
   .choose-us .row {
@@ -228,10 +223,5 @@
 
   .carousel-caption {
     bottom: 30px;
-  }
-
-  .bg-yellow {
-    background: #ffd700;
-    background: radial-gradient(circle, #ffd700 92%, #000 100%);
   }
 }

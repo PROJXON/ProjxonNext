@@ -29,31 +29,43 @@ code {
   color: gold;
 }
 
-.text-gray { 
+.text-gray {
   color: #d1d5db;
 }
 
-.yellow-button{
+.yellow-button {
   background-color: #ffd700 !important;
   border: #ffd700;
   box-shadow: 0 8px 30px -6px rgba(0, 0, 0, 0.6);
   color: #000000;
   height: 48px;
-  padding-left: 2rem; 
+  padding-left: 2rem;
   padding-right: 2rem;
 }
 
-.yellow-button:hover{
+.yellow-button:hover {
   background-color: rgb(234 179 8 / 1) !important;
   border: rgb(234 179 8 / 1);
   color: #000000;
 }
 
-.yellow-button:active{
-  color: #000000 !important; 
+.yellow-button:active {
+  color: #000000 !important;
 }
 
 .sections-container {
   padding-top: 108px;
   padding-bottom: 108px;
+}
+
+.bg-yellow {
+  background: #ffd700;
+  background: radial-gradient(circle, #ffd700 80%, #000 100%);
+}
+
+@media (max-width: 780px) {
+  .bg-yellow {
+    background: #ffd700;
+    background: radial-gradient(circle, #ffd700 92%, #000 100%);
+  }
 }
