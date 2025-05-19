@@ -3,9 +3,13 @@
   height: 250px;
 }
 
-.blog-card:hover {
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.4);
+.blog-card {
   transition: 0.2s ease-in-out;
+}
+
+.blog-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #ffd700;
 }
 
 .blog-card-title {

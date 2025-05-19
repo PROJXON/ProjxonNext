@@ -4,8 +4,6 @@
     background-size: cover;
 }
 
-
-
 /* || Intern Testimonials */
 .interns-testimonials-heading {
     font-size: 32px;
@@ -38,4 +36,9 @@
     background-color: #000 !important;
     color: #000 !important;
     opacity: 1;
+}
+
+/* Blogs */
+section.blog-section {
+    background: black;
 }

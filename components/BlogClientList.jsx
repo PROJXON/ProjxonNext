@@ -34,7 +34,7 @@ const BlogClientList = ({ initialBlogs }) => {
   return (
     <section className="sections-container blog-section">
       <Container>
-        <h2 className="mb-5">
+        <h2 className="mb-5 text-yellow">
           Recent Posts <span className="blog-heading-border mt-2"></span>
         </h2>
 
@@ -44,7 +44,7 @@ const BlogClientList = ({ initialBlogs }) => {
           </div>
         ) : blogs.length > 0 ? (
           <>
-            <ul className="list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <ul className="list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-5">
               {blogs.slice(0, visibleBlogs).map((blog, index) => (
                 <BlogCard blog={blog} key={index} />
               ))}
