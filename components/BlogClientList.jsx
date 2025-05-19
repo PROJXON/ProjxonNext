@@ -6,25 +6,29 @@ import BlogCard from "./BlogCard";
 import LoadingSpinner from "./LoadingSpinner"; // Import LoadingSpinner
 import { fetchBlogs } from "@/services/blogService";
 
-const BlogClientList = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);  // Use isLoading for managing loading state
+const BlogClientList = ({ initialBlogs }) => {
+  const [blogs, setBlogs] = useState(initialBlogs || []);
+  const [isLoading, setIsLoading] = useState(false);  // Use isLoading for managing loading state
   const [visibleBlogs, setVisibleBlogs] = useState(6);
 
   const handleLoadMore = () => setVisibleBlogs((prev) => prev + 6);
 
   // Optional: To fetch blogs dynamically if needed (for client-side fetching)
   useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetchBlogs();  // Fetching data from the service
-        setBlogs(response);
-      } catch (error) {
-        console.log("Error fetching blogs:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    })()
+    if (!initialBlogs || initialBlogs.length === 0) {
+      setIsLoading(true)
+
+        (async () => {
+          try {
+            const response = await fetchBlogs();  // Fetching data from the service
+            setBlogs(response);
+          } catch (error) {
+            console.log("Error fetching blogs:", error);
+          } finally {
+            setIsLoading(false);
+          }
+        })()
+    }
   }, []);
 
   return (

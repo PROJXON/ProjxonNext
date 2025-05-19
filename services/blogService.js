@@ -2,7 +2,7 @@
 
 export const fetchBlogs = async (slug) => {
   const endpoint = slug ? `/posts?_embed&slug=${slug}` : `/posts?_embed`;
-  const url = `${process.env.WORDPRESS_API_URL}${endpoint}`;
+  const url = `${process.env.WORDPRESS_API_URL}${endpoint}`
 
   try {
     const res = await fetch(url, {
@@ -13,7 +13,7 @@ export const fetchBlogs = async (slug) => {
             `${process.env.WORDPRESS_API_USERNAME}:${process.env.WORDPRESS_API_PASSWORD}`
           ).toString("base64"),
       },
-      next: { revalidate: 300 }, 
+      next: { revalidate: 300 },
     });
 
     if (!res.ok) {
