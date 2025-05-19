@@ -1,12 +1,10 @@
 import { Container, Row, Col } from "react-bootstrap";
-import "./CareerPage.css";
-
+import "./CareerPage.css"
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
 import CustomButton from "@/components/CustomButton"
 import AOSWrapper from "@/components/AOSWrapper";
 import ClientSection from "@/components/ClientSection"
-import InternTestimonialsSection from "@/components/InternTestimonialsSection"
 
 export const metadata = {
   title: "Careers at PROJXON | Build Your Future in With Us",
@@ -151,9 +149,6 @@ const CareerPage = () => {
 
       {/* Clients */}
       <ClientSection />
-
-      {/* Intern Testimonials */}
-      <InternTestimonialsSection />
 
       {/* Call to Action Section */}
       <CallToAction />

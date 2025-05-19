@@ -25,8 +25,7 @@ const BlogCard = ({ blog, blogStyle }) => {
   return (
     <li key={blog.id} className="col mb-4" data-aos="fade-up">
       <Card
-        className={`overflow-hidden blog-card h-100 ${blogStyle === "dark" ? "bg-black" : "bg-light"
-          }`}
+        className={`overflow-hidden blog-card h-100 ${blogStyle === "dark" ? "bg-black" : "bg-light"}`}
       >
         <Link href={`/internships/${blog.slug}`}>
           <Image
@@ -43,8 +42,7 @@ const BlogCard = ({ blog, blogStyle }) => {
         >
           <Link
             href={`/internships/${blog.slug}`}
-            className={`blog-card-title ${blogStyle === "dark" ? "text-white" : "text-black"
-              }`}
+            className={`blog-card-title ${blogStyle === "dark" ? "text-white" : "text-black"}`}
           >
             <Card.Title className="mb-0">{blog.title.rendered}</Card.Title>
           </Link>
@@ -67,8 +65,7 @@ const BlogCard = ({ blog, blogStyle }) => {
           <div className="clamped-container py-4 flex-grow-1">
             <div
               dangerouslySetInnerHTML={{ __html: sanitizedExcerpt }}
-              className={`card-excerpt ${blogStyle === "dark" ? "text-gray" : "text-muted"
-                }`}
+              className={`card-excerpt ${blogStyle === "dark" ? "text-gray" : "text-muted"}`}
             />
           </div>
 
