@@ -6,31 +6,35 @@ import BlogCard from "./BlogCard";
 import LoadingSpinner from "./LoadingSpinner"; // Import LoadingSpinner
 import { fetchBlogs } from "@/services/blogService";
 
-const BlogClientList = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);  // Use isLoading for managing loading state
+const BlogClientList = ({ initialBlogs }) => {
+  const [blogs, setBlogs] = useState(initialBlogs || []);
+  const [isLoading, setIsLoading] = useState(false);  // Use isLoading for managing loading state
   const [visibleBlogs, setVisibleBlogs] = useState(6);
 
-  const handleLoadMore = () => setVisibleBlogs((prev) => prev + 6);
+  const handleLoadMore = () => setVisibleBlogs(prev => prev + 6);
 
   // Optional: To fetch blogs dynamically if needed (for client-side fetching)
   useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetchBlogs();  // Fetching data from the service
-        setBlogs(response);
-      } catch (error) {
-        console.log("Error fetching blogs:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    })()
+    if (!initialBlogs || initialBlogs.length === 0) {
+      setIsLoading(true)
+
+        (async () => {
+          try {
+            const response = await fetchBlogs();  // Fetching data from the service
+            setBlogs(response);
+          } catch (error) {
+            console.log("Error fetching blogs:", error);
+          } finally {
+            setIsLoading(false);
+          }
+        })()
+    }
   }, []);
 
   return (
     <section className="sections-container blog-section">
       <Container>
-        <h2 className="mb-5">
+        <h2 className="mb-5 text-yellow">
           Recent Posts <span className="blog-heading-border mt-2"></span>
         </h2>
 
@@ -40,7 +44,7 @@ const BlogClientList = () => {
           </div>
         ) : blogs.length > 0 ? (
           <>
-            <ul className="list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-3">
+            <ul className="list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-5">
               {blogs.slice(0, visibleBlogs).map((blog, index) => (
                 <BlogCard blog={blog} key={index} />
               ))}

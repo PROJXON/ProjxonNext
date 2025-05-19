@@ -1,0 +1,44 @@
+#internships-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("/assets/banners/Internships.webp") no-repeat center center;
+    background-size: cover;
+}
+
+/* || Intern Testimonials */
+.interns-testimonials-heading {
+    font-size: 32px;
+    line-height: 1.5;
+}
+
+.interns-testimonials-sub-heading {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.interns-testimonials .section-card {
+    box-shadow: 0 8px 20px #000000 !important;
+}
+
+.intern-testimonials-carousel .carousel-indicators {
+    margin: 0;
+    bottom: -50px;
+}
+
+.intern-testimonials-carousel .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #28303b;
+    opacity: 0.2;
+}
+
+.intern-testimonials-carousel .carousel-indicators button.active {
+    background-color: #000 !important;
+    color: #000 !important;
+    opacity: 1;
+}
+
+/* Blogs */
+section.blog-section {
+    background: black;
+}

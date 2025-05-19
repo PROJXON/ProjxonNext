@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import { CiCalendar } from "react-icons/ci";
 import { fetchBlogs, fetchBlog } from "@/services/blogService";
 import Image from "next/image";
-import defaultImg from "@/public/assets/research/default-blog-img.webp";
+import defaultImg from "@/public/assets/internships/default-blog-img.webp";
 import "./BlogPage.css";
 
 export const revalidate = 300;

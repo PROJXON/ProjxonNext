@@ -1,12 +1,7 @@
 "use client"
-
 import { Container, Row } from "react-bootstrap";
 import BlackCard from "@/components/BlackCard";
-import {
-    FaLightbulb,
-    FaBalanceScale,
-    FaUsers
-} from "react-icons/fa";
+import { FaLightbulb, FaBalanceScale, FaUsers } from "react-icons/fa"
 
 export default function OurValues() {
     const values = [
@@ -32,11 +27,7 @@ export default function OurValues() {
 
     return (<section className="bg-black our-values sections-container">
         <Container className="text-center">
-            <h2
-                className="fw-bold sections-heading text-yellow"
-                data-aos="fade-up"
-                data-aos-once="true"
-            >
+            <h2 className="fw-bold sections-heading text-yellow" data-aos="fade-up" data-aos-once="true">
                 Our Core Values
             </h2>
             <Row className="my-5 g-5">

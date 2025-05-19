@@ -3,9 +3,13 @@
   height: 250px;
 }
 
-.blog-card:hover {
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.4);
+.blog-card {
   transition: 0.2s ease-in-out;
+}
+
+.blog-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #ffd700;
 }
 
 .blog-card-title {
@@ -17,22 +21,19 @@
   text-decoration: underline #ffd700;
 }
 
-.blog-button,
-.research-button {
+.blog-button {
   background-color: #ffd700 !important;
   border: #ffd700;
   color: #000000;
 }
 
-.blog-button:hover,
-.research-button:hover {
+.blog-button:hover {
   background-color: rgb(234 179 8 / 1) !important;
   border: rgb(234 179 8 / 1);
   color: #000000;
 }
 
-.blog-button:active,
-.research-button:active {
+.blog-button:active {
   color: #000000 !important;
 }
 

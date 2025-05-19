@@ -1,7 +1,5 @@
 import "./HomePage.css";
-
 import { Container } from "react-bootstrap"
-
 import HomeHero from "@/components/HomeHero";
 import CustomButton from "@/components/CustomButton";
 import CallToAction from "@/components/CallToAction"

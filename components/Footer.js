@@ -122,22 +122,22 @@ const Footer = () => {
       ]
     },
     {
-      heading: "Research",
+      heading: "Internships",
       links: [
         {
-          href: "/research",
+          href: "/internships",
           text: "Blog"
         },
         {
-          href: "/research",
+          href: "/internships",
           text: "Events"
         },
         {
-          href: "/research",
+          href: "/internships",
           text: "Articles"
         },
         {
-          href: "/research",
+          href: "/internships",
           text: "Newsletter"
         }
       ]
@@ -161,49 +161,39 @@ const Footer = () => {
     <Container>
       <Row>
         <Col>
-          <Link
-            href="/"
-            className="footer-logo"
-          >
+          <Link href="/" className="footer-logo">
             <h1 className="footer-logo">PROJXON</h1>
           </Link>
         </Col>
         <Col className="text-end">
           <div className="d-flex justify-content-end social-icons">
-            {socialIcons.map((icon, index) => (
-              <Link
-                key={index}
-                href={icon.href}
-                target={icon.newTab ? "_blank" : undefined}
-                rel={icon.newTab ? "noopener noreferrer" : undefined}
-                passHref
-              >
-                <div
-                  className="footer-icon"
-                  aria-label={icon.ariaLabel}
-                >
-                  <icon.icon size={40} />
-                </div>
-              </Link>
-            ))}
+            {socialIcons.map((icon, index) => (<Link
+              key={index}
+              href={icon.href}
+              target={icon.newTab ? "_blank" : undefined}
+              rel={icon.newTab ? "noopener noreferrer" : undefined}
+              passHref
+            >
+              <div className="footer-icon" aria-label={icon.ariaLabel}>
+                <icon.icon size={40} />
+              </div>
+            </Link>))}
           </div>
         </Col>
       </Row>
 
       <hr className="my-4" />
       <Row>
-        {footerLinks.map((section, index) => (
-          <Col xs={6} md={2} className="mb-3" key={index}>
-            <h2 className="footer-heading">{section.heading}</h2>
-            <ul className="list-unstyled">
-              {section.links.map((link, index) => (<li key={index}>
-                <Link href={link.href} className="footer-link">
-                  {link.text}
-                </Link>
-              </li>))}
-            </ul>
-          </Col>
-        ))}
+        {footerLinks.map((section, i) => (<Col xs={6} md={2} className="mb-3" key={i}>
+          <h2 className="footer-heading">{section.heading}</h2>
+          <ul className="list-unstyled">
+            {section.links.map((link, j) => (<li key={j}>
+              <Link href={link.href} className="footer-link">
+                {link.text}
+              </Link>
+            </li>))}
+          </ul>
+        </Col>))}
       </Row>
 
       <Row className="mt-4">
