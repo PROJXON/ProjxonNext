@@ -9,6 +9,9 @@ footer {
 
 .footer-logo {
   letter-spacing: 0.1rem;
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
 }
 
 footer:hover {
@@ -50,8 +53,10 @@ footer:hover {
   color: #ffd700;
   transform: translateY(-3px);
   text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffd700,
-    0 0 20px #ffd700, 0 0 25px #ffd700; /* Enhanced glowing effect */
-  transition: transform 0.2s ease, text-shadow 0.2s ease; /* Smooth transition */
+    0 0 20px #ffd700, 0 0 25px #ffd700;
+  /* Enhanced glowing effect */
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
+  /* Smooth transition */
 }
 
 .footer-icon {
