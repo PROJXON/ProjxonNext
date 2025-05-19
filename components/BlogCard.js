@@ -52,9 +52,7 @@ const BlogCard = ({ blog, blogStyle }) => {
               {blog._embedded?.author?.[0]?.name}
             </span>
             <span
-              className={`${blogStyle === "dark" ? "text-gray" : "text-muted"
-                } dot-seperator fs-6`}
-            >
+              className={`${blogStyle === "dark" ? "text-gray" : "text-muted"} dot-seperator fs-6`}>
               •
             </span>
             <span className={blogStyle === "dark" ? "text-gray" : "text-muted"}>

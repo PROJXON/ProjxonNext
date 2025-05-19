@@ -1,9 +1,12 @@
 "use client"
-import { Row, Col, Container } from "react-bootstrap"
+import { Row, Col, Container, Carousel, Card } from "react-bootstrap"
+import { useState } from "react"
 import Image from "next/image"
-import CareersPageCarousel from "@/components/CareersPageCarousel"
 
 export default function InternTestimonialsSection() {
+    const [index, setIndex] = useState(0);
+    const handleSelect = (selectedIndex) => setIndex(selectedIndex);
+
     const internTestimonials = [
         {
             image: "/assets/careers/interns/jordan.webp",
@@ -35,6 +38,11 @@ export default function InternTestimonialsSection() {
         }
     ]
 
+    const chunked = []
+    for (let i = 0; i < internTestimonials.length; i += 3) {
+        chunked.push(internTestimonials.slice(i, i + 3))
+    }
+
     return (<section className="interns-testimonials sections-container bg-yellow">
         <Container>
             <Row className="align-items-center justify-content-between mb-4 mb-md-5">
@@ -50,33 +58,49 @@ export default function InternTestimonialsSection() {
                     </p>
                 </Col>
             </Row>
-            <CareersPageCarousel
-                data={internTestimonials}
-                itemsPerRow={3}
-                cardClasses="border-0 p-4 mt-4"
-                renderItem={intern => (<>
-                    <div className="d-flex align-items-center mb-4">
-                        <div className="me-3">
-                            <Image
-                                src={intern.image}
-                                alt={intern.name}
-                                className="img-fluid rounded-circle border"
-                                width={65}
-                                height={65}
-                            />
-                        </div>
-                        <div>
-                            <h4 className="mb-0 fs-5 text-yellow">{intern.name}</h4>
-                            <p className="mb-0 small text-gray">
-                                {intern.university}
-                            </p>
-                        </div>
-                    </div>
-                    <p className="gray-opacity text-gray">
-                        {intern.testimonial}
-                    </p>
-                </>)}
-            />
+            <Carousel
+                activeIndex={index}
+                onSelect={handleSelect}
+                controls={false}
+                indicators={true}
+                interval={null}
+                className="intern-testimonials-carousel"
+            >
+                {chunked.map((testimonialGroup, groupIndex) => (
+                    <Carousel.Item key={groupIndex}>
+                        <Row>
+                            {testimonialGroup.map((intern, i) => (
+                                <Col xs={12} lg={4} key={i}>
+                                    <Card className="border-0 p-4 my-4 section-card">
+                                        <Card.Body>
+                                            <div className="d-flex align-items-center mb-4">
+                                                <div className="me-3">
+                                                    <Image
+                                                        src={intern.image}
+                                                        alt={intern.name}
+                                                        className="img-fluid rounded-circle border"
+                                                        width={65}
+                                                        height={65}
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <h4 className="mb-0 fs-5 text-yellow">{intern.name}</h4>
+                                                    <p className="mb-0 small text-gray">
+                                                        {intern.university}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <p className="gray-opacity text-gray">
+                                                {intern.testimonial}
+                                            </p>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            ))}
+                        </Row>
+                    </Carousel.Item>
+                ))}
+            </Carousel>
         </Container>
     </section>)
 }

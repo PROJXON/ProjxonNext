@@ -1,7 +1,6 @@
 "use client"
-import { Container } from "react-bootstrap"
+import { Container, Row, Col, Card } from "react-bootstrap"
 import Image from "next/image"
-import CareersPageCarousel from "@/components/CareersPageCarousel"
 import { Fragment } from "react"
 
 export default function ClientSection() {
@@ -32,29 +31,28 @@ export default function ClientSection() {
         }
     ]
 
-    return (<section className="positions sections-container clients-section">
+    return (<section className="positions sections-container bg-yellow">
         <Container>
             <h2 className="sections-heading text-center mb-5">Clients</h2>
-            <CareersPageCarousel
-                data={clients}
-                itemsPerRow={5}
-                cardClasses="my-4"
-                renderItem={client => (<>
-                    <Image
-                        src={client.image}
-                        alt={client.name}
-                        className="img-fluid rounded-circle border-black"
-                        width={100}
-                        height={100}
-                    />
-                    <h4 className="mt-2 mb-0 fs-5 text-gray">
-                        {client.name.map((line, i) => (<Fragment key={i}>
-                            {i > 0 && <br />}
-                            {line}
-                        </Fragment>))}
-                    </h4>
-                </>)}
-            />
+            <div className="clients-grid mt-5">
+                {clients.map((client, i) => (<Card className="section-card" key={i}>
+                    <Card.Body>
+                        <Image
+                            src={client.image}
+                            alt={client.name}
+                            className="img-fluid rounded-circle border-black"
+                            width={100}
+                            height={100}
+                        />
+                        <h4 className="mt-2 mb-0 fs-5 text-yellow">
+                            {client.name.map((line, i) => (<Fragment key={i}>
+                                {i > 0 && <br />}
+                                {line}
+                            </Fragment>))}
+                        </h4>
+                    </Card.Body>
+                </Card>))}
+            </div>
         </Container>
     </section>)
 }

@@ -58,6 +58,17 @@ code {
   padding-bottom: 108px;
 }
 
+.section-card {
+  background-color: #000 !important;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.section-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
 .bg-yellow {
   background: #ffd700;
   background: radial-gradient(circle, #ffd700 80%, #000 100%);

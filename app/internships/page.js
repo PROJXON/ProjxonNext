@@ -9,12 +9,12 @@ import Image from "next/image"
 import "./InternshipsPage.css"
 
 export const metadata = {
-  title: "PROJXON Blog | Insights on Business Strategy & Innovation",
-  description: "Stay ahead with expert insights from PROJXON. Explore articles on business strategy, market trends, digital transformation, and innovation.",
+  title: "Launch Your Career with a Projxon Internship | PROJXON",
+  description: "Gain real‑world experience, mentorship, and growth opportunities. Discover how a Projxon internship can jump‑start your professional journey today.",
   metadataBase: new URL("https://www.projxon.com/"),
   openGraph: {
-    title: "PROJXON Blog | Insights on Business Strategy & Innovation",
-    description: "Stay ahead with expert insights from PROJXON. Explore articles on business strategy, market trends, digital transformation, and innovation.",
+    title: "Launch Your Career with a Projxon Internship | PROJXON",
+    description: "Gain real‑world experience, mentorship, and growth opportunities. Discover how a Projxon internship can jump‑start your professional journey today.",
     url: "https://www.projxon.com/",
     siteName: "PROJXON",
     images: [

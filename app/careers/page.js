@@ -56,104 +56,102 @@ const CareerPage = () => {
     },
   ]
 
-  return (
-    <div>
-      <AOSWrapper />
-      {/* Hero Section */}
-      <Hero title="Join Our Team" backgroundClass="career-hero" />
+  return (<div>
+    <AOSWrapper />
+    {/* Hero Section */}
+    <Hero title="Join Our Team" backgroundClass="career-hero" />
 
-      {/* Apply */}
-      <section className="apply bg-yellow">
-        <Container>
-          <Row
-            className="align-items-center justify-content-center"
-            data-aos="fade-up"
-          >
-            <Col xs={12} lg={6} className="py-5 bg-black rounded px-5">
-              <h1 className="apply-heading sections-heading text-yellow">
-                Work with us
-              </h1>
-              <p className="apply-sub-heading  text-white my-4">
-                At Projxon, we are always on the lookout for talented
-                individuals who are passionate about innovation and
-                collaboration.
-              </p>
+    {/* Apply */}
+    <section className="apply bg-yellow">
+      <Container>
+        <Row
+          className="align-items-center justify-content-center"
+          data-aos="fade-up"
+        >
+          <Col xs={12} lg={6} className="py-5 bg-black rounded px-5">
+            <h1 className="apply-heading sections-heading text-yellow">
+              Work with us
+            </h1>
+            <p className="apply-sub-heading  text-white my-4">
+              At Projxon, we are always on the lookout for talented
+              individuals who are passionate about innovation and
+              collaboration.
+            </p>
 
-              <p className="apply-sub-heading  text-white my-4">
-                Join our team and contribute to exciting projects that make a
-                difference.
-              </p>
-              <CustomButton
-                buttonText="Apply now"
-                link="https://app.dover.com/jobs/projxon"
-                buttonStyle="yellow-button"
-                delayTime={0}
-                isExternal={true}
-                isAnimated={false}
-              />
-            </Col>
-          </Row>
-        </Container>
-      </section>
+            <p className="apply-sub-heading  text-white my-4">
+              Join our team and contribute to exciting projects that make a
+              difference.
+            </p>
+            <CustomButton
+              buttonText="Apply now"
+              link="https://app.dover.com/jobs/projxon"
+              buttonStyle="yellow-button"
+              delayTime={0}
+              isExternal={true}
+              isAnimated={false}
+            />
+          </Col>
+        </Row>
+      </Container>
+    </section>
 
-      {/* Positions */}
-      <section className="positions sections-container bg-black ">
-        <Container>
-          <Row className="justify-content-center mb-5">
-            <Col lg={5} className="text-center">
-              <h2 className="positions-heading sections-heading text-yellow mb-4">
-                Consulting + Adivsory Roles
-              </h2>
-              <p className="positions-sub-heading text-white mb-4">
-                Empowering collaboration, innovation, and expert guidance to
-                deliver exceptional client solutions.
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            {positions.map((position, index) => (
-              <Col
-                md={6}
-                className="mt-5"
-                key={index}
-                data-aos={position.dataAOS}
+    {/* Positions */}
+    <section className="positions sections-container bg-black ">
+      <Container>
+        <Row className="justify-content-center mb-5">
+          <Col lg={5} className="text-center">
+            <h2 className="positions-heading sections-heading text-yellow mb-4">
+              Consulting + Adivsory Roles
+            </h2>
+            <p className="positions-sub-heading text-white mb-4">
+              Empowering collaboration, innovation, and expert guidance to
+              deliver exceptional client solutions.
+            </p>
+          </Col>
+        </Row>
+        <Row>
+          {positions.map((position, index) => (
+            <Col
+              md={6}
+              className="mt-5"
+              key={index}
+              data-aos={position.dataAOS}
+            >
+              <div
+                className={`positions-item p-4 p-lg-5 positions-shape-${position.align}`}
+                style={{
+                  backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${position.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
               >
-                <div
-                  className={`positions-item p-4 p-lg-5 positions-shape-${position.align}`}
-                  style={{
-                    backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${position.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                >
-                  {/* <div className="positions-icon mb-4">
+                {/* <div className="positions-icon mb-4">
                                     </div> */}
-                  <h4 className="text-yellow fs-2 fw-bold mb-3">
-                    {position.title}
-                  </h4>
-                  <p className="text-gray fs-5 mb-4">{position.description}</p>
-                  <CustomButton
-                    buttonText="Apply now"
-                    link={position.link}
-                    buttonStyle="yellow-button"
-                    delayTime={0}
-                    isExternal={true}
-                    isAnimated={false}
-                  />
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
+                <h4 className="text-yellow fs-2 fw-bold mb-3">
+                  {position.title}
+                </h4>
+                <p className="text-gray fs-5 mb-4">{position.description}</p>
+                <CustomButton
+                  buttonText="Apply now"
+                  link={position.link}
+                  buttonStyle="yellow-button"
+                  delayTime={0}
+                  isExternal={true}
+                  isAnimated={false}
+                />
+              </div>
+            </Col>
+          ))}
+        </Row>
+      </Container>
+    </section>
 
-      {/* Clients */}
-      <ClientSection />
+    {/* Clients */}
+    <ClientSection />
 
-      {/* Call to Action Section */}
-      <CallToAction />
-    </div>
-  );
+    {/* Call to Action Section */}
+    <CallToAction />
+  </div>)
 };
 
 export default CareerPage;
