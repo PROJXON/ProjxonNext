@@ -45,7 +45,6 @@ export default async function ResearchPage() {
       subtitle="Stay Updated with the Latest News, Events, and Insight"
       backgroundClass="internships-hero"
     />
-    <BlogClientList initialBlogs={blogs} />
 
     <Container className="momentum-intern overflow-hidden sections-container">
       <h2 className="sections-heading text-center mb-5">
@@ -95,6 +94,7 @@ export default async function ResearchPage() {
     </Container>
 
     <InternTestimonialsSection />
+    <BlogClientList initialBlogs={blogs} />
     <CallToAction />
   </div>)
 }
