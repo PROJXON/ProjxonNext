@@ -151,18 +151,8 @@ const Footer = () => {
             <h2 className="footer-heading">Research</h2>
             <ul className="list-unstyled">
               <li>
-                <Link href="/research" className="footer-link">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/research" className="footer-link">
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link href="/research" className="footer-link">
-                  Articles
+                <Link href="/research#newsletter" className="footer-link">
+                  Newsletter
                 </Link>
               </li>
             </ul>
@@ -173,13 +163,23 @@ const Footer = () => {
             <h2 className="footer-heading">Careers</h2>
             <ul className="list-unstyled">
               <li>
-                <Link href="/careers" className="footer-link">
-                  Join Our Team
+                <Link href="/careers#mip" className="footer-link">
+                  MIP
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="footer-link">
-                  Internship Program
+                <Link href="/careers#apply" className="footer-link">
+                  Work With Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers#roles" className="footer-link">
+                  Consulting + Advisory Roles
+                </Link>
+              </li>
+              <li>
+                <Link href="/careers#testimonials" className="footer-link">
+                  Testimonials
                 </Link>
               </li>
             </ul>

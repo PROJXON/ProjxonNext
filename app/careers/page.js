@@ -225,7 +225,7 @@ const CareerPage = () => {
           <Row className="justify-content-center mb-5">
             <Col lg={5} className="text-center">
               <h2 className="positions-heading sections-heading text-yellow mb-4">
-                Consulting + Adivsory Roles
+                Consulting + Advisory Roles
               </h2>
               <p className="positions-sub-heading text-white mb-4">
                 Empowering collaboration, innovation, and expert guidance to
