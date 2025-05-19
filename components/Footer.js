@@ -122,22 +122,22 @@ const Footer = () => {
       ]
     },
     {
-      heading: "Research",
+      heading: "Internships",
       links: [
         {
-          href: "/research",
+          href: "/internships",
           text: "Blog"
         },
         {
-          href: "/research",
+          href: "/internships",
           text: "Events"
         },
         {
-          href: "/research",
+          href: "/internships",
           text: "Articles"
         },
         {
-          href: "/research",
+          href: "/internships",
           text: "Newsletter"
         }
       ]

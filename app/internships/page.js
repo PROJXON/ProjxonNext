@@ -1,9 +1,9 @@
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
-import BlogClientList from "@/components/BlogClientList";
-import "./ResearchPage.css";
+import BlogClientList from "@/components/BlogClientList"
 import AOSWrapper from "@/components/AOSWrapper";
-import { fetchBlogs } from "@/services/blogService";
+import { fetchBlogs } from "@/services/blogService"
+import "./InternshipsPage.css"
 
 export const metadata = {
   title: "PROJXON Blog | Insights on Business Strategy & Innovation",
@@ -38,9 +38,9 @@ export default async function ResearchPage() {
   return (<div>
     <AOSWrapper />
     <Hero
-      title="Blog & Research"
+      title="Blog & Internships"
       subtitle="Stay Updated with the Latest News, Events, and Insight"
-      backgroundClass="research-hero"
+      backgroundClass="internships-hero"
     />
     <BlogClientList initialBlogs={blogs} />
     <CallToAction />

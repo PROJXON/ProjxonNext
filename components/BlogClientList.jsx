@@ -11,7 +11,7 @@ const BlogClientList = ({ initialBlogs }) => {
   const [isLoading, setIsLoading] = useState(false);  // Use isLoading for managing loading state
   const [visibleBlogs, setVisibleBlogs] = useState(6);
 
-  const handleLoadMore = () => setVisibleBlogs((prev) => prev + 6);
+  const handleLoadMore = () => setVisibleBlogs(prev => prev + 6);
 
   // Optional: To fetch blogs dynamically if needed (for client-side fetching)
   useEffect(() => {

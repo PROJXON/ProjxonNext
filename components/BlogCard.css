@@ -17,22 +17,19 @@
   text-decoration: underline #ffd700;
 }
 
-.blog-button,
-.research-button {
+.blog-button {
   background-color: #ffd700 !important;
   border: #ffd700;
   color: #000000;
 }
 
-.blog-button:hover,
-.research-button:hover {
+.blog-button:hover {
   background-color: rgb(234 179 8 / 1) !important;
   border: rgb(234 179 8 / 1);
   color: #000000;
 }
 
-.blog-button:active,
-.research-button:active {
+.blog-button:active {
   color: #000000 !important;
 }
 
