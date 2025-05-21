@@ -88,18 +88,18 @@ section.clients-section div.carousel-item {
   max-width: 100%;
 }
 
-.clients-grid .section-card {
+.military-branches-grid .section-card {
   box-shadow: 0 6px 10px #000000 !important;
 }
 
-.clients-grid {
+.military-branches-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
 
 @media (min-width: 992px) {
-  .clients-grid {
+  .military-branches-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
