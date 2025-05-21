@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { Container, Button } from "react-bootstrap";
 import BlogCard from "./BlogCard";
@@ -31,40 +30,32 @@ const BlogClientList = ({ initialBlogs }) => {
     }
   }, []);
 
-  return (
-    <section className="sections-container blog-section">
-      <Container>
-        <h2 className="mb-5 text-yellow">
-          Recent Posts <span className="blog-heading-border mt-2"></span>
-        </h2>
+  return (<section className="sections-container blog-section">
+    <Container>
+      <h2 className="mb-5 text-yellow">
+        Internship Graduate Blogs <span className="blog-heading-border mt-2"></span>
+      </h2>
 
-        {isLoading ? (
-          <div className="text-center my-5">
-            <LoadingSpinner /> {/* Show loading spinner while fetching data */}
-          </div>
-        ) : blogs.length > 0 ? (
-          <>
-            <ul className="list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-5">
-              {blogs.slice(0, visibleBlogs).map((blog, index) => (
-                <BlogCard blog={blog} key={index} />
-              ))}
-            </ul>
-            {visibleBlogs < blogs.length && (
-              <div className="text-center mt-4">
-                <Button onClick={handleLoadMore} className="fs-5 px-4 black-button">
-                  Load More
-                </Button>
-              </div>
-            )}
-          </>
-        ) : (
-          <div className="text-center my-5">
-            <p>No blog posts at the moment.</p>
+      {isLoading ? (<div className="text-center my-5">
+        <LoadingSpinner /> {/* Show loading spinner while fetching data */}
+      </div>) : blogs.length > 0 ? (<>
+        <ul className="list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-3 mt-5">
+          {blogs.slice(0, visibleBlogs).map((blog, index) => (
+            <BlogCard blog={blog} key={index} />
+          ))}
+        </ul>
+        {visibleBlogs < blogs.length && (
+          <div className="text-center mt-4">
+            <Button onClick={handleLoadMore} className="fs-5 px-4 black-button">
+              Load More
+            </Button>
           </div>
         )}
-      </Container>
-    </section>
-  );
+      </>) : (<div className="text-center my-5">
+        <p>No blog posts at the moment.</p>
+      </div>)}
+    </Container>
+  </section>)
 };
 
 export default BlogClientList;

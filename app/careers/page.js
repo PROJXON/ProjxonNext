@@ -34,7 +34,6 @@ export const metadata = {
 }
 
 const CareerPage = () => {
-
   const positions = [
     {
       image: "/assets/careers/consult.webp",
