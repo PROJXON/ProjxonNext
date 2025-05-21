@@ -41,16 +41,11 @@ export default async function ResearchPage() {
   return (<div>
     <AOSWrapper />
     <Hero
-      title="Blog & Internships"
-      subtitle="Stay Updated with the Latest News, Events, and Insight"
+      title="Momentum Internship Program"
       backgroundClass="internships-hero"
     />
 
     <Container className="momentum-intern overflow-hidden sections-container">
-      <h2 className="sections-heading text-center mb-5">
-        Momentum Internship Program
-      </h2>
-
       <Row className="align-items-center flex-row-reverse g-5">
         <Col sm={12} md={6} data-aos="fade-up">
           <Image

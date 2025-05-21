@@ -11,7 +11,7 @@ const Hero = ({ title, subtitle, backgroundClass }) => {
       <Container className="text-center hero-content">
         <div data-aos="fade-up">
           <h1 className="hero-title text-uppercase">{title}</h1>
-          <p className="hero-subtitle">{subtitle}</p>
+          {subtitle && <p className="hero-subtitle">{subtitle}</p>}
         </div>
       </Container>
     </div>
