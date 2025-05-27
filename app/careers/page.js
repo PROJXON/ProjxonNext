@@ -61,8 +61,8 @@ const CareerPage = () => {
     {/* Hero Section */}
     <Hero title="Join Our Team" backgroundClass="career-hero" />
 
-    {/* Apply */}
-    <section className="apply bg-yellow">
+    {/* Work with us */}
+    <section id="work-with-us" className="apply bg-yellow">
       <Container>
         <Row
           className="align-items-center justify-content-center"
@@ -96,12 +96,12 @@ const CareerPage = () => {
     </section>
 
     {/* Positions */}
-    <section className="positions sections-container bg-black ">
+    <section id="consulting-advisory" className="positions sections-container bg-black ">
       <Container>
         <Row className="justify-content-center mb-5">
           <Col lg={5} className="text-center">
             <h2 className="positions-heading sections-heading text-yellow mb-4">
-              Consulting + Adivsory Roles
+              Consulting + Advisory  Roles
             </h2>
             <p className="positions-sub-heading text-white mb-4">
               Empowering collaboration, innovation, and expert guidance to
@@ -147,7 +147,9 @@ const CareerPage = () => {
     </section>
 
     {/* Clients */}
-    <ClientSection />
+    <section id="clients" style={{ scrollMarginTop: "100px" }}>
+      <ClientSection />
+    </section>
 
     {/* Call to Action Section */}
     <CallToAction />

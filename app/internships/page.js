@@ -46,7 +46,7 @@ export default async function ResearchPage() {
       backgroundClass="internships-hero"
     />
 
-    <Container className="momentum-intern overflow-hidden sections-container">
+    <Container id="mip" className="momentum-intern overflow-hidden sections-container">
       <h2 className="sections-heading text-center mb-5">
         Momentum Internship Program
       </h2>
@@ -93,7 +93,9 @@ export default async function ResearchPage() {
       </Row>
     </Container>
 
-    <InternTestimonialsSection />
+    <section id="testimonials" style={{ scrollMarginTop: "100px" }}>
+      <InternTestimonialsSection />
+    </section>
     <BlogClientList initialBlogs={blogs} />
     <CallToAction />
   </div>)
