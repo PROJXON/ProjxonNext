@@ -115,7 +115,7 @@ const AboutPage = () => {
       />
 
       {/* Our Mission & Vision Section */}
-      <section className="mission-vision bg-yellow overflow-hidden sections-container">
+      <section id="mission-vision" className="mission-vision bg-yellow overflow-hidden sections-container">
         <Container>
           <Row className="g-5">
             <Col
@@ -161,7 +161,7 @@ const AboutPage = () => {
       </section>
 
       {/* Who We Are Section */}
-      <section className="who-we-are sections-container">
+      <section id="who-we-are" className="who-we-are sections-container">
         <Container className="overflow-hidden">
           <Row className="align-items-center g-5">
             <Col md={12} lg={6} data-aos="fade-up" data-aos-once="true">
@@ -214,10 +214,12 @@ const AboutPage = () => {
       </section>
 
       {/* Our Values Section */}
-      <OurValues />
+      <section id="our-values">
+        <OurValues />
+      </section>
 
       {/* Our Team Section */}
-      <section className="bg-yellow-team our-team sections-container">
+      <section id="meet-the-team" className="bg-yellow-team our-team sections-container">
         <Container>
           <Row className="justify-content-center mb-4 mb-md-5">
             <Col lg={6} xl={5} className="text-center">

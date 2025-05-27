@@ -88,7 +88,7 @@ const ContactPage = () => {
                 ))}
               </div>
             </Col>
-            <Col lg={5}>
+            <Col lg={5} id="contact-form">
               <InfoForm />
             </Col>
           </Row>

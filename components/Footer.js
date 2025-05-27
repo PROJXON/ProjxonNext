@@ -37,23 +37,23 @@ const Footer = () => {
       heading: "Services",
       links: [
         {
-          href: "/services",
+          href: "/services#services",
           text: "Marketing + Social"
         },
         {
-          href: "/services",
+          href: "/services#services",
           text: "E-commerce Solutions"
         },
         {
-          href: "/services",
+          href: "/services#services",
           text: "Business Optimization"
         },
         {
-          href: "/services",
+          href: "/services#services",
           text: "Project Management"
         },
         {
-          href: "/services",
+          href: "/services#services",
           text: "IT Interactions"
         }
       ]
@@ -62,36 +62,32 @@ const Footer = () => {
       heading: "About",
       links: [
         {
-          href: "/about",
-          text: "Vision"
+          href: "/about#mission-vision",
+          text: "Our Mission/Our Vision"
         },
         {
-          href: "/about",
-          text: "Mission"
+          href: "/about#who-we-are",
+          text: "Who Are We?"
         },
         {
-          href: "/about",
-          text: "Core Value"
+          href: "/about#our-values",
+          text: "Our Core Values"
         },
         {
-          href: "/about",
+          href: "/about#meet-the-team",
           text: "Meet the Team"
         },
-        {
-          href: "/about",
-          text: "Our Journey"
-        }
       ]
     },
     {
       heading: "Partnerships",
       links: [
         {
-          href: "/servicepartners",
+          href: "/partnerships#service-partners",
           text: "Service Partners"
         },
         {
-          href: "/referralpartners",
+          href: "/partnerships#referral-partners",
           text: "Referral Partners"
         }
       ]
@@ -100,45 +96,21 @@ const Footer = () => {
       heading: "Connect",
       links: [
         {
-          href: "/contact",
+          href: "/contact#contact-form",
           text: "Contact"
         },
-        {
-          href: "/contact",
-          text: "Social"
-        },
-        {
-          href: "/contact",
-          text: "Appoint"
-        },
-        {
-          href: "/contact",
-          text: "Inquiries"
-        },
-        {
-          href: "/contact",
-          text: "Address (Google)"
-        }
       ]
     },
     {
       heading: "Internships",
       links: [
         {
-          href: "/internships",
-          text: "Blog"
+          href: "/internships#mip",
+          text: "MIP"
         },
         {
-          href: "/internships",
-          text: "Events"
-        },
-        {
-          href: "/internships",
-          text: "Articles"
-        },
-        {
-          href: "/internships",
-          text: "Newsletter"
+          href: "/internships#testimonials",
+          text: "Testimonials"
         }
       ]
     },
@@ -146,12 +118,16 @@ const Footer = () => {
       heading: "Careers",
       links: [
         {
-          href: "/career",
-          text: "Join Our Team"
+          href: "/careers#work-with-us",
+          text: "Work With Us"
         },
         {
-          href: "/career",
-          text: "Internship Program"
+          href: "/careers#consulting-advisory",
+          text: "Consulting + Advisory"
+        },
+                {
+          href: "/careers#clients",
+          text: "Clients"
         }
       ]
     }
