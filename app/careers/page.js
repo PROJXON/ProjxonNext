@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
 import CustomButton from "@/components/CustomButton"
 import AOSWrapper from "@/components/AOSWrapper";
-import ClientSection from "@/components/ClientSection"
+import MilitaryBranches from "@/components/MilitaryBranches"
 
 export const metadata = {
   title: "Careers at PROJXON | Build Your Future in With Us",
@@ -34,7 +34,6 @@ export const metadata = {
 }
 
 const CareerPage = () => {
-
   const positions = [
     {
       image: "/assets/careers/consult.webp",
@@ -147,7 +146,7 @@ const CareerPage = () => {
     </section>
 
     {/* Clients */}
-    <ClientSection />
+    <MilitaryBranches />
 
     {/* Call to Action Section */}
     <CallToAction />
