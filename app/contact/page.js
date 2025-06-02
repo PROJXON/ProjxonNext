@@ -39,7 +39,7 @@ export const metadata = {
 const ContactPage = () => {
   const contactInfoList = [
     {
-      icon: <FaEnvelopeOpenText className="text-yellow" />,
+      icon: FaEnvelopeOpenText,
       label: "info@projxon.com",
       href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=info@projxon.com",
     },
@@ -76,7 +76,9 @@ const ContactPage = () => {
                 {contactInfoList.map((info, index) => (
                   <Card className={`contact-link mt-4`} key={index}>
                     <CardBody className="d-flex align-items-center">
-                      <div className="fs-3 px-2 lh-1">{info.icon}</div>
+                      <div className="fs-3 px-2 lh-1">
+                        <info.icon className="text-yellow" />
+                      </div>
                       <a
                         className="contact-link-content ms-4"
                         href={info.href || "#!"}
