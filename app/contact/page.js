@@ -34,6 +34,14 @@ export const metadata = {
 };
 
 const ContactPage = () => {
+  const contactInfoList = [
+    {
+      icon: FaEnvelopeOpenText,
+      label: "info@projxon.com",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=info@projxon.com",
+    },
+  ];
+
   return (
     <div className="contact-page">
       <AOSWrapper />

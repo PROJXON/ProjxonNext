@@ -110,6 +110,10 @@
   color: #fff !important;
 }
 
+.homepage-hero-divider {
+  background-color: #ffd700;
+}
+
 /* || Video */
 
 .homepage-video-container {
