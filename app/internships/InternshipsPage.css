@@ -5,6 +5,7 @@
 }
 
 /* || Intern Testimonials */
+
 .interns-testimonials-heading {
     font-size: 32px;
     line-height: 1.5;
@@ -41,4 +42,10 @@
 /* Blogs */
 section.blog-section {
     background: black;
+}
+
+/* scroll offset */
+#testimonials,
+#mip{
+  scroll-margin-top: 80px;
 }

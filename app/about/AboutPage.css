@@ -101,3 +101,11 @@
 .sections-heading {
   font-size: 3rem;
 }
+
+/* scroll offset */
+#mission-vision,
+#who-we-are,
+#our-values,
+#meet-the-team{
+  scroll-margin-top: 80px;
+}

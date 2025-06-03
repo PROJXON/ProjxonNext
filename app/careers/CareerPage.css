@@ -103,3 +103,10 @@ section.clients-section div.carousel-item {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+/* scroll offset */
+#work-with-us,
+#consulting-advisory,
+#clients{
+  scroll-margin-top: 80px;
+}
