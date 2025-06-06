@@ -80,3 +80,10 @@ code {
     background: radial-gradient(circle, #ffd700 92%, #000 100%);
   }
 }
+ .gold-chaos{
+   color:gold;
+   font-style: italic;
+  }
+  .gold-opportunity{
+   color:gold;
+  }

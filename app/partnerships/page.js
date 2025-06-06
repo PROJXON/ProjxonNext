@@ -60,11 +60,18 @@ const PartnershipPage = () => {
       <AOSWrapper />
       {/* Hero Section */}
       <Hero
-        title="Partner with PROJXON"
-        subtitle="Collaborate with us to drive success and innovation"
+        title="Partner with US"
+        subtitle={
+          <>
+          <h3 className="fw-bold mb-2">Collaborate with Purpose. Grow with Impact </h3>
+            <p>
+            Join forces with a team that turns bold ideas into real-world results
+            through strategic partnerships built on trust, innovation, and measurable value.
+            </p>
+          </>
+        }
         backgroundClass="partner-hero"
       />
-
       {/* Why Partner with Us Section */}
       <section className="partner-us sections-container overflow-hidden">
         <Container>
@@ -74,16 +81,12 @@ const PartnershipPage = () => {
             data-aos-once="true"
           >
             <Col xs={12} md={6}>
-              <h2 className="sections-heading partner-heading fw-bold mb-4">
-                Why Partner with PROJXON?
-              </h2>
               <p className="partner-heading-sub-heading gray-opacity">
-                At PROJXON, we excel in delivering innovative solutions tailored
-                to your business needs. Our team combines expertise, creativity,
-                and cutting-edge technology to help your business thrive in
-                today's competitive market. Partner with us for unmatched
-                dedication, seamless collaboration, and results-driven
-                strategies.
+                At PROJXON, we excel in delivering innovative solutions tailored to 
+                your business needs. Our team combines expertise, creativity, and cutting-edge 
+                technology to help your business thrive in today's competitive market. 
+                Partner with us for unmatched dedication, seamless collaboration, 
+                and results-driven strategies.
               </p>
             </Col>
             <Col
@@ -204,12 +207,11 @@ const PartnershipPage = () => {
                   Referral Partnerships
                 </h2>
                 <p className="partner-heading-sub-heading mb-4 pb-2 fs-5">
-                  Do you and your team possess the skills to deliver exceptional
-                  service, have an interest in working on unique projects, and
-                  want to grow your business?
+                  Join our referral ecosystem and collaborate on high-impact projects that push boundaries, 
+                  fuel innovation, and grow your business along the way.
                 </p>
                 <CustomButton
-                  buttonText="Submit Referral"
+                  buttonText="Submit A Referral"
                   link="https://share.hsforms.com/1bKYf6vDKT9WleJf4zPxwUgrx61e"
                   buttonStyle="black-button"
                   delayTime={0}

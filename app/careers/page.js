@@ -70,7 +70,7 @@ const CareerPage = () => {
         >
           <Col xs={12} lg={6} className="py-5 bg-black rounded px-5">
             <h1 className="apply-heading sections-heading text-yellow">
-              Work with us
+              Work with Intention. Grow with Impact.
             </h1>
             <p className="apply-sub-heading  text-white my-4">
               At Projxon, we are always on the lookout for talented

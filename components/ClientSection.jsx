@@ -33,7 +33,7 @@ export default function ClientSection() {
 
     return (<section className="positions sections-container bg-yellow">
         <Container>
-            <h2 className="sections-heading text-center mb-5">Clients</h2>
+            <h2 className="sections-heading text-center mb-5">Veterans First Program</h2>
             <div className="clients-grid mt-5">
                 {clients.map((client, i) => (<Card className="section-card" key={i}>
                     <Card.Body>

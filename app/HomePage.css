@@ -71,6 +71,7 @@
   height: 48px;
   padding-left: 2rem;
   padding-right: 2rem;
+  
 }
 
 .homepage-blog-card {
@@ -85,10 +86,6 @@
 
 .yellow-button:active {
   color: #000000 !important;
-}
-
-.homepage-hero-divider {
-  background-color: #ffd700;
 }
 
 /* || About Us */

@@ -13,8 +13,9 @@ const HomeHero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
+        
         >
-          Turning Chaos Into Opportunity
+          Turning <span className="gold-chaos">Chaos</span> Into <span className="gold-opportunity">Opportunity</span>
         </motion.h1>
 
         <motion.div
@@ -26,20 +27,21 @@ const HomeHero = () => {
         />
 
         <motion.h2
-          className="homepage-hero-subtitle mt-1"
+          className="homepage-hero-subtitle mt-1 mb-4"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          Empowering medium-sized businesses to achieve their full potential
+         Empowering High-Impact Teams to Achieve Their Full Potential
         </motion.h2>
 
         <CustomButton
-          buttonText="Get Started"
+          buttonText="Let's Get Started"
           link="/contact"
           buttonStyle="mt-4 yellow-button"
           delayTime={0.7}
           isAnimated={true}
+          
         />
       </Container>
     </div>

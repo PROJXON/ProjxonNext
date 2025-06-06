@@ -1,5 +1,7 @@
+"use client";
 import "./Hero.css";
 import { Container } from "react-bootstrap";
+import { motion } from "framer-motion";
 
 const Hero = ({ title, subtitle, backgroundClass }) => {
   return (
@@ -11,7 +13,14 @@ const Hero = ({ title, subtitle, backgroundClass }) => {
       <Container className="text-center hero-content">
         <div data-aos="fade-up">
           <h1 className="hero-title text-uppercase">{title}</h1>
-          <p className="hero-subtitle">{subtitle}</p>
+          <motion.div
+            className="w-25 my-4 homepage-hero-divider"
+            style={{height:"4px"}}
+            initial={{ scaleX:0}}
+            animate={{scaleX:1}}
+            transition={{ duration:0.5, delay:0.3}}
+            />
+          <div className="hero-subtitle">{subtitle}</div>
         </div>
       </Container>
     </div>
