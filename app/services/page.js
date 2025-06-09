@@ -18,7 +18,7 @@ const ServicesPage = () => {
         backgroundClass="services-hero"
       />
 
-      <section className="bg-yellow sections-container">
+      <section id="services" className="bg-yellow sections-container">
         <Container className="pt-4">
           <ServiceGrid />
         </Container>

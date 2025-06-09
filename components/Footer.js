@@ -34,128 +34,50 @@ const Footer = () => {
   //Note: I assume that all of these href values are supposed to be different and go to different pages/subpages, or different sections of the same page (like /services#marketing-social) and the fact that each subsection of the footer gave all of them the same href was just a placeholder. But when copying over the code, I kept the href links exactly how they originally were.
   const footerLinks = [
     {
-      heading: "Services",
-      links: [
-        {
-          href: "/services",
-          text: "Marketing + Social"
-        },
-        {
-          href: "/services",
-          text: "E-commerce Solutions"
-        },
-        {
-          href: "/services",
-          text: "Business Optimization"
-        },
-        {
-          href: "/services",
-          text: "Project Management"
-        },
-        {
-          href: "/services",
-          text: "IT Interactions"
-        }
-      ]
-    },
-    {
       heading: "About",
       links: [
-        {
-          href: "/about",
-          text: "Vision"
-        },
-        {
-          href: "/about",
-          text: "Mission"
-        },
-        {
-          href: "/about",
-          text: "Core Value"
-        },
-        {
-          href: "/about",
-          text: "Meet the Team"
-        },
-        {
-          href: "/about",
-          text: "Our Journey"
-        }
-      ]
+        { href: "/about#mission-vision", text: "Our Mission/Our Vision" },
+        { href: "/about#who-we-are", text: "Who Are We?" },
+        { href: "/about#our-values", text: "Our Core Values" },
+        { href: "/about#meet-the-team", text: "Meet the Team" },
+      ],
     },
     {
-      heading: "Partnerships",
+      heading: "Services",
       links: [
-        {
-          href: "/servicepartners",
-          text: "Service Partners"
-        },
-        {
-          href: "/referralpartners",
-          text: "Referral Partners"
-        }
-      ]
+        { href: "/services#services", text: "Our Services" },
+      ],
     },
     {
-      heading: "Connect",
+      heading: "Opportunities",
       links: [
-        {
-          href: "/contact",
-          text: "Contact"
-        },
-        {
-          href: "/contact",
-          text: "Social"
-        },
-        {
-          href: "/contact",
-          text: "Appoint"
-        },
-        {
-          href: "/contact",
-          text: "Inquiries"
-        },
-        {
-          href: "/contact",
-          text: "Address (Google)"
-        }
-      ]
-    },
-    {
-      heading: "Internships",
-      links: [
-        {
-          href: "/internships",
-          text: "Blog"
-        },
-        {
-          href: "/internships",
-          text: "Events"
-        },
-        {
-          href: "/internships",
-          text: "Articles"
-        },
-        {
-          href: "/internships",
-          text: "Newsletter"
-        }
-      ]
+        { href: "/partnerships#service-partners", text: "Service Partners" },
+        { href: "/partnerships#referral-partners", text: "Referral Partners" },
+      ],
     },
     {
       heading: "Careers",
       links: [
-        {
-          href: "/career",
-          text: "Join Our Team"
-        },
-        {
-          href: "/career",
-          text: "Internship Program"
-        }
-      ]
-    }
-  ]
+        { href: "/careers#apply", text: "Work With Us" },
+        { href: "/careers#consulting-advisory", text: "Consulting + Advisory" },
+        { href: "/careers#clients", text: "Veteran Owned" },
+      ],
+    },
+    {
+      heading: "Internships",
+      links: [
+        { href: "/internships#mip", text: "MIP" },
+        { href: "/internships#testimonials", text: "Testimonials" },
+        { href: "/internships#blogs", text: "Blogs" },
+      ],
+    },
+    {
+      heading: "Contact",
+      links: [
+        { href: "/contact#contact-form", text: "Contact" },
+      ],
+    },
+  ];
 
   return (<footer className="bg-black text-white py-4 footer text-center">
     <Container>

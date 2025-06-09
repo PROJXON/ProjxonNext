@@ -66,7 +66,7 @@ const PartnershipPage = () => {
       />
 
       {/* Why Partner with Us Section */}
-      <section className="partner-us sections-container overflow-hidden">
+      <section id="service-partners" className="partner-us sections-container">
         <Container>
           <Row
             className="align-items-center justify-content-between"
@@ -124,7 +124,7 @@ const PartnershipPage = () => {
       </section>
 
       {/* Partnership Opportunities Section */}
-      <section className=" bg-yellow overflow-hidden">
+      <section id="referral-partners"className=" bg-yellow">
         <section className="partner-opportunity">
           <h1 className="sections-heading fw-bold text-center mb-5 pb-3">
             Partnership Opportunities

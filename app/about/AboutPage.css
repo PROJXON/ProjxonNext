@@ -29,7 +29,7 @@
 }
 
 .our-team {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .our-team-sub-heading {
@@ -100,4 +100,14 @@
 
 .sections-heading {
   font-size: 3rem;
+}
+
+/* scroll offset */
+#mission-vision,
+#who-we-are,
+#our-values {
+  scroll-margin-top: 80px;
+}
+#meet-the-team {
+  scroll-margin-top: 90px;
 }

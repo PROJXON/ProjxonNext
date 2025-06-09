@@ -45,7 +45,7 @@ export default async function ResearchPage() {
       backgroundClass="internships-hero"
     />
 
-    <Container className="momentum-intern overflow-hidden sections-container">
+    <Container id="mip" className="momentum-intern sections-container">
       <Row className="align-items-center flex-row-reverse g-5">
         <Col sm={12} md={6} data-aos="fade-up">
           <Image
@@ -88,8 +88,12 @@ export default async function ResearchPage() {
       </Row>
     </Container>
 
+    <section id="testimonials" className="testimonials-wrapper">
     <InternTestimonialsSection />
+    </section>
+    <section id="blogs" className="blogs-wrapper">
     <BlogClientList initialBlogs={blogs} />
+    </section>
     <CallToAction />
   </div>)
 }

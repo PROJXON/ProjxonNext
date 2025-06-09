@@ -72,3 +72,7 @@
   height: 600px !important;
   object-fit: cover;
 }
+/* scroll offset */
+#services{
+  scroll-margin-top: 82px;
+}
