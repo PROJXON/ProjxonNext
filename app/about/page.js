@@ -115,7 +115,7 @@ const AboutPage = () => {
       />
 
       {/* Our Mission & Vision Section */}
-      <section id="mission-vision" className="mission-vision bg-yellow overflow-hidden sections-container">
+      <section id="mission-vision" className="mission-vision bg-yellow sections-container">
         <Container>
           <Row className="g-5">
             <Col

@@ -45,7 +45,7 @@ section.blog-section {
 }
 
 /* scroll offset */
-#testimonials,
-#mip{
-  scroll-margin-top: 80px;
+#mip,
+#testimonials {
+    scroll-margin-top: 80px;
 }

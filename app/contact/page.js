@@ -50,7 +50,7 @@ const ContactPage = () => {
       <AOSWrapper />
       <Hero title="Contact Us" backgroundClass="contact-hero" />
 
-      <section className="contact position-relative sections-container">
+      <section id="contact-form" className="contact position-relative sections-container">
         <div
           className="contact-bg-holder d-none d-md-block"
           style={{
@@ -88,7 +88,7 @@ const ContactPage = () => {
                 ))}
               </div>
             </Col>
-            <Col lg={5} id="contact-form">
+            <Col lg={5}>
               <InfoForm />
             </Col>
           </Row>
