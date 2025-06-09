@@ -74,6 +74,26 @@ code {
   background: radial-gradient(circle, #ffd700 80%, #000 100%);
 }
 
+.black-button {
+  background-color: #000 !important;
+  box-shadow: 0 8px 30px -6px rgba(0, 0, 0, 0.6);
+  border: #000;
+  color: #fff;
+  height: 48px;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.black-button:hover {
+  background-color: rgb(31 41 55 / 1) !important;
+  border: rgb(31 41 55 / 1);
+  color: #fff;
+}
+
+.black-button:active {
+  color: #fff !important;
+}
+
 @media (max-width: 780px) {
   .bg-yellow {
     background: #ffd700;
