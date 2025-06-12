@@ -10,7 +10,7 @@ import {
   FaChalkboardTeacher,
   FaLightbulb,
   FaLeaf,
-  FaSmile,
+  FaStar,
   FaGlobe,
   FaMoneyCheckAlt,
   FaDigitalTachograph,
@@ -63,6 +63,45 @@ const ServiceGrid = () => {
         },
       ],
     },
+        {
+      dataAOS: "700",
+      title: "Innovation and R&D",
+      icon: FaLightbulb,
+      content: [
+        {
+          heading: "Innovation Workshops",
+          description:
+            "Conduct workshops to foster a culture of innovation and generate new ideas.",
+        },
+        {
+          heading: "R&D Strategy",
+          description:
+            "Assist clients in developing and executing R&D strategies to stay ahead of market trends.",
+        },
+      ],
+    },
+        {
+      dataAOS: "400",
+      title: "IT Tech Stack Design",
+      icon: FaLaptopCode,
+      content: [
+        {
+          heading: "IT Strategy and Planning",
+          description:
+            "Develop IT strategies aligned with business goals to drive digital transformation.",
+        },
+        {
+          heading: "System Integration",
+          description:
+            "Integrate various IT systems to ensure seamless data flow and process automation.",
+        },
+        {
+          heading: "Cybersecurity",
+          description:
+            "Implement robust cybersecurity measures to protect client data and IT infrastructure.",
+        },
+      ],
+    },
     {
       dataAOS: "300",
       title: "E-commerce Solutions",
@@ -85,25 +124,54 @@ const ServiceGrid = () => {
         },
       ],
     },
-    {
-      dataAOS: "400",
-      title: "IT Consulting",
-      icon: FaLaptopCode,
+        {
+      dataAOS: "900",
+      title: "Customer Experience Enhancement",
+      icon: FaStar,
       content: [
         {
-          heading: "IT Strategy and Planning",
+          heading: "CX Strategy",
           description:
-            "Develop IT strategies aligned with business goals to drive digital transformation.",
+            "Develop strategies to improve overall customer experience across all touchpoints.",
         },
         {
-          heading: "System Integration",
+          heading: "Customer Feedback Systems",
           description:
-            "Integrate various IT systems to ensure seamless data flow and process automation.",
+            "Implement systems to capture and analyze customer feedback for continuous improvement.",
+        },
+      ],
+    },
+     {
+      dataAOS: "600",
+      title: "Customized Training Program",
+      icon: FaChalkboardTeacher,
+      content: [
+        {
+          heading: "Employee Training",
+          description:
+            "Develop and deliver training programs tailored to client needs, including process improvement, project management, and technology adoption.",
         },
         {
-          heading: "Cybersecurity",
+          heading: "Leadership Development",
           description:
-            "Implement robust cybersecurity measures to protect client data and IT infrastructure.",
+            "Offer leadership training to help executives and managers lead change effectively within their organizations.",
+        },
+      ],
+    },
+        {
+      dataAOS: "1200",
+      title: "Digital Transformation",
+      icon: FaDigitalTachograph,
+      content: [
+        {
+          heading: "Digital Strategy Development",
+          description:
+            "Create digital transformation roadmaps to modernize business operations.",
+        },
+        {
+          heading: "Technology Adoption",
+          description:
+            "Guide clients in adopting emerging technologies such as blockchain, IoT, and cloud computing.",
         },
       ],
     },
@@ -125,40 +193,6 @@ const ServiceGrid = () => {
       ],
     },
     {
-      dataAOS: "600",
-      title: "Customized Training Program",
-      icon: FaChalkboardTeacher,
-      content: [
-        {
-          heading: "Employee Training",
-          description:
-            "Develop and deliver training programs tailored to client needs, including process improvement, project management, and technology adoption.",
-        },
-        {
-          heading: "Leadership Development",
-          description:
-            "Offer leadership training to help executives and managers lead change effectively within their organizations.",
-        },
-      ],
-    },
-    {
-      dataAOS: "700",
-      title: "Innovation and R&D Consulting",
-      icon: FaLightbulb,
-      content: [
-        {
-          heading: "Innovation Workshops",
-          description:
-            "Conduct workshops to foster a culture of innovation and generate new ideas.",
-        },
-        {
-          heading: "R&D Strategy",
-          description:
-            "Assist clients in developing and executing R&D strategies to stay ahead of market trends.",
-        },
-      ],
-    },
-    {
       dataAOS: "800",
       title: "Sustainability and CSR",
       icon: FaLeaf,
@@ -175,23 +209,7 @@ const ServiceGrid = () => {
         },
       ],
     },
-    {
-      dataAOS: "900",
-      title: "Customer Experience Enhancement",
-      icon: FaSmile,
-      content: [
-        {
-          heading: "CX Strategy",
-          description:
-            "Develop strategies to improve overall customer experience across all touchpoints.",
-        },
-        {
-          heading: "Customer Feedback Systems",
-          description:
-            "Implement systems to capture and analyze customer feedback for continuous improvement.",
-        },
-      ],
-    },
+    /*
     {
       dataAOS: "1000",
       title: "Global Expansion Support",
@@ -226,23 +244,7 @@ const ServiceGrid = () => {
         },
       ],
     },
-    {
-      dataAOS: "1200",
-      title: "Digital Transformation Consulting",
-      icon: FaDigitalTachograph,
-      content: [
-        {
-          heading: "Digital Strategy Development",
-          description:
-            "Create digital transformation roadmaps to modernize business operations.",
-        },
-        {
-          heading: "Technology Adoption",
-          description:
-            "Guide clients in adopting emerging technologies such as blockchain, IoT, and cloud computing.",
-        },
-      ],
-    },
+    */
   ];
 
   return (<Container className="mt-5">

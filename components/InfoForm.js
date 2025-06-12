@@ -44,10 +44,7 @@ const InfoForm = () => {
     <div className="infoform-container text-white">
       <Card className="contact-form-card">
         <Card.Body className="p-md-5">
-          <h2 className="contact-heading mb-3 text-yellow">Contact Us</h2>
-          <p className="contact-sub-heading mb-5">
-            Let's discuss how we can help you achieve your business goals.
-          </p>
+          <h2 className="contact-heading mb-3 text-yellow">Questions?</h2>
           {status.show && (
             <Alert
               variant={status.type}

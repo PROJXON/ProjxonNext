@@ -108,11 +108,20 @@ const AboutPage = () => {
     <div className="about-page">
       <AOSWrapper />
       {/* Hero Section */}
+      <section className="hero-section">
       <Hero
-        title="About PROJXON"
-        subtitle="Empowering Businesses to Reach Their Full Potential"
+        title="About US"
+        subtitle={ 
+          <>
+            <h2 className="fw-bold mb-2">Where Purpose Meets Performance.</h2>
+            <p>
+              We empower impact-driven businesses to scale with clarity, confidence, and strategic precision, unlocking their full potential every step of the way.
+          </p>
+         </>
+        }
         backgroundClass="about-hero"
       />
+      </section>
 
       {/* Our Mission & Vision Section */}
       <section className="mission-vision bg-yellow overflow-hidden sections-container">
@@ -127,14 +136,12 @@ const AboutPage = () => {
             >
               <section className="w-100">
                 <h2 className="fs-1 mb-4 text-uppercase fw-bold">
-                  Our Mission
+                   Mission
                 </h2>
                 <p className="fs-5">
-                  At PROJXON, our mission is to empower medium-sized businesses
-                  to achieve their full potential through tailored solutions,
-                  innovative strategies, and expert guidance. We strive to help
-                  our clients navigate challenges, optimize operations, and
-                  drive sustainable growth.
+                  We believe impact-driven businesses deserve to grow with clarity and purpose.
+                  That’s why PROJXON delivers the systems, strategy, and expertise they
+                  need to scale smarter, lead stronger, and make their mission unstoppable.
                 </p>
               </section>
             </Col>
@@ -146,13 +153,12 @@ const AboutPage = () => {
               data-aos-once="true"
             >
               <section className="w-100">
-                <h2 className="fs-1 mb-4 text-uppercase fw-bold">Our Vision</h2>
+                <h2 className="fs-1 mb-4 text-uppercase fw-bold">Vision</h2>
                 <p className="fs-5">
-                  We envision a world where businesses easily access the
-                  expertise and tools they need to thrive in a rapidly changing
-                  environment. By offering cutting-edge solutions and
-                  unparalleled support, we aim to be the go-to partner for
-                  businesses looking to innovate, grow, and succeed.
+                  We envision a world where Impact-Driven Businesses scale with confidence,
+                  backed by the right Tools, Techniques, and Talent.
+                  We envision PROJXON as the trusted partner organizations turn to when 
+                  they’re ready to succeed with focus and scale with purpose.
                 </p>
               </section>
             </Col>
@@ -182,28 +188,29 @@ const AboutPage = () => {
               data-aos-delay="500"
               data-aos-once="true"
             >
-              <h1 className="text-uppercase fw-bolder mb-3">Who Are We?</h1>
+              <h1 className="text-uppercase fw-bolder mb-3">Who We Are</h1>
               <h2 className="fw-bolder fs-4">
                 {" "}
-                PROJXON is a leading business consulting firm helping
-                medium-sized businesses achieve their full potential.
+                PROJXON is a business optimization firm built for impact-driven,
+                medium-sized businesses ready to scale with purpose.
               </h2>
               <div className="mt-3 who-we-are-description gray-opacity">
                 <p className="fs-5">
-                  PROJXON offers a wide range of services, including business
-                  process optimization, project management, and strategic
-                  planning, to help our clients navigate challenges, optimize
-                  operations, and drive sustainable growth.
+                  We specialize in transforming operational chaos into clarity through 
+                  strategic planning, process improvement, and project execution. From streamlining systems 
+                  to guiding high-stakes growth, we deliver tailored solutions that empower our clients to 
+                  lead, innovate, and thrive.
                 </p>
                 <p className="fs-5 mb-4 pb-2">
-                  Our team of experts is dedicated to providing tailored
-                  solutions, innovative strategies, and expert guidance to help
-                  businesses innovate, grow, and succeed.
+                  Our cross-functional team brings deep industry 
+                  expertise and a relentless focus on results,
+                  because your mission deserves more than just advice. 
+                  It deserves momentum.
                 </p>
               </div>
               <div className="about-button">
                 <CustomButton
-                  buttonText="Get Started"
+                  buttonText=" Let's Get Started"
                   link="/contact"
                   buttonStyle="yellow-button"
                 />
@@ -222,15 +229,15 @@ const AboutPage = () => {
           <Row className="justify-content-center mb-4 mb-md-5">
             <Col lg={6} xl={5} className="text-center">
               <h2 className="sections-heading fw-bold mb-3">Meet Our Team</h2>
-              <p className="our-team-sub-heading mb-3">
+              {/* <p className="our-team-sub-heading mb-3"> 
                 Our talented team combines vision, skill, and innovation to
                 create exceptional results for our clients.
-              </p>
+              </p> */}
             </Col>
           </Row>
 
           {/* Consulting Leads Section */}
-          <h2 className="fw-bold sections-heading">Consulting Leads</h2>
+          {/* <h2 className="fw-bold sections-heading">Consulting Leads</h2> */}
           <Row className="text-center">
             {consultingLeads.map((member, i) => (
               <Col md={6} lg={3} key={i} className="mb-5 our-team-card-body">

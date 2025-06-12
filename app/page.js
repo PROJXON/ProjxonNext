@@ -42,18 +42,18 @@ export default async function HomePage() {
       <section className="text-center introduction bg-yellow">
         <Container>
           <h2 className="mb-5 fw-bold fs-3 text-black mx-auto text-uppercase">
-            About
+            Our purpose
           </h2>
           <p
             data-aos="fade-up"
             data-aos-once="true"
             className="fs-4 text-black"
           >
-            We are a business optimization consulting company with a holistic approach and a focus on veteran founded businesses and non-profits. We help small and medium-sized organizations grow and scale by partnering with high-impact teams across the tech, e-commerce, non-profit, and health & wellness industries, empowering our clients through creating sustainable solutions that are aimed to combat chaos head-on, turning points of failure into opportunities for growth.
+            We are a Business Optimization Consulting Company helping Veteran-Owned and Operated Businesses and Veteran-Founded Non-Profits Launch, Grow, and Scale through High-Impact Strategic Partnerships. We specialize in guiding small and medium-sized organizations across the Tech, E-commerce, Health & Wellness, and Non-Profit industries to combat chaos head-on by empowering our clients through creating sustainable solutions that scale with their business, turning points of failure into opportunities for growth.
           </p>
           <hr className="divider" />
           <CustomButton
-            buttonText="Learn About Us"
+            buttonText="More About Us"
             link="/about"
             buttonStyle="black-button"
             delayTime={0.3}
