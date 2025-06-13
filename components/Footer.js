@@ -49,10 +49,10 @@ const Footer = () => {
       ],
     },
     {
-      heading: "Opportunities",
+      heading: "Partnerships",
       links: [
-        { href: "/partnerships#service-partners", text: "Service Partners" },
-        { href: "/partnerships#referral-partners", text: "Referral Partners" },
+        { href: "/partnerships#service-partners", text: "Why Projxon" },
+        { href: "/partnerships#referral-partners", text: "Partnership Opportunites" },
       ],
     },
     {
