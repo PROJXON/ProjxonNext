@@ -61,3 +61,9 @@
     padding-left: 96px;
   }
 }
+
+/* scroll offset */
+#service-partners,
+#referral-partners{
+  scroll-margin-top: 82px;
+}

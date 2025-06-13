@@ -61,7 +61,7 @@ const CareerPage = () => {
     <Hero title="Join Our Team" backgroundClass="career-hero" />
 
     {/* Apply */}
-    <section className="apply bg-yellow">
+    <section id="apply" className="apply bg-yellow">
       <Container>
         <Row
           className="align-items-center justify-content-center"
@@ -95,7 +95,7 @@ const CareerPage = () => {
     </section>
 
     {/* Positions */}
-    <section className="positions sections-container bg-black ">
+    <section id="consulting-advisory" className="positions sections-container bg-black ">
       <Container>
         <Row className="justify-content-center mb-5">
           <Col lg={5} className="text-center">
@@ -146,7 +146,9 @@ const CareerPage = () => {
     </section>
 
     {/* Clients */}
+    <section id="clients" className="clients-wrapper">
     <MilitaryBranches />
+    </section>
 
     {/* Call to Action Section */}
     <CallToAction />

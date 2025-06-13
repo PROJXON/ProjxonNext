@@ -50,7 +50,7 @@ const ContactPage = () => {
       <AOSWrapper />
       <Hero title="Contact Us" backgroundClass="contact-hero" />
 
-      <section className="contact position-relative sections-container">
+      <section id="contact-form" className="contact position-relative sections-container">
         <div
           className="contact-bg-holder d-none d-md-block"
           style={{

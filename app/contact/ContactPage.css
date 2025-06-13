@@ -109,3 +109,8 @@
     width: 100%;
   }
 }
+
+/* scroll offset */
+#contact-form{
+  scroll-margin-top: 80px;
+}
