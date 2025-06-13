@@ -115,12 +115,66 @@ const AboutPage = () => {
           <>
             <h2 className="fw-bold mb-2">Where Purpose Meets Performance.</h2>
             <p>
-              We empower impact-driven businesses to scale with clarity, confidence, and strategic precision, unlocking their full potential every step of the way.
+              We empower impact-driven businesses to scale with clarity, confidence, and strategic precision, unlocking their full potential every step of the way
           </p>
          </>
         }
         backgroundClass="about-hero"
       />
+      </section>
+
+      {/* Who We Are Section */}
+      <section className="who-we-are sections-container">
+        <Container className="overflow-hidden">
+          <Row className="align-items-center g-5">
+            <Col md={12} lg={6} data-aos="fade-up" data-aos-once="true">
+              <Image
+                src="/assets/about/whoarewe.webp"
+                alt="who we are"
+                width={800}
+                height={400}
+                className="overflow-hidden rounded-3 object-fit-cover w-100"
+              // placeholder="blur"
+              />
+            </Col>
+
+            <Col
+              md={12}
+              lg={6}
+              data-aos="fade-left"
+              data-aos-delay="500"
+              data-aos-once="true"
+            >
+              <h1 className="text-uppercase fw-bolder mb-3">Who We Are</h1>
+              <h2 className="fw-bolder fs-4">
+                {" "}
+                PROJXON is a business optimization firm built for impact-driven,
+                medium-sized businesses ready to scale with purpose
+              </h2>
+              <div className="mt-3 who-we-are-description gray-opacity">
+                <p className="fs-5">
+                  We specialize in transforming operational chaos into clarity through 
+                  strategic planning, process improvement, and project execution. From streamlining systems 
+                  to guiding high-stakes growth, we deliver tailored solutions that empower our clients to 
+                  lead, innovate, and thrive.
+                </p>
+                <p className="fs-5 mb-4 pb-2">
+                  Our cross-functional team brings deep industry 
+                  expertise and a relentless focus on results,
+                  because your mission deserves more than just advice. 
+                  It deserves momentum.
+                </p>
+              </div>
+              <div className="about-button">
+                <CustomButton
+                  buttonText=" Let's Get Started"
+                  link="/contact"
+                  buttonStyle="yellow-button"
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
 
       {/* Our Mission & Vision Section */}
@@ -161,60 +215,6 @@ const AboutPage = () => {
                   they’re ready to succeed with focus and scale with purpose.
                 </p>
               </section>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      {/* Who We Are Section */}
-      <section className="who-we-are sections-container">
-        <Container className="overflow-hidden">
-          <Row className="align-items-center g-5">
-            <Col md={12} lg={6} data-aos="fade-up" data-aos-once="true">
-              <Image
-                src="/assets/about/whoarewe.webp"
-                alt="who we are"
-                width={800}
-                height={400}
-                className="overflow-hidden rounded-3 object-fit-cover w-100"
-              // placeholder="blur"
-              />
-            </Col>
-
-            <Col
-              md={12}
-              lg={6}
-              data-aos="fade-left"
-              data-aos-delay="500"
-              data-aos-once="true"
-            >
-              <h1 className="text-uppercase fw-bolder mb-3">Who We Are</h1>
-              <h2 className="fw-bolder fs-4">
-                {" "}
-                PROJXON is a business optimization firm built for impact-driven,
-                medium-sized businesses ready to scale with purpose.
-              </h2>
-              <div className="mt-3 who-we-are-description gray-opacity">
-                <p className="fs-5">
-                  We specialize in transforming operational chaos into clarity through 
-                  strategic planning, process improvement, and project execution. From streamlining systems 
-                  to guiding high-stakes growth, we deliver tailored solutions that empower our clients to 
-                  lead, innovate, and thrive.
-                </p>
-                <p className="fs-5 mb-4 pb-2">
-                  Our cross-functional team brings deep industry 
-                  expertise and a relentless focus on results,
-                  because your mission deserves more than just advice. 
-                  It deserves momentum.
-                </p>
-              </div>
-              <div className="about-button">
-                <CustomButton
-                  buttonText=" Let's Get Started"
-                  link="/contact"
-                  buttonStyle="yellow-button"
-                />
-              </div>
             </Col>
           </Row>
         </Container>

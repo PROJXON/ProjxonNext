@@ -66,7 +66,7 @@ const PartnershipPage = () => {
           <h3 className="fw-bold mb-2">Collaborate with Purpose. Grow with Impact </h3>
             <p>
             Join forces with a team that turns bold ideas into real-world results
-            through strategic partnerships built on trust, innovation, and measurable value.
+            through strategic partnerships built on trust, innovation, and measurable value
             </p>
           </>
         }
@@ -74,57 +74,57 @@ const PartnershipPage = () => {
       />
       {/* Why Partner with Us Section */}
       <section className="partner-us sections-container overflow-hidden">
-        <Container>
-          <Row
-            className="align-items-center justify-content-between"
-            data-aos="fade-right"
+  <Container>
+    <Row
+      className="align-items-center justify-content-between"
+      data-aos="fade-right"
+      data-aos-once="true"
+    >
+      <Col xs={12} md={6}>
+        <p className="partner-heading-sub-heading gray-opacity">
+          At PROJXON, we excel in delivering innovative solutions tailored to 
+          your business needs. Our team combines expertise, creativity, and cutting-edge 
+          technology to help your business thrive in today's competitive market. 
+          Partner with us for unmatched dedication, seamless collaboration, 
+          and results-driven strategies.
+        </p>
+      </Col>
+      <Col
+        xs={12}
+        md={5}
+        className="position-relative"
+        data-aos="fade-left"
+        data-aos-delay="200"
+        data-aos-once="true"
+      >
+        <Image
+          src="/assets/partnership/partner.webp"
+          alt="partner"
+          className="img-fluid my-5 my-md-0 rounded-3"
+          width={600}
+          height={400}
+          priority={true}
+        />
+      </Col>
+    </Row>
+    <Row className="mt-5">
+      {partnerships.map((partner, index) => (
+        <Col xs={12} md={6} lg={4} key={index} className="mb-4">
+          <div
+            className="value-card h-100 shadow-sm border-0 rounded-4 p-4 d-flex flex-column align-items-start"
+            data-aos="fade-up"
+            data-aos-delay={partner.dataAOSDelay}
             data-aos-once="true"
           >
-            <Col xs={12} md={6}>
-              <p className="partner-heading-sub-heading gray-opacity">
-                At PROJXON, we excel in delivering innovative solutions tailored to 
-                your business needs. Our team combines expertise, creativity, and cutting-edge 
-                technology to help your business thrive in today's competitive market. 
-                Partner with us for unmatched dedication, seamless collaboration, 
-                and results-driven strategies.
-              </p>
-            </Col>
-            <Col
-              xs={12}
-              md={5}
-              className="position-relative"
-              data-aos="fade-left"
-              data-aos-delay="200"
-              data-aos-once="true"
-            >
-              <Image
-                src="/assets/partnership/partner.webp"
-                alt="partner"
-                className="img-fluid my-5 my-md-0 rounded-3"
-                width={600}
-                height={400}
-                priority={true}
-              />
-            </Col>
-          </Row>
-          <Row className="mt-5">
-            {partnerships.map((partner, index) => (
-              <Col xs={12} md={6} lg={4} key={index}>
-                <div
-                  className="p-xl-3 mt-4"
-                  data-aos="fade-up"
-                  data-aos-delay={partner.dataAOSDelay}
-                  data-aos-once="true"
-                >
-                  <div className="partner-number mb-3">{index + 1}</div>
-                  <h3 className="partner-title fs-4 mb-3">{partner.title}</h3>
-                  <p className="gray-opacity mb-0">{partner.text}</p>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </Container>
-      </section>
+            <div className="partner-number mb-3">{index + 1}</div>
+            <h3 className="partner-title fs-4 mb-3">{partner.title}</h3>
+            <p className="gray-opacity mb-0">{partner.text}</p>
+          </div>
+        </Col>
+      ))}
+    </Row>
+  </Container>
+</section>
 
       {/* Partnership Opportunities Section */}
       <section className=" bg-yellow overflow-hidden">
@@ -160,10 +160,10 @@ const PartnershipPage = () => {
                 <h2 className="sections-heading partner-heading fw-bold mb-4 par">
                   Service Partnerships
                 </h2>
+                <h3>Looking to expand your impact and deliver greater value to your clients?</h3>
                 <p className="partner-heading-sub-heading mb-4 pb-2 fs-5">
-                  Would you like to provide more value to your clients and
-                  support them in resolving critical issues standing in the way
-                  of their growth?
+                  Partner with PROJXON to help businesses overcome critical challenges and unlock new growth. 
+                  Together, we can create lasting solutions where they matter most.
                 </p>
 
                 <CustomButton
@@ -208,7 +208,7 @@ const PartnershipPage = () => {
                 </h2>
                 <p className="partner-heading-sub-heading mb-4 pb-2 fs-5">
                   Join our referral ecosystem and collaborate on high-impact projects that push boundaries, 
-                  fuel innovation, and grow your business along the way.
+                  fuel innovation, and grow your business along the way
                 </p>
                 <CustomButton
                   buttonText="Submit A Referral"

@@ -8,6 +8,11 @@
   background-size: cover;
 }
 
+.hero-section,
+.about-hero {
+  padding-top: 0 !important;
+}
+
 /* || Who We Are */
 
 .who-we-are img {

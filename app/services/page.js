@@ -18,7 +18,7 @@ const ServicesPage = () => {
      <>
       <h3 className="fw-bold mb-2">Built for Growth. Delivered with Precision.</h3>
        <p>
-        From strategy to execution, every service is designed to move your business forward with clarity, confidence, and measurable impact.
+        From strategy to execution, every service is designed to move your business forward with clarity, confidence, and measurable impact
        </p>
     </>
   }
