@@ -36,7 +36,6 @@ const Footer = () => {
     {
       heading: "About",
       links: [
-        { href: "/about#mission-vision", text: "Our Mission/Our Vision" },
         { href: "/about#who-we-are", text: "Who Are We?" },
         { href: "/about#our-values", text: "Our Core Values" },
         { href: "/about#meet-the-team", text: "Meet the Team" },
@@ -52,7 +51,7 @@ const Footer = () => {
       heading: "Partnerships",
       links: [
         { href: "/partnerships#service-partners", text: "Why Projxon" },
-        { href: "/partnerships#referral-partners", text: "Partnership Opportunites" },
+        { href: "/partnerships#partnership-opprtunities", text: "Partnership Opportunites" },
       ],
     },
     {
@@ -60,7 +59,7 @@ const Footer = () => {
       links: [
         { href: "/careers#apply", text: "Work With Us" },
         { href: "/careers#consulting-advisory", text: "Consulting + Advisory" },
-        { href: "/careers#clients", text: "Veteran Owned" },
+        { href: "/careers#clients", text: "Veterans First Program" },
       ],
     },
     {
