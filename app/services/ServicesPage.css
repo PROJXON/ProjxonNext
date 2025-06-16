@@ -15,16 +15,13 @@
   overflow: hidden;
   text-align: left;
   padding: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(255,255,255,0.3);
 }
 
 .service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-}
-
-.service-card:hover {
-  background: linear-gradient(135deg, white, gray);
+  background: #fff; 
+  box-shadow: 0 8px 30px rgba(255,255,255,0.7); 
+  border: 1.5px solid #ffe066; 
 }
 
 .service-card:hover p,
