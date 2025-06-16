@@ -18,7 +18,7 @@ const CallToAction = () => {
           </h2>
           <p className="mt-3 mb-5 text-gray fs-5">
             Contact us today to discuss how we can help you achieve your
-            business goals.
+            business goals
           </p>
           <CustomButton
             buttonText="Contact Us"

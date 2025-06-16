@@ -19,6 +19,15 @@
   animation: rotate 10s linear infinite;
 }
 
+.homepage-hero-divider {
+  background-color: #ffd700;
+  border-radius: 2px;
+  width: 25% !important;
+  height: 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0deg);

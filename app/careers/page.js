@@ -69,17 +69,17 @@ const CareerPage = () => {
         >
           <Col xs={12} lg={6} className="py-5 bg-black rounded px-5">
             <h1 className="apply-heading sections-heading text-yellow">
-              Work with us
+              Work with Intention. Grow with Impact.
             </h1>
             <p className="apply-sub-heading  text-white my-4">
               At Projxon, we are always on the lookout for talented
               individuals who are passionate about innovation and
-              collaboration.
+              collaboration
             </p>
 
             <p className="apply-sub-heading  text-white my-4">
               Join our team and contribute to exciting projects that make a
-              difference.
+              difference
             </p>
             <CustomButton
               buttonText="Apply now"
@@ -104,7 +104,7 @@ const CareerPage = () => {
             </h2>
             <p className="positions-sub-heading text-white mb-4">
               Empowering collaboration, innovation, and expert guidance to
-              deliver exceptional client solutions.
+              deliver exceptional client solutions
             </p>
           </Col>
         </Row>

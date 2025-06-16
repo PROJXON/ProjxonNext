@@ -4,9 +4,7 @@ import "./ContactPage.css";
 
 import Hero from "@/components/Hero";
 import InfoForm from "@/components/InfoForm";
-
 import AOSWrapper from "@/components/AOSWrapper";
-
 
 export const metadata = {
   title: "Contact PROJXON | Get in Touch with Our Experts",
@@ -35,7 +33,6 @@ export const metadata = {
   }
 };
 
-
 const ContactPage = () => {
   const contactInfoList = [
     {
@@ -48,56 +45,41 @@ const ContactPage = () => {
   return (
     <div className="contact-page">
       <AOSWrapper />
-      <Hero title="Contact Us" backgroundClass="contact-hero" />
-
-      <section id="contact-form" className="contact position-relative sections-container">
-        <div
-          className="contact-bg-holder d-none d-md-block"
-          style={{
-            backgroundImage: `url('/assets/contact/bg-contact.webp')`,
-          }}
-        />
-        <Container className="position-relative">
-          <Row className="justify-content-between">
-            <Col lg={7} xxl={5} className="mb-5 mb-lg-0">
-              <h2 className="contact-title text-black mb-4 mt-0">
-                Ready to Transform Chaos Into Opportunity?
-              </h2>
-              <p className="contact-sub-heading text-black mb-0">
-                Whether you have inquiries about our <strong>services</strong>,
-                wish to explore <strong>partnership</strong> opportunities, or
-                are ready to embark on a journey of growth and success, our team
-                is eager to connect with you.{" "}
-                <strong>
-                  Let's Transform Chaos Into Opportunity together.
-                </strong>
-              </p>
-              <div className="mt-5 pt-md-4">
-                {contactInfoList.map((info, index) => (
-                  <Card className={`contact-link mt-4`} key={index}>
-                    <CardBody className="d-flex align-items-center">
-                      <div className="fs-3 px-2 lh-1">
-                        <info.icon className="text-yellow" />
-                      </div>
-                      <a
-                        className="contact-link-content ms-4"
-                        href={info.href || "#!"}
-                      >
-                        {info.label}
-                      </a>
-                    </CardBody>
-                  </Card>
-                ))}
-              </div>
-            </Col>
-            <Col lg={5}>
-              <InfoForm />
-            </Col>
-          </Row>
-        </Container>
-      </section>
+      <Hero
+        title="Contact Us"
+        subtitle={
+          <>
+            <h2 className="fw-bold mb-2">Connect with Clarity. Start with Purpose.</h2>
+            <p>
+              Whether you're ready to solve challenges, explore opportunities, or simply have a conversation, our team is here to help. Reach out and let’s start building something meaningful together.
+            </p>
+          </>
+        }
+        backgroundClass="contact-hero"
+      />
+      <Container className="my-5">
+        <Row className="justify-content-center">
+          <Col md={6} lg={4}>
+            <Card className="contact-link">
+              <CardBody className="d-flex align-items-center">
+                <div className="fs-3 px-2 lh-1">
+                  <FaEnvelopeOpenText className="text-yellow" />
+                </div>
+                <a
+                  className="contact-link-content ms-4"
+                  href="mailto:info@projxon.com"
+                >
+                  Questions?
+                </a>
+              </CardBody>
+            </Card>
+          </Col>
+          <Col md={6} lg={6}>
+            <InfoForm />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
-
 export default ContactPage;

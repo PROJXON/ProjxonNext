@@ -10,7 +10,7 @@ export default function ChooseUs() {
             icon: LuUsers,
             title: "Expert Team",
             description:
-                "Our team consists of industry experts with years of experience in their respective fields. With diverse backgrounds and deep knowledge, we bring unparalleled expertise to every project.",
+                "Our team consists of industry experts with years of experience in their respective fields. With diverse backgrounds and deep knowledge, we bring unparalleled expertise to every projectOur tailored delivery teams consist of industry experts in their respective fields. With diverse backgrounds and deep knowledge, we bring relevant expertise to every project.",
             stat: "10",
             statSuffix: "+",
             statDescription: "years combined experience",
@@ -27,7 +27,7 @@ export default function ChooseUs() {
             icon: LuLightbulb,
             title: "Innovative Solutions",
             description:
-                "We leverage the latest technologies and methodologies to provide innovative solutions to our clients. Our forward-thinking approach ensures that you stay ahead of the curve in your industry.",
+                "Leveraging the latest methodologies and technologies, we create solutions that work and scale. A holistic, forward-thinking approach ensures that we keep your team ahead of the curve in your industry.",
             stat: "20",
             statSuffix: "+",
             statDescription: "innovative projects delivered",
@@ -36,8 +36,8 @@ export default function ChooseUs() {
 
     return (<section className="bg-black choose-us">
         <Container className="text-center">
-            <h2 className="fw-bold sections-heading text-yellow" data-aos="fade-up" data-aos-once="true">
-                Why Choose Us?
+            <h2 className="fw-bold sections-heading text-white" data-aos="fade-up" data-aos-once="true">
+                We Got Your Back
             </h2>
             <Row className="my-5 g-5">
                 {reasons.map((reason, index) => (

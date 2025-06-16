@@ -48,13 +48,13 @@ export default function InternTestimonialsSection() {
             <Row className="align-items-center justify-content-between mb-4 mb-md-5">
                 <Col xs={12} md={6} lg={5}>
                     <h2 className="interns-testimonials-heading fw-bold mb-0">
-                        Hear what previous interns have to say about our program.
+                        Hear what previous interns have to say about our program
                     </h2>
                 </Col>
                 <Col xs={12} md={6} lg={5}>
                     <p className="interns-testimonials-sub-heading mb-0">
                         Gain hands-on experience and invaluable skills to jumpstart your
-                        career with our industry-leading internship program.
+                        career with our industry-leading internship program
                     </p>
                 </Col>
             </Row>
