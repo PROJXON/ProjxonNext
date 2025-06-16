@@ -33,7 +33,7 @@
 
 /* || Positions */
 .positions {
-  overflow: hidden;
+  overflow: visible;
 
   position: relative;
   z-index: 1;
@@ -102,4 +102,11 @@ section.clients-section div.carousel-item {
   .military-branches-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
+}
+
+/* scroll offset */
+#apply,
+#consulting-advisory,
+#clients{
+  scroll-margin-top: 80px;
 }

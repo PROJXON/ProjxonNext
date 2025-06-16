@@ -42,3 +42,10 @@
 section.blog-section {
     background: black;
 }
+
+/* scroll offset */
+#mip,
+#testimonials,
+#blogs {
+    scroll-margin-top: 80px;
+}
