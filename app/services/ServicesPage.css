@@ -76,3 +76,8 @@
 .service-card a {
   color: #000 !important;
 }
+
+/* scroll offset */
+#services{
+  scroll-margin-top: 82px;
+}

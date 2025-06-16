@@ -63,20 +63,26 @@ const ServiceGrid = () => {
         },
       ],
     },
+        
         {
-      dataAOS: "700",
-      title: "Innovation and R&D",
-      icon: FaLightbulb,
+      dataAOS: "300",
+      title: "E-commerce Solutions",
+      icon: FaShoppingCart,
       content: [
         {
-          heading: "Innovation Workshops",
+          heading: "Platform Selection and Implementation",
           description:
-            "Conduct workshops to foster a culture of innovation and generate new ideas.",
+            "Help clients choose the right e-commerce platform and oversee its implementation.",
         },
         {
-          heading: "R&D Strategy",
+          heading: "Digital Marketing Strategies",
           description:
-            "Assist clients in developing and executing R&D strategies to stay ahead of market trends.",
+            "Develop and execute digital marketing campaigns to drive online sales and improve brand visibility.",
+        },
+        {
+          heading: "User Experience Optimization",
+          description:
+            "Enhance the online shopping experience through UI/UX design improvements and personalized customer journeys.",
         },
       ],
     },
@@ -103,24 +109,19 @@ const ServiceGrid = () => {
       ],
     },
     {
-      dataAOS: "300",
-      title: "E-commerce Solutions",
-      icon: FaShoppingCart,
+      dataAOS: "700",
+      title: "Innovation and R&D",
+      icon: FaLightbulb,
       content: [
         {
-          heading: "Platform Selection and Implementation",
+          heading: "Innovation Workshops",
           description:
-            "Help clients choose the right e-commerce platform and oversee its implementation.",
+            "Conduct workshops to foster a culture of innovation and generate new ideas.",
         },
         {
-          heading: "Digital Marketing Strategies",
+          heading: "R&D Strategy",
           description:
-            "Develop and execute digital marketing campaigns to drive online sales and improve brand visibility.",
-        },
-        {
-          heading: "User Experience Optimization",
-          description:
-            "Enhance the online shopping experience through UI/UX design improvements and personalized customer journeys.",
+            "Assist clients in developing and executing R&D strategies to stay ahead of market trends.",
         },
       ],
     },

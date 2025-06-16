@@ -57,7 +57,7 @@ const ContactPage = () => {
         }
         backgroundClass="contact-hero"
       />
-      <Container className="my-5">
+      <Container id="contact-form" className="my-5">
         <Row className="justify-content-center">
           <Col md={6} lg={4}>
             <Card className="contact-link">
