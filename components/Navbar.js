@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { Sling as Hamburger } from 'hamburger-react';
 import { Navbar, Nav, NavLink, Container } from "react-bootstrap";
 import Link from "next/link";
 import "./NavBar.css";
@@ -48,7 +49,17 @@ const NavBar = () => {
           <Navbar.Brand as={Link} href="/" className="text-light">
             PROJXON
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <div className="hamburger-react-toggle d-lg-none">
+            <Hamburger
+              toggled={expanded}
+              toggle={setExpanded}
+              color="#FFD700"
+              size={28}
+              rounded
+              label="Show menu"
+              direction="right"
+            />
+          </div>
           <Navbar.Collapse id="basic-navbar-nav">
             <Container className="navbar-container d-flex justify-content-md-start justify-content-lg-end">
               <Nav className="ml-auto text-uppercase">

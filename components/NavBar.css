@@ -84,13 +84,24 @@ a.nav-link:focus-visible {
 .navbar-collapse.collapsing {
   transition: height 0.3s ease;
 }
-
-@media (max-width: 990px) {
+@media (max-width: 991.98px) {
   .navbar-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center;
     padding-left: 0px;
+    max-width: 400px !important;
   }
-
+  .navbar-container .nav {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100%;
+  }
+  .navbar-container .nav-link,
   .navbar-nav a.nav-link {
+    width: 100%;
+    text-align: center;
     padding-left: 0px !important;
   }
 }
