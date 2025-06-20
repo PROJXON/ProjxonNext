@@ -111,14 +111,8 @@ const AboutPage = () => {
       <section className="hero-section">
         <Hero
           title="About Us"
-          subtitle={
-            <>
-              <h2 className="fw-bold mb-2">Where Purpose Meets Performance.</h2>
-              <p>
-                We empower impact-driven businesses to scale with clarity, confidence, and strategic precision, unlocking their full potential every step of the way
-              </p>
-            </>
-          }
+          subtitle="Where Purpose Meets Performance."
+          paragraph="We empower impact-driven businesses to scale with clarity, confidence, and strategic precision, unlocking their full potential every step of the way."
           backgroundClass="about-hero"
         />
       </section>

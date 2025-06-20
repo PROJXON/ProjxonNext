@@ -2,17 +2,11 @@
 
 import AuthGuard from "@/components/AuthGuard";
 import React, { useState, useEffect, useRef } from "react";
-import {
-  fetchClients,
-  addClient,
-  deleteClient,
-  uploadFile
-} from "../../services/clientService";
+import { addClient, deleteClient, uploadFile } from "../../services/clientService";
 import "./TestimonialEditorPage.css";
 import { useRouter } from "next/navigation";
 import { logout } from "../../services/loginService";
 import ImageUpload from "../../components/ImageUpload";
-import axiosInstance from "../../utils/axiosInstance";
 
 export default function EditorPage() {
   const router = useRouter();
@@ -101,49 +95,43 @@ export default function EditorPage() {
     // Make sure you handle the JWT token (can be stored in cookies or context)
     const token = localStorage.getItem('authToken'); // Or use context if needed
 
-    if (!token) {
-        return;
-    }
+    if (!token) return;
 
     try {
-        // Upload file if there is one
-        let fileUrl = '';
-        if (file) {
-            fileUrl = await uploadFile(file);
-        }
+      // Upload file if there is one
+      let fileUrl = '';
+      if (file) fileUrl = await uploadFile(file);
 
-        const newClient = {
-          name: newTestimonial.name,  
-          quote: newTestimonial.quote, 
-          title: newTestimonial.title,
-          image: fileUrl,         
-        };
-        const addedClient = await addClient(newClient, token);
-        if (addedClient) {
-          const response = await fetch('/api/client');
+      const newClient = {
+        name: newTestimonial.name,
+        quote: newTestimonial.quote,
+        title: newTestimonial.title,
+        image: fileUrl,
+      };
+      const addedClient = await addClient(newClient, token);
+      if (addedClient) {
+        const response = await fetch('/api/client');
 
-          if (!response.ok) {
-            throw new Error('Failed to fetch clients');
-          }
-          
-          const updatedClients = await response.json();
-          setClients(updatedClients);
-          setCurrentTestIndex(updatedClients.length - 1);
+        if (!response.ok) throw new Error('Failed to fetch clients');
 
-          setNewTestimonial({
-            image: "",
-            quote: "",
-            name: "",
-            title: ""
-          })
-  
-          setFile(null);
-          if (fileInputRef.current) fileInputRef.current.value = ""
-        }
+        const updatedClients = await response.json();
+        setClients(updatedClients);
+        setCurrentTestIndex(updatedClients.length - 1);
 
-        console.log('Added client:', addedClient);
+        setNewTestimonial({
+          image: "",
+          quote: "",
+          name: "",
+          title: ""
+        })
+
+        setFile(null);
+        if (fileInputRef.current) fileInputRef.current.value = ""
+      }
+
+      console.log('Added client:', addedClient);
     } catch (error) {
-        console.error('Error adding client:', error);
+      console.error('Error adding client:', error);
     }
   };
 

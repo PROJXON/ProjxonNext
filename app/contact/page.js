@@ -47,14 +47,8 @@ const ContactPage = () => {
       <AOSWrapper />
       <Hero
         title="Contact Us"
-        subtitle={
-          <>
-            <h2 className="fw-bold mb-2">Connect with Clarity. Start with Purpose.</h2>
-            <p>
-              Whether you're ready to solve challenges, explore opportunities, or simply have a conversation, our team is here to help. Reach out and let’s start building something meaningful together.
-            </p>
-          </>
-        }
+        subtitle="Connect with Clarity. Start with Purpose."
+        paragraph="Whether you're ready to solve challenges, explore opportunities, or simply have a conversation, our team is here to help. Reach out and let's start building something meaningful together."
         backgroundClass="contact-hero"
       />
       <Container id="contact-form" className="my-5">
