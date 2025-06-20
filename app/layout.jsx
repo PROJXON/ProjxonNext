@@ -18,7 +18,7 @@ export const metadata = {
     siteName: "PROJXON",
     images: [
       {
-        url: "/PROJXON.png",
+        url: "https://www.projxon.com/PROJXON-og.png",
         width: 1200,
         height: 630,
         alt: "PROJXON logo",
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "PROJXON",
     description: "PROJXON empowers businesses with data-driven strategies, operational clarity, and innovative insights. Turning chaos into opportunity with every move.",
-    images: ["/PROJXON.png"]
+    images:["https://www.projxon.com/PROJXON-og.png"]
   }
 };
 
