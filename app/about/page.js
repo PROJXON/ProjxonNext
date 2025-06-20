@@ -109,18 +109,18 @@ const AboutPage = () => {
       <AOSWrapper />
       {/* Hero Section */}
       <section className="hero-section">
-      <Hero
-        title="About US"
-        subtitle={ 
-          <>
-            <h2 className="fw-bold mb-2">Where Purpose Meets Performance.</h2>
-            <p>
-              We empower impact-driven businesses to scale with clarity, confidence, and strategic precision, unlocking their full potential every step of the way
-          </p>
-         </>
-        }
-        backgroundClass="about-hero"
-      />
+        <Hero
+          title="About Us"
+          subtitle={
+            <>
+              <h2 className="fw-bold mb-2">Where Purpose Meets Performance.</h2>
+              <p>
+                We empower impact-driven businesses to scale with clarity, confidence, and strategic precision, unlocking their full potential every step of the way
+              </p>
+            </>
+          }
+          backgroundClass="about-hero"
+        />
       </section>
 
       {/* Who We Are Section */}
@@ -153,15 +153,15 @@ const AboutPage = () => {
               </h2>
               <div className="mt-3 who-we-are-description gray-opacity">
                 <p className="fs-5">
-                  We specialize in transforming operational chaos into clarity through 
-                  strategic planning, process improvement, and project execution. From streamlining systems 
-                  to guiding high-stakes growth, we deliver tailored solutions that empower our clients to 
+                  We specialize in transforming operational chaos into clarity through
+                  strategic planning, process improvement, and project execution. From streamlining systems
+                  to guiding high-stakes growth, we deliver tailored solutions that empower our clients to
                   lead, innovate, and thrive.
                 </p>
                 <p className="fs-5 mb-4 pb-2">
-                  Our cross-functional team brings deep industry 
+                  Our cross-functional team brings deep industry
                   expertise and a relentless focus on results,
-                  because your mission deserves more than just advice. 
+                  because your mission deserves more than just advice.
                   It deserves momentum.
                 </p>
               </div>
@@ -190,7 +190,7 @@ const AboutPage = () => {
             >
               <section className="w-100">
                 <h2 className="fs-1 mb-4 text-uppercase fw-bold">
-                   Mission
+                  Mission
                 </h2>
                 <p className="fs-5">
                   We believe impact-driven businesses deserve to grow with clarity and purpose.
@@ -211,7 +211,7 @@ const AboutPage = () => {
                 <p className="fs-5">
                   We envision a world where Impact-Driven Businesses scale with confidence,
                   backed by the right Tools, Techniques, and Talent.
-                  We envision PROJXON as the trusted partner organizations turn to when 
+                  We envision PROJXON as the trusted partner organizations turn to when
                   they’re ready to succeed with focus and scale with purpose.
                 </p>
               </section>
