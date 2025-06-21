@@ -42,6 +42,8 @@ export default async function ResearchPage() {
     <AOSWrapper />
     <Hero
       title="Momentum Internship Program"
+      subtitle="Designed for Learning. Structured for Success."
+      paragraph="Empowering professionals with the tools, experience, and mentorship needed to thrive in fast-paced, real-world environments. This isn’t busy work, it’s a launchpad for high-performance careers."
       backgroundClass="internships-hero"
     />
 
@@ -89,10 +91,10 @@ export default async function ResearchPage() {
     </Container>
 
     <section id="testimonials" className="testimonials-wrapper">
-    <InternTestimonialsSection />
+      <InternTestimonialsSection />
     </section>
     <section id="blogs" className="blogs-wrapper">
-    <BlogClientList initialBlogs={blogs} />
+      <BlogClientList initialBlogs={blogs} />
     </section>
     <CallToAction />
   </div>)
