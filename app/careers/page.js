@@ -58,7 +58,12 @@ const CareerPage = () => {
   return (<div>
     <AOSWrapper />
     {/* Hero Section */}
-    <Hero title="Join Our Team" backgroundClass="career-hero" />
+    <Hero
+      title="Join Our Team"
+      subtitle="Work with Intention. Grow with Impact."
+      paragraph="At PROJXON, we don't just hire talent—we invest in potential. Join a team where your expertise drives change, your voice matters, and your work creates real-world results."
+      backgroundClass="career-hero"
+    />
 
     {/* Apply */}
     <section id="apply" className="apply bg-yellow">
@@ -147,7 +152,7 @@ const CareerPage = () => {
 
     {/* Clients */}
     <section id="clients" className="clients-wrapper">
-    <MilitaryBranches />
+      <MilitaryBranches />
     </section>
 
     {/* Call to Action Section */}
