@@ -1,4 +1,6 @@
-const login = async (username, password) => {
+import { LoginResponse, WPAuthUser } from "@/types/interfaces";
+
+const login = async (username: string, password: string): Promise<LoginResponse> => {
   try {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth`, {
       method: "POST",
@@ -14,15 +16,12 @@ const login = async (username, password) => {
       throw new Error(errorData.message || "Invalid username or password.");
     }
 
-    const data = await response.json()
+    const data: WPAuthUser = await response.json();
 
     if (data.token) {
       localStorage.setItem("authToken", data.token);
-      localStorage.setItem("user", JSON.stringify(data.user));
-      return { success: true, user: data.user };
-    } else {
-      return { success: false, message: "Invalid username or password." };
-    }
+      return { success: true };
+    } else return { success: false, message: "Invalid username or password." };
   } catch (error) {
     console.error("Login failed:", error);
     return { success: false, message: "Login failed. Please try again." };
@@ -34,8 +33,6 @@ const logout = () => {
   localStorage.removeItem("user");
 };
 
-const isAuthenticated = () => {
-  return !!localStorage.getItem("authToken");
-};
+const isAuthenticated = () => !!localStorage.getItem("authToken");
 
 export { login, logout, isAuthenticated };
