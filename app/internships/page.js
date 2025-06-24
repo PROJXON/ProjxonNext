@@ -43,7 +43,7 @@ export default async function ResearchPage() {
     <Hero
       title="Momentum Internship Program"
       subtitle="Designed for Learning. Structured for Success."
-      paragraph="Empowering professionals with the tools, experience, and mentorship needed to thrive in fast-paced, real-world environments. This isn’t busy work, it’s a launchpad for high-performance careers."
+      paragraph="Empowering professionals with the tools, experience, and mentorship needed to thrive in fast-paced, real-world environments. This isn't busy work, it's a launchpad for high-performance careers."
       backgroundClass="internships-hero"
     />
 
