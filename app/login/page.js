@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState } from "react";
+import { useState } from "react";
 import { Form, Button, Row, Col, Container } from "react-bootstrap";
 import { useRouter } from "next/navigation";
 import { login } from "@/services/loginService";
@@ -12,14 +11,10 @@ const LoginPage = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     const result = await login(username, password);
 
-    if (result.success) {
-      router.push("/editor");
-    } else {
-      alert(result.message);
-    }
+    if (result.success) router.push("/editor");
+    else alert(result.message);
   };
 
   return (

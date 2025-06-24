@@ -28,10 +28,7 @@ const login = async (username: string, password: string): Promise<LoginResponse>
   }
 };
 
-const logout = () => {
-  localStorage.removeItem("authToken");
-  localStorage.removeItem("user");
-};
+const logout = () => localStorage.removeItem("authToken");
 
 const isAuthenticated = () => !!localStorage.getItem("authToken");
 
