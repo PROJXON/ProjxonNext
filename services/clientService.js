@@ -1,26 +1,13 @@
-// services/clientService.js
-
-// We will modify the clientService.js to fetch data internally instead of externally
 import axios from 'axios';
-
-const api = axios.create({
-  baseURL: process.env.WORDPRESS_CUSTOM_API_URL,
-  headers: {
-      'Content-Type': 'application/json',
-  },
-});
+import getToken from '@/lib/getToken';
 
 export const fetchClients = async ({ useNoStore = false } = {}) => {
   try {
     const res = await fetch(`${process.env.WORDPRESS_CUSTOM_API_URL}/clients`, {
-      ...(useNoStore
-        ? { cache: "no-store" }
-        : { next: { revalidate: 300 } }), // default ISR for SSR pages
+      ...(useNoStore ? { cache: "no-store" } : { next: { revalidate: 300 } }), // default ISR for SSR pages
     });
 
-    if (!res.ok) {
-      throw new Error("Error fetching clients");
-    }
+    if (!res.ok) throw new Error("Error fetching clients");
 
     return await res.json();
   } catch (error) {
@@ -31,20 +18,13 @@ export const fetchClients = async ({ useNoStore = false } = {}) => {
 
 export const fetchClient = async (id) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/${id}`); // Internal API route with dynamic id
-  if (!res.ok) {
-    throw new Error("Error fetching client");
-  }
+  if (!res.ok) throw new Error("Error fetching client");
   return res.json(); // Parse the JSON response
 };
 
 export const addClient = async (clientData) => {
   try {
-    const token = localStorage.getItem("authToken");
-
-    if (!token) {
-      throw new Error("Unauthorized - No token found");
-    }
-
+    const token = getToken();
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client`, {
       method: "POST",
       headers: {
@@ -55,11 +35,11 @@ export const addClient = async (clientData) => {
     });
 
     if (!res.ok) {
-      const errorResponse = await res.json(); 
+      const errorResponse = await res.json();
       throw new Error(`Error adding client: ${errorResponse.message || res.statusText}`);
     }
 
-    return res.json(); 
+    return res.json();
   } catch (error) {
     console.error("❌ Error adding client:", error.message);
     return null;
@@ -67,36 +47,26 @@ export const addClient = async (clientData) => {
 };
 
 export const uploadFile = async (file) => {
-  const token = localStorage.getItem("authToken");
-  
-  if (!token) {
-    throw new Error("No token found");
-  }
-
+  const token = getToken();
   const formData = new FormData();
   formData.append('file', file);
 
   try {
-      const response = await axios.post('/api/upload', formData, {
-          headers: {
-              'Authorization': `Bearer ${token}`,
-          },
-      });
-      return response.data.url;
+    const response = await axios.post('/api/upload', formData, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+    return response.data.url;
   } catch (error) {
-      console.error('Error uploading file:', error);
-      throw error;
+    console.error('Error uploading file:', error);
+    throw error;
   }
 };
 
 export const deleteClient = async (id) => {
   try {
-    const token = localStorage.getItem("authToken");
-
-    if (!token) {
-      throw new Error("Unauthorized - No token found");
-    }
-
+    const token = getToken();
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/${id}`, {
       method: "DELETE",
       headers: {
@@ -105,9 +75,7 @@ export const deleteClient = async (id) => {
       },
     });
 
-    if (!res.ok) {
-      throw new Error("Error deleting client");
-    }
+    if (!res.ok) throw new Error("Error deleting client");
 
     return res.status === 200 || res.status === 204;
   } catch (error) {
