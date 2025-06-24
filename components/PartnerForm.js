@@ -1,6 +1,5 @@
 "use client";
-
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { Form, Button, Col, Alert } from "react-bootstrap";
 import { sendEmail } from "../services/emailService";
 import "./PartnerForm.css";

@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useRef } from "react";
 import { Form, Button, Alert, Card } from "react-bootstrap";
 import { sendEmail } from "../services/emailService";
