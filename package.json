@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-sitemap": "node generate-sitemap.js",
+    "generate-sitemap": "ts-node generate-sitemap.ts",
     "prebuild": "npm run generate-sitemap",
     "deploy": "aws s3 sync ./out s3:www.projxon.com --delete"
   },
@@ -35,6 +35,7 @@
   "devDependencies": {
     "@types/node": "^24.0.3",
     "@types/react": "^19.1.8",
+    "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   }
 }

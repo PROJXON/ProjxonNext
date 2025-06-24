@@ -1,9 +1,10 @@
 // generate-sitemap.js
-const fs = require('fs');
-const path = require('path');
+import fs from "fs";
+import path from "path";
+import { StaticPage, BlogPost } from "./types/interfaces";
 
 // Static pages that are part of your site
-const staticPages = [
+const staticPages: StaticPage[] = [
   { url: '/', priority: '1.0', changefreq: 'daily' },
   { url: '/services', priority: '0.8', changefreq: 'weekly' },
   { url: '/about', priority: '0.7', changefreq: 'weekly' },
@@ -14,7 +15,7 @@ const staticPages = [
 ];
 
 // You can dynamically get your blog posts from a CMS or database here
-const blogPosts = [
+const blogPosts: BlogPost[] = [
   { id: 'from-overwhelmed-to-empowered-how-projxons-internship-changed-my-life', lastModified: '2025-03-03' }
   // Add more blog posts here
 ];
@@ -46,5 +47,5 @@ blogPosts.forEach(post => {
 sitemap += '</urlset>';
 
 // Write sitemap to public directory
-fs.writeFileSync(path.join(__dirname, 'public', 'sitemap.xml'), sitemap);
+fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), sitemap);
 console.log('Sitemap generated successfully!');
