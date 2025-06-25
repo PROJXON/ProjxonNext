@@ -38,10 +38,7 @@ export interface ConsultingLeads {
   name: string;
   title: string;
   specialty: string;
-  socials: {
-    icon: IconType;
-    href: URL;
-  }[];
+  socials: ReactIconLink[];
 };
 
 export interface InternTestimonial {
@@ -50,4 +47,23 @@ export interface InternTestimonial {
   name: string;
   quote: string;
   title: string;
+};
+
+interface ReactIconLink {
+  icon: IconType;
+  href: URL;
+};
+
+export interface SocialIcon extends ReactIconLink {
+  ariaLabel: string;
+  newTab: boolean;
+};
+
+export interface FooterLink {
+  heading: string;
+  href: string;
+  links: {
+    id: string;
+    text: string;
+  }[];
 };
