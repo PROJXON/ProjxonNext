@@ -1,15 +1,14 @@
 import { Container, Row, Col } from "react-bootstrap";
-
 import "./PartnershipPage.css";
-
 import Hero from "../../components/Hero";
 import CallToAction from "../../components/CallToAction";
 import CustomButton from "../../components/CustomButton";
-
 import AOSWrapper from "@/components/AOSWrapper";
 import Image from "next/image";
+import type { Metadata } from "next";
+import { Partnership } from "@/types/interfaces";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Partner with PROJXON | Strategic Collaborations for Growth",
   description: "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
   metadataBase: new URL("https://www.projxon.com/partnership"),
@@ -37,7 +36,7 @@ export const metadata = {
 };
 
 const PartnershipPage = () => {
-  const partnerships = [
+  const partnerships: Partnership[] = [
     {
       title: "Experience and Expertise",
       text: "Leverage our extensive experience across various industries to enhance your offerings and drive growth. Our team of experts is equipped to handle diverse challenges and deliver innovative solutions.",

@@ -67,3 +67,9 @@ export interface FooterLink {
     text: string;
   }[];
 };
+
+export interface Partnership {
+  title: string;
+  text: string;
+  dataAOSDelay: NumericString;
+};

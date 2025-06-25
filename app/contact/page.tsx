@@ -1,12 +1,12 @@
 import { Container, Row, Col, Card, CardBody } from "react-bootstrap";
 import { FaEnvelopeOpenText } from "react-icons/fa";
+import type { Metadata } from "next";
 import "./ContactPage.css";
-
 import Hero from "@/components/Hero";
 import InfoForm from "@/components/InfoForm";
 import AOSWrapper from "@/components/AOSWrapper";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Contact PROJXON | Get in Touch with Our Experts",
   description: "Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.",
   metadataBase: new URL("https://www.projxon.com/contact"),
@@ -34,14 +34,6 @@ export const metadata = {
 };
 
 const ContactPage = () => {
-  const contactInfoList = [
-    {
-      icon: FaEnvelopeOpenText,
-      label: "info@projxon.com",
-      href: "https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=info@projxon.com",
-    },
-  ];
-
   return (
     <div className="contact-page">
       <AOSWrapper />
@@ -59,10 +51,7 @@ const ContactPage = () => {
                 <div className="fs-3 px-2 lh-1">
                   <FaEnvelopeOpenText className="text-yellow" />
                 </div>
-                <a
-                  className="contact-link-content ms-4"
-                  href="mailto:info@projxon.com"
-                >
+                <a className="contact-link-content ms-4" href="mailto:info@projxon.com">
                   Questions?
                 </a>
               </CardBody>
@@ -76,4 +65,5 @@ const ContactPage = () => {
     </div>
   );
 };
+
 export default ContactPage;
