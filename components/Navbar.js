@@ -6,7 +6,7 @@ import { Navbar, Nav, NavLink, Container } from "react-bootstrap";
 import Link from "next/link";
 import "./NavBar.css";
 import dynamic from "next/dynamic";
-
+import useWindowSize from "@/components/useWindowSize";
 import { usePathname } from 'next/navigation'
 
 const BootstrapBundle = dynamic(
@@ -17,6 +17,8 @@ const BootstrapBundle = dynamic(
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
   const pathname = usePathname()
+  const size = useWindowSize();
+
 
   useEffect(() => {
     BootstrapBundle(); // Ensure bootstrap JS is loaded after the component mounts
@@ -60,7 +62,7 @@ const NavBar = () => {
               direction="right"
             />
           </div>
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Collapse id="basic-navbar-nav" className="d-none d-lg-block">
             <Container className="navbar-container d-flex justify-content-md-start justify-content-lg-end">
               <Nav className="ml-auto text-uppercase">
                 {navLinks.map((link, index) => {
@@ -88,6 +90,24 @@ const NavBar = () => {
             </Container>
           </Navbar.Collapse>
         </Container>
+        {expanded && size.width < 992 && (
+          <div className="mobile-sidebar-menu">
+            {navLinks.map((link, index) => {
+              const currPage =
+                pathname === link.to || (pathname.startsWith(link.to) && link.to !== "/");
+              return (
+                <Link
+                  key={index}
+                  href={link.to}
+                  className={`sidebar-link nav-link ${currPage ? "active" : ""}`}
+                  onClick={handleLinkClick}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
+        )}
       </Navbar>
     </div>
   );
