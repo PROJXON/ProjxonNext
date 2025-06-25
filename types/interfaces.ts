@@ -28,7 +28,6 @@ export interface CareerPositions {
   image: string;
   title: string;
   description: string;
-  link: URL;
   align: "start" | "end";
   dataAOS: "fade-left" | "fade-right";
 };

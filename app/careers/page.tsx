@@ -42,7 +42,6 @@ const CareerPage = () => {
       title: "Consulting Positions",
       description:
         "Join a team that values continuous improvement, collaboration, and exceptional client service. If you're passionate about delivering unique and impactful projects, we want to hear from you.",
-      link: new URL("https://app.dover.com/apply/5ccf21fe-8abd-41a1-9901-454fced87372/712e0a00-9144-489e-a759-1b71331cb327/?rs=15190316"),
       align: "start",
       dataAOS: "fade-right",
     },
@@ -51,7 +50,6 @@ const CareerPage = () => {
       title: "Advisory Positions",
       description:
         "Leverage your consulting expertise in a flexible, part-time role, supporting client engagements without the responsibility of managing clients. Share your skills and knowledge with us.",
-      link: new URL("https://app.dover.com/apply/5ccf21fe-8abd-41a1-9901-454fced87372/712e0a00-9144-489e-a759-1b71331cb327/?rs=15190316"),
       align: "end",
       dataAOS: "fade-left",
     },
@@ -140,7 +138,7 @@ const CareerPage = () => {
                   <p className="text-gray fs-5 mb-4">{position.description}</p>
                   <CustomButton
                     buttonText="Apply now"
-                    link={position.link.toString()}
+                    link="https://app.dover.com/apply/5ccf21fe-8abd-41a1-9901-454fced87372/712e0a00-9144-489e-a759-1b71331cb327/?rs=15190316"
                     buttonStyle="yellow-button"
                     delayTime={0}
                     isExternal={true}
