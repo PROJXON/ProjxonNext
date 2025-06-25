@@ -54,11 +54,11 @@ export default function InternTestimonialsSection() {
                                     <Card className="border-0 p-4 my-4 section-card">
                                         <Card.Body>
                                             <div className="d-flex align-items-center mb-4">
-                                                <div className="me-3">
+                                                <div className="me-3 flex-shrink-0">
                                                     <Image
                                                         src={intern.image.toString()}
                                                         alt={intern.name}
-                                                        className="img-fluid rounded-circle border"
+                                                        className="rounded-circle border"
                                                         width={65}
                                                         height={65}
                                                     />
