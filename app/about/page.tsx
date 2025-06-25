@@ -2,14 +2,15 @@ import "./AboutPage.css"
 import { Container, Row, Col } from "react-bootstrap"
 import { FaLinkedin, FaGlobe } from "react-icons/fa"
 import Image from "next/image"
-
 import AOSWrapper from "@/components/AOSWrapper";
 import Hero from "@/components/Hero";
 import CustomButton from "@/components/CustomButton";
 import CallToAction from "@/components/CallToAction"
 import OurValues from "@/components/OurValues"
+import type { Metadata } from "next";
+import { ConsultingLeads } from "@/types/interfaces";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "About PROJXON | The Story Behing Strategy & Innovation",
   description: "Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.",
   metadataBase: new URL("https://www.projxon.com/about"),
@@ -37,7 +38,7 @@ export const metadata = {
 };
 
 const AboutPage = () => {
-  const consultingLeads = [
+  const consultingLeads: ConsultingLeads[] = [
     {
       image: "/assets/about/team/phelan.webp",
       name: "Mark Phelan",
@@ -46,11 +47,11 @@ const AboutPage = () => {
       socials: [
         {
           icon: FaLinkedin,
-          href: "https://www.linkedin.com/in/phelanmarkw",
+          href: new URL("https://www.linkedin.com/in/phelanmarkw")
         },
         {
           icon: FaGlobe,
-          href: "https://www.thephelanfocus.com/",
+          href: new URL("https://www.thephelanfocus.com/")
         },
       ],
     },
@@ -62,11 +63,11 @@ const AboutPage = () => {
       socials: [
         {
           icon: FaLinkedin,
-          href: "https://www.linkedin.com/in/klseaton",
+          href: new URL("https://www.linkedin.com/in/klseaton")
         },
         {
           icon: FaGlobe,
-          href: "https://www.klseatonconsulting.com/",
+          href: new URL("https://www.klseatonconsulting.com/")
         },
       ],
     },
@@ -78,11 +79,11 @@ const AboutPage = () => {
       socials: [
         {
           icon: FaLinkedin,
-          href: "https://www.linkedin.com/in/viamelissa",
+          href: new URL("https://www.linkedin.com/in/viamelissa")
         },
         {
           icon: FaGlobe,
-          href: "https://www.viaskitchen.com/"
+          href: new URL("https://www.viaskitchen.com/")
         },
       ],
     },
@@ -94,11 +95,11 @@ const AboutPage = () => {
       socials: [
         {
           icon: FaLinkedin,
-          href: "https://www.linkedin.com/in/donavonroberson",
+          href: new URL("https://www.linkedin.com/in/donavonroberson")
         },
         {
           icon: FaGlobe,
-          href: "https://medium.com/@thejourneyofthedreamer",
+          href: new URL("https://medium.com/@thejourneyofthedreamer")
         },
       ],
     }
@@ -254,7 +255,7 @@ const AboutPage = () => {
                     <div className="mt-auto">
                       {member.socials.map((link, index) => (
                         <a
-                          href={link.href}
+                          href={link.href.toString()}
                           className="text-yellow social-icons mx-2"
                           key={index}
                           target="_blank"
@@ -271,19 +272,6 @@ const AboutPage = () => {
           </Row>
         </Container>
       </section>
-
-      {/* Company History Section */}
-      {/* <Container className="my-5">
-                <h2 className="text-center mb-4" data-aos="fade-down">Our Journey</h2>
-                <Row className="justify-content-center">
-                    <Col md={6} data-aos="fade-up">
-                        <h3>Milestones and Achievements</h3>
-                        <p>
-                            From our humble beginnings, we have achieved numerous milestones, including expanding our client base internationally, developing proprietary solutions, and being recognized as industry leaders in business consulting. Our journey is a testament to our commitment to excellence and continuous improvement.
-                        </p>
-                    </Col>
-                </Row>
-            </Container> */}
 
       {/* Call to Action Section */}
       <CallToAction />

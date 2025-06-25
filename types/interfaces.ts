@@ -1,3 +1,4 @@
+import { IconType } from "react-icons";
 import { NumericString } from "./types";
 
 export interface StaticPage {
@@ -30,4 +31,15 @@ export interface CareerPositions {
   link: URL;
   align: "start" | "end";
   dataAOS: "fade-left" | "fade-right";
+};
+
+export interface ConsultingLeads {
+  image: string;
+  name: string;
+  title: string;
+  specialty: string;
+  socials: {
+    icon: IconType;
+    href: URL;
+  }[];
 };

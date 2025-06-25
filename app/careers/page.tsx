@@ -140,7 +140,7 @@ const CareerPage = () => {
                   <p className="text-gray fs-5 mb-4">{position.description}</p>
                   <CustomButton
                     buttonText="Apply now"
-                    link={position.link}
+                    link={position.link.toString()}
                     buttonStyle="yellow-button"
                     delayTime={0}
                     isExternal={true}
