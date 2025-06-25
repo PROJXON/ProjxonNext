@@ -1,42 +1,22 @@
 "use client"
 import { Row, Col, Container, Carousel, Card } from "react-bootstrap"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
+import { InternTestimonial } from "@/types/interfaces";
 
 export default function InternTestimonialsSection() {
     const [index, setIndex] = useState(0);
-    const handleSelect = (selectedIndex) => setIndex(selectedIndex);
+    const [internTestimonials, setInternTestimonials] = useState<InternTestimonial[]>([]);
+    const handleSelect = (selectedIndex: number) => setIndex(selectedIndex);
 
-    const internTestimonials = [
-        {
-            image: "/assets/careers/interns/jordan.webp",
-            name: "Jordan Le",
-            university: "Azuza Pacific University",
-            testimonial:
-                "PROJXON helps companies grow, while the internship program helps its interns develop into competent, knowledgable professionals. Throughout this experience, I have become more collaborative, communicative, detail-oriented, and creative.",
-        },
-        {
-            image: "/assets/careers/interns/noemi.webp",
-            name: "Noemi Nagy",
-            university: "University of California Merced",
-            testimonial:
-                "Participating in the PROJXON MIP has been a pivotal experience...",
-        },
-        {
-            image: "/assets/careers/interns/gianna.webp",
-            name: "Gianna Vita",
-            university: "Indiana University Bloomington",
-            testimonial:
-                "PROJXON has provided me with valuable insights into cross-departmental collaboration...",
-        },
-        {
-            image: "/assets/careers/interns/arthur.webp",
-            name: "Artur Fedrizzi",
-            university: "University of California Irvine",
-            testimonial:
-                "The Momentum Internship Program at PROJXON gave me applicable knowledge, skills, tools...",
-        }
-    ]
+    useEffect(() => {
+        (async () => {
+            const result = await fetch("/api/client");
+            const data = await result.json();
+            console.log(data);
+            setInternTestimonials(data);
+        })()
+    }, []);
 
     const chunked = []
     for (let i = 0; i < internTestimonials.length; i += 3) {
@@ -69,14 +49,14 @@ export default function InternTestimonialsSection() {
                 {chunked.map((testimonialGroup, groupIndex) => (
                     <Carousel.Item key={groupIndex}>
                         <Row>
-                            {testimonialGroup.map((intern, i) => (
-                                <Col xs={12} lg={4} key={i}>
+                            {testimonialGroup.map(intern => (
+                                <Col xs={12} lg={4} key={intern.id}>
                                     <Card className="border-0 p-4 my-4 section-card">
                                         <Card.Body>
                                             <div className="d-flex align-items-center mb-4">
                                                 <div className="me-3">
                                                     <Image
-                                                        src={intern.image}
+                                                        src={intern.image.toString()}
                                                         alt={intern.name}
                                                         className="img-fluid rounded-circle border"
                                                         width={65}
@@ -86,12 +66,12 @@ export default function InternTestimonialsSection() {
                                                 <div>
                                                     <h4 className="mb-0 fs-5 text-yellow">{intern.name}</h4>
                                                     <p className="mb-0 small text-gray">
-                                                        {intern.university}
+                                                        {intern.title}
                                                     </p>
                                                 </div>
                                             </div>
                                             <p className="gray-opacity text-gray">
-                                                {intern.testimonial}
+                                                {intern.quote}
                                             </p>
                                         </Card.Body>
                                     </Card>

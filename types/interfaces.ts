@@ -43,3 +43,11 @@ export interface ConsultingLeads {
     href: URL;
   }[];
 };
+
+export interface InternTestimonial {
+  id: NumericString;
+  image: URL;
+  name: string;
+  quote: string;
+  title: string;
+};
