@@ -7,10 +7,11 @@ import { useRouter } from "next/navigation";
 import { logout } from "../../services/loginService";
 import ImageUpload from "../../components/ImageUpload";
 import Image from "next/image";
+import { InternTestimonial } from "@/types/interfaces";
 
 export default function EditorPage() {
   const router = useRouter();
-  const [clients, setClients] = useState([]);
+  const [clients, setClients] = useState<InternTestimonial[]>([]);
   const [currentTestIndex, setCurrentTestIndex] = useState(0);
   const [newTestimonial, setNewTestimonial] = useState({
     image: "",
@@ -18,9 +19,9 @@ export default function EditorPage() {
     name: "",
     title: "",
   });
-  const fileInputRef = useRef(null);
-  const [file, setFile] = useState(null);
-  const [authToken, setAuthToken] = useState(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+  const [file, setFile] = useState<File | null>(null);
+  const [authToken, setAuthToken] = useState<string | null>(null);
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
@@ -85,11 +86,11 @@ export default function EditorPage() {
     }
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setNewTestimonial({ ...newTestimonial, [e.target.name]: e.target.value });
   };
 
-  const handleAdd = async (e) => {
+  const handleAdd = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
     // Make sure you handle the JWT token (can be stored in cookies or context)
@@ -108,7 +109,7 @@ export default function EditorPage() {
         title: newTestimonial.title,
         image: fileUrl,
       };
-      const addedClient = await addClient(newClient, token);
+      const addedClient = await addClient(newClient);
       if (addedClient) {
         const response = await fetch('/api/client');
 
@@ -143,7 +144,7 @@ export default function EditorPage() {
           <div className="testimonial">
             {getCurrentClient().image && (
               <Image
-                src={getCurrentClient().image}
+                src={getCurrentClient().image.toString()}
                 alt="Client"
                 width={150}
                 height={150}

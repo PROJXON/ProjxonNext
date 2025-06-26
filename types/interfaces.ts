@@ -93,3 +93,7 @@ export interface RouteParams {
 export interface WPImage {
   source_url: string;
 };
+
+export interface ImageUploadProps {
+  onFileSelect: (file: File) => void;
+};
