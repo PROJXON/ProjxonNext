@@ -1,44 +1,45 @@
 import { NextResponse } from 'next/server';
+import type { NextRequest } from "next/server";
 import axios from 'axios';
 import FormData from 'form-data';
-import { authenticateUser } from '@/lib/authenticateUser';
+import getAuth from "@/lib/getAuth";
+import { WPImage } from "@/types/interfaces";
 
-export async function POST(req) {
+export async function POST(req: NextRequest) {
     try {
-        authenticateUser(req);
-
-        const authHeader = req.headers.get('Authorization');
+        const authHeader = getAuth(req);
         if (!authHeader || !authHeader.startsWith('Bearer ')) {
-          return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
+            return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
         }
         const token = authHeader.split(' ')[1];
 
         const formData = new FormData();
         const body = await req.formData();
         const file = body.get('file');
-
-        if (!file) {
+        if (!file || !(file instanceof File)) {
             return NextResponse.json({ message: 'No file uploaded' }, { status: 400 });
         }
-
-        // const fileStream = file.stream(); 
 
         const buffer = Buffer.from(await file.arrayBuffer());
         formData.append('file', buffer, file.name);
         console.log('FormData:', formData);
 
         // Make the POST request to the WordPress media API
-        const response = await axios.post(`${process.env.WORDPRESS_API_URL}/media`, formData, {
-            headers: {
-                ...formData.getHeaders(),
-                'Authorization': `Bearer ${token}`,
-            },
-        });
+        const response = await axios.post<WPImage>(
+            `${process.env.WORDPRESS_API_URL}/media`,
+            formData,
+            {
+                headers: {
+                    ...formData.getHeaders(),
+                    'Authorization': `Bearer ${token}`,
+                },
+            }
+        );
         console.log('WordPress API response:', response.data);
 
         // Return the image URL from the WordPress API
         return NextResponse.json({ url: response.data.source_url }, { status: 200 });
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error uploading image:', error.response ? error.response.data : error);
         return NextResponse.json({ message: 'Error uploading image' }, { status: 500 });
     }

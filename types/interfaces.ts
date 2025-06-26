@@ -89,3 +89,7 @@ export interface RouteParams {
     id: string;
   };
 };
+
+export interface WPImage {
+  source_url: string;
+};
