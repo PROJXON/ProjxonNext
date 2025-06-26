@@ -44,10 +44,10 @@ export async function POST(req: NextResponse) {
             to: process.env.EMAIL_USER,
             subject: `New Contact Request from ${user_name}`,
             text: `
-        Name: ${user_name}
-        Email: ${user_email}
-        Message: ${message}
-      `,
+                Name: ${user_name}
+                Email: ${user_email}
+                Message: ${message}
+            `,
         };
 
         const confirmationMailOptions = {

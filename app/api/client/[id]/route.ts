@@ -1,17 +1,19 @@
-import { authenticateUser } from "@/lib/authenticateUser";
+import getAuth from "@/lib/getAuth";
+import type { NextRequest } from "next/server";
+import { InternTestimonial, RouteParams } from "@/types/interfaces";
 
-export async function GET(req, { params }) {
+export async function GET(_req: NextRequest, { params }: RouteParams) {
   try {
     const res = await fetch(`${process.env.WORDPRESS_CUSTOM_API_URL}/clients`);
-    const data = await res.json();
+    const data: InternTestimonial[] = await res.json();
     const client = data.find((c) => c.id === params.id);
 
     return client
       ? Response.json(client)
       : new Response(JSON.stringify({ message: "Client not found" }), {
-          status: 404,
-        });
-  } catch (error) {
+        status: 404,
+      });
+  } catch (error: any) {
     return new Response(
       JSON.stringify({
         message: "Error fetching client",
@@ -22,24 +24,22 @@ export async function GET(req, { params }) {
   }
 }
 
-export async function DELETE(req, context) {
+export async function DELETE(req: NextRequest, { params }: RouteParams) {
   try {
-    authenticateUser(req);
-
-    const { id } = await context.params
+    const authHeader = getAuth(req);
 
     const res = await fetch(
-      `${process.env.WORDPRESS_CUSTOM_API_URL}/clients/${id}`,
+      `${process.env.WORDPRESS_CUSTOM_API_URL}/clients/${params.id}`,
       {
         method: "DELETE",
         headers: {
-          Authorization: req.headers.get("authorization"),
+          Authorization: authHeader,
         },
       }
     );
 
     return Response.json(await res.json());
-  } catch (error) {
+  } catch (error: any) {
     return new Response(
       JSON.stringify({
         message: "Error deleting client",

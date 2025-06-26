@@ -83,3 +83,9 @@ export interface EmailFormFields {
   organization?: string;
   services_needed?: string;
 };
+
+export interface RouteParams {
+  params: {
+    id: string;
+  };
+};

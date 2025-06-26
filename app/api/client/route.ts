@@ -1,11 +1,12 @@
-import { authenticateUser } from "@/lib/authenticateUser";
+import getAuth from "@/lib/getAuth";
 import { fetchClients } from "@/services/clientService";
+import type { NextRequest } from "next/server";
 
 export async function GET() {
   try {
     const data = await fetchClients({ useNoStore: true });
     return Response.json(data);
-  } catch (error) {
+  } catch (error: any) {
     return new Response(
       JSON.stringify({
         message: "Error fetching clients",
@@ -16,16 +17,23 @@ export async function GET() {
   }
 }
 
-export async function POST(req) {
+export async function POST(req: NextRequest) {
   try {
-    authenticateUser(req); // Protect this route
+    const authHeader = getAuth(req);
+
+    if (!authHeader) {
+      return new Response(
+        JSON.stringify({ message: "Missing Authorization header" }),
+        { status: 401, headers: { "Content-Type": "application/json" } }
+      );
+    }
 
     const body = await req.json();
     console.log("Received client data:", body);
     const res = await fetch(`${process.env.WORDPRESS_CUSTOM_API_URL}/clients`, {
       method: "POST",
       headers: {
-        Authorization: req.headers.get("authorization"),
+        Authorization: authHeader,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
@@ -39,7 +47,7 @@ export async function POST(req) {
 
     const responseData = await res.json();
     return Response.json(responseData, { status: 201 });
-  } catch (error) {
+  } catch (error: any) {
     return new Response(
       JSON.stringify({ message: "Error adding client", error: error.message }),
       { status: 500 }
