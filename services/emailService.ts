@@ -1,4 +1,6 @@
-export const sendEmail = async (formData: Record<string, string>) => {
+import { EmailResponse, EmailFormFields } from "@/types/interfaces";
+
+export const sendEmail = async (formData: EmailFormFields): Promise<EmailResponse> => {
   try {
     const data = JSON.stringify(formData);
 
@@ -10,7 +12,7 @@ export const sendEmail = async (formData: Record<string, string>) => {
 
     if (!response.ok) throw new Error("Error sending email");
 
-    const responseData = await response.json();
+    const responseData: EmailResponse = await response.json();
     return responseData;
   } catch (error) {
     console.error("Error sending email:", error);

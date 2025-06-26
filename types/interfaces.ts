@@ -72,3 +72,14 @@ export interface Partnership {
   text: string;
   dataAOSDelay: NumericString;
 };
+
+export interface EmailResponse { message: string; };
+
+export interface EmailFormFields {
+  user_name: string;
+  user_email: string;
+  message: string;
+  user_phone?: string;
+  organization?: string;
+  services_needed?: string;
+};

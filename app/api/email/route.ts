@@ -1,5 +1,7 @@
 import { google } from "googleapis";
 import nodemailer from "nodemailer";
+import { NextResponse } from "next/server";
+import { EmailFormFields } from "@/types/interfaces";
 
 const OAuth2Client = new google.auth.OAuth2(
     process.env.EMAIL_CLIENT_ID,
@@ -9,19 +11,20 @@ const OAuth2Client = new google.auth.OAuth2(
 
 OAuth2Client.setCredentials({ refresh_token: process.env.EMAIL_REFRESH_TOKEN });
 
-async function getAccessToken() {
+async function getAccessToken(): Promise<string> {
     try {
-        const { token } = await OAuth2Client.getAccessToken();
-        return token;
+        const res = await OAuth2Client.getAccessToken();
+        if (!res?.token) throw new Error("No access token returned");
+        return res.token;
     } catch (error) {
         console.error("Failed to get access token:", error);
         throw new Error("Failed to authenticate email service.");
     }
 }
 
-export async function POST(req) {
+export async function POST(req: NextResponse) {
     try {
-        const { user_name, user_email, message } = await req.json();
+        const { user_name, user_email, message }: EmailFormFields = await req.json();
         const accessToken = await getAccessToken();
 
         const transporter = nodemailer.createTransport({
