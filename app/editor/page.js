@@ -1,5 +1,4 @@
 "use client";
-
 import AuthGuard from "@/components/AuthGuard";
 import React, { useState, useEffect, useRef } from "react";
 import { addClient, deleteClient, uploadFile } from "../../services/clientService";
@@ -7,6 +6,7 @@ import "./TestimonialEditorPage.css";
 import { useRouter } from "next/navigation";
 import { logout } from "../../services/loginService";
 import ImageUpload from "../../components/ImageUpload";
+import Image from "next/image";
 
 export default function EditorPage() {
   const router = useRouter();
@@ -142,10 +142,11 @@ export default function EditorPage() {
         <div className="testimonial-carousel">
           <div className="testimonial">
             {getCurrentClient().image && (
-              <img
-                className="image"
+              <Image
                 src={getCurrentClient().image}
                 alt="Client"
+                width={150}
+                height={150}
               />
             )}
             <span className="quote">{getCurrentClient().quote}</span>
