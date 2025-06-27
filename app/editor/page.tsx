@@ -13,8 +13,8 @@ export default function EditorPage() {
   const router = useRouter();
   const [clients, setClients] = useState<InternTestimonial[]>([]);
   const [currentTestIndex, setCurrentTestIndex] = useState(0);
-  const [newTestimonial, setNewTestimonial] = useState({
-    image: "",
+  const [newTestimonial, setNewTestimonial] = useState<InternTestimonial>({
+    image: new URL(""),
     quote: "",
     name: "",
     title: "",
@@ -120,7 +120,7 @@ export default function EditorPage() {
         setCurrentTestIndex(updatedClients.length - 1);
 
         setNewTestimonial({
-          image: "",
+          image: new URL(""),
           quote: "",
           name: "",
           title: ""

@@ -41,7 +41,7 @@ export interface ConsultingLeads {
 };
 
 export interface InternTestimonial {
-  id: NumericString;
+  id?: NumericString;
   image: URL;
   name: string;
   quote: string;
