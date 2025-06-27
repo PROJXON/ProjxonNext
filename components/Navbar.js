@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Navbar, Nav, NavLink, Container } from "react-bootstrap";
 import Link from "next/link";
 import "./NavBar.css";
+import { Sling as Hamburger } from 'hamburger-react';
 import dynamic from "next/dynamic";
 
 import { usePathname } from 'next/navigation'
@@ -16,10 +17,31 @@ const BootstrapBundle = dynamic(
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
   const pathname = usePathname()
+  const collapseRef = useRef(null);
 
   useEffect(() => {
     BootstrapBundle(); // Ensure bootstrap JS is loaded after the component mounts
   }, []);
+
+   useEffect(() => {
+    const handleClickOutside = (event) => {
+      // If menu is open and click target is outside collapse and hamburger
+      if (
+        expanded &&
+        collapseRef.current &&
+        !collapseRef.current.contains(event.target) &&
+        !event.target.closest(".hamburger-react")
+      ) {
+        setExpanded(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [expanded]);
 
   const handleToggle = () => setExpanded(!expanded);
   const handleLinkClick = () => setExpanded(false);
@@ -43,13 +65,21 @@ const NavBar = () => {
         expand="lg"
         expanded={expanded}
         onToggle={handleToggle}
-      >
+        >
         <Container className="d-flex justify-content-between py-1">
           <Navbar.Brand as={Link} href="/" className="text-light">
             PROJXON
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <div className="d-lg-none">
+            <Hamburger
+              toggled={expanded}
+              toggle={setExpanded}
+              color="#ffd700"
+              size={24}
+              label="Show menu"
+             />
+           </div>
+          <Navbar.Collapse id="basic-navbar-nav" ref={collapseRef}>
             <Container className="navbar-container d-flex justify-content-md-start justify-content-lg-end">
               <Nav className="ml-auto text-uppercase">
                 {navLinks.map((link, index) => {
@@ -61,11 +91,11 @@ const NavBar = () => {
                     <NavLink
                       className="link-offset-3"
                       key={index}
-                      as="div" // Render as a div since Next.js Link uses an anchor tag
+                      as="div" 
                     >
                       <Link
                         href={link.to}
-                        className={`nav-link ${currPage ? "active" : ""}`} // Add the active class based on current route
+                        className={`nav-link ${currPage ? "active" : ""}`} 
                         onClick={handleLinkClick}
                       >
                         {link.label}

@@ -49,3 +49,97 @@ section.blog-section {
 #blogs {
     scroll-margin-top: 80px;
 }
+.internship-content-section {
+  background: #fff;
+  padding: 64px 0 32px 0;
+  font-family: "inherit";
+  color: #000;
+  text-align: left;
+}
+
+.momentum-intern h2 {
+  font-size: 32px;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #000;
+  margin-bottom: 18px;
+}
+
+.momentum-intern h4 {
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 700;
+  color: #000;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.momentum-intern p,
+.momentum-intern ul,
+.momentum-intern ol {
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  color: #000;
+}
+
+.momentum-intern ul,
+.momentum-intern ol {
+  padding-left: 1.3em;
+}
+
+.momentum-intern ul li,
+.momentum-intern ol li {
+  margin-bottom: 8px;
+}
+
+.momentum-intern ul li strong,
+.momentum-intern ol li strong {
+  color: #000;
+  font-weight: 600;
+}
+
+.momentum-intern table {
+  width: 100%;
+  background: #fafbfc;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.momentum-intern table th,
+.momentum-intern table td {
+  border: none;
+  padding: 12px 18px;
+  font-size: 18px;
+  vertical-align: middle;
+  color: #000;
+}
+
+.momentum-intern table tr:not(:last-child) td {
+  border-bottom: 1px solid #ececec;
+}
+
+.yellow-button {
+  border-radius: 32px !important;
+}
+
+/* Responsive table for mobile */
+@media (max-width: 575px) {
+  .momentum-intern table,
+  .momentum-intern table tbody,
+  .momentum-intern table tr,
+  .momentum-intern table td {
+    display: block;
+    width: 100%;
+  }
+  .momentum-intern table tr {
+    margin-bottom: 12px;
+  }
+  .momentum-intern table td {
+    border-bottom: none;
+  }
+}
