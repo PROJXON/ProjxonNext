@@ -42,7 +42,7 @@ export interface ConsultingLeads {
 
 export interface InternTestimonial {
   id?: NumericString;
-  image: URL;
+  image: string;
   name: string;
   quote: string;
   title: string;

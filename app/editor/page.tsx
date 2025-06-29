@@ -14,7 +14,7 @@ export default function EditorPage() {
   const [clients, setClients] = useState<InternTestimonial[]>([]);
   const [currentTestIndex, setCurrentTestIndex] = useState(0);
   const [newTestimonial, setNewTestimonial] = useState<InternTestimonial>({
-    image: new URL(""),
+    image: "",
     quote: "",
     name: "",
     title: "",
@@ -120,7 +120,7 @@ export default function EditorPage() {
         setCurrentTestIndex(updatedClients.length - 1);
 
         setNewTestimonial({
-          image: new URL(""),
+          image: "",
           quote: "",
           name: "",
           title: ""
