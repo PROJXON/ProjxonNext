@@ -2,8 +2,9 @@
 import "./Hero.css";
 import { Container } from "react-bootstrap";
 import { motion } from "framer-motion";
+import { HeroProps } from "@/types/interfaces";
 
-const Hero = ({ title, subtitle, paragraph, backgroundClass }) => {
+const Hero = ({ title, subtitle, paragraph, backgroundClass }: HeroProps) => {
   return (
     <div
       className={`hero-section bg-black`}

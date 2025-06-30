@@ -102,3 +102,10 @@ export interface ErrorPageProps {
   error: Error & { digest?: string; };
   reset: () => void;
 };
+
+export interface HeroProps {
+  title: string;
+  subtitle?: string;
+  paragraph?: string;
+  backgroundClass?: `${string}-hero`;
+};

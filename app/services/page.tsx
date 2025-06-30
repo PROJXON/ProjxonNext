@@ -1,10 +1,8 @@
 import "./ServicesPage.css";
-
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
 import { Container } from "react-bootstrap"
 import ServiceGrid from "@/components/ServiceGrid";
-
 import AOSWrapper from "@/components/AOSWrapper";
 
 const ServicesPage = () => {
