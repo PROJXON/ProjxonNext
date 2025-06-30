@@ -97,3 +97,8 @@ export interface WPImage {
 export interface ImageUploadProps {
   onFileSelect: (file: File) => void;
 };
+
+export interface ErrorPageProps {
+  error: Error & { digest?: string; };
+  reset: () => void;
+};
