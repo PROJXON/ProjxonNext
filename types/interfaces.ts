@@ -1,5 +1,5 @@
 import { IconType } from "react-icons";
-import { NumericString } from "./types";
+import { NumericString, WPStatus } from "./types";
 
 export interface StaticPage {
   url: string;
@@ -7,7 +7,7 @@ export interface StaticPage {
   changefreq: "daily" | "weekly";
 };
 
-export interface BlogPost {
+export interface SitemapBlogPost {
   id: string;
   lastModified: string;
 };
@@ -108,4 +108,34 @@ export interface HeroProps {
   subtitle?: string;
   paragraph?: string;
   backgroundClass?: `${string}-hero`;
+};
+
+export interface WPBlogPost {
+  author: number;
+  categories: number[];
+  comment_status: WPStatus;
+  content: WPPostContent;
+  date: Date;
+  date_gmt: Date;
+  excerpt: WPPostContent;
+  featured_media: number;
+  format: "standard" | "aside" | "chat" | "gallery" | "link" | "image" | "quote" | "status" | "video" | "audio";
+  guid: WPPostContent;
+  id: number;
+  link: URL;
+  meta: Record<string, string>;
+  modified: Date;
+  modified_gmt: Date;
+  ping_status: WPStatus;
+  slug: string;
+  status: "publish" | "future" | "draft" | "pending" | "private";
+  type: string;
+  template: string;
+  title: WPPostContent;
+  [prop: string]: any;
+};
+
+interface WPPostContent {
+  protected?: boolean;
+  rendered: string;
 };

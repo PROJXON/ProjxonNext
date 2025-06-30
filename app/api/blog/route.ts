@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
   const slug = searchParams.get("slug");
 
   try {
-    const data = await fetchBlogs(slug);
+    const data = await fetchBlogs(slug as string);
     return new Response(JSON.stringify(data), { status: 200 });
   } catch (error: any) {
     console.error("Error fetching blogs:", error);

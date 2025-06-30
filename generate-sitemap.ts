@@ -1,7 +1,7 @@
 // generate-sitemap.js
 import fs from "fs";
 import path from "path";
-import { StaticPage, BlogPost } from "./types/interfaces";
+import { StaticPage, SitemapBlogPost } from "./types/interfaces";
 
 // Static pages that are part of your site
 const staticPages: StaticPage[] = [
@@ -15,7 +15,7 @@ const staticPages: StaticPage[] = [
 ];
 
 // You can dynamically get your blog posts from a CMS or database here
-const blogPosts: BlogPost[] = [
+const blogPosts: SitemapBlogPost[] = [
   { id: 'from-overwhelmed-to-empowered-how-projxons-internship-changed-my-life', lastModified: '2025-03-03' }
   // Add more blog posts here
 ];

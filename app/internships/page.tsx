@@ -7,7 +7,7 @@ import { fetchBlogs } from "@/services/blogService"
 import { Container, Row, Col } from "react-bootstrap"
 import Image from "next/image";
 import type { Metadata } from "next";
-import "./InternshipsPage.css"
+import "./InternshipsPage.css";
 
 export const metadata: Metadata = {
   title: "Launch Your Career with a Projxon Internship | PROJXON",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 };
 
 export default async function ResearchPage() {
-  const blogs = await fetchBlogs()
+  const blogs = await fetchBlogs();
 
   return (
     <div>
