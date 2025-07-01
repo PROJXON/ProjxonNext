@@ -139,3 +139,7 @@ interface WPPostContent {
   protected?: boolean;
   rendered: string;
 };
+
+export interface BlogIdParams {
+  blogId: string;
+};
