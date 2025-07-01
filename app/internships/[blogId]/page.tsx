@@ -6,6 +6,7 @@ import Image from "next/image";
 import defaultImg from "@/public/assets/internships/default-blog-img.webp";
 import { WPBlogPost, IdParams, RouteParams } from "@/types/interfaces";
 import "./BlogPage.css";
+import formatDate from "@/lib/formatDate";
 
 export const revalidate = 300;
 
@@ -43,14 +44,6 @@ export default async function BlogPage({ params }: RouteParams) {
   const featuredMedia = blog._embedded?.["wp:featuredmedia"];
   const imageUrl = featuredMedia?.[0]?.source_url ?? defaultImg.src;
 
-  const formatDate = (date: Date) => {
-    return new Date(date).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
-
   return (
     <Container className="w-50 blog-container px-3">
       <article className="my-5 py-2">
@@ -64,7 +57,7 @@ export default async function BlogPage({ params }: RouteParams) {
             <div className="d-flex items-center text-muted gap-1">
               <CiCalendar size={20} />
               <time dateTime={blog.date.toString()} className="text-muted">
-                {formatDate(blog.date)}
+                {formatDate(blog.date, "long")}
               </time>
             </div>
           </div>

@@ -1,22 +1,16 @@
 "use client";
-
 import DOMPurify from "isomorphic-dompurify";
 import { Card, Button } from "react-bootstrap";
 import Link from "next/link";
 import Image from "next/image";
 import blogDefaultImg from "@/public/assets/internships/default-blog-img.webp";
 import "./BlogCard.css";
+import { WPBlogPost } from "@/types/interfaces";
+import formatDate from "@/lib/formatDate";
 
-const BlogCard = ({ blog, blogStyle }) => {
-  const cleanExcerpt = (excerpt) => {
-    return DOMPurify.sanitize(excerpt);
-  };
-
-  const formatDate = (date) => {
-    const dateObj = new Date(date);
-    const options = { year: "numeric", month: "short", day: "numeric" };
-    return dateObj.toLocaleDateString("en-US", options);
-  };
+const BlogCard = ({ blog, blogStyle }: { blog: WPBlogPost, blogStyle?: string }) => {
+  const cleanExcerpt = (excerpt: string) => DOMPurify.sanitize(excerpt);
+  console.log(blog.slug);
 
   const sanitizedExcerpt = cleanExcerpt(blog.excerpt.rendered);
   const featuredMedia = blog._embedded?.["wp:featuredmedia"];
@@ -56,7 +50,7 @@ const BlogCard = ({ blog, blogStyle }) => {
               •
             </span>
             <span className={blogStyle === "dark" ? "text-gray" : "text-muted"}>
-              {formatDate(blog.date)}
+              {formatDate(blog.date, "short")}
             </span>
           </div>
 

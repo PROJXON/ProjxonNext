@@ -1,14 +1,13 @@
 "use client";
 import AuthGuard from "@/components/AuthGuard";
 import React, { useState, useEffect, useRef } from "react";
-import { addClient, deleteClient, uploadFile } from "../../services/clientService";
+import { addClient, deleteClient, uploadFile } from "@/services/clientService";
 import "./TestimonialEditorPage.css";
 import { useRouter } from "next/navigation";
-import { logout } from "../../services/loginService";
-import ImageUpload from "../../components/ImageUpload";
+import { logout } from "@/services/loginService";
+import ImageUpload from "@/components/ImageUpload";
 import Image from "next/image";
 import { InternTestimonial } from "@/types/interfaces";
-import { NumericString } from "@/types/types";
 
 export default function EditorPage() {
   const router = useRouter();
