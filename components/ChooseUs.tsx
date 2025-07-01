@@ -42,7 +42,7 @@ export default function ChooseUs() {
         </h2>
         <Row className="my-5 g-5">
           {reasons.map((reason, index) => (
-            <BlackCard key={index} item={reason} iconSize={64} isStat={true} />
+            <BlackCard key={index} item={reason} iconSize={64} />
           ))}
         </Row>
       </Container>

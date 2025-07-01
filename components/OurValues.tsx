@@ -34,7 +34,7 @@ export default function OurValues() {
         </h2>
         <Row className="my-5 g-5">
           {values.map((value, index) => (
-            <BlackCard key={index} item={value} iconSize={55} isStat={false} />
+            <BlackCard key={index} item={value} iconSize={55} />
           ))}
         </Row>
       </Container>
