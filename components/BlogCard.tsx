@@ -10,7 +10,6 @@ import formatDate from "@/lib/formatDate";
 
 const BlogCard = ({ blog, blogStyle }: { blog: WPBlogPost, blogStyle?: string }) => {
   const cleanExcerpt = (excerpt: string) => DOMPurify.sanitize(excerpt);
-  console.log(blog.slug);
 
   const sanitizedExcerpt = cleanExcerpt(blog.excerpt.rendered);
   const featuredMedia = blog._embedded?.["wp:featuredmedia"];
