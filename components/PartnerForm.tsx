@@ -1,24 +1,26 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useRef, FormEvent } from "react";
 import { Form, Button, Col, Alert } from "react-bootstrap";
-import { sendEmail } from "../services/emailService";
+import { sendEmail } from "@/services/emailService";
 import "./PartnerForm.css";
+import { InfoFormStatus, EmailFormFields } from "@/types/interfaces";
 
 const PartnerForm = () => {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState({
+  const [status, setStatus] = useState<InfoFormStatus>({
     show: false,
     message: "",
     type: "",
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    if (!form.current) return;
 
     const formData = new FormData(form.current);
-    const data = Object.fromEntries(formData.entries());
+    const data = Object.fromEntries(formData.entries()) as unknown as EmailFormFields;
 
     try {
       await sendEmail(data); // Call the service function

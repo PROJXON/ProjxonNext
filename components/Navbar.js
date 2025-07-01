@@ -1,11 +1,9 @@
 "use client";
-
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, NavLink, Container } from "react-bootstrap";
 import Link from "next/link";
 import "./NavBar.css";
 import dynamic from "next/dynamic";
-
 import { usePathname } from 'next/navigation'
 
 const BootstrapBundle = dynamic(

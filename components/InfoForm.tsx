@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, FormEvent } from "react";
-import { Form, Button, Alert, Card, FormCheck } from "react-bootstrap";
+import { Form, Button, Alert, Card } from "react-bootstrap";
 import { sendEmail } from "../services/emailService";
 import "./InfoForm.css";
 import { InfoFormStatus, EmailFormFields } from "@/types/interfaces";

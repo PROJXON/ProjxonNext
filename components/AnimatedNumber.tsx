@@ -1,9 +1,8 @@
 "use client";
-
 import { useInView } from "react-intersection-observer";
 import { useState, useEffect } from "react";
 
-const AnimatedNumber = ({ value }) => {
+const AnimatedNumber = ({ value }: { value: number }) => {
   const [count, setCount] = useState(0);
   const { ref, inView } = useInView({
     triggerOnce: true,
