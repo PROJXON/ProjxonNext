@@ -81,9 +81,6 @@ export interface EmailFormFields {
   user_name: string;
   user_email: string;
   message: string;
-  user_phone?: string;
-  organization?: string;
-  services_needed?: string;
 };
 
 export interface RouteParams {
