@@ -161,10 +161,18 @@ export interface Value {
   icon: IconType;
   title: string;
   description: string;
-}
+};
 
 export interface ChooseUsReasons extends Value {
   stat: NumericString;
   statSuffix: "+" | "%";
   statDescription: string;
+};
+
+export interface MilitaryBranch {
+  name: [
+    "United States",
+    string
+  ],
+  image: string;
 };

@@ -1,5 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import "./CareerPage.css"
+import "./CareerPage.css";
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
 import CustomButton from "@/components/CustomButton"

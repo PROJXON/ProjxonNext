@@ -1,4 +1,4 @@
-import "./AboutPage.css"
+import "./AboutPage.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaLinkedin, FaGlobe } from "react-icons/fa";
 import Image from "next/image";
