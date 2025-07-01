@@ -85,9 +85,11 @@ export interface EmailFormFields {
 };
 
 export interface RouteParams {
-  params: {
-    id: string;
-  };
+  params: IdParams;
+};
+
+export interface IdParams {
+  id: string;
 };
 
 export interface WPImage {
@@ -138,8 +140,4 @@ export interface WPBlogPost {
 interface WPPostContent {
   protected?: boolean;
   rendered: string;
-};
-
-export interface BlogIdParams {
-  blogId: string;
 };

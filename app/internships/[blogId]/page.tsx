@@ -4,7 +4,7 @@ import { CiCalendar } from "react-icons/ci";
 import { fetchBlogs, fetchBlog } from "@/services/blogService";
 import Image from "next/image";
 import defaultImg from "@/public/assets/internships/default-blog-img.webp";
-import { WPBlogPost, BlogIdParams } from "@/types/interfaces";
+import { WPBlogPost, IdParams, RouteParams } from "@/types/interfaces";
 import "./BlogPage.css";
 
 export const revalidate = 300;
@@ -12,14 +12,14 @@ export const revalidate = 300;
 export async function generateStaticParams() {
   const blogs = await fetchBlogs() as WPBlogPost[];
 
-  return blogs.map((blog): BlogIdParams => ({
-    blogId: blog.slug,
+  return blogs.map((blog): IdParams => ({
+    id: blog.slug,
   }));
 }
 
-export async function generateMetadata({ params }: { params: BlogIdParams }) {
-  const { blogId } = params;
-  const blog = await fetchBlog(blogId);
+export async function generateMetadata({ params }: RouteParams) {
+  const { id } = params;
+  const blog = await fetchBlog(id);
 
   if (!blog) {
     return {
@@ -34,9 +34,9 @@ export async function generateMetadata({ params }: { params: BlogIdParams }) {
   };
 }
 
-export default async function BlogPage({ params }: { params: BlogIdParams }) {
-  const { blogId } = params;
-  const blog = await fetchBlog(blogId) as WPBlogPost;
+export default async function BlogPage({ params }: RouteParams) {
+  const { id } = params;
+  const blog = await fetchBlog(id) as WPBlogPost;
   const content = blog.content?.rendered || "";
   const sanitizedHtml = DOMPurify.sanitize(content);
 
