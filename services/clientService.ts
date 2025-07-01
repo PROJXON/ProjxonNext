@@ -1,5 +1,7 @@
 import axios from 'axios';
 import getToken from '@/lib/getToken';
+import { NumericString } from '@/types/types';
+import { InternTestimonial, UploadResponse } from '@/types/interfaces';
 
 export const fetchClients = async ({ useNoStore = false } = {}) => {
   try {
@@ -10,19 +12,19 @@ export const fetchClients = async ({ useNoStore = false } = {}) => {
     if (!res.ok) throw new Error("Error fetching clients");
 
     return await res.json();
-  } catch (error) {
+  } catch (error: any) {
     console.error("❌ Error fetching clients:", error.message);
     return []; // Safe fallback for SSR
   }
 };
 
-export const fetchClient = async (id) => {
+export const fetchClient = async (id: NumericString) => {
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/${id}`); // Internal API route with dynamic id
   if (!res.ok) throw new Error("Error fetching client");
   return res.json(); // Parse the JSON response
 };
 
-export const addClient = async (clientData) => {
+export const addClient = async (clientData: InternTestimonial) => {
   try {
     const token = getToken();
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client`, {
@@ -40,22 +42,20 @@ export const addClient = async (clientData) => {
     }
 
     return res.json();
-  } catch (error) {
+  } catch (error: any) {
     console.error("❌ Error adding client:", error.message);
     return null;
   }
 };
 
-export const uploadFile = async (file) => {
+export const uploadFile = async (file: File) => {
   const token = getToken();
   const formData = new FormData();
   formData.append('file', file);
 
   try {
-    const response = await axios.post('/api/upload', formData, {
-      headers: {
-        'Authorization': `Bearer ${token}`,
-      },
+    const response = await axios.post<UploadResponse>('/api/upload', formData, {
+      headers: { 'Authorization': `Bearer ${token}` }
     });
     return response.data.url;
   } catch (error) {
@@ -64,7 +64,7 @@ export const uploadFile = async (file) => {
   }
 };
 
-export const deleteClient = async (id) => {
+export const deleteClient = async (id: NumericString) => {
   try {
     const token = getToken();
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/${id}`, {

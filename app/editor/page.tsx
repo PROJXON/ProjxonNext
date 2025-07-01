@@ -8,6 +8,7 @@ import { logout } from "../../services/loginService";
 import ImageUpload from "../../components/ImageUpload";
 import Image from "next/image";
 import { InternTestimonial } from "@/types/interfaces";
+import { NumericString } from "@/types/types";
 
 export default function EditorPage() {
   const router = useRouter();
@@ -72,6 +73,7 @@ export default function EditorPage() {
     if (clients.length === 0) return;
 
     const clientId = clients[currentTestIndex].id;
+    if (!clientId) throw new Error("Invalid client ID");
 
     try {
       const success = await deleteClient(clientId);
@@ -103,7 +105,7 @@ export default function EditorPage() {
       let fileUrl = '';
       if (file) fileUrl = await uploadFile(file);
 
-      const newClient = {
+      const newClient: InternTestimonial = {
         name: newTestimonial.name,
         quote: newTestimonial.quote,
         title: newTestimonial.title,

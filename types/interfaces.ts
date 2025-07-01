@@ -141,3 +141,7 @@ interface WPPostContent {
   protected?: boolean;
   rendered: string;
 };
+
+export interface UploadResponse {
+  url: string;
+}
