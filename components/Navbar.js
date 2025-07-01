@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Navbar, Nav, NavLink, Container } from "react-bootstrap";
 import Link from "next/link";
 import "./NavBar.css";
