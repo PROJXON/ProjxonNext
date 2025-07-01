@@ -176,3 +176,9 @@ export interface MilitaryBranch {
   ],
   image: string;
 };
+
+export interface InfoFormStatus {
+  show: boolean;
+  message: string;
+  type: string;
+}

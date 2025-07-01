@@ -1,24 +1,30 @@
 "use client";
-import { useState, useRef } from "react";
-import { Form, Button, Alert, Card } from "react-bootstrap";
+import { useState, useRef, FormEvent } from "react";
+import { Form, Button, Alert, Card, FormCheck } from "react-bootstrap";
 import { sendEmail } from "../services/emailService";
 import "./InfoForm.css";
+import { InfoFormStatus, EmailFormFields } from "@/types/interfaces";
 
 const InfoForm = () => {
-  const form = useRef();
+  const form = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState({
+  const [status, setStatus] = useState<InfoFormStatus>({
     show: false,
     message: "",
     type: "",
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+    if (!form.current) return;
 
     const formData = new FormData(form.current);
-    const data = Object.fromEntries(formData.entries());
+    const data: EmailFormFields = {
+      user_name: formData.get("user_name") as string,
+      user_email: formData.get("user_email") as string,
+      message: formData.get("message") as string
+    }
 
     try {
       await sendEmail(data);
