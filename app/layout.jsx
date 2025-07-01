@@ -2,7 +2,6 @@ import "@/styles/index.css";
 import "@/styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
-
 import ScrollToTop from "@/components/ScrollToTop";
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";

@@ -144,4 +144,22 @@ interface WPPostContent {
 
 export interface UploadResponse {
   url: string;
-}
+};
+
+export interface CustomButtonProps {
+  buttonText: string;
+  link: string;
+  buttonStyle: string;
+  delayTime?: number;
+  isExternal?: boolean;
+  isAnimated?: boolean;
+};
+
+export interface ChooseUsReasons {
+  icon: IconType;
+  title: string;
+  description: string;
+  stat: NumericString;
+  statSuffix: "+" | "%";
+  statDescription: string;
+};

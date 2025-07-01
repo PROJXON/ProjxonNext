@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import CustomButton from "@/components/CustomButton";
 import { Container } from "react-bootstrap";
@@ -13,7 +12,6 @@ const HomeHero = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-        
         >
           Turning <span className="gold-chaos">Chaos</span> Into <span className="gold-opportunity">Opportunity</span>
         </motion.h1>
@@ -32,7 +30,7 @@ const HomeHero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-         Empowering High-Impact Teams to Achieve Their Full Potential
+          Empowering High-Impact Teams to Achieve Their Full Potential
         </motion.h2>
 
         <CustomButton
@@ -41,7 +39,7 @@ const HomeHero = () => {
           buttonStyle="mt-4 yellow-button"
           delayTime={0.7}
           isAnimated={true}
-          
+
         />
       </Container>
     </div>

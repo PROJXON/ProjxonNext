@@ -33,6 +33,7 @@
     "react-intersection-observer": "^9.16.0"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "@types/axios": "^0.9.36",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.0.3",

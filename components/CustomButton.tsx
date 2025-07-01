@@ -1,8 +1,8 @@
 "use client";
-
 import Link from "next/link";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
+import { CustomButtonProps } from "@/types/interfaces";
 
 const AnimatedButton = ({
   buttonText,
@@ -11,7 +11,7 @@ const AnimatedButton = ({
   delayTime = 0,
   isExternal = false,
   isAnimated = false,
-}) => {
+}: CustomButtonProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
