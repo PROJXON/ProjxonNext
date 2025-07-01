@@ -5,6 +5,7 @@ import Link from "next/link";
 import "./NavBar.css";
 import dynamic from "next/dynamic";
 import { usePathname } from 'next/navigation'
+//import { NavLink } from "@/types/interfaces";
 
 const BootstrapBundle = dynamic(
   () => import("bootstrap/dist/js/bootstrap.bundle.min"),
@@ -22,14 +23,15 @@ const NavBar = () => {
   const handleToggle = () => setExpanded(!expanded);
   const handleLinkClick = () => setExpanded(false);
 
+  //const navLinks: NavLink[] = [
   const navLinks = [
-    { to: "/", label: "Home" },
-    { to: "/about", label: "About" },
-    { to: "/services", label: "Services" },
-    { to: "/partnerships", label: "Partnerships" },
-    { to: "/careers", label: "Careers" },
-    { to: "/internships", label: "Internships" },
-    { to: "/contact", label: "Contact" },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/services", label: "Services" },
+    { href: "/partnerships", label: "Partnerships" },
+    { href: "/careers", label: "Careers" },
+    { href: "/internships", label: "Internships" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (

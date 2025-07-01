@@ -30,12 +30,11 @@ const Footer = () => {
       icon: FaLinkedin,
       newTab: true
     }
-  ]
+  ];
 
-  //Note: I assume that all of these href values are supposed to be different and go to different pages/subpages, or different sections of the same page (like /services#marketing-social) and the fact that each subsection of the footer gave all of them the same href was just a placeholder. But when copying over the code, I kept the href links exactly how they originally were.
   const footerLinks: FooterLink[] = [
     {
-      heading: "About",
+      label: "About",
       href: "/about",
       links: [
         { id: "who-we-are", text: "Who Are We?" },
@@ -44,14 +43,14 @@ const Footer = () => {
       ],
     },
     {
-      heading: "Services",
+      label: "Services",
       href: "/services",
       links: [
         { id: "services", text: "Our Services" },
       ],
     },
     {
-      heading: "Partnerships",
+      label: "Partnerships",
       href: "/partnerships",
       links: [
         { id: "service-partners", text: "Why Projxon" },
@@ -59,7 +58,7 @@ const Footer = () => {
       ],
     },
     {
-      heading: "Careers",
+      label: "Careers",
       href: "/careers",
       links: [
         { id: "apply", text: "Work With Us" },
@@ -68,7 +67,7 @@ const Footer = () => {
       ],
     },
     {
-      heading: "Internships",
+      label: "Internships",
       href: "/internships",
       links: [
         { id: "mip", text: "MIP" },
@@ -77,7 +76,7 @@ const Footer = () => {
       ],
     },
     {
-      heading: "Contact",
+      label: "Contact",
       href: "/contact",
       links: [
         { id: "contact-form", text: "Contact" },
@@ -116,7 +115,7 @@ const Footer = () => {
         <hr className="my-4" />
         <Row>
           {footerLinks.map((section, i) => (<Col xs={6} md={2} className="mb-3" key={i}>
-            <h2 className="footer-heading">{section.heading}</h2>
+            <h2 className="footer-label">{section.label}</h2>
             <ul className="list-unstyled">
               {section.links.map((link, j) => (<li key={j}>
                 <Link href={`${section.href}#${link.id}`} className="footer-link">

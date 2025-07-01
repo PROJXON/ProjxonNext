@@ -58,9 +58,12 @@ export interface SocialIcon extends ReactIconLink {
   newTab: boolean;
 };
 
-export interface FooterLink {
-  heading: string;
-  href: string;
+export interface NavLink {
+  label: string;
+  href: `/${string}`;
+};
+
+export interface FooterLink extends NavLink {
   links: {
     id: string;
     text: string;
