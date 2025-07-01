@@ -73,7 +73,9 @@ export interface Partnership {
   dataAOSDelay: NumericString;
 };
 
-export interface EmailResponse { message: string; };
+export interface EmailResponse {
+  message: string;
+};
 
 export interface EmailFormFields {
   user_name: string;
@@ -155,10 +157,13 @@ export interface CustomButtonProps {
   isAnimated?: boolean;
 };
 
-export interface ChooseUsReasons {
+export interface Value {
   icon: IconType;
   title: string;
   description: string;
+}
+
+export interface ChooseUsReasons extends Value {
   stat: NumericString;
   statSuffix: "+" | "%";
   statDescription: string;

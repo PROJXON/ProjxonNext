@@ -1,12 +1,12 @@
 import "./AboutPage.css"
-import { Container, Row, Col } from "react-bootstrap"
-import { FaLinkedin, FaGlobe } from "react-icons/fa"
-import Image from "next/image"
+import { Container, Row, Col } from "react-bootstrap";
+import { FaLinkedin, FaGlobe } from "react-icons/fa";
+import Image from "next/image";
 import AOSWrapper from "@/components/AOSWrapper";
 import Hero from "@/components/Hero";
 import CustomButton from "@/components/CustomButton";
-import CallToAction from "@/components/CallToAction"
-import OurValues from "@/components/OurValues"
+import CallToAction from "@/components/CallToAction";
+import OurValues from "@/components/OurValues";
 import type { Metadata } from "next";
 import { ConsultingLeads } from "@/types/interfaces";
 
@@ -233,7 +233,6 @@ const AboutPage = () => {
             </Col>
           </Row>
 
-          {/* Consulting Leads Section */}
           {/* <h2 className="fw-bold sections-heading">Consulting Leads</h2> */}
           <Row className="text-center">
             {consultingLeads.map((member, i) => (
