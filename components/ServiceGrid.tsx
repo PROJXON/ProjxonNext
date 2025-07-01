@@ -1,4 +1,4 @@
-// app/components/ServiceGrid.js
+import { Service } from "@/types/interfaces";
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import {
@@ -11,14 +11,12 @@ import {
   FaLightbulb,
   FaLeaf,
   FaStar,
-  FaGlobe,
-  FaMoneyCheckAlt,
   FaDigitalTachograph,
 } from "react-icons/fa";
 
 const ServiceGrid = () => {
   // Services data array
-  const services = [
+  const services: Service[] = [
     {
       dataAOS: "100",
       title: "Business Process Optimization",
@@ -63,8 +61,8 @@ const ServiceGrid = () => {
         },
       ],
     },
-        
-        {
+
+    {
       dataAOS: "300",
       title: "E-commerce Solutions",
       icon: FaShoppingCart,
@@ -86,7 +84,7 @@ const ServiceGrid = () => {
         },
       ],
     },
-        {
+    {
       dataAOS: "400",
       title: "IT Tech Stack Design",
       icon: FaLaptopCode,
@@ -125,7 +123,7 @@ const ServiceGrid = () => {
         },
       ],
     },
-        {
+    {
       dataAOS: "900",
       title: "Customer Experience Enhancement",
       icon: FaStar,
@@ -142,7 +140,7 @@ const ServiceGrid = () => {
         },
       ],
     },
-     {
+    {
       dataAOS: "600",
       title: "Customized Training Program",
       icon: FaChalkboardTeacher,
@@ -159,7 +157,7 @@ const ServiceGrid = () => {
         },
       ],
     },
-        {
+    {
       dataAOS: "1200",
       title: "Digital Transformation",
       icon: FaDigitalTachograph,
@@ -248,31 +246,33 @@ const ServiceGrid = () => {
     */
   ];
 
-  return (<Container className="mt-5">
-    <Row className="py-4">
-      {services.map((service, index) => (
-        <Col md={6} key={index}>
-          <Card
-            className="service-card"
-            data-aos="fade-up"
-            data-aos-delay={service.dataAOS}
-          >
-            <div className="card-icon text-yellow">
-              <service.icon />
-            </div>
-            <div className="card-content">
-              <h3 className="text-white">{service.title}</h3>
-              {service.content.map((item, idx) => (
-                <p key={idx} className="text-gray gray-opacity">
-                  <strong>{item.heading}:</strong> {item.description}
-                </p>
-              ))}
-            </div>
-          </Card>
-        </Col>
-      ))}
-    </Row>
-  </Container>)
+  return (
+    <Container className="mt-5">
+      <Row className="py-4">
+        {services.map((service, index) => (
+          <Col md={6} key={index}>
+            <Card
+              className="service-card"
+              data-aos="fade-up"
+              data-aos-delay={service.dataAOS}
+            >
+              <div className="card-icon text-yellow">
+                <service.icon />
+              </div>
+              <div className="card-content">
+                <h3 className="text-white">{service.title}</h3>
+                {service.content.map((item, idx) => (
+                  <p key={idx} className="text-gray gray-opacity">
+                    <strong>{item.heading}:</strong> {item.description}
+                  </p>
+                ))}
+              </div>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  )
 };
 
 export default ServiceGrid;

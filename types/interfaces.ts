@@ -163,6 +163,14 @@ export interface Value {
   description: string;
 };
 
+export interface Service extends Omit<Value, "description"> {
+  dataAOS: NumericString;
+  content: {
+    heading: string;
+    description: string;
+  }[];
+};
+
 export interface ChooseUsReasons extends Value {
   stat: NumericString;
   statSuffix: "+" | "%";
