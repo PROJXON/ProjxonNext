@@ -28,15 +28,17 @@ const BlackCard = ({ item, iconSize }: { item: Value | ChooseUsReasons, iconSize
         </div>
         <h3 className="fs-2 mb-3 text-yellow">{item.title}</h3>
         <p className="flex-grow-1 mb-0 black-card-desc text-gray">{item.description}</p>
-        {isChooseUsReason(item) && (<div>
-          <span className="fw-bold black-card-stat">
-            <AnimatedNumber value={parseInt(item.stat)} />
-            {item.statSuffix}
-          </span>
-          <span className="black-card-stat-desc d-block">
-            {item.statDescription}
-          </span>
-        </div>)}
+        {isChooseUsReason(item) && (
+          <div>
+            <span className="fw-bold black-card-stat">
+              <AnimatedNumber value={parseInt(item.stat)} />
+              {item.statSuffix}
+            </span>
+            <span className="black-card-stat-desc d-block">
+              {item.statDescription}
+            </span>
+          </div>
+        )}
       </div>
     </Col>
   );

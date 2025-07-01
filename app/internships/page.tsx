@@ -101,5 +101,5 @@ export default async function ResearchPage() {
       </section>
       <CallToAction />
     </div>
-  )
+  );
 }

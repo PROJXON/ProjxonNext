@@ -114,16 +114,20 @@ const Footer = () => {
 
         <hr className="my-4" />
         <Row>
-          {footerLinks.map((section, i) => (<Col xs={6} md={2} className="mb-3" key={i}>
-            <h2 className="footer-label">{section.label}</h2>
-            <ul className="list-unstyled">
-              {section.links.map((link, j) => (<li key={j}>
-                <Link href={`${section.href}#${link.id}`} className="footer-link">
-                  {link.text}
-                </Link>
-              </li>))}
-            </ul>
-          </Col>))}
+          {footerLinks.map((section, i) => (
+            <Col xs={6} md={2} className="mb-3" key={i}>
+              <h2 className="footer-label">{section.label}</h2>
+              <ul className="list-unstyled">
+                {section.links.map((link, j) => (
+                  <li key={j}>
+                    <Link href={`${section.href}#${link.id}`} className="footer-link">
+                      {link.text}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </Col>
+          ))}
         </Row>
 
         <Row className="mt-4">
