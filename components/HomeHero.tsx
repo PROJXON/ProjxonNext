@@ -1,4 +1,5 @@
 "use client";
+import "./Hero.css";
 import { motion } from "framer-motion";
 import CustomButton from "@/components/CustomButton";
 import { Container } from "react-bootstrap";
