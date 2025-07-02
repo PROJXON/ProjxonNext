@@ -4,16 +4,15 @@ import HomeHero from "@/components/HomeHero";
 import CustomButton from "@/components/CustomButton";
 import CallToAction from "@/components/CallToAction"
 import ChooseUs from "@/components/ChooseUs";
-import AOSWrapper from "@/components/AOSWrapper";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "PROJXON Services | Expert Business Consulting & Strategy",
-  description: "Explore PROJXON’s consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
+  description: "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
   metadataBase: new URL("https://www.projxon.com/services"),
   openGraph: {
     title: "PROJXON Services | Expert Business Consulting & Strategy",
-    description: "Explore PROJXON’s consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
+    description: "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
     url: "https://www.projxon.com/services",
     siteName: "PROJXON",
     images: [
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "PROJXON Services | Expert Business Consulting & Strategy",
-    description: "Explore PROJXON’s consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
+    description: "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
     images: ["/PROJXON.png"]
   }
 };
@@ -37,7 +36,6 @@ export const metadata: Metadata = {
 export default async function HomePage() {
   return (
     <>
-      <AOSWrapper />
       <HomeHero />
 
       <section className="text-center introduction bg-yellow">

@@ -3,7 +3,6 @@ import "./PartnershipPage.css";
 import Hero from "../../components/Hero";
 import CallToAction from "../../components/CallToAction";
 import CustomButton from "../../components/CustomButton";
-import AOSWrapper from "@/components/AOSWrapper";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { Partnership } from "@/types/interfaces";
@@ -56,7 +55,6 @@ const PartnershipPage = () => {
 
   return (
     <div>
-      <AOSWrapper />
       {/* Hero Section */}
       <Hero
         title="Partner with Us"

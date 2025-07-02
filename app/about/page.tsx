@@ -2,7 +2,6 @@ import "./AboutPage.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaLinkedin, FaGlobe } from "react-icons/fa";
 import Image from "next/image";
-import AOSWrapper from "@/components/AOSWrapper";
 import Hero from "@/components/Hero";
 import CustomButton from "@/components/CustomButton";
 import CallToAction from "@/components/CallToAction";
@@ -107,7 +106,6 @@ const AboutPage = () => {
 
   return (
     <div className="about-page">
-      <AOSWrapper />
       {/* Hero Section */}
       <section className="hero-section">
         <Hero

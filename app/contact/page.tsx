@@ -4,7 +4,6 @@ import type { Metadata } from "next";
 import "./ContactPage.css";
 import Hero from "@/components/Hero";
 import InfoForm from "@/components/InfoForm";
-import AOSWrapper from "@/components/AOSWrapper";
 
 export const metadata: Metadata = {
   title: "Contact PROJXON | Get in Touch with Our Experts",
@@ -36,7 +35,6 @@ export const metadata: Metadata = {
 const ContactPage = () => {
   return (
     <div className="contact-page">
-      <AOSWrapper />
       <Hero
         title="Contact Us"
         subtitle="Connect with Clarity. Start with Purpose."

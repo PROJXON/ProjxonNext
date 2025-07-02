@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
 import BlogClientList from "@/components/BlogClientList"
-import AOSWrapper from "@/components/AOSWrapper"
 import InternTestimonialsSection from "@/components/InternTestimonialsSection"
 import { fetchBlogs } from "@/services/blogService"
 import { Container, Row, Col } from "react-bootstrap"
@@ -42,7 +41,6 @@ export default async function ResearchPage() {
 
   return (
     <div>
-      <AOSWrapper />
       <Hero
         title="Momentum Internship Program"
         subtitle="Designed for Learning. Structured for Success."

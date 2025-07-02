@@ -3,7 +3,6 @@ import "./CareerPage.css";
 import Hero from "@/components/Hero";
 import CallToAction from "@/components/CallToAction";
 import CustomButton from "@/components/CustomButton"
-import AOSWrapper from "@/components/AOSWrapper";
 import MilitaryBranches from "@/components/MilitaryBranches"
 import type { Metadata } from "next";
 import { CareerPositions } from "@/types/interfaces";
@@ -57,7 +56,6 @@ const CareerPage = () => {
 
   return (
     <div>
-      <AOSWrapper />
       {/* Hero Section */}
       <Hero
         title="Join Our Team"

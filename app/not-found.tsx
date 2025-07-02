@@ -5,7 +5,12 @@ const NotFound = () => {
   return (
     <div>
       {/* Hero Section */}
-      <Hero title="404 - Page Not Found" />
+      <Hero 
+        title="404 - Page Not Found" 
+        subtitle="Oops! This page doesn't exist"
+        paragraph="The page you're looking for might have been moved, deleted, or never existed."
+        backgroundClass="not-found-hero"
+      />
 
       <section className="sections-container">
         <h1 className="mt-5 text-center">

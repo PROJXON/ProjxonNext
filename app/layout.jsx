@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import ScrollToTop from "@/components/ScrollToTop";
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AOSWrapper from "@/components/AOSWrapper";
 
 export const metadata = {
   title: "PROJXON | Strategic Business Consulting for Scalable Growth",
@@ -62,6 +63,7 @@ export default function RootLayout({ children }) {
         </noscript>
 
         <div className="content">
+          <AOSWrapper />
           <NavBar />
           <ScrollToTop />
           {children}
