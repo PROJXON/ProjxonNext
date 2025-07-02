@@ -4,9 +4,10 @@ import { InternTestimonial, RouteParams } from "@/types/interfaces";
 
 export async function GET(_req: NextRequest, { params }: RouteParams) {
   try {
+    const { id } = await params;
     const res = await fetch(`${process.env.WORDPRESS_CUSTOM_API_URL}/clients`);
     const data: InternTestimonial[] = await res.json();
-    const client = data.find((c) => c.id === params.id);
+    const client = data.find((c) => c.id === id);
 
     return client
       ? Response.json(client)
@@ -26,10 +27,11 @@ export async function GET(_req: NextRequest, { params }: RouteParams) {
 
 export async function DELETE(req: NextRequest, { params }: RouteParams) {
   try {
+    const { id } = await params;
     const authHeader = getAuth(req);
 
     const res = await fetch(
-      `${process.env.WORDPRESS_CUSTOM_API_URL}/clients/${params.id}`,
+      `${process.env.WORDPRESS_CUSTOM_API_URL}/clients/${id}`,
       {
         method: "DELETE",
         headers: {

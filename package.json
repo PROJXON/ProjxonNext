@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-sitemap": "ts-node generate-sitemap.ts",
+    "generate-sitemap": "npx ts-node generate-sitemap.ts",
     "prebuild": "npm run generate-sitemap",
     "deploy": "aws s3 sync ./out s3:www.projxon.com --delete"
   },

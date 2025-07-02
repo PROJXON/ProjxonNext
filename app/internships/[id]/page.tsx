@@ -19,7 +19,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: RouteParams) {
-  const { id } = params;
+  const { id } = await params;
   const blog = await fetchBlog(id);
 
   if (!blog) {
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: RouteParams) {
 }
 
 export default async function BlogPage({ params }: RouteParams) {
-  const { id } = params;
+  const { id } = await params;
   const blog = await fetchBlog(id) as WPBlogPost;
   const content = blog.content?.rendered || "";
   const sanitizedHtml = DOMPurify.sanitize(content);

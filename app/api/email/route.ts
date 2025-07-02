@@ -1,6 +1,6 @@
 import { google } from "googleapis";
 import nodemailer from "nodemailer";
-import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import { EmailFormFields } from "@/types/interfaces";
 
 const OAuth2Client = new google.auth.OAuth2(
@@ -22,7 +22,7 @@ async function getAccessToken(): Promise<string> {
     }
 }
 
-export async function POST(req: NextResponse) {
+export async function POST(req: NextRequest) {
     try {
         const { user_name, user_email, message }: EmailFormFields = await req.json();
         const accessToken = await getAccessToken();

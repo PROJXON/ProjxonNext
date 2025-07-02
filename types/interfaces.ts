@@ -87,7 +87,7 @@ export interface EmailFormFields {
 };
 
 export interface RouteParams {
-  params: IdParams;
+  params: Promise<IdParams>;
 };
 
 export interface IdParams {
