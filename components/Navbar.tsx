@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, NavLink, Container } from "react-bootstrap";
 import Link from "next/link";
 import "./NavBar.css";
 import { usePathname } from 'next/navigation';
-import type { NavLink } from "@/types/interfaces";
+import type { NavLink as NavLinkType } from "@/types/interfaces";
 
-const navLinks: NavLink[] = [
+const navLinks: NavLinkType[] = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
@@ -46,7 +46,11 @@ const NavBar = () => {
                     pathname === link.href || (pathname.startsWith(link.href) && link.href !== "/");
 
                   return (
-                    <div key={index} className="link-offset-3">
+                    <NavLink
+                      className="link-offset-3"
+                      key={index}
+                      as="div" // Render as a div since Next.js Link uses an anchor tag
+                    >
                       <Link
                         href={link.href}
                         className={`nav-link ${currPage ? "active" : ""}`}
@@ -54,7 +58,7 @@ const NavBar = () => {
                       >
                         {link.label}
                       </Link>
-                    </div>
+                    </NavLink>
                   );
                 })}
               </Nav>
