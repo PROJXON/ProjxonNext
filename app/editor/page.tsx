@@ -1,27 +1,27 @@
-"use client";
-import AuthGuard from "@/components/AuthGuard";
-import React, { useState, useEffect, useRef } from "react";
-import { addClient, deleteClient, uploadFile } from "@/services/clientService";
-import "./TestimonialEditorPage.css";
-import { useRouter } from "next/navigation";
-import { logout } from "@/services/loginService";
-import ImageUpload from "@/components/ImageUpload";
-import Image from "next/image";
-import { InternTestimonial } from "@/types/interfaces";
+'use client';
+import AuthGuard from '@/components/AuthGuard';
+import React, { useState, useEffect, useRef } from 'react';
+import { addClient, deleteClient, uploadFile } from '@/services/clientService';
+import './TestimonialEditorPage.css';
+import { useRouter } from 'next/navigation';
+import { logout } from '@/services/loginService';
+import ImageUpload from '@/components/ImageUpload';
+import Image from 'next/image';
+import { InternTestimonial } from '@/types/interfaces';
 
 export default function EditorPage() {
   const router = useRouter();
   const [clients, setClients] = useState<InternTestimonial[]>([]);
   const [currentTestIndex, setCurrentTestIndex] = useState(0);
   const [newTestimonial, setNewTestimonial] = useState<InternTestimonial>({
-    image: "",
-    quote: "",
-    name: "",
-    title: "",
+    image: '',
+    quote: '',
+    name: '',
+    title: '',
   });
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
-  const [authToken, setAuthToken] = useState<string | null>(null);
+  const [_authToken, setAuthToken] = useState<string | null>(null);
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
@@ -30,12 +30,12 @@ export default function EditorPage() {
 
   const handleLogout = () => {
     logout();
-    router.push("/login");
+    router.push('/login');
   };
 
   useEffect(() => {
     const loadClients = async () => {
-      const response = await fetch("/api/client");
+      const response = await fetch('/api/client');
       const data = await response.json();
       setClients(data);
     };
@@ -45,10 +45,10 @@ export default function EditorPage() {
   const getCurrentClient = () => {
     if (clients.length === 0) {
       return {
-        image: "",
-        quote: "No testimonials available.",
-        name: "",
-        title: "",
+        image: '',
+        quote: 'No testimonials available.',
+        name: '',
+        title: '',
       };
     }
     return clients[currentTestIndex];
@@ -57,7 +57,7 @@ export default function EditorPage() {
   const handlePrev = () => {
     if (clients.length > 0) {
       setCurrentTestIndex(
-        (prevIndex) => (prevIndex - 1 + clients.length) % clients.length
+        (prevIndex) => (prevIndex - 1 + clients.length) % clients.length,
       );
     }
   };
@@ -72,18 +72,18 @@ export default function EditorPage() {
     if (clients.length === 0) return;
 
     const clientId = clients[currentTestIndex].id;
-    if (!clientId) throw new Error("Invalid client ID");
+    if (!clientId) throw new Error('Invalid client ID');
 
     try {
       const success = await deleteClient(clientId);
       if (success) {
-        const updatedClients = await fetch("/api/client");
+        const updatedClients = await fetch('/api/client');
         const data = await updatedClients.json();
         setClients(data);
         setCurrentTestIndex(Math.max(0, currentTestIndex - 1));
       }
     } catch (error) {
-      console.error("Error deleting client:", error);
+      console.error('Error deleting client:', error);
     }
   };
 
@@ -121,14 +121,14 @@ export default function EditorPage() {
         setCurrentTestIndex(updatedClients.length - 1);
 
         setNewTestimonial({
-          image: "",
-          quote: "",
-          name: "",
-          title: ""
-        })
+          image: '',
+          quote: '',
+          name: '',
+          title: '',
+        });
 
         setFile(null);
-        if (fileInputRef.current) fileInputRef.current.value = ""
+        if (fileInputRef.current) fileInputRef.current.value = '';
       }
 
       console.log('Added client:', addedClient);
@@ -139,29 +139,29 @@ export default function EditorPage() {
 
   return (
     <AuthGuard>
-      <div className="testimonial-editor">
+      <div className='testimonial-editor'>
         <h1>Testimonial Carousel Editor</h1>
-        <div className="testimonial-carousel">
-          <div className="testimonial">
+        <div className='testimonial-carousel'>
+          <div className='testimonial'>
             {getCurrentClient().image && (
               <Image
                 src={getCurrentClient().image.toString()}
-                alt="Client"
+                alt='Client'
                 width={150}
                 height={150}
               />
             )}
-            <span className="quote">{getCurrentClient().quote}</span>
-            <span className="name">{getCurrentClient().name}</span>
-            <span className="title">{getCurrentClient().title}</span>
+            <span className='quote'>{getCurrentClient().quote}</span>
+            <span className='name'>{getCurrentClient().name}</span>
+            <span className='title'>{getCurrentClient().title}</span>
           </div>
-          <button id="leftButton" onClick={handlePrev}>
+          <button id='leftButton' onClick={handlePrev}>
             Left
           </button>
-          <button id="rightButton" onClick={handleNext}>
+          <button id='rightButton' onClick={handleNext}>
             Right
           </button>
-          <button id="deleteButton" onClick={handleDelete}>
+          <button id='deleteButton' onClick={handleDelete}>
             Delete Current Entry
           </button>
         </div>
@@ -171,28 +171,28 @@ export default function EditorPage() {
           onFileSelect={(file) => setFile(file)}
         />
         <textarea
-          name="quote"
+          name='quote'
           value={newTestimonial.quote}
           onChange={handleInputChange}
-          placeholder="Quote"
+          placeholder='Quote'
         ></textarea>
         <textarea
-          name="name"
+          name='name'
           value={newTestimonial.name}
           onChange={handleInputChange}
-          placeholder="Name"
+          placeholder='Name'
         ></textarea>
         <textarea
-          name="title"
+          name='title'
           value={newTestimonial.title}
           onChange={handleInputChange}
-          placeholder="Title"
+          placeholder='Title'
         ></textarea>
-        <div className="buttons">
-          <button id="addButton" onClick={handleAdd}>
+        <div className='buttons'>
+          <button id='addButton' onClick={handleAdd}>
             Add Entry
           </button>
-          <button id="logoutButton" onClick={handleLogout}>
+          <button id='logoutButton' onClick={handleLogout}>
             Logout
           </button>
         </div>
