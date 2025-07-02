@@ -13,7 +13,7 @@ const NotFound = () => {
       />
 
       <section className="sections-container">
-        <h1 className="mt-5 text-center">
+        <h1 className="text-center">
           Return back to{" "}
           <Link href="/" className="link-secondary">
             home
