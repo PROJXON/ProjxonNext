@@ -1,7 +1,9 @@
+import Image from 'next/image';
+
 const LoadingSpinner = () => {
   return (
     <div className="loading-container">
-      <img src="/assets/loadingSpinner.svg" alt="loading.." />
+      <Image src="/assets/loadingSpinner.svg" alt="loading.." width={50} height={50} />
     </div>
   );
 };
