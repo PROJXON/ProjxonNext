@@ -6,8 +6,10 @@ import ScrollToTop from "@/components/ScrollToTop";
 import NavBar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AOSWrapper from "@/components/AOSWrapper";
+import type { Metadata } from "next";
+import { ReactNode } from "react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "PROJXON | Strategic Business Consulting for Scalable Growth",
   description: "PROJXON empowers businesses with data-driven strategies, operational clarity, and innovative insights. Turning chaos into opportunity with every move.",
   metadataBase: new URL("https://www.projxon.com/"),
@@ -34,7 +36,7 @@ export const metadata = {
   }
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
       <head>
