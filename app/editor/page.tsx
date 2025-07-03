@@ -1,23 +1,23 @@
-"use client";
-import AuthGuard from "@/components/AuthGuard";
-import React, { useState, useEffect, useRef } from "react";
-import { addClient, deleteClient, uploadFile } from "@/services/clientService";
-import "./TestimonialEditorPage.css";
-import { useRouter } from "next/navigation";
-import { logout } from "@/services/loginService";
-import ImageUpload from "@/components/ImageUpload";
-import Image from "next/image";
-import { InternTestimonial } from "@/types/interfaces";
+'use client';
+import AuthGuard from '@/components/AuthGuard';
+import React, { useState, useEffect, useRef } from 'react';
+import { addClient, deleteClient, uploadFile } from '@/services/clientService';
+import './TestimonialEditorPage.css';
+import { useRouter } from 'next/navigation';
+import { logout } from '@/services/loginService';
+import ImageUpload from '@/components/ImageUpload';
+import Image from 'next/image';
+import { InternTestimonial } from '@/types/interfaces';
 
 export default function EditorPage() {
   const router = useRouter();
   const [clients, setClients] = useState<InternTestimonial[]>([]);
   const [currentTestIndex, setCurrentTestIndex] = useState(0);
   const [newTestimonial, setNewTestimonial] = useState<InternTestimonial>({
-    image: "",
-    quote: "",
-    name: "",
-    title: "",
+    image: '',
+    quote: '',
+    name: '',
+    title: '',
   });
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
@@ -30,12 +30,12 @@ export default function EditorPage() {
 
   const handleLogout = () => {
     logout();
-    router.push("/login");
+    router.push('/login');
   };
 
   useEffect(() => {
     const loadClients = async () => {
-      const response = await fetch("/api/client");
+      const response = await fetch('/api/client');
       const data = await response.json();
       setClients(data);
     };
@@ -45,10 +45,10 @@ export default function EditorPage() {
   const getCurrentClient = () => {
     if (clients.length === 0) {
       return {
-        image: "",
-        quote: "No testimonials available.",
-        name: "",
-        title: "",
+        image: '',
+        quote: 'No testimonials available.',
+        name: '',
+        title: '',
       };
     }
     return clients[currentTestIndex];
@@ -57,7 +57,7 @@ export default function EditorPage() {
   const handlePrev = () => {
     if (clients.length > 0) {
       setCurrentTestIndex(
-        (prevIndex) => (prevIndex - 1 + clients.length) % clients.length
+        (prevIndex) => (prevIndex - 1 + clients.length) % clients.length,
       );
     }
   };
@@ -72,18 +72,18 @@ export default function EditorPage() {
     if (clients.length === 0) return;
 
     const clientId = clients[currentTestIndex].id;
-    if (!clientId) throw new Error("Invalid client ID");
+    if (!clientId) throw new Error('Invalid client ID');
 
     try {
       const success = await deleteClient(clientId);
       if (success) {
-        const updatedClients = await fetch("/api/client");
+        const updatedClients = await fetch('/api/client');
         const data = await updatedClients.json();
         setClients(data);
         setCurrentTestIndex(Math.max(0, currentTestIndex - 1));
       }
     } catch (error) {
-      console.error("Error deleting client:", error);
+      console.error('Error deleting client:', error);
     }
   };
 
@@ -121,14 +121,14 @@ export default function EditorPage() {
         setCurrentTestIndex(updatedClients.length - 1);
 
         setNewTestimonial({
-          image: "",
-          quote: "",
-          name: "",
-          title: ""
-        })
+          image: '',
+          quote: '',
+          name: '',
+          title: '',
+        });
 
         setFile(null);
-        if (fileInputRef.current) fileInputRef.current.value = ""
+        if (fileInputRef.current) fileInputRef.current.value = '';
       }
 
       console.log('Added client:', addedClient);

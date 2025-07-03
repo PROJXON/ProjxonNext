@@ -1,39 +1,39 @@
-import "@/styles/index.css";
-import "@/styles/App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "aos/dist/aos.css";
-import ScrollToTop from "@/components/ScrollToTop";
-import NavBar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AOSWrapper from "@/components/AOSWrapper";
-import type { Metadata } from "next";
-import { ReactNode } from "react";
+import '@/styles/index.css';
+import '@/styles/App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'aos/dist/aos.css';
+import ScrollToTop from '@/components/ScrollToTop';
+import NavBar from '@/components/Navbar';
+import Footer from '@/components/Footer';
+import AOSWrapper from '@/components/AOSWrapper';
+import type { Metadata } from 'next';
+import { ReactNode } from 'react';
 
 export const metadata: Metadata = {
-  title: "PROJXON | Strategic Business Consulting for Scalable Growth",
-  description: "PROJXON empowers businesses with data-driven strategies, operational clarity, and innovative insights. Turning chaos into opportunity with every move.",
-  metadataBase: new URL("https://www.projxon.com/"),
+  title: 'PROJXON | Strategic Business Consulting for Scalable Growth',
+  description: 'PROJXON empowers businesses with data-driven strategies, operational clarity, and innovative insights. Turning chaos into opportunity with every move.',
+  metadataBase: new URL('https://www.projxon.com/'),
   openGraph: {
-    title: "PROJXON",
-    description: "PROJXON empowers businesses with data-driven strategies, operational clarity, and innovative insights. Turning chaos into opportunity with every move.",
-    url: "https://www.projxon.com/",
-    siteName: "PROJXON",
+    title: 'PROJXON',
+    description: 'PROJXON empowers businesses with data-driven strategies, operational clarity, and innovative insights. Turning chaos into opportunity with every move.',
+    url: 'https://www.projxon.com/',
+    siteName: 'PROJXON',
     images: [
       {
-        url: "/PROJXON.png",
+        url: '/PROJXON.png',
         width: 1200,
         height: 630,
-        alt: "PROJXON logo",
-      }
+        alt: 'PROJXON logo',
+      },
     ],
-    type: "website"
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "PROJXON",
-    description: "PROJXON empowers businesses with data-driven strategies, operational clarity, and innovative insights. Turning chaos into opportunity with every move.",
-    images: ["/PROJXON.png"]
-  }
+    card: 'summary_large_image',
+    title: 'PROJXON',
+    description: 'PROJXON empowers businesses with data-driven strategies, operational clarity, and innovative insights. Turning chaos into opportunity with every move.',
+    images: ['/PROJXON.png'],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -60,7 +60,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             src="https://www.googletagmanager.com/ns.html?id=GTM-MJBNSBPQ"
             height="0"
             width="0"
-            style={{ display: "none", visibility: "hidden" }}
+            style={{ display: 'none', visibility: 'hidden' }}
           ></iframe>
         </noscript>
 

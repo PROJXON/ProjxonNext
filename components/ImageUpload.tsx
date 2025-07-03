@@ -1,5 +1,5 @@
-import { ChangeEvent, forwardRef } from "react";
-import { ImageUploadProps } from "@/types/interfaces";
+import { ChangeEvent, forwardRef } from 'react';
+import { ImageUploadProps } from '@/types/interfaces';
 
 const ImageUpload = forwardRef<HTMLInputElement, ImageUploadProps>(({ onFileSelect }, ref) => {
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {

@@ -1,8 +1,8 @@
-"use client";
-import "./Hero.css";
-import { motion } from "framer-motion";
-import CustomButton from "@/components/CustomButton";
-import { Container } from "react-bootstrap";
+'use client';
+import './Hero.css';
+import { motion } from 'framer-motion';
+import CustomButton from '@/components/CustomButton';
+import { Container } from 'react-bootstrap';
 
 const HomeHero = () => {
   return (
@@ -19,7 +19,7 @@ const HomeHero = () => {
 
         <motion.div
           className="w-25 my-4 homepage-hero-divider"
-          style={{ height: "4px" }}
+          style={{ height: '4px' }}
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}

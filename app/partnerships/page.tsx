@@ -1,55 +1,55 @@
-import { Container, Row, Col } from "react-bootstrap";
-import "./PartnershipPage.css";
-import Hero from "../../components/Hero";
-import CallToAction from "../../components/CallToAction";
-import CustomButton from "../../components/CustomButton";
-import Image from "next/image";
-import type { Metadata } from "next";
-import { Partnership } from "@/types/interfaces";
+import { Container, Row, Col } from 'react-bootstrap';
+import './PartnershipPage.css';
+import Hero from '../../components/Hero';
+import CallToAction from '../../components/CallToAction';
+import CustomButton from '../../components/CustomButton';
+import Image from 'next/image';
+import type { Metadata } from 'next';
+import { Partnership } from '@/types/interfaces';
 
 export const metadata: Metadata = {
-  title: "Partner with PROJXON | Strategic Collaborations for Growth",
-  description: "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
-  metadataBase: new URL("https://www.projxon.com/partnership"),
+  title: 'Partner with PROJXON | Strategic Collaborations for Growth',
+  description: 'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
+  metadataBase: new URL('https://www.projxon.com/partnership'),
   openGraph: {
-    title: "Partner with PROJXON | Strategic Collaborations for Growth",
-    description: "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
-    url: "https://www.projxon.com/partnership",
-    siteName: "PROJXON",
+    title: 'Partner with PROJXON | Strategic Collaborations for Growth',
+    description: 'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
+    url: 'https://www.projxon.com/partnership',
+    siteName: 'PROJXON',
     images: [
       {
-        url: "/PROJXON.png",
+        url: '/PROJXON.png',
         width: 1200,
         height: 630,
-        alt: "PROJXON logo",
-      }
+        alt: 'PROJXON logo',
+      },
     ],
-    type: "website"
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Partner with PROJXON | Strategic Collaborations for Growth",
-    description: "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
-    images: ["/PROJXON.png"]
-  }
+    card: 'summary_large_image',
+    title: 'Partner with PROJXON | Strategic Collaborations for Growth',
+    description: 'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
+    images: ['/PROJXON.png'],
+  },
 };
 
 const PartnershipPage = () => {
   const partnerships: Partnership[] = [
     {
-      title: "Experience and Expertise",
-      text: "Leverage our extensive experience across various industries to enhance your offerings and drive growth. Our team of experts is equipped to handle diverse challenges and deliver innovative solutions.",
-      dataAOSDelay: "100",
+      title: 'Experience and Expertise',
+      text: 'Leverage our extensive experience across various industries to enhance your offerings and drive growth. Our team of experts is equipped to handle diverse challenges and deliver innovative solutions.',
+      dataAOSDelay: '100',
     },
     {
-      title: "Sustainable Solutions",
-      text: "Collaborate with us to develop cutting-edge solutions tailored to your needs. Our focus on innovation ensures that we stay ahead of the curve, providing partners with a competitive advantage.",
-      dataAOSDelay: "200",
+      title: 'Sustainable Solutions',
+      text: 'Collaborate with us to develop cutting-edge solutions tailored to your needs. Our focus on innovation ensures that we stay ahead of the curve, providing partners with a competitive advantage.',
+      dataAOSDelay: '200',
     },
     {
-      title: "Mutual Growth",
-      text: "We believe in building long-term partnerships that foster mutual growth. By working together, we can unlock new opportunities and drive success for both parties.",
-      dataAOSDelay: "300",
+      title: 'Mutual Growth',
+      text: 'We believe in building long-term partnerships that foster mutual growth. By working together, we can unlock new opportunities and drive success for both parties.',
+      dataAOSDelay: '300',
     },
   ];
 

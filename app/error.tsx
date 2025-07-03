@@ -1,5 +1,5 @@
-"use client";
-import { ErrorPageProps } from "@/types/interfaces";
+'use client';
+import { ErrorPageProps } from '@/types/interfaces';
 
 export default function ErrorPage({ error, reset }: ErrorPageProps) {
   console.error(error); // Optional: Log the error for debugging

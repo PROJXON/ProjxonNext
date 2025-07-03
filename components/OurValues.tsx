@@ -1,28 +1,28 @@
-"use client"
-import { Container, Row } from "react-bootstrap";
-import BlackCard from "@/components/BlackCard";
-import { FaLightbulb, FaBalanceScale, FaUsers } from "react-icons/fa"
-import { Value } from "@/types/interfaces";
+'use client';
+import { Container, Row } from 'react-bootstrap';
+import BlackCard from '@/components/BlackCard';
+import { FaLightbulb, FaBalanceScale, FaUsers } from 'react-icons/fa';
+import { Value } from '@/types/interfaces';
 
 export default function OurValues() {
   const values: Value[] = [
     {
       icon: FaLightbulb,
-      title: "Innovation",
+      title: 'Innovation',
       description:
-        "We constantly seek out new ideas and approaches to stay ahead of industry trends and provide our clients with cutting-edge solutions.",
+        'We constantly seek out new ideas and approaches to stay ahead of industry trends and provide our clients with cutting-edge solutions.',
     },
     {
       icon: FaBalanceScale,
-      title: "Integrity",
+      title: 'Integrity',
       description:
-        "We believe in doing business with honesty and transparency, building trust with our clients and partners through ethical practices.",
+        'We believe in doing business with honesty and transparency, building trust with our clients and partners through ethical practices.',
     },
     {
       icon: FaUsers,
-      title: "Collaboration",
+      title: 'Collaboration',
       description:
-        "We work closely with our clients and partners, fostering a collaborative environment that drives success for everyone involved.",
+        'We work closely with our clients and partners, fostering a collaborative environment that drives success for everyone involved.',
     },
   ];
 
@@ -39,5 +39,5 @@ export default function OurValues() {
         </Row>
       </Container>
     </section>
-  )
+  );
 }

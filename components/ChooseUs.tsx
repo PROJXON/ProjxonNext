@@ -1,36 +1,36 @@
-"use client"
-import { LuTrendingUp, LuUsers, LuLightbulb } from "react-icons/lu";
-import { Container, Row } from "react-bootstrap";
-import BlackCard from "@/components/BlackCard";
-import { ChooseUsReasons } from "@/types/interfaces";
+'use client';
+import { LuTrendingUp, LuUsers, LuLightbulb } from 'react-icons/lu';
+import { Container, Row } from 'react-bootstrap';
+import BlackCard from '@/components/BlackCard';
+import { ChooseUsReasons } from '@/types/interfaces';
 
 export default function ChooseUs() {
   const reasons: ChooseUsReasons[] = [
     {
       icon: LuUsers,
-      title: "Expert Team",
+      title: 'Expert Team',
       description:
-        "Our team consists of industry experts with years of experience in their respective fields. With diverse backgrounds and deep knowledge, we bring unparalleled expertise to every projectOur tailored delivery teams consist of industry experts in their respective fields. With diverse backgrounds and deep knowledge, we bring relevant expertise to every project.",
-      stat: "10",
-      statSuffix: "+",
-      statDescription: "years combined experience",
+        'Our team consists of industry experts with years of experience in their respective fields. With diverse backgrounds and deep knowledge, we bring unparalleled expertise to every projectOur tailored delivery teams consist of industry experts in their respective fields. With diverse backgrounds and deep knowledge, we bring relevant expertise to every project.',
+      stat: '10',
+      statSuffix: '+',
+      statDescription: 'years combined experience',
     },
     {
       icon: LuTrendingUp,
-      title: "Proven Results",
-      description: "We have a track record of delivering successful projects and measurable improvements for our clients. Our results speak for themselves, with consistent client satisfaction and tangible outcomes.",
-      stat: "95",
-      statSuffix: "%",
-      statDescription: "customer satisfaction rate",
+      title: 'Proven Results',
+      description: 'We have a track record of delivering successful projects and measurable improvements for our clients. Our results speak for themselves, with consistent client satisfaction and tangible outcomes.',
+      stat: '95',
+      statSuffix: '%',
+      statDescription: 'customer satisfaction rate',
     },
     {
       icon: LuLightbulb,
-      title: "Innovative Solutions",
+      title: 'Innovative Solutions',
       description:
-        "Leveraging the latest methodologies and technologies, we create solutions that work and scale. A holistic, forward-thinking approach ensures that we keep your team ahead of the curve in your industry.",
-      stat: "20",
-      statSuffix: "+",
-      statDescription: "innovative projects delivered",
+        'Leveraging the latest methodologies and technologies, we create solutions that work and scale. A holistic, forward-thinking approach ensures that we keep your team ahead of the curve in your industry.',
+      stat: '20',
+      statSuffix: '+',
+      statDescription: 'innovative projects delivered',
     },
   ];
 
@@ -47,5 +47,5 @@ export default function ChooseUs() {
         </Row>
       </Container>
     </section>
-  )
+  );
 }

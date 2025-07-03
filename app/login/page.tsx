@@ -1,19 +1,19 @@
-"use client";
-import { useState, FormEvent } from "react";
-import { Form, Button, Row, Col, Container } from "react-bootstrap";
-import { useRouter } from "next/navigation";
-import { login } from "@/services/loginService";
+'use client';
+import { useState, FormEvent } from 'react';
+import { Form, Button, Row, Col, Container } from 'react-bootstrap';
+import { useRouter } from 'next/navigation';
+import { login } from '@/services/loginService';
 
 const LoginPage = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const router = useRouter();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const result = await login(username, password);
 
-    if (result.success) router.push("/editor");
+    if (result.success) router.push('/editor');
     else alert(result.message);
   };
 

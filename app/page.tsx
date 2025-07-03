@@ -1,36 +1,36 @@
-import "./HomePage.css";
-import { Container } from "react-bootstrap"
-import HomeHero from "@/components/HomeHero";
-import CustomButton from "@/components/CustomButton";
-import CallToAction from "@/components/CallToAction"
-import ChooseUs from "@/components/ChooseUs";
-import type { Metadata } from "next";
+import './HomePage.css';
+import { Container } from 'react-bootstrap';
+import HomeHero from '@/components/HomeHero';
+import CustomButton from '@/components/CustomButton';
+import CallToAction from '@/components/CallToAction';
+import ChooseUs from '@/components/ChooseUs';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "PROJXON Services | Expert Business Consulting & Strategy",
+  title: 'PROJXON Services | Expert Business Consulting & Strategy',
   description: "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
-  metadataBase: new URL("https://www.projxon.com/services"),
+  metadataBase: new URL('https://www.projxon.com/services'),
   openGraph: {
-    title: "PROJXON Services | Expert Business Consulting & Strategy",
+    title: 'PROJXON Services | Expert Business Consulting & Strategy',
     description: "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
-    url: "https://www.projxon.com/services",
-    siteName: "PROJXON",
+    url: 'https://www.projxon.com/services',
+    siteName: 'PROJXON',
     images: [
       {
-        url: "/PROJXON.png",
+        url: '/PROJXON.png',
         width: 1200,
         height: 630,
-        alt: "PROJXON logo",
-      }
+        alt: 'PROJXON logo',
+      },
     ],
-    type: "website"
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "PROJXON Services | Expert Business Consulting & Strategy",
+    card: 'summary_large_image',
+    title: 'PROJXON Services | Expert Business Consulting & Strategy',
     description: "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
-    images: ["/PROJXON.png"]
-  }
+    images: ['/PROJXON.png'],
+  },
 };
 
 export default async function HomePage() {

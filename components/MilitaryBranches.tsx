@@ -1,36 +1,36 @@
-"use client"
-import { Container, Card } from "react-bootstrap"
-import Image from "next/image"
-import { Fragment } from "react"
-import { MilitaryBranch } from "@/types/interfaces"
+'use client';
+import { Container, Card } from 'react-bootstrap';
+import Image from 'next/image';
+import { Fragment } from 'react';
+import { MilitaryBranch } from '@/types/interfaces';
 
 export default function MilitaryBranches() {
   const branches: MilitaryBranch[] = [
     {
-      name: ["United States", "Army"],
-      image: "/assets/careers/military-branches/army.webp"
+      name: ['United States', 'Army'],
+      image: '/assets/careers/military-branches/army.webp',
     },
     {
-      name: ["United States", "Air Force"],
-      image: "/assets/careers/military-branches/air-force.webp"
+      name: ['United States', 'Air Force'],
+      image: '/assets/careers/military-branches/air-force.webp',
     },
     {
-      name: ["United States", "Navy"],
-      image: "/assets/careers/military-branches/navy.webp"
+      name: ['United States', 'Navy'],
+      image: '/assets/careers/military-branches/navy.webp',
     },
     {
-      name: ["United States", "Marine Corps"],
-      image: "/assets/careers/military-branches/marine-corps.webp"
+      name: ['United States', 'Marine Corps'],
+      image: '/assets/careers/military-branches/marine-corps.webp',
     },
     {
-      name: ["United States", "Coast Guard"],
-      image: "/assets/careers/military-branches/coast-guard.webp"
+      name: ['United States', 'Coast Guard'],
+      image: '/assets/careers/military-branches/coast-guard.webp',
     },
     {
-      name: ["United States", "Space Force"],
-      image: "/assets/careers/military-branches/space-force.webp"
-    }
-  ]
+      name: ['United States', 'Space Force'],
+      image: '/assets/careers/military-branches/space-force.webp',
+    },
+  ];
 
   return (
     <section className="positions sections-container bg-yellow">
@@ -61,5 +61,5 @@ export default function MilitaryBranches() {
         </div>
       </Container>
     </section>
-  )
+  );
 }

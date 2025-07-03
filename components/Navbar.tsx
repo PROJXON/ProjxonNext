@@ -1,19 +1,19 @@
-"use client";
-import { useState } from "react";
-import { Navbar, Nav, NavLink, Container } from "react-bootstrap";
-import Link from "next/link";
-import "./NavBar.css";
+'use client';
+import { useState } from 'react';
+import { Navbar, Nav, NavLink, Container } from 'react-bootstrap';
+import Link from 'next/link';
+import './NavBar.css';
 import { usePathname } from 'next/navigation';
-import type { NavLink as NavLinkType } from "@/types/interfaces";
+import type { NavLink as NavLinkType } from '@/types/interfaces';
 
 const navLinks: NavLinkType[] = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/partnerships", label: "Partnerships" },
-  { href: "/careers", label: "Careers" },
-  { href: "/internships", label: "Internships" },
-  { href: "/contact", label: "Contact" },
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/partnerships', label: 'Partnerships' },
+  { href: '/careers', label: 'Careers' },
+  { href: '/internships', label: 'Internships' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 const NavBar = () => {
@@ -43,7 +43,7 @@ const NavBar = () => {
               <Nav className="ml-auto text-uppercase">
                 {navLinks.map((link, index) => {
                   const currPage =
-                    pathname === link.href || (pathname.startsWith(link.href) && link.href !== "/");
+                    pathname === link.href || (pathname.startsWith(link.href) && link.href !== '/');
 
                   return (
                     <NavLink
@@ -53,7 +53,7 @@ const NavBar = () => {
                     >
                       <Link
                         href={link.href}
-                        className={`nav-link ${currPage ? "active" : ""}`}
+                        className={`nav-link ${currPage ? 'active' : ''}`}
                         onClick={handleLinkClick}
                       >
                         {link.label}

@@ -1,10 +1,10 @@
-"use client";
-import { useState, useEffect } from "react";
-import { Container, Button } from "react-bootstrap";
-import BlogCard from "./BlogCard";
-import LoadingSpinner from "./LoadingSpinner"; // Import LoadingSpinner
-import { fetchBlogs } from "@/services/blogService";
-import { WPBlogPost } from "@/types/interfaces";
+'use client';
+import { useState, useEffect } from 'react';
+import { Container, Button } from 'react-bootstrap';
+import BlogCard from './BlogCard';
+import LoadingSpinner from './LoadingSpinner'; // Import LoadingSpinner
+import { fetchBlogs } from '@/services/blogService';
+import { WPBlogPost } from '@/types/interfaces';
 
 const BlogClientList = ({ initialBlogs }: { initialBlogs: WPBlogPost[] }) => {
   const [blogs, setBlogs] = useState<WPBlogPost[]>(initialBlogs || []);
@@ -23,11 +23,11 @@ const BlogClientList = ({ initialBlogs }: { initialBlogs: WPBlogPost[] }) => {
           const response = await fetchBlogs() as WPBlogPost[];  // Fetching data from the service
           setBlogs(response);
         } catch (error) {
-          console.log("Error fetching blogs:", error);
+          console.log('Error fetching blogs:', error);
         } finally {
           setIsLoading(false);
         }
-      })()
+      })();
     }
   }, []);
 
@@ -64,7 +64,7 @@ const BlogClientList = ({ initialBlogs }: { initialBlogs: WPBlogPost[] }) => {
         )}
       </Container>
     </section>
-  )
+  );
 };
 
 export default BlogClientList;

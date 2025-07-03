@@ -1,12 +1,12 @@
-import DOMPurify from "isomorphic-dompurify";
-import { Container } from "react-bootstrap";
-import { CiCalendar } from "react-icons/ci";
-import { fetchBlogs, fetchBlog } from "@/services/blogService";
-import Image from "next/image";
-import defaultImg from "@/public/assets/internships/default-blog-img.webp";
-import { WPBlogPost, IdParams, RouteParams } from "@/types/interfaces";
-import "./BlogPage.css";
-import formatDate from "@/lib/formatDate";
+import DOMPurify from 'isomorphic-dompurify';
+import { Container } from 'react-bootstrap';
+import { CiCalendar } from 'react-icons/ci';
+import { fetchBlogs, fetchBlog } from '@/services/blogService';
+import Image from 'next/image';
+import defaultImg from '@/public/assets/internships/default-blog-img.webp';
+import { WPBlogPost, IdParams, RouteParams } from '@/types/interfaces';
+import './BlogPage.css';
+import formatDate from '@/lib/formatDate';
 
 export const revalidate = 300;
 
@@ -24,24 +24,24 @@ export async function generateMetadata({ params }: RouteParams) {
 
   if (!blog) {
     return {
-      title: "Blog not found",
-      description: "The blog could not be found.",
+      title: 'Blog not found',
+      description: 'The blog could not be found.',
     };
   }
 
   return {
-    title: blog?.title?.rendered || "Blog",
-    description: blog?.excerpt?.rendered?.replace(/<[^>]+>/g, "") || "",
+    title: blog?.title?.rendered || 'Blog',
+    description: blog?.excerpt?.rendered?.replace(/<[^>]+>/g, '') || '',
   };
 }
 
 export default async function BlogPage({ params }: RouteParams) {
   const { id } = await params;
   const blog = await fetchBlog(id) as WPBlogPost;
-  const content = blog.content?.rendered || "";
+  const content = blog.content?.rendered || '';
   const sanitizedHtml = DOMPurify.sanitize(content);
 
-  const featuredMedia = blog._embedded?.["wp:featuredmedia"];
+  const featuredMedia = blog._embedded?.['wp:featuredmedia'];
   const imageUrl = featuredMedia?.[0]?.source_url ?? defaultImg.src;
 
   return (
@@ -57,7 +57,7 @@ export default async function BlogPage({ params }: RouteParams) {
             <div className="d-flex items-center text-muted gap-1">
               <CiCalendar size={20} />
               <time dateTime={blog.date.toString()} className="text-muted">
-                {formatDate(blog.date, "long")}
+                {formatDate(blog.date, 'long')}
               </time>
             </div>
           </div>
@@ -66,7 +66,7 @@ export default async function BlogPage({ params }: RouteParams) {
         <Image
           className="w-100 blogpage-img"
           src={imageUrl}
-          alt={blog.title?.rendered || "Blog featured image"}
+          alt={blog.title?.rendered || 'Blog featured image'}
           width={1080}
           height={566}
         />

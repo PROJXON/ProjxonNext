@@ -1,17 +1,17 @@
-"use client";
-import { useState, useRef, FormEvent } from "react";
-import { Form, Button, Alert, Card } from "react-bootstrap";
-import { sendEmail } from "../services/emailService";
-import "./InfoForm.css";
-import { InfoFormStatus, EmailFormFields } from "@/types/interfaces";
+'use client';
+import { useState, useRef, FormEvent } from 'react';
+import { Form, Button, Alert, Card } from 'react-bootstrap';
+import { sendEmail } from '../services/emailService';
+import './InfoForm.css';
+import { InfoFormStatus, EmailFormFields } from '@/types/interfaces';
 
 const InfoForm = () => {
   const form = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState<InfoFormStatus>({
     show: false,
-    message: "",
-    type: "",
+    message: '',
+    type: '',
   });
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -21,24 +21,24 @@ const InfoForm = () => {
 
     const formData = new FormData(form.current);
     const data: EmailFormFields = {
-      user_name: formData.get("user_name") as string,
-      user_email: formData.get("user_email") as string,
-      message: formData.get("message") as string
-    }
+      user_name: formData.get('user_name') as string,
+      user_email: formData.get('user_email') as string,
+      message: formData.get('message') as string,
+    };
 
     try {
       await sendEmail(data);
       setStatus({
         show: true,
-        message: "Thank you! We will contact you as soon as possible.",
-        type: "success",
+        message: 'Thank you! We will contact you as soon as possible.',
+        type: 'success',
       });
       form.current.reset();
     } catch (error) {
       setStatus({
         show: true,
-        message: "Something went wrong. Please try again later.",
-        type: "danger",
+        message: 'Something went wrong. Please try again later.',
+        type: 'danger',
       });
     } finally {
       setLoading(false);
@@ -56,7 +56,7 @@ const InfoForm = () => {
               onClose={() => setStatus({ ...status, show: false })}
               dismissible
               className="mx-auto"
-              style={{ maxWidth: "600px" }}
+              style={{ maxWidth: '600px' }}
             >
               {status.message}
             </Alert>
@@ -99,13 +99,13 @@ const InfoForm = () => {
                 type="submit"
                 className="mt-4 submit-button"
                 style={{
-                  backgroundColor: "#FFD700",
-                  borderColor: "#FFD700",
-                  color: "#000",
+                  backgroundColor: '#FFD700',
+                  borderColor: '#FFD700',
+                  color: '#000',
                 }}
                 disabled={loading}
               >
-                {loading ? "Sending..." : "Submit"}
+                {loading ? 'Sending...' : 'Submit'}
               </Button>
             </div>
           </Form>

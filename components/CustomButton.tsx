@@ -1,8 +1,8 @@
-"use client";
-import Link from "next/link";
-import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
-import { CustomButtonProps } from "@/types/interfaces";
+'use client';
+import Link from 'next/link';
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
+import { CustomButtonProps } from '@/types/interfaces';
 
 const AnimatedButton = ({
   buttonText,

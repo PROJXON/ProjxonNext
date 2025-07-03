@@ -1,15 +1,15 @@
-"use client"
-import AnimatedNumber from "@/components/AnimatedNumber"
-import "./BlackCard.css";
-import { Col } from "react-bootstrap";
-import { Value, ChooseUsReasons } from "@/types/interfaces";
+'use client';
+import AnimatedNumber from '@/components/AnimatedNumber';
+import './BlackCard.css';
+import { Col } from 'react-bootstrap';
+import { Value, ChooseUsReasons } from '@/types/interfaces';
 
 const BlackCard = ({ item, iconSize }: { item: Value | ChooseUsReasons, iconSize: number }) => {
   function isChooseUsReason(item: Value | ChooseUsReasons): item is ChooseUsReasons {
     return (
-      "stat" in item &&
-      "statSuffix" in item &&
-      "statDescription" in item
+      'stat' in item &&
+      'statSuffix' in item &&
+      'statDescription' in item
     );
   }
 

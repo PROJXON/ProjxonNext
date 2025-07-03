@@ -1,12 +1,12 @@
-import { google } from "googleapis";
-import nodemailer from "nodemailer";
-import { NextRequest } from "next/server";
-import { EmailFormFields } from "@/types/interfaces";
+import { google } from 'googleapis';
+import nodemailer from 'nodemailer';
+import { NextRequest } from 'next/server';
+import { EmailFormFields } from '@/types/interfaces';
 
 const OAuth2Client = new google.auth.OAuth2(
     process.env.EMAIL_CLIENT_ID,
     process.env.EMAIL_CLIENT_SECRET,
-    process.env.EMAIL_REDIRECT_URI
+    process.env.EMAIL_REDIRECT_URI,
 );
 
 OAuth2Client.setCredentials({ refresh_token: process.env.EMAIL_REFRESH_TOKEN });
@@ -14,11 +14,11 @@ OAuth2Client.setCredentials({ refresh_token: process.env.EMAIL_REFRESH_TOKEN });
 async function getAccessToken(): Promise<string> {
     try {
         const res = await OAuth2Client.getAccessToken();
-        if (!res?.token) throw new Error("No access token returned");
+        if (!res?.token) throw new Error('No access token returned');
         return res.token;
     } catch (error) {
-        console.error("Failed to get access token:", error);
-        throw new Error("Failed to authenticate email service.");
+        console.error('Failed to get access token:', error);
+        throw new Error('Failed to authenticate email service.');
     }
 }
 
@@ -28,9 +28,9 @@ export async function POST(req: NextRequest) {
         const accessToken = await getAccessToken();
 
         const transporter = nodemailer.createTransport({
-            service: "gmail",
+            service: 'gmail',
             auth: {
-                type: "OAuth2",
+                type: 'OAuth2',
                 user: process.env.EMAIL_USER,
                 clientId: process.env.EMAIL_CLIENT_ID,
                 clientSecret: process.env.EMAIL_CLIENT_SECRET,
@@ -53,7 +53,7 @@ export async function POST(req: NextRequest) {
         const confirmationMailOptions = {
             from: `"Projxon" <${process.env.EMAIL_USER}>`,
             to: user_email,
-            subject: "Thank you for contacting us!",
+            subject: 'Thank you for contacting us!',
             text: `
         Hi ${user_name},
 
@@ -67,9 +67,9 @@ export async function POST(req: NextRequest) {
         await transporter.sendMail(notificationMailOptions);
         await transporter.sendMail(confirmationMailOptions);
 
-        return new Response(JSON.stringify({ message: "Emails sent successfully!" }), { status: 200 });
+        return new Response(JSON.stringify({ message: 'Emails sent successfully!' }), { status: 200 });
     } catch (error) {
-        console.error("Error sending email:", error);
-        return new Response(JSON.stringify({ message: "Error sending email" }), { status: 500 });
+        console.error('Error sending email:', error);
+        return new Response(JSON.stringify({ message: 'Error sending email' }), { status: 500 });
     }
 }

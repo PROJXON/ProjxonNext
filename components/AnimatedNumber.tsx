@@ -1,6 +1,6 @@
-"use client";
-import { useInView } from "react-intersection-observer";
-import { useState, useEffect } from "react";
+'use client';
+import { useInView } from 'react-intersection-observer';
+import { useState, useEffect } from 'react';
 
 const AnimatedNumber = ({ value }: { value: number }) => {
   const [count, setCount] = useState(0);

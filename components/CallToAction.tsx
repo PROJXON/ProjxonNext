@@ -1,6 +1,6 @@
-import "./CallToAction.css";
-import { Container } from "react-bootstrap";
-import CustomButton from "./CustomButton";
+import './CallToAction.css';
+import { Container } from 'react-bootstrap';
+import CustomButton from './CustomButton';
 
 const CallToAction = () => {
   return (
@@ -13,7 +13,7 @@ const CallToAction = () => {
       >
         <div>
           <h2 className="fw-bold text-white sections-heading">
-            Ready to{" "}
+            Ready to{' '}
             <span className="text-yellow">Transform Your Business</span>
           </h2>
           <p className="mt-3 mb-5 text-gray fs-5">

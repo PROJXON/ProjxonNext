@@ -1,5 +1,5 @@
-import Link from "next/link";
-import Hero from "@/components/Hero";
+import Link from 'next/link';
+import Hero from '@/components/Hero';
 
 const NotFound = () => {
   return (
@@ -14,7 +14,7 @@ const NotFound = () => {
 
       <section className="sections-container">
         <h1 className="text-center">
-          Return back to{" "}
+          Return back to{' '}
           <Link href="/" className="link-secondary">
             home
           </Link>

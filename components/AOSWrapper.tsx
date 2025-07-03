@@ -1,6 +1,6 @@
-"use client";
-import { useEffect } from "react";
-import AOS from "aos";
+'use client';
+import { useEffect } from 'react';
+import AOS from 'aos';
 
 const AOSWrapper = () => {
   useEffect(() => {

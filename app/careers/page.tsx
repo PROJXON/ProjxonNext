@@ -1,58 +1,58 @@
-import { Container, Row, Col } from "react-bootstrap";
-import "./CareerPage.css";
-import Hero from "@/components/Hero";
-import CallToAction from "@/components/CallToAction";
-import CustomButton from "@/components/CustomButton"
-import MilitaryBranches from "@/components/MilitaryBranches"
-import type { Metadata } from "next";
-import { CareerPositions } from "@/types/interfaces";
+import { Container, Row, Col } from 'react-bootstrap';
+import './CareerPage.css';
+import Hero from '@/components/Hero';
+import CallToAction from '@/components/CallToAction';
+import CustomButton from '@/components/CustomButton';
+import MilitaryBranches from '@/components/MilitaryBranches';
+import type { Metadata } from 'next';
+import { CareerPositions } from '@/types/interfaces';
 
 export const metadata: Metadata = {
-  title: "Careers at PROJXON | Build Your Future in With Us",
-  description: "Join PROJXON and be part of a team that drives business innovation. Explore career opportunities in strategy, consulting, and digital transformation.",
-  metadataBase: new URL("https://www.projxon.com/careers"),
+  title: 'Careers at PROJXON | Build Your Future in With Us',
+  description: 'Join PROJXON and be part of a team that drives business innovation. Explore career opportunities in strategy, consulting, and digital transformation.',
+  metadataBase: new URL('https://www.projxon.com/careers'),
   openGraph: {
-    title: "Careers at PROJXON | Build Your Future in With Us",
-    description: "Join PROJXON and be part of a team that drives business innovation. Explore career opportunities in strategy, consulting, and digital transformation.",
-    url: "https://www.projxon.com/careers",
-    siteName: "PROJXON",
+    title: 'Careers at PROJXON | Build Your Future in With Us',
+    description: 'Join PROJXON and be part of a team that drives business innovation. Explore career opportunities in strategy, consulting, and digital transformation.',
+    url: 'https://www.projxon.com/careers',
+    siteName: 'PROJXON',
     images: [
       {
-        url: "/PROJXON.png",
+        url: '/PROJXON.png',
         width: 1200,
         height: 630,
-        alt: "PROJXON logo",
-      }
+        alt: 'PROJXON logo',
+      },
     ],
-    type: "website"
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Careers at PROJXON | Build Your Future in With Us",
-    description: "Join PROJXON and be part of a team that drives business innovation. Explore career opportunities in strategy, consulting, and digital transformation.",
-    images: ["/PROJXON.png"]
-  }
-}
+    card: 'summary_large_image',
+    title: 'Careers at PROJXON | Build Your Future in With Us',
+    description: 'Join PROJXON and be part of a team that drives business innovation. Explore career opportunities in strategy, consulting, and digital transformation.',
+    images: ['/PROJXON.png'],
+  },
+};
 
 const CareerPage = () => {
   const positions: CareerPositions[] = [
     {
-      image: "/assets/careers/consult.webp",
-      title: "Consulting Positions",
+      image: '/assets/careers/consult.webp',
+      title: 'Consulting Positions',
       description:
         "Join a team that values continuous improvement, collaboration, and exceptional client service. If you're passionate about delivering unique and impactful projects, we want to hear from you.",
-      align: "start",
-      dataAOS: "fade-right",
+      align: 'start',
+      dataAOS: 'fade-right',
     },
     {
-      image: "/assets/careers/advisor.webp",
-      title: "Advisory Positions",
+      image: '/assets/careers/advisor.webp',
+      title: 'Advisory Positions',
       description:
-        "Leverage your consulting expertise in a flexible, part-time role, supporting client engagements without the responsibility of managing clients. Share your skills and knowledge with us.",
-      align: "end",
-      dataAOS: "fade-left",
+        'Leverage your consulting expertise in a flexible, part-time role, supporting client engagements without the responsibility of managing clients. Share your skills and knowledge with us.',
+      align: 'end',
+      dataAOS: 'fade-left',
     },
-  ]
+  ];
 
   return (
     <div>
@@ -124,8 +124,8 @@ const CareerPage = () => {
                   className={`positions-item p-4 p-lg-5 positions-shape-${position.align}`}
                   style={{
                     backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${position.image})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
                   }}
                 >
                   {/* <div className="positions-icon mb-4">

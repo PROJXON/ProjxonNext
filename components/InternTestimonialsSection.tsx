@@ -1,8 +1,8 @@
-"use client"
-import { Row, Col, Container, Carousel, Card } from "react-bootstrap";
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import { InternTestimonial } from "@/types/interfaces";
+'use client';
+import { Row, Col, Container, Carousel, Card } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { InternTestimonial } from '@/types/interfaces';
 
 export default function InternTestimonialsSection() {
   const [index, setIndex] = useState(0);
@@ -11,10 +11,10 @@ export default function InternTestimonialsSection() {
 
   useEffect(() => {
     (async () => {
-      const result = await fetch("/api/client");
+      const result = await fetch('/api/client');
       const data = await result.json();
       setInternTestimonials(data);
-    })()
+    })();
   }, []);
 
   const chunked = [];
@@ -83,5 +83,5 @@ export default function InternTestimonialsSection() {
         </Carousel>
       </Container>
     </section>
-  )
+  );
 }

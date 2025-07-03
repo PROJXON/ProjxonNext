@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import type { NextRequest } from "next/server";
+import type { NextRequest } from 'next/server';
 import axios from 'axios';
 import FormData from 'form-data';
-import getAuth from "@/lib/getAuth";
-import { WPImage, UploadResponse } from "@/types/interfaces";
+import getAuth from '@/lib/getAuth';
+import { WPImage, UploadResponse } from '@/types/interfaces';
 
 export async function POST(req: NextRequest) {
     try {
@@ -33,12 +33,12 @@ export async function POST(req: NextRequest) {
                     ...formData.getHeaders(),
                     'Authorization': `Bearer ${token}`,
                 },
-            }
+            },
         );
         console.log('WordPress API response:', response.data);
 
         // Return the image URL from the WordPress API
-        const sourceURL: UploadResponse = { url: response.data.source_url }
+        const sourceURL: UploadResponse = { url: response.data.source_url };
         return NextResponse.json(sourceURL, { status: 200 });
     } catch (error: any) {
         console.error('Error uploading image:', error.response ? error.response.data : error);

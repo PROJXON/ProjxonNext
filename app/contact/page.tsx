@@ -1,35 +1,35 @@
-import { Container, Row, Col, Card, CardBody } from "react-bootstrap";
-import { FaEnvelopeOpenText } from "react-icons/fa";
-import type { Metadata } from "next";
-import "./ContactPage.css";
-import Hero from "@/components/Hero";
-import InfoForm from "@/components/InfoForm";
+import { Container, Row, Col, Card, CardBody } from 'react-bootstrap';
+import { FaEnvelopeOpenText } from 'react-icons/fa';
+import type { Metadata } from 'next';
+import './ContactPage.css';
+import Hero from '@/components/Hero';
+import InfoForm from '@/components/InfoForm';
 
 export const metadata: Metadata = {
-  title: "Contact PROJXON | Get in Touch with Our Experts",
-  description: "Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.",
-  metadataBase: new URL("https://www.projxon.com/contact"),
+  title: 'Contact PROJXON | Get in Touch with Our Experts',
+  description: 'Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.',
+  metadataBase: new URL('https://www.projxon.com/contact'),
   openGraph: {
-    title: "Contact PROJXON | Get in Touch with Our Experts",
-    description: "Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.",
-    url: "https://www.projxon.com/contact",
-    siteName: "PROJXON",
+    title: 'Contact PROJXON | Get in Touch with Our Experts',
+    description: 'Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.',
+    url: 'https://www.projxon.com/contact',
+    siteName: 'PROJXON',
     images: [
       {
-        url: "/PROJXON.png",
+        url: '/PROJXON.png',
         width: 1200,
         height: 630,
-        alt: "PROJXON logo",
-      }
+        alt: 'PROJXON logo',
+      },
     ],
-    type: "website"
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Contact PROJXON | Get in Touch with Our Experts",
-    description: "Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.",
-    images: ["/PROJXON.png"]
-  }
+    card: 'summary_large_image',
+    title: 'Contact PROJXON | Get in Touch with Our Experts',
+    description: 'Have questions or need expert consulting? Contact PROJXON for business strategy, market insights, and growth solutions. Let’s connect and collaborate.',
+    images: ['/PROJXON.png'],
+  },
 };
 
 const ContactPage = () => {

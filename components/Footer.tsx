@@ -1,85 +1,85 @@
-import { FaEnvelope, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { Container, Row, Col } from "react-bootstrap"
-import Link from "next/link";
-import { SocialIcon, FooterLink } from "@/types/interfaces";
-import "./Footer.css";
+import { FaEnvelope, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { Container, Row, Col } from 'react-bootstrap';
+import Link from 'next/link';
+import { SocialIcon, FooterLink } from '@/types/interfaces';
+import './Footer.css';
 
 const Footer = () => {
   const socialIcons: SocialIcon[] = [
     {
-      href: new URL("https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=info@projxon.com"),
-      ariaLabel: "Email",
+      href: new URL('https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=info@projxon.com'),
+      ariaLabel: 'Email',
       icon: FaEnvelope,
-      newTab: false
+      newTab: false,
     },
     {
-      href: new URL("https://twitter.com/projxon"),
-      ariaLabel: "Twitter",
+      href: new URL('https://twitter.com/projxon'),
+      ariaLabel: 'Twitter',
       icon: FaTwitter,
-      newTab: true
+      newTab: true,
     },
     {
-      href: new URL("https://www.instagram.com/projxon/"),
-      ariaLabel: "Instagram",
+      href: new URL('https://www.instagram.com/projxon/'),
+      ariaLabel: 'Instagram',
       icon: FaInstagram,
-      newTab: true
+      newTab: true,
     },
     {
-      href: new URL("https://linkedin.com/company/projxon"),
-      ariaLabel: "LinkedIn",
+      href: new URL('https://linkedin.com/company/projxon'),
+      ariaLabel: 'LinkedIn',
       icon: FaLinkedin,
-      newTab: true
-    }
+      newTab: true,
+    },
   ];
 
   const footerLinks: FooterLink[] = [
     {
-      label: "About",
-      href: "/about",
+      label: 'About',
+      href: '/about',
       links: [
-        { id: "who-we-are", text: "Who Are We?" },
-        { id: "our-values", text: "Our Core Values" },
-        { id: "meet-the-team", text: "Meet the Team" },
+        { id: 'who-we-are', text: 'Who Are We?' },
+        { id: 'our-values', text: 'Our Core Values' },
+        { id: 'meet-the-team', text: 'Meet the Team' },
       ],
     },
     {
-      label: "Services",
-      href: "/services",
+      label: 'Services',
+      href: '/services',
       links: [
-        { id: "services", text: "Our Services" },
+        { id: 'services', text: 'Our Services' },
       ],
     },
     {
-      label: "Partnerships",
-      href: "/partnerships",
+      label: 'Partnerships',
+      href: '/partnerships',
       links: [
-        { id: "service-partners", text: "Why Projxon" },
-        { id: "partnership-opprtunities", text: "Partnership Opportunites" },
+        { id: 'service-partners', text: 'Why Projxon' },
+        { id: 'partnership-opprtunities', text: 'Partnership Opportunites' },
       ],
     },
     {
-      label: "Careers",
-      href: "/careers",
+      label: 'Careers',
+      href: '/careers',
       links: [
-        { id: "apply", text: "Work With Us" },
-        { id: "consulting-advisory", text: "Consulting + Advisory" },
-        { id: "clients", text: "Veterans First Program" },
+        { id: 'apply', text: 'Work With Us' },
+        { id: 'consulting-advisory', text: 'Consulting + Advisory' },
+        { id: 'clients', text: 'Veterans First Program' },
       ],
     },
     {
-      label: "Internships",
-      href: "/internships",
+      label: 'Internships',
+      href: '/internships',
       links: [
-        { id: "mip", text: "MIP" },
-        { id: "testimonials", text: "Testimonials" },
-        { id: "blogs", text: "Blogs" },
+        { id: 'mip', text: 'MIP' },
+        { id: 'testimonials', text: 'Testimonials' },
+        { id: 'blogs', text: 'Blogs' },
       ],
     },
     {
-      label: "Contact",
-      href: "/contact",
+      label: 'Contact',
+      href: '/contact',
       links: [
-        { id: "contact-form", text: "Contact" },
+        { id: 'contact-form', text: 'Contact' },
       ],
     },
   ];
@@ -99,8 +99,8 @@ const Footer = () => {
                 <Link
                   key={index}
                   href={icon.href.toString()}
-                  target={icon.newTab ? "_blank" : undefined}
-                  rel={icon.newTab ? "noopener noreferrer" : undefined}
+                  target={icon.newTab ? '_blank' : undefined}
+                  rel={icon.newTab ? 'noopener noreferrer' : undefined}
                   passHref
                 >
                   <div className="footer-icon" aria-label={icon.ariaLabel}>
@@ -137,7 +137,7 @@ const Footer = () => {
         </Row>
       </Container>
     </footer>
-  )
+  );
 };
 
 export default Footer;

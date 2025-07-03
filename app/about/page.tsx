@@ -1,108 +1,108 @@
-import "./AboutPage.css";
-import { Container, Row, Col } from "react-bootstrap";
-import { FaLinkedin, FaGlobe } from "react-icons/fa";
-import Image from "next/image";
-import Hero from "@/components/Hero";
-import CustomButton from "@/components/CustomButton";
-import CallToAction from "@/components/CallToAction";
-import OurValues from "@/components/OurValues";
-import type { Metadata } from "next";
-import { ConsultingLeads } from "@/types/interfaces";
+import './AboutPage.css';
+import { Container, Row, Col } from 'react-bootstrap';
+import { FaLinkedin, FaGlobe } from 'react-icons/fa';
+import Image from 'next/image';
+import Hero from '@/components/Hero';
+import CustomButton from '@/components/CustomButton';
+import CallToAction from '@/components/CallToAction';
+import OurValues from '@/components/OurValues';
+import type { Metadata } from 'next';
+import { ConsultingLeads } from '@/types/interfaces';
 
 export const metadata: Metadata = {
-  title: "About PROJXON | The Story Behing Strategy & Innovation",
-  description: "Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.",
-  metadataBase: new URL("https://www.projxon.com/about"),
+  title: 'About PROJXON | The Story Behing Strategy & Innovation',
+  description: 'Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.',
+  metadataBase: new URL('https://www.projxon.com/about'),
   openGraph: {
-    title: "About PROJXON | The Story Behing Strategy & Innovation",
-    description: "Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.",
-    url: "https://www.projxon.com/about",
-    siteName: "PROJXON",
+    title: 'About PROJXON | The Story Behing Strategy & Innovation',
+    description: 'Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.',
+    url: 'https://www.projxon.com/about',
+    siteName: 'PROJXON',
     images: [
       {
-        url: "/PROJXON.png",
+        url: '/PROJXON.png',
         width: 1200,
         height: 630,
-        alt: "PROJXON logo",
-      }
+        alt: 'PROJXON logo',
+      },
     ],
-    type: "website"
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    title: "About PROJXON | The Story Behing Strategy & Innovation",
-    description: "Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.",
-    images: ["/PROJXON.png"]
-  }
+    card: 'summary_large_image',
+    title: 'About PROJXON | The Story Behing Strategy & Innovation',
+    description: 'Discover PROJXON’s mission, values, and expertise in business consulting. We help companies achieve growth through strategic insights and innovation.',
+    images: ['/PROJXON.png'],
+  },
 };
 
 const AboutPage = () => {
   const consultingLeads: ConsultingLeads[] = [
     {
-      image: "/assets/about/team/phelan.webp",
-      name: "Mark Phelan",
-      title: "Senior Consultant,",
-      specialty: "E-Commerce Solutions",
+      image: '/assets/about/team/phelan.webp',
+      name: 'Mark Phelan',
+      title: 'Senior Consultant,',
+      specialty: 'E-Commerce Solutions',
       socials: [
         {
           icon: FaLinkedin,
-          href: new URL("https://www.linkedin.com/in/phelanmarkw")
+          href: new URL('https://www.linkedin.com/in/phelanmarkw'),
         },
         {
           icon: FaGlobe,
-          href: new URL("https://www.thephelanfocus.com/")
+          href: new URL('https://www.thephelanfocus.com/'),
         },
       ],
     },
     {
-      image: "/assets/about/team/kathy.webp",
-      name: "Kathy Seaton",
-      title: "Senior Consultant,",
-      specialty: "Non Profit Development",
+      image: '/assets/about/team/kathy.webp',
+      name: 'Kathy Seaton',
+      title: 'Senior Consultant,',
+      specialty: 'Non Profit Development',
       socials: [
         {
           icon: FaLinkedin,
-          href: new URL("https://www.linkedin.com/in/klseaton")
+          href: new URL('https://www.linkedin.com/in/klseaton'),
         },
         {
           icon: FaGlobe,
-          href: new URL("https://www.klseatonconsulting.com/")
+          href: new URL('https://www.klseatonconsulting.com/'),
         },
       ],
     },
     {
-      image: "/assets/about/team/melissa.webp",
-      name: "Melissa Eboli",
-      title: "Senior Consultant,",
-      specialty: "Health + Wellness Solutions",
+      image: '/assets/about/team/melissa.webp',
+      name: 'Melissa Eboli',
+      title: 'Senior Consultant,',
+      specialty: 'Health + Wellness Solutions',
       socials: [
         {
           icon: FaLinkedin,
-          href: new URL("https://www.linkedin.com/in/viamelissa")
+          href: new URL('https://www.linkedin.com/in/viamelissa'),
         },
         {
           icon: FaGlobe,
-          href: new URL("https://www.viaskitchen.com/")
+          href: new URL('https://www.viaskitchen.com/'),
         },
       ],
     },
     {
-      image: "/assets/about/team/donavon.webp",
-      name: "Donavon Roberson",
-      title: "Senior Consultant,",
-      specialty: "Tech + Software Solutions",
+      image: '/assets/about/team/donavon.webp',
+      name: 'Donavon Roberson',
+      title: 'Senior Consultant,',
+      specialty: 'Tech + Software Solutions',
       socials: [
         {
           icon: FaLinkedin,
-          href: new URL("https://www.linkedin.com/in/donavonroberson")
+          href: new URL('https://www.linkedin.com/in/donavonroberson'),
         },
         {
           icon: FaGlobe,
-          href: new URL("https://medium.com/@thejourneyofthedreamer")
+          href: new URL('https://medium.com/@thejourneyofthedreamer'),
         },
       ],
-    }
-  ]
+    },
+  ];
 
   return (
     <div className="about-page">
@@ -140,7 +140,7 @@ const AboutPage = () => {
             >
               <h1 className="text-uppercase fw-bolder mb-3">Who We Are</h1>
               <h2 className="fw-bolder fs-4">
-                {" "}
+                {' '}
                 PROJXON is a business optimization firm built for impact-driven,
                 medium-sized businesses ready to scale with purpose
               </h2>
