@@ -60,8 +60,8 @@ const CareerPage = () => {
       <Hero
         title='Join Our Team'
         subtitle='Work with Intention. Grow with Impact.'
-        paragraph={`At PROJXON, we don't just hire talent—we invest in potential. Join a team where your expertise drives change, your voice matters, and your work creates real-world results.'
-        backgroundClass='career-hero`}
+        paragraph={'At PROJXON, we don\'t just hire talent—we invest in potential. Join a team where your expertise drives change, your voice matters, and your work creates real-world results.'}
+        backgroundClass='career-hero'
       />
 
       {/* Apply */}
@@ -128,8 +128,6 @@ const CareerPage = () => {
                     backgroundPosition: 'center',
                   }}
                 >
-                  {/* <div className='positions-icon mb-4'>
-                                    </div> */}
                   <h4 className='text-yellow fs-2 fw-bold mb-3'>
                     {position.title}
                   </h4>
