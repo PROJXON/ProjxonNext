@@ -40,6 +40,7 @@ const InfoForm = () => {
         message: 'Something went wrong. Please try again later.',
         type: 'danger',
       });
+      console.log('Error:', error);
     } finally {
       setLoading(false);
     }

@@ -75,7 +75,7 @@ const PartnershipPage = () => {
               <p className="partner-heading-sub-heading gray-opacity">
                 At PROJXON, we excel in delivering innovative solutions tailored to
                 your business needs. Our team combines expertise, creativity, and cutting-edge
-                technology to help your business thrive in today's competitive market.
+                technology to help your business thrive in today&apos;s competitive market.
                 Partner with us for unmatched dedication, seamless collaboration,
                 and results-driven strategies.
               </p>

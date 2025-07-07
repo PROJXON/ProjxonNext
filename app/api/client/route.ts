@@ -10,7 +10,7 @@ export async function GET() {
     return new Response(
       JSON.stringify({
         message: 'Error fetching clients',
-        error: error instanceof Error ? error.message : "Unknown error",
+        error: error instanceof Error ? error.message : 'Unknown error',
       }),
       { status: 500 },
     );
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     if (!authHeader) {
       return new Response(
         JSON.stringify({ message: 'Missing Authorization header' }),
-        { status: 401, headers: { 'Content-Type': 'application/json' }, },
+        { status: 401, headers: { 'Content-Type': 'application/json' } },
       );
     }
 
@@ -51,9 +51,9 @@ export async function POST(req: NextRequest) {
     return new Response(
       JSON.stringify({
         message: 'Error adding client',
-        error: error instanceof Error ? error.message : "Unknown error",
+        error: error instanceof Error ? error.message : 'Unknown error',
       }),
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

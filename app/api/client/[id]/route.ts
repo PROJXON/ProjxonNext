@@ -17,7 +17,7 @@ export async function GET(_req: NextRequest, { params }: RouteParams) {
     return new Response(
       JSON.stringify({
         message: 'Error fetching client',
-        error: error instanceof Error ? error.message : "Unknown error",
+        error: error instanceof Error ? error.message : 'Unknown error',
       }),
       { status: 500 },
     );
@@ -44,7 +44,7 @@ export async function DELETE(req: NextRequest, { params }: RouteParams) {
     return new Response(
       JSON.stringify({
         message: 'Error deleting client',
-        error: error instanceof Error ? error.message : "Unknown error",
+        error: error instanceof Error ? error.message : 'Unknown error',
       }),
       { status: 500 },
     );

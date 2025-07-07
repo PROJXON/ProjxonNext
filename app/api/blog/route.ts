@@ -13,9 +13,9 @@ export async function GET(req: NextRequest) {
     return new Response(
       JSON.stringify({
         message: 'Error fetching blogs',
-        error: error instanceof Error ? error.message : "Unknown error",
+        error: error instanceof Error ? error.message : 'Unknown error',
       }),
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

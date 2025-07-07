@@ -160,7 +160,7 @@ const AboutPage = () => {
               </div>
               <div className='about-button'>
                 <CustomButton
-                  buttonText={` Let's Get Started`}
+                  buttonText={' Let\'s Get Started'}
                   link='/contact'
                   buttonStyle='yellow-button'
                 />

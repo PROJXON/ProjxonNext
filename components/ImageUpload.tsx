@@ -13,4 +13,6 @@ const ImageUpload = forwardRef<HTMLInputElement, ImageUploadProps>(({ onFileSele
   );
 });
 
+ImageUpload.displayName = 'Image Upload';
+
 export default ImageUpload;

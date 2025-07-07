@@ -29,7 +29,7 @@ const BlogClientList = ({ initialBlogs }: { initialBlogs: WPBlogPost[] }) => {
         }
       })();
     }
-  }, []);
+  }, [initialBlogs]);
 
   return (
     <section className="sections-container blog-section">

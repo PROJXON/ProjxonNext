@@ -21,12 +21,12 @@ export default function EditorPage() {
   });
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
-  const [_authToken, setAuthToken] = useState<string | null>(null);
+  const setAuthToken = useState<string | null>(null)[1];
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
     setAuthToken(token);
-  }, []);
+  }, [setAuthToken]);
 
   const handleLogout = () => {
     logout();

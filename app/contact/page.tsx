@@ -38,7 +38,7 @@ const ContactPage = () => {
       <Hero
         title='Contact Us'
         subtitle='Connect with Clarity. Start with Purpose.'
-        paragraph={`Whether you\'re ready to solve challenges, explore opportunities, or simply have a conversation, our team is here to help. Reach out and let's start building something meaningful together.'`}
+        paragraph={'Whether you\'re ready to solve challenges, explore opportunities, or simply have a conversation, our team is here to help. Reach out and let\'s start building something meaningful together.\''}
         backgroundClass='contact-hero'
       />
       <Container id='contact-form' className='my-5'>

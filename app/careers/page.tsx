@@ -60,7 +60,7 @@ const CareerPage = () => {
       <Hero
         title='Join Our Team'
         subtitle='Work with Intention. Grow with Impact.'
-        paragraph={`At PROJXON, we don\'t just hire talent—we invest in potential. Join a team where your expertise drives change, your voice matters, and your work creates real-world results.'
+        paragraph={`At PROJXON, we don't just hire talent—we invest in potential. Join a team where your expertise drives change, your voice matters, and your work creates real-world results.'
         backgroundClass='career-hero`}
       />
 

@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     return new NextResponse(
       JSON.stringify({
         message: 'Authentication failed',
-        error: error instanceof Error ? error.message : "Unknown error",
+        error: error instanceof Error ? error.message : 'Unknown error',
       }),
       { status: 500 },
     );

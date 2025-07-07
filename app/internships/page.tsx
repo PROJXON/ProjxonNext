@@ -44,7 +44,7 @@ export default async function ResearchPage() {
       <Hero
         title='Momentum Internship Program'
         subtitle='Designed for Learning. Structured for Success.'
-        paragraph={`Empowering professionals with the tools, experience, and mentorship needed to thrive in fast-paced, real-world environments. This isn't busy work, it's a launchpad for high-performance careers.`}
+        paragraph={'Empowering professionals with the tools, experience, and mentorship needed to thrive in fast-paced, real-world environments. This isn\'t busy work, it\'s a launchpad for high-performance careers.'}
         backgroundClass='internships-hero'
       />
 
@@ -71,7 +71,7 @@ export default async function ResearchPage() {
               <strong>Our 180-day Momentum Internship Program</strong>{' '}
               offers passionate and innovative individuals the opportunity to work on real consulting projects and collaborate with participants from across the US in various industries, including{' '}
               <strong>Tech, Health + Wellness, E-commerce, Non-Profit, and Professional Services.</strong>{' '}
-              You'll gain invaluable hands-on experience while making a tangible impact.
+              You&apos;ll gain invaluable hands-on experience while making a tangible impact.
             </p>
 
             <h3>What We Offer:</h3>
@@ -85,7 +85,7 @@ export default async function ResearchPage() {
             </ul>
 
             <p className='my-3'>
-              <strong>Discover</strong> the power of tailored strategies and make your mark with PROJXON. As part of our team, you'll contribute to strategies that drive sustainable growth for our clients. This is your opportunity to forge long-lasting partnerships and be part of a team that values growth, productivity, and commercialization.
+              <strong>Discover</strong> the power of tailored strategies and make your mark with PROJXON. As part of our team, you&apos;ll contribute to strategies that drive sustainable growth for our clients. This is your opportunity to forge long-lasting partnerships and be part of a team that values growth, productivity, and commercialization.
             </p>
           </Col>
         </Row>
