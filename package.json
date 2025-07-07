@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate-sitemap": "node generate-sitemap.js",
+    "lint-fix": "next lint --fix",
+    "generate-sitemap": "npx ts-node generate-sitemap.ts",
     "prebuild": "npm run generate-sitemap",
     "deploy": "aws s3 sync ./out s3:www.projxon.com --delete"
   },
@@ -31,5 +32,18 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "@types/axios": "^0.9.36",
+    "@types/bootstrap": "^5.2.10",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.0.3",
+    "@types/nodemailer": "^6.4.17",
+    "@types/react": "^19.1.8",
+    "eslint": "^9.30.1",
+    "eslint-config-next": "15.3.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
