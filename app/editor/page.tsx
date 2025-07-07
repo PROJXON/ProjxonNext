@@ -21,7 +21,7 @@ export default function EditorPage() {
   });
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
-  const [authToken, setAuthToken] = useState<string | null>(null);
+  const [_authToken, setAuthToken] = useState<string | null>(null);
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
@@ -139,29 +139,29 @@ export default function EditorPage() {
 
   return (
     <AuthGuard>
-      <div className="testimonial-editor">
+      <div className='testimonial-editor'>
         <h1>Testimonial Carousel Editor</h1>
-        <div className="testimonial-carousel">
-          <div className="testimonial">
+        <div className='testimonial-carousel'>
+          <div className='testimonial'>
             {getCurrentClient().image && (
               <Image
                 src={getCurrentClient().image.toString()}
-                alt="Client"
+                alt='Client'
                 width={150}
                 height={150}
               />
             )}
-            <span className="quote">{getCurrentClient().quote}</span>
-            <span className="name">{getCurrentClient().name}</span>
-            <span className="title">{getCurrentClient().title}</span>
+            <span className='quote'>{getCurrentClient().quote}</span>
+            <span className='name'>{getCurrentClient().name}</span>
+            <span className='title'>{getCurrentClient().title}</span>
           </div>
-          <button id="leftButton" onClick={handlePrev}>
+          <button id='leftButton' onClick={handlePrev}>
             Left
           </button>
-          <button id="rightButton" onClick={handleNext}>
+          <button id='rightButton' onClick={handleNext}>
             Right
           </button>
-          <button id="deleteButton" onClick={handleDelete}>
+          <button id='deleteButton' onClick={handleDelete}>
             Delete Current Entry
           </button>
         </div>
@@ -171,28 +171,28 @@ export default function EditorPage() {
           onFileSelect={(file) => setFile(file)}
         />
         <textarea
-          name="quote"
+          name='quote'
           value={newTestimonial.quote}
           onChange={handleInputChange}
-          placeholder="Quote"
+          placeholder='Quote'
         ></textarea>
         <textarea
-          name="name"
+          name='name'
           value={newTestimonial.name}
           onChange={handleInputChange}
-          placeholder="Name"
+          placeholder='Name'
         ></textarea>
         <textarea
-          name="title"
+          name='title'
           value={newTestimonial.title}
           onChange={handleInputChange}
-          placeholder="Title"
+          placeholder='Title'
         ></textarea>
-        <div className="buttons">
-          <button id="addButton" onClick={handleAdd}>
+        <div className='buttons'>
+          <button id='addButton' onClick={handleAdd}>
             Add Entry
           </button>
-          <button id="logoutButton" onClick={handleLogout}>
+          <button id='logoutButton' onClick={handleLogout}>
             Logout
           </button>
         </div>

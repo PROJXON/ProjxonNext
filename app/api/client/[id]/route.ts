@@ -10,15 +10,14 @@ export async function GET(_req: NextRequest, { params }: RouteParams) {
     const client = data.find((c) => c.id === id);
 
     return client
-      ? Response.json(client)
-      : new Response(JSON.stringify({ message: 'Client not found' }), {
+      ? Response.json(client) : new Response(JSON.stringify({ message: 'Client not found' }), {
         status: 404,
       });
-  } catch (error: any) {
+  } catch (error: unknown) {
     return new Response(
       JSON.stringify({
         message: 'Error fetching client',
-        error: error.message,
+        error: error instanceof Error ? error.message : "Unknown error",
       }),
       { status: 500 },
     );
@@ -41,11 +40,11 @@ export async function DELETE(req: NextRequest, { params }: RouteParams) {
     );
 
     return Response.json(await res.json());
-  } catch (error: any) {
+  } catch (error: unknown) {
     return new Response(
       JSON.stringify({
         message: 'Error deleting client',
-        error: error.message,
+        error: error instanceof Error ? error.message : "Unknown error",
       }),
       { status: 500 },
     );

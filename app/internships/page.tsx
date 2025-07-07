@@ -42,32 +42,32 @@ export default async function ResearchPage() {
   return (
     <div>
       <Hero
-        title="Momentum Internship Program"
-        subtitle="Designed for Learning. Structured for Success."
-        paragraph="Empowering professionals with the tools, experience, and mentorship needed to thrive in fast-paced, real-world environments. This isn't busy work, it's a launchpad for high-performance careers."
-        backgroundClass="internships-hero"
+        title='Momentum Internship Program'
+        subtitle='Designed for Learning. Structured for Success.'
+        paragraph={`Empowering professionals with the tools, experience, and mentorship needed to thrive in fast-paced, real-world environments. This isn't busy work, it's a launchpad for high-performance careers.`}
+        backgroundClass='internships-hero'
       />
 
-      <Container id="mip" className="momentum-intern sections-container">
-        <Row className="align-items-center flex-row-reverse g-5">
-          <Col sm={12} md={6} data-aos="fade-up">
+      <Container id='mip' className='momentum-intern sections-container'>
+        <Row className='align-items-center flex-row-reverse g-5'>
+          <Col sm={12} md={6} data-aos='fade-up'>
             <Image
-              src="/assets/careers/internship.webp"
-              alt="Promotional"
-              className="img-fluid rounded-3"
+              src='/assets/careers/internship.webp'
+              alt='Promotional'
+              className='img-fluid rounded-3'
               width={600}
               height={400}
             />
           </Col>
 
-          <Col sm={12} md={6} data-aos="fade-right" data-aos-delay="500">
+          <Col sm={12} md={6} data-aos='fade-right' data-aos-delay='500'>
             <h2>Future-Proof Your Career</h2>
-            <p className="my-3">
+            <p className='my-3'>
               <strong>At PROJXON, we help young professionals realize their full potential </strong>{' '}
               while building their personal brand and understanding their value. Are you ready to launch your career in strategic consulting and digital marketing?
             </p>
 
-            <p className="my-3">
+            <p className='my-3'>
               <strong>Our 180-day Momentum Internship Program</strong>{' '}
               offers passionate and innovative individuals the opportunity to work on real consulting projects and collaborate with participants from across the US in various industries, including{' '}
               <strong>Tech, Health + Wellness, E-commerce, Non-Profit, and Professional Services.</strong>{' '}
@@ -84,17 +84,17 @@ export default async function ResearchPage() {
               </li>
             </ul>
 
-            <p className="my-3">
+            <p className='my-3'>
               <strong>Discover</strong> the power of tailored strategies and make your mark with PROJXON. As part of our team, you'll contribute to strategies that drive sustainable growth for our clients. This is your opportunity to forge long-lasting partnerships and be part of a team that values growth, productivity, and commercialization.
             </p>
           </Col>
         </Row>
       </Container>
 
-      <section id="testimonials" className="testimonials-wrapper">
+      <section id='testimonials' className='testimonials-wrapper'>
         <InternTestimonialsSection />
       </section>
-      <section id="blogs" className="blogs-wrapper">
+      <section id='blogs' className='blogs-wrapper'>
         <BlogClientList initialBlogs={blogs} />
       </section>
       <CallToAction />

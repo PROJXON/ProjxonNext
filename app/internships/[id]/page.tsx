@@ -45,18 +45,18 @@ export default async function BlogPage({ params }: RouteParams) {
   const imageUrl = featuredMedia?.[0]?.source_url ?? defaultImg.src;
 
   return (
-    <Container className="w-50 blog-container px-3">
-      <article className="my-5 py-2">
+    <Container className='w-50 blog-container px-3'>
+      <article className='my-5 py-2'>
         <header>
-          <h1 className="fw-bold">{blog.title.rendered}</h1>
+          <h1 className='fw-bold'>{blog.title.rendered}</h1>
 
-          <div className="d-flex items-center justify-content-between mb-3 blogpage-date mt-3">
-            <p className="fw-semibold fs-6">
+          <div className='d-flex items-center justify-content-between mb-3 blogpage-date mt-3'>
+            <p className='fw-semibold fs-6'>
               {blog._embedded?.author?.[0]?.name}
             </p>
-            <div className="d-flex items-center text-muted gap-1">
+            <div className='d-flex items-center text-muted gap-1'>
               <CiCalendar size={20} />
-              <time dateTime={blog.date.toString()} className="text-muted">
+              <time dateTime={blog.date.toString()} className='text-muted'>
                 {formatDate(blog.date, 'long')}
               </time>
             </div>
@@ -64,7 +64,7 @@ export default async function BlogPage({ params }: RouteParams) {
         </header>
 
         <Image
-          className="w-100 blogpage-img"
+          className='w-100 blogpage-img'
           src={imageUrl}
           alt={blog.title?.rendered || 'Blog featured image'}
           width={1080}
@@ -72,7 +72,7 @@ export default async function BlogPage({ params }: RouteParams) {
         />
 
         <div
-          className="mt-5"
+          className='mt-5'
           dangerouslySetInnerHTML={{ __html: sanitizedHtml }}
         />
       </article>

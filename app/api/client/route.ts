@@ -6,11 +6,11 @@ export async function GET() {
   try {
     const data = await fetchClients({ useNoStore: true });
     return Response.json(data);
-  } catch (error: any) {
+  } catch (error: unknown) {
     return new Response(
       JSON.stringify({
         message: 'Error fetching clients',
-        error: error.message,
+        error: error instanceof Error ? error.message : "Unknown error",
       }),
       { status: 500 },
     );
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     if (!authHeader) {
       return new Response(
         JSON.stringify({ message: 'Missing Authorization header' }),
-        { status: 401, headers: { 'Content-Type': 'application/json' } },
+        { status: 401, headers: { 'Content-Type': 'application/json' }, },
       );
     }
 
@@ -47,10 +47,13 @@ export async function POST(req: NextRequest) {
 
     const responseData = await res.json();
     return Response.json(responseData, { status: 201 });
-  } catch (error: any) {
+  } catch (error: unknown) {
     return new Response(
-      JSON.stringify({ message: 'Error adding client', error: error.message }),
-      { status: 500 },
+      JSON.stringify({
+        message: 'Error adding client',
+        error: error instanceof Error ? error.message : "Unknown error",
+      }),
+      { status: 500 }
     );
   }
 }

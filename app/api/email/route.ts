@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
         });
 
         const notificationMailOptions = {
-            from: `"Projxon" <${process.env.EMAIL_USER}>`,
+            from: `'Projxon' <${process.env.EMAIL_USER}>`,
             to: process.env.EMAIL_USER,
             subject: `New Contact Request from ${user_name}`,
             text: `
@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
         };
 
         const confirmationMailOptions = {
-            from: `"Projxon" <${process.env.EMAIL_USER}>`,
+            from: `'Projxon' <${process.env.EMAIL_USER}>`,
             to: user_email,
             subject: 'Thank you for contacting us!',
             text: `

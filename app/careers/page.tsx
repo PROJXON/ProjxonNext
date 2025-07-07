@@ -40,7 +40,7 @@ const CareerPage = () => {
       image: '/assets/careers/consult.webp',
       title: 'Consulting Positions',
       description:
-        "Join a team that values continuous improvement, collaboration, and exceptional client service. If you're passionate about delivering unique and impactful projects, we want to hear from you.",
+        'Join a team that values continuous improvement, collaboration, and exceptional client service. If you\'re passionate about delivering unique and impactful projects, we want to hear from you.',
       align: 'start',
       dataAOS: 'fade-right',
     },
@@ -58,37 +58,37 @@ const CareerPage = () => {
     <div>
       {/* Hero Section */}
       <Hero
-        title="Join Our Team"
-        subtitle="Work with Intention. Grow with Impact."
-        paragraph="At PROJXON, we don't just hire talent—we invest in potential. Join a team where your expertise drives change, your voice matters, and your work creates real-world results."
-        backgroundClass="career-hero"
+        title='Join Our Team'
+        subtitle='Work with Intention. Grow with Impact.'
+        paragraph={`At PROJXON, we don\'t just hire talent—we invest in potential. Join a team where your expertise drives change, your voice matters, and your work creates real-world results.'
+        backgroundClass='career-hero`}
       />
 
       {/* Apply */}
-      <section id="apply" className="apply bg-yellow">
+      <section id='apply' className='apply bg-yellow'>
         <Container>
           <Row
-            className="align-items-center justify-content-center"
-            data-aos="fade-up"
+            className='align-items-center justify-content-center'
+            data-aos='fade-up'
           >
-            <Col xs={12} lg={6} className="py-5 bg-black rounded px-5">
-              <h1 className="apply-heading sections-heading text-yellow">
+            <Col xs={12} lg={6} className='py-5 bg-black rounded px-5'>
+              <h1 className='apply-heading sections-heading text-yellow'>
                 Work with Intention. Grow with Impact.
               </h1>
-              <p className="apply-sub-heading  text-white my-4">
+              <p className='apply-sub-heading  text-white my-4'>
                 At Projxon, we are always on the lookout for talented
                 individuals who are passionate about innovation and
                 collaboration
               </p>
 
-              <p className="apply-sub-heading  text-white my-4">
+              <p className='apply-sub-heading  text-white my-4'>
                 Join our team and contribute to exciting projects that make a
                 difference
               </p>
               <CustomButton
-                buttonText="Apply now"
-                link="https://app.dover.com/jobs/projxon"
-                buttonStyle="yellow-button"
+                buttonText='Apply now'
+                link='https://app.dover.com/jobs/projxon'
+                buttonStyle='yellow-button'
                 delayTime={0}
                 isExternal={true}
                 isAnimated={false}
@@ -99,14 +99,14 @@ const CareerPage = () => {
       </section>
 
       {/* Positions */}
-      <section id="consulting-advisory" className="positions sections-container bg-black ">
+      <section id='consulting-advisory' className='positions sections-container bg-black '>
         <Container>
-          <Row className="justify-content-center mb-5">
-            <Col lg={5} className="text-center">
-              <h2 className="positions-heading sections-heading text-yellow mb-4">
+          <Row className='justify-content-center mb-5'>
+            <Col lg={5} className='text-center'>
+              <h2 className='positions-heading sections-heading text-yellow mb-4'>
                 Consulting + Adivsory Roles
               </h2>
-              <p className="positions-sub-heading text-white mb-4">
+              <p className='positions-sub-heading text-white mb-4'>
                 Empowering collaboration, innovation, and expert guidance to
                 deliver exceptional client solutions
               </p>
@@ -116,7 +116,7 @@ const CareerPage = () => {
             {positions.map((position, index) => (
               <Col
                 md={6}
-                className="mt-5"
+                className='mt-5'
                 key={index}
                 data-aos={position.dataAOS}
               >
@@ -128,16 +128,16 @@ const CareerPage = () => {
                     backgroundPosition: 'center',
                   }}
                 >
-                  {/* <div className="positions-icon mb-4">
+                  {/* <div className='positions-icon mb-4'>
                                     </div> */}
-                  <h4 className="text-yellow fs-2 fw-bold mb-3">
+                  <h4 className='text-yellow fs-2 fw-bold mb-3'>
                     {position.title}
                   </h4>
-                  <p className="text-gray fs-5 mb-4">{position.description}</p>
+                  <p className='text-gray fs-5 mb-4'>{position.description}</p>
                   <CustomButton
-                    buttonText="Apply now"
-                    link="https://app.dover.com/apply/5ccf21fe-8abd-41a1-9901-454fced87372/712e0a00-9144-489e-a759-1b71331cb327/?rs=15190316"
-                    buttonStyle="yellow-button"
+                    buttonText='Apply now'
+                    link='https://app.dover.com/apply/5ccf21fe-8abd-41a1-9901-454fced87372/712e0a00-9144-489e-a759-1b71331cb327/?rs=15190316'
+                    buttonStyle='yellow-button'
                     delayTime={0}
                     isExternal={true}
                     isAnimated={false}
@@ -150,7 +150,7 @@ const CareerPage = () => {
       </section>
 
       {/* Clients */}
-      <section id="clients" className="clients-wrapper">
+      <section id='clients' className='clients-wrapper'>
         <MilitaryBranches />
       </section>
 

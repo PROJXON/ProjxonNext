@@ -40,8 +40,9 @@ export async function POST(req: NextRequest) {
         // Return the image URL from the WordPress API
         const sourceURL: UploadResponse = { url: response.data.source_url };
         return NextResponse.json(sourceURL, { status: 200 });
-    } catch (error: any) {
-        console.error('Error uploading image:', error.response ? error.response.data : error);
+    } catch (error: unknown) {
+        const err = error as { response?: { data?: unknown } };
+        console.error('Error uploading image:', err.response ? err.response.data : error);
         return NextResponse.json({ message: 'Error uploading image' }, { status: 500 });
     }
 }

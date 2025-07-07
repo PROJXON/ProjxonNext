@@ -17,11 +17,11 @@ export async function POST(req: NextRequest) {
     if (!res.ok) return new NextResponse(JSON.stringify({ message: 'Invalid credentials' }), { status: 401 });
 
     return Response.json(await res.json());
-  } catch (error: any) {
+  } catch (error: unknown) {
     return new NextResponse(
       JSON.stringify({
         message: 'Authentication failed',
-        error: error.message,
+        error: error instanceof Error ? error.message : "Unknown error",
       }),
       { status: 500 },
     );

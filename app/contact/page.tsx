@@ -34,22 +34,22 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
   return (
-    <div className="contact-page">
+    <div className='contact-page'>
       <Hero
-        title="Contact Us"
-        subtitle="Connect with Clarity. Start with Purpose."
-        paragraph="Whether you're ready to solve challenges, explore opportunities, or simply have a conversation, our team is here to help. Reach out and let's start building something meaningful together."
-        backgroundClass="contact-hero"
+        title='Contact Us'
+        subtitle='Connect with Clarity. Start with Purpose.'
+        paragraph={`Whether you\'re ready to solve challenges, explore opportunities, or simply have a conversation, our team is here to help. Reach out and let's start building something meaningful together.'`}
+        backgroundClass='contact-hero'
       />
-      <Container id="contact-form" className="my-5">
-        <Row className="justify-content-center">
+      <Container id='contact-form' className='my-5'>
+        <Row className='justify-content-center'>
           <Col md={6} lg={4}>
-            <Card className="contact-link">
-              <CardBody className="d-flex align-items-center">
-                <div className="fs-3 px-2 lh-1">
-                  <FaEnvelopeOpenText className="text-yellow" />
+            <Card className='contact-link'>
+              <CardBody className='d-flex align-items-center'>
+                <div className='fs-3 px-2 lh-1'>
+                  <FaEnvelopeOpenText className='text-yellow' />
                 </div>
-                <a className="contact-link-content ms-4" href="mailto:info@projxon.com">
+                <a className='contact-link-content ms-4' href='mailto:info@projxon.com'>
                   Questions?
                 </a>
               </CardBody>
