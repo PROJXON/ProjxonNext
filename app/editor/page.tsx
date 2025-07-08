@@ -96,7 +96,7 @@ export default function EditorPage() {
 
   const handleAdd = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-
+    setIsLoading(true);
     // Fixed warning to use authToken.  Directly uses authToken so no need to fetch it again in localStorage. - Brent Chen
 
     // Make sure you handle the JWT token (can be stored in cookies or context)
@@ -139,6 +139,8 @@ export default function EditorPage() {
       console.log('Added client:', addedClient);
     } catch (error) {
       console.error('Error adding client:', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
