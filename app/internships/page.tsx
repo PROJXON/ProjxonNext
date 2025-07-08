@@ -72,6 +72,7 @@ export default async function ResearchPage() {
               offers passionate and innovative individuals the opportunity to work on real consulting projects and collaborate with participants from across the US in various industries, including{' '}
               <strong>Tech, Health + Wellness, E-commerce, Non-Profit, and Professional Services.</strong>{' '}
               You&apos;ll gain invaluable hands-on experience while making a tangible impact.
+              You&apos;ll gain invaluable hands-on experience while making a tangible impact.
             </p>
 
             <h3>What We Offer:</h3>

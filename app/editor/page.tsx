@@ -21,12 +21,15 @@ export default function EditorPage() {
   });
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [file, setFile] = useState<File | null>(null);
-  const setAuthToken = useState<string | null>(null)[1];
+  // const setAuthToken = useState<string | null>(null)[1];
+  const [authToken, setAuthToken] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
     setAuthToken(token);
-  }, [setAuthToken]);
+    setIsLoading(false);
+  }, []);
 
   const handleLogout = () => {
     logout();
@@ -94,10 +97,12 @@ export default function EditorPage() {
   const handleAdd = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    // Make sure you handle the JWT token (can be stored in cookies or context)
-    const token = localStorage.getItem('authToken'); // Or use context if needed
+    // Fixed warning to use authToken.  Directly uses authToken so no need to fetch it again in localStorage. - Brent Chen
 
-    if (!token) return;
+    // Make sure you handle the JWT token (can be stored in cookies or context)
+    // const token = localStorage.getItem('authToken'); // Or use context if needed
+
+    if (!authToken) return;
 
     try {
       // Upload file if there is one
@@ -189,7 +194,7 @@ export default function EditorPage() {
           placeholder='Title'
         ></textarea>
         <div className='buttons'>
-          <button id='addButton' onClick={handleAdd}>
+          <button id='addButton' disabled={ isLoading || !authToken } onClick={handleAdd}>
             Add Entry
           </button>
           <button id='logoutButton' onClick={handleLogout}>
