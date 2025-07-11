@@ -13,7 +13,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![PROJXON Homepage][https://www.simeondavenport.com/_next/image?url=%2Fimages%2Fprojects%2Fprojxon.PNG&w=3840&q=75]](https://projxon.com)
+[![PROJXON Homepage](https://www.simeondavenport.com/_next/image?url=%2Fimages%2Fprojects%2Fprojxon.PNG&w=3840&q=75)](https://projxon.com)
 
 PROJXON is a leading business consulting firm helping medium-sized businesses achieve their full potential. This project aims to provide a comprehensive digital platform that enhances client engagement, streamlines communication, and showcases the firm's expertise through an intuitive and user-friendly website. By integrating modern design elements, responsive layouts, and optimized backend functionality, the project seeks to highlight PROJXON's services, share insightful research, and establish the firm as a trusted partner for business growth and innovation.
 
