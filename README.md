@@ -1,10 +1,10 @@
 # PROJXON Website
 ![Next.js](https://img.shields.io/badge/Next.js-React-blue)
 ![WordPress](https://img.shields.io/badge/WordPress-Headless%20CMS-red)
+[![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 ## Table of contents
 - [About the Project](#about-the-project)
-    - [Built With](#built-with)
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
@@ -16,22 +16,6 @@
 [![PROJXON Homepage](https://www.simeondavenport.com/_next/image?url=%2Fimages%2Fprojects%2Fprojxon.PNG&w=3840&q=75)](https://projxon.com)
 
 PROJXON is a leading business consulting firm helping medium-sized businesses achieve their full potential. This project aims to provide a comprehensive digital platform that enhances client engagement, streamlines communication, and showcases the firm's expertise through an intuitive and user-friendly website. By integrating modern design elements, responsive layouts, and optimized backend functionality, the project seeks to highlight PROJXON's services, share insightful research, and establish the firm as a trusted partner for business growth and innovation.
-
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-### Built With
-
-
-* [![NextJS][Next.js]][Next-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
