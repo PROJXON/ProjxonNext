@@ -86,11 +86,64 @@ a.nav-link:focus-visible {
 }
 
 @media (max-width: 990px) {
-  .navbar-container {
-    padding-left: 0px;
+   .navbar-collapse {
+  position: fixed;
+  right: 0;
+  top: 56px;
+  width: auto;
+  max-height: 70vh;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding-top: 1rem 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+  z-index: 1050;
+  border-radius: 0 0 0 10px;
+  align-items: left;
+}
+
+  /* Show the dropdown by sliding in */
+  .navbar-collapse.show {
+    transform: translateX(0);
   }
 
-  .navbar-nav a.nav-link {
-    padding-left: 0px !important;
+  /* Nav container inside the collapse */
+  .navbar-container {
+    white-space: nowrap; /* Prevent text wrapping */
+  }
+
+  /* Nav links styling */
+  .navbar-collapse {
+    font-family: inherit; /* Match desktop font */
+    font-size: 0.95rem; /* Adjust to match desktop */
+    color: #ffd700; /* Match desktop link color */
+    text-transform: uppercase;
+    padding: 0.75rem 1.5rem;
+    transition: color 0.3s ease;
+  }
+
+  /* Hover and active link styles */
+  .navbar-collapse .nav-link.active {
+    color: #fff;
+  }
+ .hamburger-react {
+    position: fixed;
+  }
+}
+  /* Optional: Adjust for very small screens */
+@media (max-width: 400px) {
+  .navbar-collapse {
+    width: auto;
+    position: fixed;
+    right: 0;
+    min-width: unset;
+    max-width: unset;
+    border-radius: 0 0 0 8px;
+    padding: 0.5rem 0;
+  }
+  .navbar-collapse .nav-link {
+    font-size: 0.95rem;
+    padding: 0.6rem 0;
   }
 }
