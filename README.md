@@ -1,11 +1,11 @@
 # PROJXON Website
 ![Next.js](https://img.shields.io/badge/Next.js-React-blue)
-[![Node.js][https://nodejs.org/en]][https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white]
+[![React.js](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/en)
 ![WordPress](https://img.shields.io/badge/WordPress-Headless%20CMS-red)
 ![TypeScript](https://img.shields.io/badge/TypeScript-Strongly%20Typed-blue)  
 ![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
-[![Bootstrap][Bootstrap.com]][https://getbootstrap.com]
-[![React.js][https://reactjs.org/]][https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB]
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
 
 ## Table of contents
 - [Who This Is For](#who-this-is-for)
@@ -238,14 +238,3 @@ The `projxon-custom-api` plugin adds a custom REST API (`/wp-json/projxon/v1/cli
 - SSL + reverse proxy handled via NGINX
 - Custom WordPress plugin handles dynamic testimonial APIs
 - Protected routes hidden from non-auth users
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[product-screenshot]: projxon-web/src/assets/image.png
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Express.js]: https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB
-[Express-url]: https://expressjs.com
-
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
