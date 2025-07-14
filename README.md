@@ -8,22 +8,22 @@
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
 
 ## Table of contents
-- [Who This Is For](#who-this-is-for)
-- [About the Project](#about-the-project)
-- [Tech Stack](#tech-stack)
-- [Routing Overview](#routing-overview)
-- [Authentication](#authentication)
-- [Environment Variables](#environment-variables)
+- [Who This is For](#who-this-is-for)
+- [About the Project](#-about-the-project)
+- [Tech Stack](#%EF%B8%8F-tech-stack)
+- [Routing Overview](#%EF%B8%8F-routing-overview)
+- [Authentication](#-authentication)
+- [Environment Variables](#-environment-variables)
 - [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
 - [Docker Support](#docker-support)
-- [Employment Notes](#employment-notes)
-- [NGINX Setup](#nginx-setup)
-- [Custom WordPress Plugin](#custom-wordpress-plugin)
-- [Handover Notes](#handover-notes)
+- [Deployment Notes](#-deployment-notes)
+- [NGINX Setup](#-nginx-setup)
+- [Custom WordPress Plugin](#-custom-wordpress-plugin)
+- [Handover Notes](#-handover-notes)
 
-## Who This Is For
+## Who This is For
 
 This project is intended for both:
 - Developers at PROJXON maintaining or deploying the production site
@@ -31,7 +31,7 @@ This project is intended for both:
 
 You can run the site locally with dummy `.env` values. Production deployment requires AWS access and WordPress integration.
 
-## 🧠 About The Project
+## 🧠 About the Project
 
 [![PROJXON Homepage](https://www.simeondavenport.com/_next/image?url=%2Fimages%2Fprojects%2Fprojxon.PNG&w=3840&q=75)](https://projxon.com)
 
