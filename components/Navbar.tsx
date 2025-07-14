@@ -1,7 +1,7 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
 import { Navbar, Nav, NavLink, Container } from 'react-bootstrap';
-import { Sling as Hamburger } from 'hamburger-react'
+import { Sling as Hamburger } from 'hamburger-react';
 import Link from 'next/link';
 import './NavBar.css';
 import { usePathname } from 'next/navigation';
@@ -32,7 +32,7 @@ const NavBar = () => {
       if(navRef.current && !navRef.current.contains(event.target as Node)){
         setExpanded(false);
       }
-    }
+    };
     document.addEventListener('mousedown',handleClickoutside);
     return() => document.removeEventListener('mousedown', handleClickoutside);
   },[expanded]);
