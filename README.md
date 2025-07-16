@@ -127,7 +127,7 @@ To get a local copy up and running follow these simple example steps.
    ```bash
    npm install
    ```
-3. Create a .env.local file in the root with the above environment variables
+3. Create a .env file in the root with the above environment variables
 4. Run the dev server:
 
    ```bash
@@ -211,7 +211,11 @@ Certbot automatically renews certificates and handles `.well-known` challenges.
 
 The `projxon-custom-api` plugin adds a custom REST API (`/wp-json/projxon/v1/clients`) for managing client testimonials.
 
-**Location:**
+**Plugin Files:**
+- Source code: `wordpress-plugin/projxon-custom-api.php`
+- Documentation: `wordpress-plugin/README.md`
+
+**Production Location:**
 ```bash
 /opt/bitnami/wordpress/wp-content/plugins/projxon-custom-api/
 ```
