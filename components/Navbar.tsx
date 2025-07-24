@@ -1,7 +1,6 @@
 'use client';
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { Navbar, Nav, NavLink, Container } from 'react-bootstrap';
-import { Sling as Hamburger } from 'hamburger-react';
 import Link from 'next/link';
 import './NavBar.css';
 import { usePathname } from 'next/navigation';
@@ -20,26 +19,12 @@ const navLinks: NavLinkType[] = [
 const NavBar = () => {
   const [expanded, setExpanded] = useState(false);
   const pathname = usePathname();
-  const navRef = useRef<HTMLDivElement>(null);
 
   const handleToggle = () => setExpanded(!expanded);
   const handleLinkClick = () => setExpanded(false);
 
-  useEffect(()=>{
-    if(!expanded) return;
-
-    const handleClickoutside = (event:MouseEvent) =>{
-      if(navRef.current && !navRef.current.contains(event.target as Node)){
-        setExpanded(false);
-      }
-    };
-    document.addEventListener('mousedown',handleClickoutside);
-    return() => document.removeEventListener('mousedown', handleClickoutside);
-  },[expanded]);
-
-
   return (
-    <div className="w-100" ref= {navRef}>
+    <div className="w-100">
       <Navbar
         fixed="top"
         bg="black"
@@ -52,15 +37,7 @@ const NavBar = () => {
           <Navbar.Brand as={Link} href="/" className="text-light">
             PROJXON
           </Navbar.Brand>
-          <div className="d-lg-none">
-            <Hamburger
-              toggled={expanded}
-              toggle={setExpanded}
-              color="#ffd700"
-              size={24}
-              label="show menu"
-              />
-           </div>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" role="presentation">
             <Container className="navbar-container d-flex justify-content-md-start justify-content-lg-end">
               <Nav className="ml-auto text-uppercase">
@@ -74,7 +51,7 @@ const NavBar = () => {
                       key={index}
                       as="div" // Render as a div since Next.js Link uses an anchor tag
                     >
-                       <Link
+                      <Link
                         href={link.href}
                         className={`nav-link ${currPage ? 'active' : ''}`}
                         onClick={handleLinkClick}
