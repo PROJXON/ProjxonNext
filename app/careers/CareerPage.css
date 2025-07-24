@@ -109,4 +109,5 @@ section.clients-section div.carousel-item {
 #consulting-advisory,
 #clients{
   scroll-margin-top: 80px;
+  overflow-x: hidden;
 }

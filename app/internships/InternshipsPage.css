@@ -48,4 +48,5 @@ section.blog-section {
 #testimonials,
 #blogs {
     scroll-margin-top: 80px;
+    overflow-x: hidden;
 }

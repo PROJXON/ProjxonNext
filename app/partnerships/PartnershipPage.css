@@ -67,3 +67,8 @@
 #partnership-opprtunities {
   scroll-margin-top: 82px;
 }
+
+
+#partnership-opprtunities {
+  overflow-x: hidden;
+}

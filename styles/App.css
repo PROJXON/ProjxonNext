@@ -1,13 +1,6 @@
 /* App.css or a global CSS file */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
 .content {
   padding-top: 5rem; /* Adjust this value to match the height of your navbar */
-  overflow-x: hidden;
-  max-width: 100%;
 }
 
 /* Additional styling to ensure full-height content (optional) */
