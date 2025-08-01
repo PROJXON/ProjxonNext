@@ -6,6 +6,7 @@ import CustomButton from '@/components/CustomButton';
 import MilitaryBranches from '@/components/MilitaryBranches';
 import type { Metadata } from 'next';
 import { CareerPositions } from '@/types/interfaces';
+import GlassDoorReviews from '@/components/GlassDoorReviews';
 
 export const metadata: Metadata = {
   title: 'Careers at PROJXON | Build Your Future in With Us',
@@ -151,6 +152,8 @@ const CareerPage = () => {
       <section id='clients' className='clients-wrapper'>
         <MilitaryBranches />
       </section>
+
+      <GlassDoorReviews />
 
       {/* Call to Action Section */}
       <CallToAction />
