@@ -117,8 +117,7 @@ const PartnershipPage = () => {
           </Row>
         </Container>
       </section>
-      
-      <ClientLogos />
+    
 
       {/* Partnership Opportunities Section */}
       <section id="partnership-opprtunities" className=" bg-yellow">
