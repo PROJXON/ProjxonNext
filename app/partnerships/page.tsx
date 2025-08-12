@@ -6,6 +6,7 @@ import CustomButton from '../../components/CustomButton';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { Partnership } from '@/types/interfaces';
+import ClientLogos from '@/components/ClientLogos';
 
 export const metadata: Metadata = {
   title: 'Partner with PROJXON | Strategic Collaborations for Growth',
@@ -116,10 +117,11 @@ const PartnershipPage = () => {
           </Row>
         </Container>
       </section>
+    
 
       {/* Partnership Opportunities Section */}
       <section id="partnership-opprtunities" className=" bg-yellow">
-        <section className="partner-opportunity">
+        <section className="partner-opportunity mt-0">
           <h1 className="sections-heading fw-bold text-center mb-5 pb-3">
             Partnership Opportunities
           </h1>

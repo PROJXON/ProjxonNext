@@ -8,6 +8,7 @@ import Image from 'next/image';
 import type { Metadata } from 'next';
 import './InternshipsPage.css';
 import { WPBlogPost } from '@/types/interfaces';
+import ApplyNow from '@/components/ApplyNow';
 
 export const metadata: Metadata = {
   title: 'Launch Your Career with a Projxon Internship | PROJXON',
@@ -94,6 +95,7 @@ export default async function ResearchPage() {
       <section id='testimonials' className='testimonials-wrapper'>
         <InternTestimonialsSection />
       </section>
+      <ApplyNow />
       <section id='blogs' className='blogs-wrapper'>
         <BlogClientList initialBlogs={blogs} />
       </section>
