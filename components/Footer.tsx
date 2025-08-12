@@ -1,4 +1,4 @@
-import { FaEnvelope, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaEnvelope, FaTwitter, FaInstagram, FaLinkedin, FaGoogle } from 'react-icons/fa';
 import { Container, Row, Col } from 'react-bootstrap';
 import Link from 'next/link';
 import { SocialIcon, FooterLink } from '@/types/interfaces';
@@ -28,6 +28,12 @@ const Footer = () => {
       href: new URL('https://linkedin.com/company/projxon'),
       ariaLabel: 'LinkedIn',
       icon: FaLinkedin,
+      newTab: true,
+    },
+    {
+      href: new URL('https://www.google.com/search?sca_esv=25801ab66565780f&hl=en-US&gl=us&output=search&kgmid=%2Fg%2F11wc96ndr7&q=PROJXON&shndl=30&source=sh%2Fx%2Floc%2Fact%2Fm4%2F3 '),
+      ariaLabel: 'LinkedIn',
+      icon: FaGoogle,
       newTab: true,
     },
   ];
