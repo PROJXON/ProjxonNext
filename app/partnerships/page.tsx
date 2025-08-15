@@ -1,56 +1,59 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import './PartnershipPage.css';
-import Hero from '../../components/Hero';
-import CallToAction from '../../components/CallToAction';
-import CustomButton from '../../components/CustomButton';
-import Image from 'next/image';
-import type { Metadata } from 'next';
-import { Partnership } from '@/types/interfaces';
-import ClientLogos from '@/components/ClientLogos';
+import { Container, Row, Col } from "react-bootstrap";
+import "./PartnershipPage.css";
+import Hero from "../../components/Hero";
+import CallToAction from "../../components/CallToAction";
+import CustomButton from "../../components/CustomButton";
+import Image from "next/image";
+import type { Metadata } from "next";
+import { Partnership } from "@/types/interfaces";
+import ClientLogos from "@/components/ClientLogos";
 
 export const metadata: Metadata = {
-  title: 'Partner with PROJXON | Strategic Collaborations for Growth',
-  description: 'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
-  metadataBase: new URL('https://www.projxon.com/partnership'),
+  title: "Partner with PROJXON | Strategic Collaborations for Growth",
+  description:
+    "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
+  metadataBase: new URL("https://www.projxon.com/partnership"),
   openGraph: {
-    title: 'Partner with PROJXON | Strategic Collaborations for Growth',
-    description: 'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
-    url: 'https://www.projxon.com/partnership',
-    siteName: 'PROJXON',
+    title: "Partner with PROJXON | Strategic Collaborations for Growth",
+    description:
+      "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
+    url: "https://www.projxon.com/partnership",
+    siteName: "PROJXON",
     images: [
       {
-        url: '/PROJXON.png',
+        url: "/PROJXON.png",
         width: 1200,
         height: 630,
-        alt: 'PROJXON logo',
+        alt: "PROJXON logo",
       },
     ],
-    type: 'website',
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Partner with PROJXON | Strategic Collaborations for Growth',
-    description: 'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
-    images: ['/PROJXON.png'],
+    card: "summary_large_image",
+    title: "Partner with PROJXON | Strategic Collaborations for Growth",
+    description:
+      "Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.",
+    images: ["/PROJXON.png"],
   },
 };
 
 const PartnershipPage = () => {
   const partnerships: Partnership[] = [
     {
-      title: 'Experience and Expertise',
-      text: 'Leverage our extensive experience across various industries to enhance your offerings and drive growth. Our team of experts is equipped to handle diverse challenges and deliver innovative solutions.',
-      dataAOSDelay: '100',
+      title: "Experience and Expertise",
+      text: "Leverage our extensive experience across various industries to enhance your offerings and drive growth. Our team of experts is equipped to handle diverse challenges and deliver innovative solutions.",
+      dataAOSDelay: "100",
     },
     {
-      title: 'Sustainable Solutions',
-      text: 'Collaborate with us to develop cutting-edge solutions tailored to your needs. Our focus on innovation ensures that we stay ahead of the curve, providing partners with a competitive advantage.',
-      dataAOSDelay: '200',
+      title: "Sustainable Solutions",
+      text: "Collaborate with us to develop cutting-edge solutions tailored to your needs. Our focus on innovation ensures that we stay ahead of the curve, providing partners with a competitive advantage.",
+      dataAOSDelay: "200",
     },
     {
-      title: 'Mutual Growth',
-      text: 'We believe in building long-term partnerships that foster mutual growth. By working together, we can unlock new opportunities and drive success for both parties.',
-      dataAOSDelay: '300',
+      title: "Mutual Growth",
+      text: "We believe in building long-term partnerships that foster mutual growth. By working together, we can unlock new opportunities and drive success for both parties.",
+      dataAOSDelay: "300",
     },
   ];
 
@@ -74,11 +77,12 @@ const PartnershipPage = () => {
           >
             <Col xs={12} md={6}>
               <p className="partner-heading-sub-heading gray-opacity">
-                At PROJXON, we excel in delivering innovative solutions tailored to
-                your business needs. Our team combines expertise, creativity, and cutting-edge
-                technology to help your business thrive in today&apos;s competitive market.
-                Partner with us for unmatched dedication, seamless collaboration,
-                and results-driven strategies.
+                At PROJXON, we excel in delivering innovative solutions tailored
+                to your business needs. Our team combines expertise, creativity,
+                and cutting-edge technology to help your business thrive in
+                today&apos;s competitive market. Partner with us for unmatched
+                dedication, seamless collaboration, and results-driven
+                strategies.
               </p>
             </Col>
             <Col
@@ -117,7 +121,6 @@ const PartnershipPage = () => {
           </Row>
         </Container>
       </section>
-    
 
       {/* Partnership Opportunities Section */}
       <section id="partnership-opprtunities" className=" bg-yellow">
@@ -153,10 +156,14 @@ const PartnershipPage = () => {
                 <h2 className="sections-heading partner-heading fw-bold mb-4 par">
                   Service Partnerships
                 </h2>
-                <h3>Looking to expand your impact and deliver greater value to your clients?</h3>
+                <h3>
+                  Looking to expand your impact and deliver greater value to
+                  your clients?
+                </h3>
                 <p className="partner-heading-sub-heading mb-4 pb-2 fs-5">
-                  Partner with PROJXON to help businesses overcome critical challenges and unlock new growth.
-                  Together, we can create lasting solutions where they matter most.
+                  Partner with PROJXON to help businesses overcome critical
+                  challenges and unlock new growth. Together, we can create
+                  lasting solutions where they matter most.
                 </p>
 
                 <CustomButton
@@ -200,8 +207,9 @@ const PartnershipPage = () => {
                   Referral Partnerships
                 </h2>
                 <p className="partner-heading-sub-heading mb-4 pb-2 fs-5">
-                  Join our referral ecosystem and collaborate on high-impact projects that push boundaries,
-                  fuel innovation, and grow your business along the way
+                  Join our referral ecosystem and collaborate on high-impact
+                  projects that push boundaries, fuel innovation, and grow your
+                  business along the way
                 </p>
                 <CustomButton
                   buttonText="Submit A Referral"
@@ -214,6 +222,52 @@ const PartnershipPage = () => {
             </Row>
           </Container>
         </section>
+      </section>
+
+      <ClientLogos />
+
+      {/* Madhouse Coffee Partnership Section */}
+      <section className="madhouse-section">
+        <Container>
+          <Row className="align-items-center justify-content-between flex-column-reverse flex-md-row">
+            {/* Text Column */}
+            <Col
+              xs={12}
+              md={7}
+              className="mb-4 mb-md-0 text-center text-md-start"
+            >
+              <h2 className="madhouse-header">Madhouse Coffee</h2>
+              <p className="madhouse-subheading">
+                Serving exceptional coffee around the clock, Madhouse Coffee is
+                a 24/7 specialty coffee shop known for its artisan brews, cozy
+                atmosphere, and commitment to quality. Whether you need an early
+                morning pick-me-up or a late-night caffeine boost, Madhouse has
+                you covered.
+              </p>
+              <CustomButton
+                buttonText="Visit Madhouse Coffee"
+                link="https://www.madhouse.coffee/#24hourslogos"
+                buttonStyle="madhouse-button"
+                delayTime={0}
+                isExternal={true}
+              />
+            </Col>
+
+            {/* Logo Column */}
+            <Col xs={12} md={5} className="text-center mb-4 mb-md-0">
+              <div className="madhouse-logo-container">
+                <Image
+                  src="/assets/partnership/madhouse.png"
+                  alt="Madhouse Coffee Logo"
+                  width={300}
+                  height={300}
+                  className="img-fluid"
+                  priority={true}
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </section>
 
       {/* Call To Action Section */}
