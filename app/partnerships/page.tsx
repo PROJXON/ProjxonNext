@@ -162,7 +162,7 @@ const PartnershipPage = () => {
                 </p>
                 <CustomButton
                   buttonText="Partner With Us"
-                  link="https://share.hsforms.com/1bKYf6vDKT9WleJf4zPxwUgrx61e"
+                  link=""
                   buttonStyle="black-button"
                   delayTime={0}
                   isExternal={true}
