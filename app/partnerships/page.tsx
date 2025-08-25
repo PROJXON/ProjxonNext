@@ -6,7 +6,6 @@ import CustomButton from '../../components/CustomButton';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { Partnership } from '@/types/interfaces';
-import ClientLogos from '@/components/ClientLogos';
 
 export const metadata: Metadata = {
   title: 'Partner with PROJXON | Strategic Collaborations for Growth',

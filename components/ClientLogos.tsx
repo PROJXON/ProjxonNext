@@ -1,4 +1,5 @@
-import { JSX } from "react";
+import { JSX } from 'react';
+import Image from 'next/image';
 
 export default function ClientLogos(): JSX.Element {
   const yellowFilter = '#FFD700';
@@ -20,37 +21,37 @@ export default function ClientLogos(): JSX.Element {
             padding: '2rem 0',
           }}
         >
-          <img
-            width="221"
-            height="67"
+          <Image
+            width={221}
+            height={67}
             src="https://tailwindcss.com/plus-assets/img/logos/158x48/transistor-logo-white.svg"
             alt="Transistor"
             style={{ maxHeight: 67, width: '140%', objectFit: 'contain', filter: yellowFilter, padding: '0.5rem' }}
           />
-          <img
-            width="221"
-            height="67"
+          <Image
+            width={221}
+            height={67}
             src="https://tailwindcss.com/plus-assets/img/logos/158x48/reform-logo-white.svg"
             alt="Reform"
             style={{ maxHeight: 67, width: '140%', objectFit: 'contain', filter: yellowFilter, padding: '0.5rem' }}
           />
-          <img
-            width="221"
-            height="67"
+          <Image
+            width={221}
+            height={67}
             src="https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-white.svg"
             alt="Tuple"
             style={{ maxHeight: 67, width: '140%', objectFit: 'contain', filter: yellowFilter, padding: '0.5rem' }}
           />
-          <img
-            width="221"
-            height="67"
+          <Image
+            width={221}
+            height={67}
             src="https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-white.svg"
             alt="SavvyCal"
             style={{ maxHeight: 67, width: '140%', objectFit: 'contain', filter: yellowFilter, padding: '0.5rem' }}
           />
-          <img
-            width="221"
-            height="67"
+          <Image
+            width={221}
+            height={67}
             src="https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-white.svg"
             alt="Statamic"
             style={{ maxHeight: 67, width: '140%', objectFit: 'contain', filter: yellowFilter, padding: '0.5rem' }}
