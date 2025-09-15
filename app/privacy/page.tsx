@@ -4,7 +4,7 @@ export default function () {
   const date = new Date(2025, 8, 5);
 
   return (
-    <div className="container" id="privacyPageContainer">
+    <div className="container privacy-page" id="privacyPageContainer">
       <h1>Privacy Policy — PROJXON Mobile App</h1>
       <p id="lastUpdated">
         Last updated:{' '}
@@ -53,7 +53,7 @@ export default function () {
       </p>
 
       <h2>Contact</h2>
-      <p>For questions, contact: @projxon.com</p>
+      <p>For questions, contact: it@projxon.com</p>
     </div>
   );
 }
