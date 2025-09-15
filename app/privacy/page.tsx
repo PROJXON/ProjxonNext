@@ -1,6 +1,6 @@
 import './PrivacyPage.css';
 
-export default function () {
+export default function PrivacyPage() {
   const date = new Date(2025, 8, 5);
 
   return (
