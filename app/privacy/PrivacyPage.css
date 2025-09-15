@@ -1,0 +1,10 @@
+div#privacyPageContainer h2,
+div#privacyPageContainer p:not(#lastUpdated) {
+  text-align: left;
+}
+
+div#privacyPageContainer {
+  margin-block: 1rem;
+  padding-bottom: 1rem;
+  padding: 1rem;
+}
