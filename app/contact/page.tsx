@@ -43,21 +43,9 @@ const ContactPage = () => {
       />
       <Container id='contact-form' className='my-5'>
         <Row className='justify-content-center'>
-          <Col md={6} lg={4}>
-            <Card className='contact-link'>
-              <CardBody className='d-flex align-items-center'>
-                <div className='fs-3 px-2 lh-1'>
-                  <FaEnvelopeOpenText className='text-yellow' />
-                </div>
-                <a className='contact-link-content ms-4' href='mailto:info@projxon.com'>
-                  Questions?
-                </a>
-              </CardBody>
-            </Card>
-          </Col>
-          <Col md={6} lg={6}>
+
             <InfoForm />
-          </Col>
+
         </Row>
       </Container>
     </div>

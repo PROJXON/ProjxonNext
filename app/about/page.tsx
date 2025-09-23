@@ -171,7 +171,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Mission & Vision Section */}
-      <section className='mission-vision bg-yellow overflow-hidden sections-container'>
+      <section className='mission-vision overflow-hidden sections-container'>
         <Container>
           <Row className='g-5'>
             <Col
@@ -219,7 +219,7 @@ const AboutPage = () => {
       </section>
 
       {/* Our Team Section */}
-      <section id='meet-the-team' className='bg-yellow-team our-team sections-container'>
+      <section id='meet-the-team' className='our-team sections-container'>
         <Container>
           <Row className='justify-content-center mb-4 mb-md-5'>
             <Col lg={6} xl={5} className='text-center'>

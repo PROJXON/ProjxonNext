@@ -15,4 +15,18 @@ module.exports = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/internships',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/internships/:path*',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
 };

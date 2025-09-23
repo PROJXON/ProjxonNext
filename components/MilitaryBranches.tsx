@@ -33,7 +33,7 @@ export default function MilitaryBranches() {
   ];
 
   return (
-    <section className="positions sections-container bg-yellow">
+    <section className="positions sections-container">
       <Container>
         <h2 className="sections-heading text-center mb-5">Veterans First Program</h2>
         <div className="military-branches-grid mt-5">
