@@ -38,7 +38,7 @@ export default async function HomePage() {
     <>
       <HomeHero />
 
-      <section className="text-center introduction bg-yellow">
+      <section className="text-center introduction">
         <Container>
           <h2 className="mb-5 fw-bold fs-3 text-black mx-auto text-uppercase">
             Our purpose

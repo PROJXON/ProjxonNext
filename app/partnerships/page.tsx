@@ -72,7 +72,7 @@ const PartnershipPage = () => {
             data-aos-once="true"
           >
             <Col xs={12} md={6}>
-              <p className="partner-heading-sub-heading gray-opacity">
+              <p className="partner-heading-sub-heading">
                 At PROJXON, we excel in delivering innovative solutions tailored to
                 your business needs. Our team combines expertise, creativity, and cutting-edge
                 technology to help your business thrive in today&apos;s competitive market.
@@ -109,7 +109,7 @@ const PartnershipPage = () => {
                 >
                   <div className="partner-number mb-3">{index + 1}</div>
                   <h3 className="partner-title fs-4 mb-3">{partner.title}</h3>
-                  <p className="gray-opacity mb-0">{partner.text}</p>
+                  <p className="mb-0">{partner.text}</p>
                 </div>
               </Col>
             ))}
@@ -119,7 +119,7 @@ const PartnershipPage = () => {
     
 
       {/* Partnership Opportunities Section */}
-      <section id="partnership-opprtunities" className=" bg-yellow">
+      <section id="partnership-opprtunities">
         <section className="partner-opportunity mt-0">
           <h1 className="sections-heading fw-bold text-center mb-5 pb-3">
             Partnership Opportunities

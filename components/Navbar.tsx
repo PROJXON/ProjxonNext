@@ -13,7 +13,7 @@ const navLinks: NavLinkType[] = [
   { href: '/services', label: 'Services' },
   { href: '/partnerships', label: 'Partnerships' },
   { href: '/careers', label: 'Careers' },
-  { href: '/internships', label: 'Internships' },
+  // { href: '/internships', label: 'Internships' },
   { href: '/contact', label: 'Contact' },
 ];
 
