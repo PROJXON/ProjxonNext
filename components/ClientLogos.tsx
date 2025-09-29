@@ -6,9 +6,7 @@ export default function ClientLogos(): JSX.Element {
     { src: '/assets/partnership/client-logos/App-Forge-Solutions.png', alt: 'App Forge Solutions' },
     { src: '/assets/partnership/client-logos/celyfos_redone_logo.png', alt: 'Celyfos' },
     { src: '/assets/partnership/client-logos/PhelanFocus.png', alt: 'PhelanFocus' },
-    { src: 'https://tailwindcss.com/plus-assets/img/logos/158x48/tuple-logo-white.svg', alt: 'Tuple' },
-    { src: 'https://tailwindcss.com/plus-assets/img/logos/158x48/savvycal-logo-white.svg', alt: 'SavvyCal' },
-    { src: 'https://tailwindcss.com/plus-assets/img/logos/158x48/statamic-logo-white.svg', alt: 'Statamic' },
+    { src: '/assets/partnership/client-logos/nest.png', alt: 'Nest' },
   ];
 
   return (
