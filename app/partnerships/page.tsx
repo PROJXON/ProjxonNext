@@ -162,7 +162,7 @@ const PartnershipPage = () => {
                 </p>
                 <CustomButton
                   buttonText="Partner With Us"
-                  link=""
+                  link="https://docs.google.com/forms/d/e/1FAIpQLSfFujqNvY_1kXTUCCqfNHLLQgu-W17oXtx8Yv3-hYcoXr6X_g/viewform"
                   buttonStyle="black-button"
                   delayTime={0}
                   isExternal={true}
