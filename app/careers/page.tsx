@@ -65,49 +65,15 @@ const CareerPage = () => {
         backgroundClass='career-hero'
       />
 
-      {/* Apply */}
-      <section id='apply' className='apply bg-yellow'>
-        <Container>
-          <Row
-            className='align-items-center justify-content-center'
-            data-aos='fade-up'
-          >
-            <Col xs={12} lg={6} className='py-5 bg-black rounded px-5'>
-              <h1 className='apply-heading sections-heading text-yellow'>
-                Work with Intention. Grow with Impact.
-              </h1>
-              <p className='apply-sub-heading  text-white my-4'>
-                At Projxon, we are always on the lookout for talented
-                individuals who are passionate about innovation and
-                collaboration
-              </p>
-
-              <p className='apply-sub-heading  text-white my-4'>
-                Join our team and contribute to exciting projects that make a
-                difference
-              </p>
-              <CustomButton
-                buttonText='Apply now'
-                link='https://app.dover.com/jobs/projxon'
-                buttonStyle='yellow-button'
-                delayTime={0}
-                isExternal={true}
-                isAnimated={false}
-              />
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
       {/* Positions */}
-      <section id='consulting-advisory' className='positions sections-container bg-black '>
+      <section id='consulting-advisory' className='positions sections-container'>
         <Container>
           <Row className='justify-content-center mb-5'>
             <Col lg={5} className='text-center'>
-              <h2 className='positions-heading sections-heading text-yellow mb-4'>
+              <h2 className='positions-heading sections-heading mb-4'>
                 Consulting + Adivsory Roles
               </h2>
-              <p className='positions-sub-heading text-white mb-4'>
+              <p className='positions-sub-heading mb-4'>
                 Empowering collaboration, innovation, and expert guidance to
                 deliver exceptional client solutions
               </p>
@@ -144,6 +110,40 @@ const CareerPage = () => {
                 </div>
               </Col>
             ))}
+          </Row>
+        </Container>
+      </section>
+
+      {/* Apply */}
+      <section id='apply' className='apply bg-black'>
+        <Container>
+          <Row
+            className='align-items-center justify-content-center'
+            data-aos='fade-up'
+          >
+            <Col xs={12} lg={6} className='py-5 bg-black rounded px-5'>
+              <h1 className='apply-heading sections-heading text-yellow'>
+                Work with Intention. Grow with Impact.
+              </h1>
+              <p className='apply-sub-heading  text-white my-4'>
+                At Projxon, we are always on the lookout for talented
+                individuals who are passionate about innovation and
+                collaboration
+              </p>
+
+              <p className='apply-sub-heading  text-white my-4'>
+                Join our team and contribute to exciting projects that make a
+                difference
+              </p>
+              <CustomButton
+                buttonText='Apply now'
+                link='https://app.dover.com/jobs/projxon'
+                buttonStyle='yellow-button'
+                delayTime={0}
+                isExternal={true}
+                isAnimated={false}
+              />
+            </Col>
           </Row>
         </Container>
       </section>

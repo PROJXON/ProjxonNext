@@ -1,5 +1,20 @@
 /* || Infoform */
 
+.infoform-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form-card {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.infoform {
+  max-width: 560px;
+}
+
 .infoform .form-label {
   color: #f8f9fa;
 }

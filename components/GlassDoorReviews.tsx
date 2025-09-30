@@ -9,6 +9,7 @@ export default function GlassDoorReviews(): JSX.Element {
           'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/assets/careers/glassdoor-bg.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+
         minHeight: '500px',
         borderRadius: 0,
         margin: 0,
@@ -16,6 +17,7 @@ export default function GlassDoorReviews(): JSX.Element {
     >
       <h2
         className='text-yellow fw-bold mb-3 text-center'
+
         style={{ fontSize: '3rem', marginBottom: '2rem' }}
       >
         PROJXON Reviews on Glassdoor
@@ -27,6 +29,8 @@ export default function GlassDoorReviews(): JSX.Element {
           marginBottom: '2.5rem',
           maxWidth: '800px',
         }}
+        className="text-gray mb-4 text-center"
+        style={{ fontSize: '1.6rem', marginBottom: '2.5rem', maxWidth: '800px' }}
       >
         See what our team members have to say about working at PROJXON. Discover
         real feedback and experiences on Glassdoor.

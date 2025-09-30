@@ -73,15 +73,6 @@ const Footer = () => {
       ],
     },
     {
-      label: 'Internships',
-      href: '/internships',
-      links: [
-        { id: 'mip', text: 'MIP' },
-        { id: 'testimonials', text: 'Testimonials' },
-        { id: 'blogs', text: 'Blogs' },
-      ],
-    },
-    {
       label: 'Contact',
       href: '/contact',
       links: [
@@ -119,7 +110,7 @@ const Footer = () => {
         </Row>
 
         <hr className="my-4" />
-        <Row>
+        <Row className="justify-content-center">
           {footerLinks.map((section, i) => (
             <Col xs={6} md={2} className="mb-3" key={i}>
               <h2 className="footer-label">{section.label}</h2>
