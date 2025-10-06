@@ -47,7 +47,7 @@ export default function ClientLogos(): JSX.Element {
                   width={240} 
                   height={100} 
                   className='object-contain'
-                  style={{ width: 'auto', height: '100px' }}
+                  style={{ width: 'auto', height: '100px', borderRadius: '12px' }}
                 />
               </div>
             ))}
