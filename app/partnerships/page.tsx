@@ -136,7 +136,7 @@ const PartnershipPage = () => {
                 data-aos-once='true'
               >
                 <Image
-                  src='/assets/partnership/UniPartnerships.webp'
+                  src='/assets/partnership/universityPartnerships.webp'
                   alt='Client Referral'
                   width={700}
                   height={450}
