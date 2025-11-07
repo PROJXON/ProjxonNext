@@ -51,14 +51,15 @@ export default async function HomePage() {
             data-aos-once="true"
             className="fs-4 text-black"
           >
-            We are a Business Optimization Consulting Company helping businesses
-            including Veteran-Owned Businesses and Veteran-Founded Non-Profits
-            to Launch, Grow, and Scale through High-Impact Strategic
-            Partnerships. We specialize in guiding small and medium-sized
-            organizations across the Tech, E-commerce, Health & Wellness, and
-            Non-Profit industries to combat chaos head-on by empowering our
-            clients through creating sustainable solutions that scale with their
-            business, turning points of failure into opportunities for growth.
+            We are a Business Optimization Consulting Company helping
+            businesses, including Veteran-Owned Businesses and Veteran-Founded
+            Non-Profits, to Launch, Grow, and Scale through High-Impact
+            Strategic Partnerships. We specialize in guiding small and
+            medium-sized organizations across Tech, E-commerce, Health &
+            Wellness, and Non-Profit industries. We combat chaos head-on by
+            empowering our clients with sustainable solutions that scale with
+            their business, turning points of failure into opportunities for
+            growth.
           </p>
           <hr className="divider" />
           <CustomButton
