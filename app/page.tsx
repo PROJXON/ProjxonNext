@@ -43,17 +43,17 @@ export default async function HomePage() {
 
       <section className="text-center introduction">
         <Container>
-          <h2 className="mb-5 fw-bold fs-3 text-black mx-auto text-uppercase">
-            Our purpose
+          <h2 className="mb-5 fw-bold text-5xl text-black mx-auto">
+            Our Purpose
           </h2>
           <p
             data-aos="fade-up"
             data-aos-once="true"
             className="fs-4 text-black"
           >
-            We are a Business Optimization Consulting Company helping
-            businesses including Veteran-Owned Businesses and Veteran-Founded
-            Non-Profits to Launch, Grow, and Scale through High-Impact Strategic
+            We are a Business Optimization Consulting Company helping businesses
+            including Veteran-Owned Businesses and Veteran-Founded Non-Profits
+            to Launch, Grow, and Scale through High-Impact Strategic
             Partnerships. We specialize in guiding small and medium-sized
             organizations across the Tech, E-commerce, Health & Wellness, and
             Non-Profit industries to combat chaos head-on by empowering our
