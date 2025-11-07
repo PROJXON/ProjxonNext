@@ -6,6 +6,7 @@ import CustomButton from '../../components/CustomButton';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { Partnership } from '@/types/interfaces';
+import ClientLogos from '@/components/ClientLogos';
 
 export const metadata: Metadata = {
   title: 'Partner with PROJXON | Strategic Collaborations for Growth',
@@ -74,7 +75,7 @@ const PartnershipPage = () => {
             data-aos-once='true'
           >
             <Col xs={12} md={6}>
-              <p className='partner-heading-sub-heading gray-opacity'>
+              <p className='partner-heading-sub-heading'>
                 At PROJXON, we excel in delivering innovative solutions tailored
                 to your business needs. Our team combines expertise, creativity,
                 and cutting-edge technology to help your business thrive in
@@ -247,7 +248,7 @@ const PartnershipPage = () => {
                 data-aos-once='true'
               >
                 <h2 className='sections-heading partner-heading fw-bold mb-4'>
-                  Referral Partnerships
+                  Refer a Business
                 </h2>
                 <p className='partner-heading-sub-heading mb-4 pb-2 fs-5'>
                   Join our referral ecosystem and collaborate on high-impact
@@ -269,7 +270,7 @@ const PartnershipPage = () => {
 
       <ClientLogos />
 
-      <section className='madhouse-section'>
+      {/* <section className='madhouse-section'>
         <Container>
           <Row className='align-items-center justify-content-between flex-column-reverse flex-md-row'>
             <Col xs={12} md={7} className='mb-4 mb-md-0 madhouse-text'>
@@ -304,7 +305,7 @@ const PartnershipPage = () => {
             </Col>
           </Row>
         </Container>
-      </section>
+      </section> */}
 
       <CallToAction />
     </div>

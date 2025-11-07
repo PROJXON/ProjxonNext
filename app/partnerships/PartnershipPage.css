@@ -16,8 +16,8 @@
 
 .madhouse-section .madhouse-subheading {
   color: #ffffff;
-  font-size: 1.125rem; 
-  line-height: 1.6;
+  font-size: 17px !important;
+  line-height: 1.5 !important;
   margin-bottom: 1.5rem;
 }
 
@@ -79,14 +79,37 @@
 .partner-img {
   aspect-ratio: auto 1280 / 720;
 }
+
 .partner-heading {
   line-height: 1.3;
   color: #FFD700; 
 }
+
+/* Force all subtexts to be 17px - IMPORTANT to override Bootstrap */
+.partner-heading-sub-heading,
+.partner-heading-sub-heading.fs-5,
+.gray-opacity,
+.madhouse-section .madhouse-subheading,
+.partner-subheading {
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+}
+
+/* Keep color variations */
 .partner-heading-sub-heading {
-  font-size: 17px;
-  line-height: 1.5;
-  color: #FFD700; 
+  color: black; 
+}
+
+.partner-opportunity .partner-heading-sub-heading {
+  color: #000; 
+}
+
+.partner-us .partner-heading-sub-heading {
+  color: #000; 
+}
+
+.gray-opacity {
+  color: #666;
 }
 
 .partner-number {
@@ -110,7 +133,7 @@
 }
 
 .partner-subheading {
-  color:#e6c200;
+  color: #e6c200;
 }
 
 .partner-opportunity.referral {
@@ -203,7 +226,7 @@
     font-size: 2rem;
   }
   .partner-heading-sub-heading {
-    font-size: 1rem;
+    font-size: 17px !important;
     color: black; 
   }
   .logo-card {
@@ -220,11 +243,6 @@
   }
 }
 
-.partner-opportunity .partner-heading-sub-heading {
-  color: #000; 
-}
-
-.madhouse-section .partner-subheading,
-.partner-us .partner-heading-sub-heading {
+.madhouse-section .partner-subheading {
   color: #FFD700; 
 }
