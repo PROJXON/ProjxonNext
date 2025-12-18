@@ -1,35 +1,38 @@
-import './HomePage.css';
-import { Container } from 'react-bootstrap';
-import HomeHero from '@/components/HomeHero';
-import CustomButton from '@/components/CustomButton';
-import CallToAction from '@/components/CallToAction';
-import ChooseUs from '@/components/ChooseUs';
-import type { Metadata } from 'next';
+import "./HomePage.css";
+import { Container } from "react-bootstrap";
+import HomeHero from "@/components/HomeHero";
+import CustomButton from "@/components/CustomButton";
+import CallToAction from "@/components/CallToAction";
+import ChooseUs from "@/components/ChooseUs";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'PROJXON Services | Expert Business Consulting & Strategy',
-  description: "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
-  metadataBase: new URL('https://www.projxon.com/services'),
+  title: "PROJXON Services | Expert Business Consulting & Strategy",
+  description:
+    "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
+  metadataBase: new URL("https://www.projxon.com/services"),
   openGraph: {
-    title: 'PROJXON Services | Expert Business Consulting & Strategy',
-    description: "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
-    url: 'https://www.projxon.com/services',
-    siteName: 'PROJXON',
+    title: "PROJXON Services | Expert Business Consulting & Strategy",
+    description:
+      "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
+    url: "https://www.projxon.com/services",
+    siteName: "PROJXON",
     images: [
       {
-        url: '/PROJXON.png',
+        url: "/PROJXON.png",
         width: 1200,
         height: 630,
-        alt: 'PROJXON logo',
+        alt: "PROJXON logo",
       },
     ],
-    type: 'website',
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'PROJXON Services | Expert Business Consulting & Strategy',
-    description: "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
-    images: ['/PROJXON.png'],
+    card: "summary_large_image",
+    title: "PROJXON Services | Expert Business Consulting & Strategy",
+    description:
+      "Explore PROJXON's consulting services in strategy, market research, and digital transformation. We provide data-driven solutions for business growth.",
+    images: ["/PROJXON.png"],
   },
 };
 
@@ -40,15 +43,23 @@ export default async function HomePage() {
 
       <section className="text-center introduction">
         <Container>
-          <h2 className="mb-5 fw-bold fs-3 text-black mx-auto text-uppercase">
-            Our purpose
+          <h2 className="mb-5 fw-bold text-5xl text-black mx-auto">
+            Our Purpose
           </h2>
           <p
             data-aos="fade-up"
             data-aos-once="true"
             className="fs-4 text-black"
           >
-            We are a Business Optimization Consulting Company helping Veteran-Owned and Operated Businesses and Veteran-Founded Non-Profits Launch, Grow, and Scale through High-Impact Strategic Partnerships. We specialize in guiding small and medium-sized organizations across the Tech, E-commerce, Health & Wellness, and Non-Profit industries to combat chaos head-on by empowering our clients through creating sustainable solutions that scale with their business, turning points of failure into opportunities for growth.
+            We are a Business Optimization Consulting Company helping
+            businesses, including Veteran-Owned Businesses and Veteran-Founded
+            Non-Profits, to Launch, Grow, and Scale through High-Impact
+            Strategic Partnerships. We specialize in guiding small and
+            medium-sized organizations across Tech, E-commerce, Health &
+            Wellness, and Non-Profit industries. We combat chaos head-on by
+            empowering our clients with sustainable solutions that scale with
+            their business, turning points of failure into opportunities for
+            growth.
           </p>
           <hr className="divider" />
           <CustomButton
