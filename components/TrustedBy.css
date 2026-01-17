@@ -1,0 +1,205 @@
+.trustedby-section {
+  background-color: #030303;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle radial glow */
+.trustedby-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(250, 204, 21, 0.03) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.trustedby-container {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 32px;
+  padding-right: 32px;
+  position: relative;
+}
+
+.trustedby-title {
+  text-align: center;
+  font-weight: 700;
+  color: #facc15;
+  font-size: 48px;
+  margin-top: 0;
+  margin-bottom: 64px;
+  letter-spacing: 0.5px;
+}
+
+.trustedby-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 48px 40px;
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(250, 204, 21, 0.1);
+}
+
+.trustedby-logo {
+  transition: all 0.3s ease;
+  filter: grayscale(100%) opacity(0.7);
+  cursor: pointer;
+}
+
+.trustedby-logo:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+
+.trustedby-img {
+  max-height: 60px;
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* your “Google Workspace” sizing behavior */
+.trustedby-img--tall {
+  max-height: 90px;
+  max-width: 300px;
+}
+.trustedby-section {
+  background-color: #0a0a0a;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle radial glow */
+.trustedby-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(250, 204, 21, 0.03) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.trustedby-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+}
+
+.trustedby-title {
+  text-align: center;
+  font-weight: 700;
+  color: #facc15;
+  font-size: 48px;
+  margin: 0 0 64px;
+  letter-spacing: 0.5px;
+}
+
+/* white pill card */
+.trustedby-card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px 18px; /* slightly tighter so marquee feels centered */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(250, 204, 21, 0.1);
+  overflow: hidden; /* needed for fades */
+}
+
+/* marquee viewport */
+.trustedby-marquee {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* animated track */
+.trustedby-track {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  width: max-content;
+  animation: trustedby-scroll 22s linear infinite;
+}
+
+/* pause scrolling when user hovers the card */
+.trustedby-card:hover .trustedby-track {
+  animation-play-state: paused;
+}
+
+/* fade edges to hide cutoffs */
+.trustedby-fade {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.trustedby-fade--left {
+  left: 0;
+  background: linear-gradient(to right, #ffffff 15%, rgba(255, 255, 255, 0));
+}
+
+.trustedby-fade--right {
+  right: 0;
+  background: linear-gradient(to left, #ffffff 15%, rgba(255, 255, 255, 0));
+}
+
+/* logo behavior */
+.trustedby-logo {
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%) opacity(0.7);
+  cursor: pointer;
+  z-index: 3; /* above fades visually when near edges */
+}
+
+.trustedby-logo:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
+
+.trustedby-img {
+  max-height: 60px;
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.trustedby-img--tall {
+  max-height: 90px;
+  max-width: 300px;
+}
+
+/* The key: move the track left by 50% (because we duplicated the list) */
+@keyframes trustedby-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Optional: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .trustedby-track {
+    animation: none;
+  }
+}
