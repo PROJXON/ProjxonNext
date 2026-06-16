@@ -27,6 +27,11 @@ module.exports = {
         destination: '/',
         permanent: true,
       },
+	  {
+      	source: '/portfolio',
+      	destination: 'https://sites.google.com/projxon.com/projxon-portfolio/home',
+     	 permanent: true,
+      },
     ];
   },
 };
