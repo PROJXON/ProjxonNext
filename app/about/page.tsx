@@ -269,6 +269,32 @@ const AboutPage = () => {
           </Row>
         </Container>
       </section>
+      
+      {/* Site Contributors Section */}
+      <section className='sections-container'>
+        <Container>
+          <Row className='justify-content-center mb-4 mb-md-5'>
+            <Col lg={6} xl={5} className='text-center'>
+              <h2 className='sections-heading fw-bold mb-3'>Site Contributors</h2>
+              <p className='fs-5 text-muted'>The team members who built and shaped projxon.com — a legacy for future developers to reference.</p>
+            </Col>
+          </Row>
+          <Row className='justify-content-center text-center g-4'>
+            {[
+              { name: 'Sam Ho', role: 'Web Developer' },
+              { name: 'Brandon Diep', role: 'Web Developer · V1' },
+              { name: 'Simeon', role: 'Web Developer' },
+            ].map((contributor, i) => (
+              <Col key={i} xs={6} md={4} lg={2}>
+                <div className='p-3 rounded-3' style={{ background: 'rgba(0,0,0,0.05)' }}>
+                  <h5 className='fw-bold mb-1'>{contributor.name}</h5>
+                  <p className='text-muted small mb-0'>{contributor.role}</p>
+                </div>
+              </Col>
+            ))}
+          </Row>
+        </Container>
+      </section>
 
       {/* Call to Action Section */}
       <CallToAction />
