@@ -276,7 +276,7 @@ const AboutPage = () => {
           <Row className='justify-content-center mb-4 mb-md-5'>
             <Col lg={6} xl={5} className='text-center'>
               <h2 className='sections-heading fw-bold mb-3'>Site Contributors</h2>
-              <p className='fs-5 text-muted'>The team members who built and shaped projxon.com - a legacy for future developers to reference.</p>
+              <p className='fs-5 text-muted'>The team members who built and shaped projxon.com - a legacy for future developers to reference</p>
             </Col>
           </Row>
           <Row className='justify-content-center text-center g-4'>
