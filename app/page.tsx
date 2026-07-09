@@ -1,6 +1,7 @@
 import './HomePage.css';
 import { Container } from 'react-bootstrap';
 import HomeHero from '@/components/HomeHero';
+import TrustedBy from '@/components/TrustedBy';
 import CustomButton from '@/components/CustomButton';
 import CallToAction from '@/components/CallToAction';
 import ChooseUs from '@/components/ChooseUs';
@@ -37,7 +38,6 @@ export default async function HomePage() {
   return (
     <>
       <HomeHero />
-
       <section className="text-center introduction">
         <Container>
           <h2 className="mb-5 fw-bold fs-3 text-black mx-auto text-uppercase">
@@ -62,6 +62,7 @@ export default async function HomePage() {
       </section>
 
       <ChooseUs />
+      <TrustedBy/>
       <CallToAction />
     </>
   );
