@@ -6,14 +6,17 @@ import CustomButton from '../../components/CustomButton';
 import Image from 'next/image';
 import type { Metadata } from 'next';
 import { Partnership } from '@/types/interfaces';
+import ClientLogos from '@/components/ClientLogos';
 
 export const metadata: Metadata = {
   title: 'Partner with PROJXON | Strategic Collaborations for Growth',
-  description: 'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
+  description:
+    'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
   metadataBase: new URL('https://www.projxon.com/partnership'),
   openGraph: {
     title: 'Partner with PROJXON | Strategic Collaborations for Growth',
-    description: 'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
+    description:
+      'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
     url: 'https://www.projxon.com/partnership',
     siteName: 'PROJXON',
     images: [
@@ -29,7 +32,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Partner with PROJXON | Strategic Collaborations for Growth',
-    description: 'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
+    description:
+      'Unlock new opportunities with PROJXON. Explore strategic partnerships that drive innovation, efficiency, and business success. Let’s grow together.',
     images: ['/PROJXON.png'],
   },
 };
@@ -55,113 +59,111 @@ const PartnershipPage = () => {
 
   return (
     <div>
-      {/* Hero Section */}
       <Hero
-        title="Partner with Us"
-        subtitle="Collaborate with Purpose. Grow with Impact."
-        paragraph="Join forces with a team that turns bold ideas into real-world results
-            through strategic partnerships built on trust, innovation, and measurable value."
-        backgroundClass="partner-hero"
+        title='Partner with Us'
+        subtitle='Collaborate with Purpose. Grow with Impact.'
+        paragraph='Join forces with a team that turns bold ideas into real-world results
+            through strategic partnerships built on trust, innovation, and measurable value.'
+        backgroundClass='partner-hero'
       />
-      {/* Why Partner with Us Section */}
-      <section id="service-partners" className="partner-us sections-container">
+
+      <section id='service-partners' className='partner-us sections-container'>
         <Container>
           <Row
-            className="align-items-center justify-content-between"
-            data-aos="fade-right"
-            data-aos-once="true"
+            className='align-items-center justify-content-between'
+            data-aos='fade-right'
+            data-aos-once='true'
           >
             <Col xs={12} md={6}>
-              <p className="partner-heading-sub-heading">
-                At PROJXON, we excel in delivering innovative solutions tailored to
-                your business needs. Our team combines expertise, creativity, and cutting-edge
-                technology to help your business thrive in today&apos;s competitive market.
-                Partner with us for unmatched dedication, seamless collaboration,
-                and results-driven strategies.
+              <p className='partner-heading-sub-heading'>
+                At PROJXON, we excel in delivering innovative solutions tailored
+                to your business needs. Our team combines expertise, creativity,
+                and cutting-edge technology to help your business thrive in
+                today&apos;s competitive market. Partner with us for unmatched
+                dedication, seamless collaboration, and results-driven
+                strategies.
               </p>
             </Col>
             <Col
               xs={12}
               md={5}
-              className="position-relative"
-              data-aos="fade-left"
-              data-aos-delay="200"
-              data-aos-once="true"
+              className='position-relative'
+              data-aos='fade-left'
+              data-aos-delay='200'
+              data-aos-once='true'
             >
               <Image
-                src="/assets/partnership/partner.webp"
-                alt="partner"
-                className="img-fluid my-5 my-md-0 rounded-3"
+                src='/assets/partnership/partner.webp'
+                alt='partner'
+                className='img-fluid my-5 my-md-0 rounded-3'
                 width={600}
                 height={400}
                 priority={true}
               />
             </Col>
           </Row>
-          <Row className="mt-5">
+          <Row className='mt-5'>
             {partnerships.map((partner, index) => (
-              <Col xs={12} md={6} lg={4} key={index} className="mb-4">
+              <Col xs={12} md={6} lg={4} key={index} className='mb-4'>
                 <div
-                  className="value-card h-100 shadow-sm border-0 rounded-4 p-4 d-flex flex-column align-items-start"
-                  data-aos="fade-up"
+                  className='value-card h-100 shadow-sm border-0 rounded-4 p-4 d-flex flex-column align-items-start'
+                  data-aos='fade-up'
                   data-aos-delay={partner.dataAOSDelay}
-                  data-aos-once="true"
+                  data-aos-once='true'
                 >
-                  <div className="partner-number mb-3">{index + 1}</div>
-                  <h3 className="partner-title fs-4 mb-3">{partner.title}</h3>
-                  <p className="mb-0">{partner.text}</p>
+                  <div className='partner-number mb-3'>{index + 1}</div>
+                  <h3 className='partner-title fs-4 mb-3'>{partner.title}</h3>
+                  <p className='gray-opacity mb-0'>{partner.text}</p>
                 </div>
               </Col>
             ))}
           </Row>
         </Container>
       </section>
-    
 
-      {/* Partnership Opportunities Section */}
-      <section id="partnership-opprtunities">
-        <section className="partner-opportunity mt-0">
-          <h1 className="sections-heading fw-bold text-center mb-5 pb-3">
+      <section id='partnership-opprtunities' className=' bg-yellow'>
+        <section className='partner-opportunity mt-0'>
+          <h1 className='sections-heading fw-bold text-center mb-5 pb-3'>
             Partnership Opportunities
           </h1>
-
           <Container>
-            <Row className="align-items-center justify-content-between flex-row-reverse">
+            <Row className='align-items-center justify-content-between'>
               <Col
                 xs={12}
                 md={6}
-                className="position-relative"
-                data-aos="fade-left"
-                data-aos-once="true"
+                className='position-relative'
+                data-aos='fade-right'
+                data-aos-once='true'
               >
                 <Image
-                  src="/assets/partnership/partner-service.webp"
-                  alt="Service Partner"
+                  src='/assets/partnership/universityPartnerships.webp'
+                  alt='Client Referral'
                   width={700}
                   height={450}
-                  className="img-fluid my-5 my-md-0 rounded-3 w-100 partner-img"
+                  className='img-fluid my-5 my-md-0 rounded-3 w-100 partner-img'
                 />
               </Col>
               <Col
                 xs={12}
                 md={6}
-                className="partner-text"
-                data-aos="fade-right"
-                data-aos-once="true"
+                className='partner-text'
+                data-aos='fade-left'
+                data-aos-once='true'
               >
-                <h2 className="sections-heading partner-heading fw-bold mb-4 par">
-                  Service Partnerships
+                <h2 className='sections-heading partner-heading fw-bold mb-4'>
+                  University Partnerships
                 </h2>
-                <h3>Looking to expand your impact and deliver greater value to your clients?</h3>
-                <p className="partner-heading-sub-heading mb-4 pb-2 fs-5">
-                  Partner with PROJXON to help businesses overcome critical challenges and unlock new growth.
-                  Together, we can create lasting solutions where they matter most.
+                <p className='partner-heading-sub-heading mb-4 pb-2 fs-5'>
+                  Collaborating with PROJXON enables universities to offer
+                  students and faculty access to cutting-edge business
+                  strategies, innovative problem-solving frameworks, and
+                  mentorship from experienced industry consultants, enhancing
+                  both education and professional readiness.
                 </p>
-
                 <CustomButton
-                  buttonText="Partner With Us"
-                  link="https://share.hsforms.com/1y8K29LT1QRa1VT1u2RoWTArx61e"
-                  buttonStyle="black-button"
+                  buttonText='Partner With Us'
+                  link='https://docs.google.com/forms/d/e/1FAIpQLSfFujqNvY_1kXTUCCqfNHLLQgu-W17oXtx8Yv3-hYcoXr6X_g/viewform'
+                  buttonStyle='black-button'
                   delayTime={0}
                   isExternal={true}
                 />
@@ -170,42 +172,93 @@ const PartnershipPage = () => {
           </Container>
         </section>
 
-        <section className="partner-opportunity referral">
+        <section className='partner-opportunity referral'>
           <Container>
-            <Row className="align-items-center justify-content-between">
+            <Row className='align-items-center justify-content-between flex-row-reverse'>
               <Col
                 xs={12}
                 md={6}
-                className="position-relative"
-                data-aos="fade-right"
-                data-aos-once="true"
+                className='position-relative'
+                data-aos='fade-left'
+                data-aos-once='true'
               >
                 <Image
-                  src="/assets/partnership/client-ref.webp"
-                  alt="Client Referral"
+                  src='/assets/partnership/partner-service.webp'
+                  alt='Service Partner'
                   width={700}
                   height={450}
-                  className="img-fluid my-5 my-md-0 rounded-3 w-100 partner-img"
+                  className='img-fluid my-5 my-md-0 rounded-3 w-100 partner-img'
                 />
               </Col>
               <Col
                 xs={12}
                 md={6}
-                className="partner-text"
-                data-aos="fade-left"
-                data-aos-once="true"
+                className='partner-text'
+                data-aos='fade-right'
+                data-aos-once='true'
               >
-                <h2 className="sections-heading partner-heading fw-bold mb-4">
-                  Referral Partnerships
+                <h2 className='sections-heading partner-heading fw-bold mb-4 par'>
+                  Service Partnerships
                 </h2>
-                <p className="partner-heading-sub-heading mb-4 pb-2 fs-5">
-                  Join our referral ecosystem and collaborate on high-impact projects that push boundaries,
-                  fuel innovation, and grow your business along the way
+                <h3>
+                  Looking to expand your impact and deliver greater value to
+                  your clients?
+                </h3>
+                <p className='partner-heading-sub-heading mb-4 pb-2 fs-5'>
+                  Partner with PROJXON to help businesses overcome critical
+                  challenges and unlock new growth. Together, we can create
+                  lasting solutions where they matter most.
+                </p>
+
+                <CustomButton
+                  buttonText='Partner With Us'
+                  link='https://share.hsforms.com/1y8K29LT1QRa1VT1u2RoWTArx61e'
+                  buttonStyle='black-button'
+                  delayTime={0}
+                  isExternal={true}
+                />
+              </Col>
+            </Row>
+          </Container>
+        </section>
+
+        <section className='partner-opportunity referral'>
+          <Container>
+            <Row className='align-items-center justify-content-between'>
+              <Col
+                xs={12}
+                md={6}
+                className='position-relative'
+                data-aos='fade-right'
+                data-aos-once='true'
+              >
+                <Image
+                  src='/assets/partnership/client-ref.webp'
+                  alt='Client Referral'
+                  width={700}
+                  height={450}
+                  className='img-fluid my-5 my-md-0 rounded-3 w-100 partner-img'
+                />
+              </Col>
+              <Col
+                xs={12}
+                md={6}
+                className='partner-text'
+                data-aos='fade-left'
+                data-aos-once='true'
+              >
+                <h2 className='sections-heading partner-heading fw-bold mb-4'>
+                  Refer a Business
+                </h2>
+                <p className='partner-heading-sub-heading mb-4 pb-2 fs-5'>
+                  Join our referral ecosystem and collaborate on high-impact
+                  projects that push boundaries, fuel innovation, and grow your
+                  business along the way
                 </p>
                 <CustomButton
-                  buttonText="Submit A Referral"
-                  link="https://share.hsforms.com/1bKYf6vDKT9WleJf4zPxwUgrx61e"
-                  buttonStyle="black-button"
+                  buttonText='Submit A Referral'
+                  link='https://share.hsforms.com/1bKYf6vDKT9WleJf4zPxwUgrx61e'
+                  buttonStyle='black-button'
                   delayTime={0}
                   isExternal={true}
                 />
@@ -215,7 +268,45 @@ const PartnershipPage = () => {
         </section>
       </section>
 
-      {/* Call To Action Section */}
+      <ClientLogos />
+
+      {/* <section className='madhouse-section'>
+        <Container>
+          <Row className='align-items-center justify-content-between flex-column-reverse flex-md-row'>
+            <Col xs={12} md={7} className='mb-4 mb-md-0 madhouse-text'>
+              <h2 className='madhouse-header'>Madhouse Coffee</h2>
+              <p className='madhouse-subheading'>
+                Serving exceptional coffee around the clock, Madhouse Coffee is
+                a 24/7 specialty coffee shop known for its artisan brews, cozy
+                atmosphere, and commitment to quality. Whether you need an early
+                morning pick-me-up or a late-night caffeine boost, Madhouse has
+                you covered.
+              </p>
+              <CustomButton
+                buttonText='Visit Madhouse Coffee'
+                link='https://www.madhouse.coffee/#24hourslogos'
+                buttonStyle='madhouse-button'
+                delayTime={0}
+                isExternal={true}
+              />
+            </Col>
+
+            <Col xs={12} md={5} className='text-center mb-4 mb-md-0'>
+              <div className='madhouse-logo-container'>
+                <Image
+                  src='/assets/partnership/madhouse.png'
+                  alt='Madhouse Coffee Logo'
+                  width={300}
+                  height={300}
+                  className='img-fluid'
+                  priority={true}
+                />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section> */}
+
       <CallToAction />
     </div>
   );
