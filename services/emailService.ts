@@ -4,7 +4,7 @@ export const sendEmail = async (formData: EmailFormFields): Promise<EmailRespons
   try {
     const data = JSON.stringify(formData);
 
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/email`, {
+    const response = await fetch(`/api/email`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: data,

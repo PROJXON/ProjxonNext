@@ -13,13 +13,13 @@ export const fetchClients = async ({ useNoStore = false } = {}) => {
 
     return await res.json();
   } catch (error: any) {
-    console.error('❌ Error fetching clients:', error.message);
+    console.error('âŒ Error fetching clients:', error.message);
     return []; // Safe fallback for SSR
   }
 };
 
 export const fetchClient = async (id: NumericString) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/${id}`); // Internal API route with dynamic id
+  const res = await fetch(`/api/client/${id}`); // Internal API route with dynamic id
   if (!res.ok) throw new Error('Error fetching client');
   return res.json(); // Parse the JSON response
 };
@@ -27,7 +27,7 @@ export const fetchClient = async (id: NumericString) => {
 export const addClient = async (clientData: InternTestimonial) => {
   try {
     const token = getToken();
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client`, {
+    const res = await fetch(`/api/client`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ export const addClient = async (clientData: InternTestimonial) => {
 
     return res.json();
   } catch (error: any) {
-    console.error('❌ Error adding client:', error.message);
+    console.error('âŒ Error adding client:', error.message);
     return null;
   }
 };
@@ -67,7 +67,7 @@ export const uploadFile = async (file: File) => {
 export const deleteClient = async (id: NumericString) => {
   try {
     const token = getToken();
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/client/${id}`, {
+    const res = await fetch(`/api/client/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -79,7 +79,7 @@ export const deleteClient = async (id: NumericString) => {
 
     return res.status === 200 || res.status === 204;
   } catch (error) {
-    console.error('❌ Error deleting client:', error);
+    console.error('âŒ Error deleting client:', error);
     return false;
   }
 };

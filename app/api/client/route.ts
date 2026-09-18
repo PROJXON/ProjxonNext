@@ -19,7 +19,7 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   try {
-    const authHeader = getAuth(req);
+    const authHeader = await getAuth(req);
 
     if (!authHeader) {
       return new Response(
@@ -30,6 +30,7 @@ export async function POST(req: NextRequest) {
 
     const body = await req.json();
     console.log('Received client data:', body);
+
     const res = await fetch(`${process.env.WORDPRESS_CUSTOM_API_URL}/clients`, {
       method: 'POST',
       headers: {
@@ -41,7 +42,7 @@ export async function POST(req: NextRequest) {
 
     if (!res.ok) {
       const errorResponse = await res.json();
-      console.error('Error from WordPress API:', errorResponse); // Log error response from WordPress
+      console.error('Error from WordPress API:', errorResponse);
       throw new Error(`Failed to add client. Status code: ${res.status}`);
     }
 

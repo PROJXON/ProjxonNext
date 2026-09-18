@@ -2,7 +2,7 @@ import { LoginResponse, WPAuthUser } from '@/types/interfaces';
 
 const login = async (username: string, password: string): Promise<LoginResponse> => {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth`, {
+    const response = await fetch(`/api/auth`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password }),

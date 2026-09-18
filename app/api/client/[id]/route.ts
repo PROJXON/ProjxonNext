@@ -10,9 +10,10 @@ export async function GET(_req: NextRequest, { params }: RouteParams) {
     const client = data.find((c) => c.id === id);
 
     return client
-      ? Response.json(client) : new Response(JSON.stringify({ message: 'Client not found' }), {
-        status: 404,
-      });
+      ? Response.json(client)
+      : new Response(JSON.stringify({ message: 'Client not found' }), {
+          status: 404,
+        });
   } catch (error: unknown) {
     return new Response(
       JSON.stringify({
@@ -27,7 +28,7 @@ export async function GET(_req: NextRequest, { params }: RouteParams) {
 export async function DELETE(req: NextRequest, { params }: RouteParams) {
   try {
     const { id } = await params;
-    const authHeader = getAuth(req);
+    const authHeader = await getAuth(req);
 
     const res = await fetch(
       `${process.env.WORDPRESS_CUSTOM_API_URL}/clients/${id}`,
