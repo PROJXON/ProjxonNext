@@ -1,4 +1,4 @@
-import '@/styles/index.css';
+﻿import '@/styles/index.css';
 import '@/styles/App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'aos/dist/aos.css';
@@ -81,7 +81,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           {children}
           <Footer />
         </div>
+      {/* Cloudflare Web Analytics */}
+      <Script
+        id="cloudflare-web-analytics"
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        strategy="afterInteractive"
+        data-cf-beacon='{"token":"a1f391224ba64f9cadf733676e95a463"}'
+      />
       </body>
     </html>
   );
 }
+
